@@ -731,7 +731,8 @@
   "nota": "Evidência mais próxima do envenenamento de grafo de conhecimento da aula.",
   "num": [
    "Paradoxo: o GraphRAG resiste melhor a envenenamento simples, mas relações compartilhadas no grafo abrem uma superfície nova (GragPoison) que compromete várias perguntas de uma vez.",
-   "Publicado no IEEE S&P 2026 (referência citada em InceptionRAG)."
+   "Publicado no IEEE S&P 2026 (referência citada em InceptionRAG).",
+   "Segundo o dossiê 7: até 98% de sucesso com orçamento reduzido, atingindo várias perguntas de uma vez por relações compartilhadas no grafo."
   ],
   "tags": [
    "rag",
@@ -750,7 +751,8 @@
   "lado": "atk",
   "dos": [
    0,
-   1
+   1,
+   10
   ]
  },
  {
@@ -2539,7 +2541,8 @@
   "met": "Benchmark / dataset",
   "lado": "cap",
   "dos": [
-   1
+   1,
+   10
   ],
   "src": "CTI heterogênea",
   "links": [
@@ -2550,7 +2553,9 @@
    }
   ],
   "doi": "",
-  "num": [],
+  "num": [
+   "Segundo o dossiê 7, publicado no KDD 2026: integra CVE, CWE, CAPEC, ATT&CK e relatórios de 35 fornecedores em nove tarefas. É benigno: não tem condição adversarial."
+  ],
   "repo": [],
   "open": "Texto aberto"
  },
@@ -7030,7 +7035,8 @@
   "nota": "A defesa híbrida que o benchmark RSB achou eficaz na maioria dos cenários, com custo de inferência extra.",
   "num": [
    "Dois estágios: agrupamento K-means para filtrar textos suspeitos no top-K e autoavaliação do LLM contra o próprio conhecimento.",
-   "No GPT-4o, 82% de acurácia e 5% de sucesso do ataque com 100% de envenenamento no HotpotQA."
+   "No GPT-4o, 82% de acurácia e 5% de sucesso do ataque com 100% de envenenamento no HotpotQA.",
+   "Reprodução independente citada pelo dossiê 7 (RAGSieve): removeu 85,8% do veneno, mas também 44% dos documentos limpos. Em CTI, documento limpo descartado é inteligência nova suprimida."
   ],
   "tags": [
    "admissao",
@@ -7041,7 +7047,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Benchmarks de QA",
   "open": "Código/dados",
@@ -7081,7 +7088,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Benchmarks de QA",
   "links": [
@@ -7092,7 +7100,9 @@
    }
   ],
   "doi": "",
-  "num": [],
+  "num": [
+   "Segundo o dossiê 7, publicado no SaTML 2026: no RealtimeQA, 71% de acurácia limpa e 38% de acurácia robusta certificada, contra 69% e nenhuma certificação do RAG comum."
+  ],
   "repo": [],
   "open": "Texto aberto"
  },
@@ -7380,16 +7390,23 @@
   "ano": 2025,
   "eixo": 4,
   "ft": "AC",
-  "tit": "MINJA: memory injection attack against LLM agents",
-  "veic": "Dong et al. (2025)",
-  "tipo": "Preprint",
-  "st": "A conferir",
+  "tit": "A Practical Memory Injection Attack against LLM Agents (MINJA)",
+  "veic": "NeurIPS 2025 · arXiv 2503.03704",
+  "tipo": "Conferência",
+  "st": "Dossiê A",
   "aut": [
-   "Dong"
+   "Dong, Shen",
+   "Xu, Shaochen",
+   "He, Pengfei",
+   "Li, Yige",
+   "Tang, Jiliang",
+   "Liu, Tianming",
+   "Liu, Hui",
+   "Xiang, Zhen"
   ],
-  "nota": "Usuário comum, sem privilégio, envenena a memória longa do agente só fazendo perguntas. Identificador e título exatos a conferir.",
+  "nota": "Usuário comum, sem acesso à base, envenena a memória do agente só fazendo perguntas. Em CTI, o atacante é alguém que só conversa com o seu assistente.",
   "num": [
-   "Segundo trabalhos posteriores: mais de 95% de sucesso de injeção e 70% de sucesso do ataque em condições idealizadas."
+   "Segundo o dossiê 7: mais de 95% de injeção e cerca de 70% de sucesso ponta a ponta em condições de benchmark."
   ],
   "tags": [
    "mem",
@@ -7398,13 +7415,20 @@
   "met": "Experimento de ataque em laboratório",
   "lado": "atk",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Agentes com memória",
   "doi": "",
   "repo": [],
   "open": "Texto aberto",
-  "links": []
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2503.03704",
+    "kind": "aberto"
+   }
+  ]
  },
  {
   "key": "horowitz2024bias",
@@ -7691,7 +7715,8 @@
   "nota": "Detector de documento envenenado. Usa o gradiente da similaridade entre pergunta e documento, então na forma original depende da pergunta. Para usar na admissão, é preciso simular as perguntas prováveis do analista. Pega bem tokens “trapaceiros” pouco naturais; contra texto fluente (PoisonedRAG em caixa-preta), é hipótese a testar.",
   "num": [
    "Acha os tokens que mais pesam na similaridade, mascara e mede a probabilidade com um modelo de linguagem mascarado; tokens injetados têm probabilidade anormalmente baixa.",
-   "Elimina mais de 90% do conteúdo envenenado e mantém os documentos relevantes, segundo os autores."
+   "Elimina mais de 90% do conteúdo envenenado e mantém os documentos relevantes, segundo os autores.",
+   "Reprodução independente citada pelo dossiê 7 (RAGSieve): removeu 69,5% do veneno e 22,3% da evidência limpa. Detecção por estranheza de tokens tende a falhar contra texto fluente reescrito por LLM."
   ],
   "tags": [
    "rag",
@@ -7702,7 +7727,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Benchmarks de QA",
   "open": "Código/dados",
@@ -7735,7 +7761,8 @@
   "nota": "O trabalho mais próximo de um portão de admissão para CTI: defesa em várias camadas do pipeline inteiro, começando pela ingestão, e avaliada pelo impacto na missão do SOC, não só pela acurácia da resposta. Leitura obrigatória para posicionar qualquer defesa de admissão.",
   "num": [
    "Critica as defesas atuais por cobrirem etapas isoladas do RAG, sem garantia de integridade de ponta a ponta, e por medirem acurácia em vez de impacto no SOC.",
-   "Os resultados indicam que controles de confiança, consistência e governança em camadas reduzem bastante os efeitos do envenenamento."
+   "Os resultados indicam que controles de confiança, consistência e governança em camadas reduzem bastante os efeitos do envenenamento.",
+   "Segundo o dossiê 7: avaliado num corpus de CTI de 300 documentos, 90 deles envenenados; prova de conceito aberta."
   ],
   "tags": [
    "rag",
@@ -7747,7 +7774,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Pipeline de CTI para SOC",
   "links": [
@@ -7817,7 +7845,8 @@
   "met": "Experimento de ataque em laboratório",
   "lado": "atk",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Benchmarks de QA",
   "links": [
@@ -7828,7 +7857,9 @@
    }
   ],
   "doi": "",
-  "num": [],
+  "num": [
+   "Segundo o dossiê 7: cerca de 95% a 97% de sucesso no Natural Questions com um único texto, que rotula a resposta correta como desatualizada."
+  ],
   "repo": [],
   "open": "Texto aberto"
  },
@@ -7951,6 +7982,2244 @@
    }
   ],
   "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "register2026fakecve",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "IM",
+  "tit": "AI slop pollutes the CVE pipeline with fake vulns",
+  "veic": "The Register (03/08/2026)",
+  "tipo": "Artigo",
+  "st": "Conferido na fonte",
+  "aut": [
+   "The Register"
+  ],
+  "nota": "O caso que derruba a frase “não há caso público”. Um lote de CVEs de SQLite com notas críticas e altas entrou no NVD com enriquecimento da CISA e se revelou tecnicamente falso, com indício de geração por IA. O autor não era um Estado.",
+  "num": [
+   "Seis CVEs de SQLite com CVSS de 9,8 a 7,5; nenhum descrevia falha reproduzível. A Red Hat chegou a dar 10,0 a um deles antes de rebaixar.",
+   "O repositório tinha 55 avisos; os outros 49 alegavam falhas na libraw e na ESP32-audioI2S. 54 eram inteiramente falsos; um trazia um bug real com metadados de CVE não verificados.",
+   "A MITRE rejeitou o lote inteiro. Red Hat e NVD marcaram ou removeram os registros; o GitHub ainda não tinha agido na data da reportagem.",
+   "Motivação desconhecida: a JFrog levanta, como especulação, inflar currículo ou influenciar o que ferramentas automáticas marcam como real."
+  ],
+  "tags": [
+   "vuln",
+   "aluc",
+   "valid",
+   "poison",
+   "supply",
+   "admissao"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Registros CVE, NVD e avisos do GitHub",
+  "links": [
+   {
+    "lab": "Reportagem no The Register",
+    "url": "https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "jfrog2026sqlite",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "IN",
+  "tit": "SQLite Critical CVEs or LLM Slops",
+  "veic": "JFrog Security Research (30/07/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Berger, Afek"
+  ],
+  "nota": "A verificação que expôs o lote: compilar as versões citadas, ler o código e rodar as provas de conceito. Dá os sinais de triagem que o projeto P3 propõe medir.",
+  "num": [
+   "O código citado não existia nas versões afetadas ou era lógica sem relação com a falha alegada.",
+   "Sinais propostos: fornecedor não corroborou; referências sem hash de commit ou pull request; metadados suspeitos; funções inexistentes."
+  ],
+  "tags": [
+   "vuln",
+   "aluc",
+   "valid",
+   "supply",
+   "admissao"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Seis CVEs de SQLite",
+  "links": [
+   {
+    "lab": "Relatório da JFrog",
+    "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/",
+    "kind": "aberto"
+   },
+   {
+    "lab": "JFrog: The Impact of AI on CVEs",
+    "url": "https://jfrog.com/blog/the-impact-of-ai-on-cves-industry-challenges/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "osssec2026reject",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "SC",
+  "tit": "Rejected CVE reports against SQLite, libraw, ESP32-audioI2S",
+  "veic": "Lista OSS-Security (31/07/2026)",
+  "tipo": "Registro de incidente",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Coopersmith, Alan"
+  ],
+  "nota": "A frase que resume o mecanismo: a MITRE e a maioria das CNAs que atribuem CVEs a código de terceiros operam no sistema de honra.",
+  "num": [
+   "Registra a rejeição do lote inteiro pela MITRE no mesmo dia da análise da JFrog."
+  ],
+  "tags": [
+   "vuln",
+   "aluc",
+   "valid"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Lista de discussão",
+  "links": [
+   {
+    "lab": "Post na OSS-Security",
+    "url": "https://www.openwall.com/lists/oss-security/2026/08/01/2",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "oig2026nvd",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "GO",
+  "tit": "Evaluation of NIST's Management of the National Vulnerability Database (OIG-26-020-I)",
+  "veic": "Inspetor-Geral do Departamento de Comércio dos EUA (26/05/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Office of Inspector General, U.S. Department of Commerce"
+  ],
+  "nota": "Explica por que o lote falso passou: a checagem manual do NIST, que antes filtrava registros, acumula atraso desde fevereiro de 2024.",
+  "num": [
+   "Atraso de cerca de 13 mil registros não processados em junho de 2024 para mais de 27 mil no fim de 2025.",
+   "Projeção de mais de 60 mil vulnerabilidades reportadas em 2026.",
+   "Ao menos 21 mil casos de enriquecimento duplicado entre NIST e CISA de maio de 2024 a dezembro de 2025.",
+   "Segundo a CyberScoop, as notas de severidade do NIST bateram com avaliadores independentes só 12% das vezes."
+  ],
+  "tags": [
+   "vuln",
+   "valid",
+   "gov"
+  ],
+  "met": "Auditoria / investigação de sociedade civil",
+  "lado": "med",
+  "dos": [
+   9,
+   11
+  ],
+  "src": "Programa NVD",
+  "links": [
+   {
+    "lab": "Relatório (PDF)",
+    "url": "https://www.oig.doc.gov/wp-content/OIGPublications/OIG-26-020-I-SECURED.pdf",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "stenberg2026curl",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "SC",
+  "tit": "The end of the curl bug bounty",
+  "veic": "Blog de Daniel Stenberg (26/01/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Stenberg, Daniel"
+  ],
+  "nota": "O mesmo fenômeno pelo lado humano: o verificador afogado. Stenberg diz que o problema não é a IA, são as pessoas, e supõe motivação financeira. Material puro de Camada 8.",
+  "num": [
+   "O programa acabou em 31 de janeiro de 2026, depois de seis anos.",
+   "Segundo a Bugcrowd: US$ 86 mil pagos e 78 vulnerabilidades confirmadas; em meados de 2025, cerca de 20% das submissões eram lixo de IA.",
+   "Na FOSDEM 2026 (via LWN, dossiê 6): antes cerca de uma em cada seis submissões era falha real; passou a ser uma em 20 ou 30."
+  ],
+  "tags": [
+   "vuln",
+   "humano",
+   "valid"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Programa de bug bounty do curl",
+  "links": [
+   {
+    "lab": "Post de Stenberg",
+    "url": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+    "kind": "aberto"
+   },
+   {
+    "lab": "LWN: palestra na FOSDEM 2026",
+    "url": "https://lwn.net/Articles/1058266",
+    "kind": "aberto"
+   },
+   {
+    "lab": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/curl-ending-bug-bounty-program-after-flood-of-ai-slop-reports/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "aislopddos2026",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "AC",
+  "tit": "\"AI Slop is DDoSing Open Source\": Understanding the Impact of AI-Generated Contributions on Open Source Sustainability",
+  "veic": "arXiv 2607.04003",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Estudo do impacto de contribuições geradas por IA sobre mantenedores de código aberto: a base empírica do “afogamento do verificador”.",
+  "tags": [
+   "vuln",
+   "humano"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   11
+  ],
+  "src": "Projetos de código aberto",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2607.04003",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "bugcrowd2026slop",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "IN",
+  "tit": "Sloptimism is breaking any system built on human validation",
+  "veic": "Bugcrowd (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Bugcrowd"
+  ],
+  "nota": "Uma plataforma de bug bounty descreve os controles de admissão que precisou criar contra relatórios de IA: é o portão de admissão do lado humano.",
+  "num": [
+   "Controles adotados: banimento permanente para fazendas de submissão e suspensão de 30 dias depois de 10 relatórios inválidos seguidos."
+  ],
+  "tags": [
+   "vuln",
+   "humano",
+   "admissao"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "Plataforma de bug bounty",
+  "links": [
+   {
+    "lab": "Post da Bugcrowd",
+    "url": "https://www.bugcrowd.com/blog/sloptimism-is-breaking-any-system-built-on-human-validation/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "agentframework2026",
+  "ano": 2026,
+  "eixo": 5,
+  "ft": "IM",
+  "tit": "Pacote oficial agent-framework da Microsoft comprometido no PyPI",
+  "veic": "The Hacker News, BleepingComputer e Help Net Security (17–19/11/2026)",
+  "tipo": "Artigo",
+  "st": "Conferido via cobertura",
+  "aut": [
+   "Cobertura de imprensa sobre relatórios de Aikido, Endor Labs, Socket, StepSecurity e Wiz"
+  ],
+  "nota": "A cadeia de suprimentos de agentes atingida na fonte. Qualquer agente de CTI construído sobre esse framework e atualizado naquela janela entregou as credenciais do ambiente.",
+  "num": [
+   "Versões 1.26.1 e 1.26.2 publicadas com 33 minutos de intervalo em 17 de novembro de 2026; a 1.26.0 é a última limpa.",
+   "Um arquivo .pth rodava o ladrão de credenciais a cada início do Python, mesmo sem importar o pacote.",
+   "Cerca de 190 mil downloads por mês; é o segundo pacote ligado à Microsoft comprometido no PyPI em 2026."
+  ],
+  "tags": [
+   "supply",
+   "agentes",
+   "tools"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "atk",
+  "dos": [
+   9
+  ],
+  "src": "Registro PyPI",
+  "links": [
+   {
+    "lab": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html",
+    "kind": "aberto"
+   },
+   {
+    "lab": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Endor Labs",
+    "url": "https://www.endorlabs.com/learn/agent-framework-compromised-software-supply-chain-attack",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ethics2026offsec",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "AC",
+  "tit": "The Ethics of Autonomous AI Agents for Offensive Security",
+  "veic": "arXiv 2607.20255",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Traz os números do outro lado da enchente: achados reais em volume inédito. Os números da Mozilla e do volume de CVEs vêm de citação neste paper.",
+  "num": [
+   "Março e abril de 2026 tiveram o maior número de CVEs publicados desde 1999.",
+   "A Mozilla relatou 423 correções de segurança no Firefox em abril de 2026, contra média de 21,5 por mês em 2025, com uso de um modelo de fronteira."
+  ],
+  "tags": [
+   "vuln",
+   "agentes",
+   "gov"
+  ],
+  "met": "Análise / opinião",
+  "lado": "cap",
+  "dos": [
+   9
+  ],
+  "src": "Literatura e relatos de fornecedores",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2607.20255",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "anthropic2026glasswing",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "IN",
+  "tit": "Project Glasswing: initial update",
+  "veic": "Anthropic (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Anthropic"
+  ],
+  "nota": "Do lado de quem acha vulnerabilidades reais com IA: o gargalo deixou de ser encontrar e passou a ser verificar, divulgar e corrigir. Reconhece a enxurrada de relatórios de baixa qualidade que os mantenedores já recebiam.",
+  "tags": [
+   "vuln",
+   "valid",
+   "agentes"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "cap",
+  "dos": [
+   11
+  ],
+  "src": "Projetos de código aberto",
+  "links": [
+   {
+    "lab": "Post da Anthropic",
+    "url": "https://www.anthropic.com/research/glasswing-initial-update",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "csa2026glasswing",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "IN",
+  "tit": "Project Glasswing: AI Discovery Outpaces Open Source Patching Capacity",
+  "veic": "Cloud Security Alliance, nota de pesquisa (08/06/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "CSA AI Safety Initiative"
+  ],
+  "nota": "A medida da assimetria do lado legítimo: descobrir ficou muito mais rápido que verificar e corrigir.",
+  "num": [
+   "1.596 vulnerabilidades divulgadas a mantenedores, só 97 corrigidas na data da nota.",
+   "Submissões de CVE cresceram 263% entre 2020 e 2025."
+  ],
+  "tags": [
+   "vuln",
+   "valid"
+  ],
+  "met": "Análise / opinião",
+  "lado": "med",
+  "dos": [
+   11
+  ],
+  "src": "Divulgações do Glasswing",
+  "links": [
+   {
+    "lab": "Nota da CSA",
+    "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-glasswing-ai-vuln-patching-deficit-2026060/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "glasswing2026evidence",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Does Frontier AI Strengthen Cyber Defense? Evidence from Project Glasswing",
+  "veic": "arXiv 2611.06629",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Citado pelo dossiê 6 pela base de CVEs e pela defasagem do NVD. Não conferido nesta rodada.",
+  "tags": [
+   "vuln",
+   "valid"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Base de CVEs",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2611.06629",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "syed2026neveremitted",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Never Emitted: Reporter Attribution in GitHub's Machine-Readable Vulnerability Records",
+  "veic": "arXiv 2609.33099",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Syed, Anas Mohiuddin"
+  ],
+  "nota": "Sem autoria rastreável, o sistema de honra não tem a quem cobrar. Argumento de política para a proposta P5 (selo de verificação).",
+  "num": [
+   "238 registros CVE atribuídos pelo GitHub cujo aviso credita publicamente alguém: nenhum traz o campo de créditos; todos trazem métricas e tipos de problema, campos tão opcionais quanto.",
+   "Censo de 4.889 registros CVE em duas semanas: 46,9% trazem créditos; GitHub 0 de 570, Microsoft 0 de 438.",
+   "A API 2.0 do NVD não define campo de créditos: os 43 registros com créditos rastreados até ela chegaram sem eles."
+  ],
+  "tags": [
+   "vuln",
+   "metodo",
+   "gov"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Registros CVE e exportações OSV",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2609.33099",
+    "kind": "pdf"
+   },
+   {
+    "lab": "Thread na OSS-Security",
+    "url": "https://www.openwall.com/lists/oss-security/2026/08/27/1",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "liang2024mapping",
+  "ano": 2024,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Mapping the Increasing Use of LLMs in Scientific Papers",
+  "veic": "COLM 2024 · arXiv 2404.01268",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Liang, Weixin",
+   "Zhang, Yaohui",
+   "Wu, Zhengxuan",
+   "et al."
+  ],
+  "nota": "O método pronto para o projeto P2: estima a fração de texto modificado por LLM numa população sem classificar documentos um a um. Aplicado a CVEs, daria a primeira medida desse tipo em segurança.",
+  "num": [
+   "Até 17,5% de texto modificado por LLM em resumos de Ciência da Computação até fevereiro de 2024, em 950.965 artigos."
+  ],
+  "tags": [
+   "metodo",
+   "vuln",
+   "aluc"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "arXiv, bioRxiv e periódicos",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2404.01268",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "liang2024monitoring",
+  "ano": 2024,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Monitoring AI-Modified Content at Scale: A Case Study on the Impact of ChatGPT on AI Conference Peer Reviews",
+  "veic": "ICML 2024 · arXiv 2403.07183",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Liang, Weixin",
+   "Izzo, Zachary",
+   "Zhang, Yaohui",
+   "et al."
+  ],
+  "nota": "A versão original do estimador distribucional, aplicada a revisões por pares. Cuidado que vale para P2: texto escrito com IA não é texto falso.",
+  "tags": [
+   "metodo",
+   "aluc"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   9
+  ],
+  "src": "Revisões de ICLR, NeurIPS, CoRL e EMNLP",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2403.07183",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "badrag2024",
+  "ano": 2024,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "BadRAG: Identifying Vulnerabilities in Retrieval Augmented Generation of Large Language Models",
+  "veic": "arXiv 2406.00083",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Xue, Jiaqi",
+   "et al."
+  ],
+  "nota": "Ataque por tema, não por pergunta: um tópico inteiro (um ator, uma família de malware) pode ser contaminado por gatilhos semânticos.",
+  "tags": [
+   "rag",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2406.00083",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "trojanrag2024",
+  "ano": 2024,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "TrojanRAG: Retrieval-Augmented Generation Can Be Backdoor Driver in Large Language Models",
+  "veic": "arXiv 2405.13401",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Cheng, Pengzhou",
+   "et al."
+  ],
+  "nota": "Backdoor no próprio recuperador: a ameaça está no modelo de embedding, não só no corpus. Um portão de admissão que confia no embedding herda o backdoor.",
+  "tags": [
+   "rag",
+   "poison",
+   "supply"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2405.13401",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "phantom2024",
+  "ano": 2024,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Phantom: General Trigger Attacks on Retrieval Augmented Language Generation",
+  "veic": "ACM TOPS (2026) · arXiv 2405.20485",
+  "tipo": "Periódico",
+  "st": "Dossiê A",
+  "aut": [
+   "Chaudhari, Harsh",
+   "et al."
+  ],
+  "nota": "Persistência: o documento fica inerte até a pergunta certa aparecer. Na admissão, ele parece inofensivo.",
+  "tags": [
+   "rag",
+   "poison",
+   "admissao"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2405.20485",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragfamily2025",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Topic-FlipRAG, DeRAG, HijackRAG e PoisonedEye (família de ataques a RAG)",
+  "veic": "Vários (2025)",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Vários"
+  ],
+  "nota": "Inverter opinião sobre um tema; sequestrar ranking em caixa-preta; sequestrar respostas; estender o envenenamento a modelos de visão e linguagem. PoisonedEye abre a porta para OSINT multimodal (imagens de satélite).",
+  "tags": [
+   "rag",
+   "poison",
+   "multi"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Vários",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "archmatters2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Architecture Matters: comparação de arquiteturas de RAG sob envenenamento",
+  "veic": "arXiv 2605.05632",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Afirma que nenhum trabalho anterior avaliou envenenamento contra arquiteturas agênticas, multiagente ou recursivas: confirma a lacuna central da linha com fonte independente do âncora.",
+  "tags": [
+   "rag",
+   "poison",
+   "agentes"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Arquiteturas de RAG",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2605.05632",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "mempoison2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Memory Poisoning Attack and Defense on Memory Based LLM-Agents",
+  "veic": "arXiv 2601.05504",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Reavalia o MINJA em condições menos idealizadas e propõe defesas: separa número de laboratório de número realista.",
+  "tags": [
+   "mem",
+   "poison",
+   "defesa"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Agentes com memória",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2601.05504",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "mnemonic2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Mnemonic Sovereignty: survey de segurança de memória de longo prazo em agentes",
+  "veic": "arXiv 2604.16548",
+  "tipo": "Revisão sistemática",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Organiza os ataques por gradiente de acesso do atacante e por fase (escrita, recuperação). Melhor porta de entrada para revisar a família AgentPoison.",
+  "tags": [
+   "mem",
+   "poison",
+   "defesa"
+  ],
+  "met": "Revisão / survey",
+  "lado": "fun",
+  "dos": [
+   10
+  ],
+  "src": "Literatura",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2604.16548v1",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "evobreak2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Benign Alone, Harmful Together (EvoBreak)",
+  "veic": "arXiv 2608.01759",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Experiências individualmente benignas que, combinadas na memória de agentes que se autoaperfeiçoam, produzem comportamento nocivo. Nenhum filtro por item pega: o portão precisa olhar o lote, não o documento.",
+  "tags": [
+   "mem",
+   "poison",
+   "agentes",
+   "admissao"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Agentes autoevolutivos",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2608.01759",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ghostwriter2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "GhostWriter: envenenamento de memórias de produção (Letta, Mem0, Zep)",
+  "veic": "arXiv 2607.06595",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Testa memórias usadas em produção e duas customizadas; todas vulneráveis. O problema está nos produtos, não só nos protótipos.",
+  "tags": [
+   "mem",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Produtos de memória",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2607.06595",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "memsad2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "MEMSAD: detecção de anomalia semântica contra envenenamento de memória",
+  "veic": "arXiv 2605.03482",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Defesa calibrada para memória, com teoria (jogo de Stackelberg) e uma brecha declarada: sinônimos escapam de defesas no espaço contínuo.",
+  "num": [
+   "Avaliação fiel ao cenário quadruplica o sucesso medido do ataque (de 0,25 para 1,00): avaliação frouxa subestima o risco."
+  ],
+  "tags": [
+   "mem",
+   "defesa",
+   "metodo"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Agentes com memória; validação no Mem0",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2605.03482",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "utilityattack2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking",
+  "veic": "arXiv 2608.21230",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Testa diretamente as duas defesas que esta linha propõe (triagem de conteúdo e ranking por proveniência) e mostra o piso do problema com um ataque trivial.",
+  "num": [
+   "360 memórias fabricadas (1,2% do corpus) derrubam a acurácia de 0,850 para 0,300; a memória retém 35% do seu valor.",
+   "Uma memória envenenada ficou em primeiro lugar para todas as perguntas; veneno ocupou 20% do contexto recuperado.",
+   "O ataque não foi otimizado, não traz instrução e saiu de uma única geração."
+  ],
+  "tags": [
+   "mem",
+   "defesa",
+   "admissao",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Memória de agente",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2608.21230",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "bipia2025",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "AC",
+  "tit": "Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models (BIPIA)",
+  "veic": "KDD 2025 · arXiv 2312.14197",
+  "tipo": "Conferência",
+  "st": "Dossiê A",
+  "aut": [
+   "Yi, Jingwei",
+   "et al."
+  ],
+  "nota": "Primeiro benchmark específico de injeção indireta. Testa o cenário de resumo, o mais exposto quando o assistente resume relatórios ou logs.",
+  "num": [
+   "250 objetivos de ataque em cinco cenários: e-mail, tabela, código, resumo e QA."
+  ],
+  "tags": [
+   "inj",
+   "bench"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Cinco cenários",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2312.14197",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "injecagent2024",
+  "ano": 2024,
+  "eixo": 5,
+  "ft": "AC",
+  "tit": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+  "veic": "Findings of ACL 2024 · arXiv 2403.02691",
+  "tipo": "Conferência",
+  "st": "Dossiê A",
+  "aut": [
+   "Zhan, Qiusi",
+   "Liang, Zhixiang",
+   "Ying, Zifan",
+   "Kang, Daniel"
+  ],
+  "nota": "Formaliza a injeção em agentes com ferramentas.",
+  "num": [
+   "1.054 casos, 17 ferramentas do usuário e 62 do atacante; 30 agentes avaliados, a maioria vulnerável."
+  ],
+  "tags": [
+   "inj",
+   "tools",
+   "bench"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Agentes com ferramentas",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2403.02691v2",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "wasp2025",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "AC",
+  "tit": "WASP: benchmark de injeção contra agentes web autônomos",
+  "veic": "2025",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Mesmo modelos de fronteira dão sucesso parcial ao atacante na maioria das tentativas. O coletor de OSINT é um agente web.",
+  "tags": [
+   "inj",
+   "agentes",
+   "osintia"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Agentes web",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "camel2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Defeating Prompt Injections by Design (CaMeL)",
+  "veic": "arXiv 2503.18813",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Debenedetti, Edoardo",
+   "et al."
+  ],
+  "nota": "Defesa por desenho: separa fluxo de controle de dados não confiáveis, com interpretador próprio e políticas. Forte, mas cara de implementar.",
+  "tags": [
+   "inj",
+   "defesa",
+   "agentes"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "AgentDojo",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2503.18813",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "firewalls2025",
+  "ano": 2025,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks?",
+  "veic": "arXiv 2510.05244",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Bhagwatkar, Rishika",
+   "et al."
+  ],
+  "nota": "Leitura metodológica obrigatória: quando a defesa “perfeita” aparece, o problema costuma ser o benchmark.",
+  "num": [
+   "Um firewall simples na entrada e na saída das ferramentas zera o sucesso de ataque em AgentDojo, ASB, InjecAgent e τ-Bench; os autores corrigem os benchmarks e mostram um caso que contorna o sanitizador."
+  ],
+  "tags": [
+   "inj",
+   "defesa",
+   "bench",
+   "metodo"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Quatro benchmarks",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2510.05244v2",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "saturation2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Auditoria de saturação de benchmarks de injeção indireta",
+  "veic": "Research Square rs-10962146 (preprint)",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Preprint sem revisão. O mesmo modelo pode ter 0% de sucesso de ataque no InjecAgent e 59% no BIPIA; nenhuma defesa por prompt funciona em todos os modelos. Regra: usar mais de um benchmark.",
+  "tags": [
+   "inj",
+   "bench",
+   "metodo"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "fun",
+  "dos": [
+   10
+  ],
+  "src": "InjecAgent e BIPIA",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "zenity2025agentflayer",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "IN",
+  "tit": "AgentFlayer: injeção indireta sem clique em agentes corporativos",
+  "veic": "Zenity Labs, Black Hat USA 2025",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê B",
+  "aut": [
+   "Zenity Labs"
+  ],
+  "nota": "Demonstrações em Copilot Studio e conectores. Contribuições da Zenity entraram no MITRE ATLAS.",
+  "tags": [
+   "inj",
+   "agentes",
+   "tools"
+  ],
+  "met": "Prova de conceito",
+  "lado": "atk",
+  "dos": [
+   10
+  ],
+  "src": "Agentes corporativos",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "seconrag2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "SeCon-RAG: filtragem semântica em dois estágios e geração sem conflito",
+  "veic": "NeurIPS 2025",
+  "tipo": "Conferência",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Comparar com TrustRAG. Segundo o BiRD, custa de três a quatro vezes o tempo do RAG original.",
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de QA",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "reliabilityrag2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search",
+  "veic": "NeurIPS 2025 · arXiv 2509.23519",
+  "tipo": "Conferência",
+  "st": "Preprint conferido",
+  "aut": [
+   "Shen, Zeyu",
+   "Imana, Basileal",
+   "et al."
+  ],
+  "nota": "Usa sinais de confiabilidade que já existem, como o ranking do buscador, que décadas de combate a SEO tornaram caro de manipular. O análogo em CTI é a reputação acumulada da fonte.",
+  "tags": [
+   "rag",
+   "defesa",
+   "osintia"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10,
+   11
+  ],
+  "src": "Busca na web",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2509.23519v2",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "radar2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "RADAR: defesa dinâmica contra corrupção da recuperação em busca web",
+  "veic": "arXiv 2605.22041",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Cenário de OSINT na web aberta.",
+  "tags": [
+   "rag",
+   "defesa",
+   "osintia"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Busca na web",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2605.22041",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragsieve2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "RAGSieve: Self-Referenced Local Contrast for Knowledge-Poison Detection in Retrieval-Augmented Generation",
+  "veic": "arXiv 2608.13010",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Xu, Xinlong",
+   "Li, Yoshua Y."
+  ],
+  "nota": "Duas peças importam para a admissão: a comparação independente que mostra quanto GMTP e TrustRAG descartam de documento limpo, e o RSG, que procura densidade coordenada no corpus antes de qualquer pergunta chegar.",
+  "num": [
+   "RSQ compara os cinco documentos escolhidos com as posições 6 a 20 da mesma busca: 95,2% de AUROC em três datasets e seis construções de veneno.",
+   "RSG faz contraste local no corpus, sem pergunta: é o mais próximo de um detector de admissão nesta família."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10,
+   11
+  ],
+  "src": "Três datasets de QA",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2608.13010",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Código no GitHub",
+    "url": "https://github.com/XrazyMee/RAGSieve",
+    "kind": "dados"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "tokeninfl2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Tracing Target Answers in Poisoned Retrieval Corpora via Token Influence Attribution",
+  "veic": "arXiv 2606.25721",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Forense por influência de tokens, na linha do RAGForensics: serve ao passo de retratação do playbook.",
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Corpora de QA",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2606.25721",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "rankingnot2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses",
+  "veic": "arXiv 2610.33849",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "A crítica metodológica a citar antes de declarar qualquer defesa eficaz: no benchmark que a literatura usa, regras de limiar diferentes dão as mesmas decisões, e o ponto de operação colapsa.",
+  "tags": [
+   "rag",
+   "defesa",
+   "metodo",
+   "bench"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "fun",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de defesa de RAG",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2610.33849",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragshield2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "RAGShield: Provenance-Verified Defense-in-Depth Against Knowledge Base Poisoning in Government Retrieval-Augmented Generation Systems",
+  "veic": "arXiv 2604.00387",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Patil, KrishnaSaiReddy"
+  ],
+  "nota": "Trata envenenamento de RAG como ataque de cadeia de suprimentos: atestação criptográfica inspirada no C2PA, que bloqueia na ingestão documentos sem assinatura ou forjados. É a forma mais forte do portão de admissão, e o próprio autor mostra o limite.",
+  "num": [
+   "Cinco camadas, com mapeamento para 15 famílias de controle do NIST SP 800-53.",
+   "Corpus pequeno: 500 passagens do Natural Questions, 63 documentos de ataque e 200 perguntas.",
+   "Segundo o dossiê 7, a substituição no lugar por um insider ainda alcança 17,5% de sucesso: o limite fundamental da defesa na ingestão."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao",
+   "supply"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10,
+   11
+  ],
+  "src": "Natural Questions",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2604.00387",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragsec2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "ragsec: pipeline de defesa em camadas sob ataque adaptativo",
+  "veic": "Preprints.org 202609.2192",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Preprint sem revisão, mas a conclusão é a tese da linha numa frase: resultado negativo para defesa baseada em conteúdo; positivo para proveniência quando atrelada a assinatura não forjável, e não a nome de fonte declarado.",
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Pipeline de RAG",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "coverage2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Coverage Is Not Containment: A Fundamental Limit of Admission-Time Defenses Against Coordinated Poisoning of Vector Retrieval",
+  "veic": "arXiv 2608.16044",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Pathak, Prashant Kumar",
+   "Sharma, Tarun Kumar"
+  ],
+  "nota": "O contraponto que a dissertação precisa enfrentar de frente: prova que, contra envenenamento coordenado, o portão na porta é um beco sem saída, e que a defesa robusta tem de agir também na demanda (na hora da pergunta). Conclusão: portão de admissão é necessário, não suficiente.",
+  "num": [
+   "Na ingestão, um “cone” de ataque é geometricamente idêntico a um envio legítimo de nicho; o melhor classificador treinado, com todas as features, não separa os dois.",
+   "Identidade e atestação mudam o jogo, ao custo de uma infraestrutura que canais abertos de ingestão não têm."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "fun",
+  "dos": [
+   10,
+   11
+  ],
+  "src": "Índice vetorial HNSW",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2608.16044",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "trishield2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "TriShieldRAG: A Three-Ring Defense-in-Depth Framework Against Knowledge Corruption in Retrieval-Augmented Generation",
+  "veic": "arXiv 2607.23838",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Mohanty, Susil Kumar",
+   "Patel, Rohit",
+   "Yuvaraj, Kosuru",
+   "Chaudhary, Jeenal",
+   "Singhania, Disha"
+  ],
+  "nota": "Resultado negativo honesto: três anéis (guarda na ingestão, reordenação por confiança, consenso entre três modelos) e um ponto cego declarado.",
+  "num": [
+   "Defesas anteriores deixam o sucesso do ataque em 30% ou mais sob paráfrase e expansão da base.",
+   "Os anéis 2 e 3 só funcionam sob duas condições: veneno minoritário no top-k e etiqueta de proveniência explícita."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10,
+   11
+  ],
+  "src": "Corpora de QA",
+  "links": [
+   {
+    "lab": "Resumo no alphaXiv",
+    "url": "https://www.alphaxiv.org/abs/2607.23838",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "sevenllm2024",
+  "ano": 2024,
+  "eixo": 2,
+  "ft": "AC",
+  "tit": "SEvenLLM: Benchmarking, Eliciting, and Enhancing Abilities of Large Language Models in Cyber Threat Intelligence",
+  "veic": "arXiv 2405.03446",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Ji, Hangyuan",
+   "et al."
+  ],
+  "nota": "Corpus bilíngue de CTI sobre relatórios e blogs; só texto não estruturado, sem condição adversarial.",
+  "num": [
+   "28 tarefas: 13 de compreensão e 15 de geração."
+  ],
+  "tags": [
+   "bench",
+   "osintia"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "cap",
+  "dos": [
+   10
+  ],
+  "src": "Relatórios e blogs de CTI",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2405.03446",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "cybersoceval2025",
+  "ano": 2025,
+  "eixo": 2,
+  "ft": "IN",
+  "tit": "CyberSOCEval: análise de malware e raciocínio de CTI",
+  "veic": "2025",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no relatório"
+  ],
+  "nota": "Complementa os benchmarks de CTI com tarefas de SOC. Benigno.",
+  "tags": [
+   "bench",
+   "soc"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "cap",
+  "dos": [
+   10
+  ],
+  "src": "Tarefas de SOC",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "minerva2026",
+  "ano": 2026,
+  "eixo": 2,
+  "ft": "AC",
+  "tit": "Minerva: aprendizado por reforço com recompensas verificáveis para LLMs de CTI",
+  "veic": "arXiv 2602.00513",
+  "tipo": "Preprint",
+  "st": "Dossiê A",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Mostra como transformar tarefas de CTI em sinais verificáveis: o mesmo movimento que a etapa de reprodução pede para CVEs.",
+  "tags": [
+   "bench",
+   "valid"
+  ],
+  "met": "Defesa / método",
+  "lado": "cap",
+  "dos": [
+   10
+  ],
+  "src": "Tarefas de CTI",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2602.00513",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "benchpipe2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Benchmark scores are pipeline-dependent: auditoria de benchmarks de LLM em cibersegurança",
+  "veic": "2026",
+  "tipo": "Preprint",
+  "st": "Dossiê B",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "O mesmo cuidado do “Ranking Is Not Deciding”, agora do lado dos benchmarks de CTI.",
+  "tags": [
+   "bench",
+   "metodo"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "fun",
+  "dos": [
+   10
+  ],
+  "src": "Benchmarks de cibersegurança",
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "coverredund2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Coverage Is Not Redundancy: Maintenance Cost and Exposure of Query-Aware Admission Indexes in Vector Databases Under Workload Drift",
+  "veic": "arXiv 2608.16043",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Descreve a defesa de admissão que mais se parece com a da dissertação: um conjunto de perguntas-sentinela, e o documento só entra se não for vizinho de muitas delas. É a forma operacional das “perguntas de analista simuladas” da RQ27.",
+  "num": [
+   "Limite estrutural: o monitor para de criar sentinelas quando a região parece coberta, mas só rejeita um hub depois que τ sentinelas o testemunham; a exposição tem um piso.",
+   "Uma sonda de testemunho ciente da recuperação restaura a contenção a custo fixo por documento admitido."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "Bases vetoriais (HNSW, IVF-PQ)",
+  "links": [
+   {
+    "lab": "Resumo no alphaXiv",
+    "url": "https://alphaxiv.org/abs/2608.16043v1",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "globalgating2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "When Global Gating Is Enough: Admission-Time Hubness Control in Anisotropic Vector Retrieval Systems",
+  "veic": "arXiv 2606.19692",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Portão de admissão global, mantido de forma incremental, contra documentos “hub” que aparecem para muitas perguntas sem relação. Trata proveniência como complemento.",
+  "num": [
+   "Custo por escrita independente do tamanho do corpus; resultado negativo reprodutível para o refinamento por domínio."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "Índice HNSW",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2606.19692",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "bpv2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Bounded Provisional Visibility: Controlling Poisoning Exposure in Continuously Ingested RAG Vector Stores",
+  "veic": "arXiv 2610.05826",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Xu, Chuhong",
+   "Yi, Annabel",
+   "Qian, Iris",
+   "Zhou, Mark",
+   "Li, Zhaoyi",
+   "Xiao, Hang"
+  ],
+  "nota": "O problema de tempo que um portão de admissão de CTI vai ter: feeds chegam o tempo todo e a verificação atrasa. Propõe admitir com prazo e esconder o que não foi verificado a tempo, com contenção por linhagem.",
+  "num": [
+   "Com fila de verificação, o prazo reduziu a mediana de recuperações envenenadas de 34 para 7, com a mesma redução em resultados limpos deslocados.",
+   "Verificar antes de mostrar evitou exposição, mas atrasou a primeira visibilidade de conteúdo limpo para 6,3 s; a admissão provisória mostrou em 3 ms."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Arquitetura / sistema",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "Base vetorial com ingestão contínua",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2610.05826",
+    "kind": "pdf"
+   },
+   {
+    "lab": "Página no Google Research",
+    "url": "https://research.google/pubs/bounded-provisional-visibility-controlling-poisoning-exposure-in-continuously-ingested-rag-vector-stores/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "rrparadox2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "The Retrieval-Robustness Paradox: Data Poisoning in Retrieval-Dependent Domains",
+  "veic": "NeurIPS 2026",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores na página do evento"
+  ],
+  "nota": "Fundamental para CTI: as defesas foram avaliadas em tarefas em que o modelo já sabe a resposta. Em CTI a resposta só existe na base (o ator novo, o IOC de ontem), que é justamente onde elas rendem menos.",
+  "num": [
+   "Em seis tarefas de QA, as defesas recuperam 26,45% menos nas tarefas dependentes de recuperação, onde o RAG mais importa."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "metodo",
+   "admissao"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "fun",
+  "dos": [
+   11
+  ],
+  "src": "Seis tarefas de QA",
+  "links": [
+   {
+    "lab": "Página no NeurIPS 2026",
+    "url": "https://neurips.cc/virtual/2026/178250",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "prevented2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "Prevented is Not Protected: What Attack Success Rate Hides about RAG",
+  "veic": "arXiv 2610.40742",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Casar a resposta-alvo por texto superestima o sucesso do ataque sob defesa: menções ou rejeições do veneno contam como acerto. A métrica muda o ranking das defesas.",
+  "tags": [
+   "rag",
+   "defesa",
+   "metodo"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "fun",
+  "dos": [
+   11
+  ],
+  "src": "NQ e HotpotQA",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2610.40742",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "influence2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Influence Factors on RAG Poisoning",
+  "veic": "arXiv 2606.12469",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Pereira, Pedro",
+   "et al."
+  ],
+  "nota": "Estudo fatorial de um grupo do ISEP, em Portugal: o envenenamento não depende de um componente, mas da interação entre recuperação, geração e base. Importa para ler o laboratório do site, que usa BM25.",
+  "num": [
+   "432 configurações. Recuperadores densos e por grafo são em geral mais robustos que o BM25; mais profundidade de recuperação aumenta a chance de puxar veneno."
+  ],
+  "tags": [
+   "rag",
+   "poison",
+   "br"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   11
+  ],
+  "src": "Datasets de QA",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2606.12469",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "hybridbm25_2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Corpus composition and hybrid BM25 + vector retrieval as architectural defense against RAG poisoning",
+  "veic": "arXiv 2603.18034",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Defesa arquitetural barata contra ataques guiados por gradiente. Vale como linha de base para qualquer portão: comparar contra recuperação híbrida antes de propor algo caro.",
+  "num": [
+   "Em 50 ataques, a recuperação híbrida reduziu o sucesso dos ataques guiados por gradiente de 38% para 0%."
+  ],
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "Corpora de domínios diversos",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2603.18034",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "blackhole2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Can You Trust the Vectors in Your Vector Database? Black-Hole Attack from Embedding Space Defects",
+  "veic": "arXiv 2604.05480",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Li, Hanxi",
+   "Zhou, Jianan",
+   "Lao, Jiale",
+   "et al."
+  ],
+  "nota": "Poucos vetores maliciosos perto do centro geométrico dos vetores armazenados capturam muitas buscas. Um portão de admissão que olha só o texto não vê o ataque no vetor.",
+  "tags": [
+   "rag",
+   "poison",
+   "admissao"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   11
+  ],
+  "src": "Bases vetoriais",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2604.05480",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": []
+ },
+ {
+  "key": "competing2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation",
+  "veic": "KDD 2026 · arXiv 2505.12574",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "doi": "10.1145/3770855.3818119",
+  "aut": [
+   "Chen, Liuji",
+   "Yang, Xiaofang",
+   "et al."
+  ],
+  "nota": "Vários atacantes envenenando a mesma pergunta em direções diferentes. Em CTI é o cenário de atribuição disputada: cada lado planta a sua versão.",
+  "tags": [
+   "rag",
+   "poison",
+   "desinf"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   11
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2505.12574",
+    "kind": "pdf"
+   }
+  ],
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragparadox2025",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "The RAG Paradox: A Black-Box Attack Exploiting Unintentional Vulnerabilities in Retrieval-Augmented Generation Systems",
+  "veic": "Findings of EMNLP 2025, pp. 23723–23744",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Choi, Chanwoo",
+   "Kim, Jinsoo",
+   "Cho, Sukmin",
+   "Jeong, Soyeong",
+   "Chang, Buru"
+  ],
+  "nota": "Mostrar as fontes para ganhar confiança entrega ao atacante onde plantar. Assistentes de OSINT que citam fontes caem exatamente nisso.",
+  "tags": [
+   "rag",
+   "poison",
+   "osintia"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   11
+  ],
+  "src": "Sistemas de RAG que citam fontes",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2502.20995v3",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "tinyllama2025cti",
+  "ano": 2025,
+  "eixo": 1,
+  "ft": "AC",
+  "tit": "What if, Behind the Curtain, There Is Only an LLM? A Holistic Evaluation of TinyLlama-Generated Synthetic Cyber Threat Intelligence",
+  "veic": "Electronics 14(24), 4971 (MDPI)",
+  "tipo": "Periódico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "Até um modelo pequeno gera CTI falso que humanos não distinguem: reforça o achado de Ranade (2021) com modelos de hoje.",
+  "num": [
+   "Participantes humanos acertaram cerca de 50% ao separar relatórios autênticos de gerados: acaso."
+  ],
+  "tags": [
+   "aluc",
+   "humano",
+   "poison"
+  ],
+  "met": "Estudo com humanos",
+  "lado": "atk",
+  "dos": [
+   11
+  ],
+  "src": "Relatórios de CTI",
+  "links": [
+   {
+    "lab": "Artigo na MDPI",
+    "url": "https://www.mdpi.com/2079-9292/14/24/4971",
+    "kind": "editor"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "glmfakecti2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "GLM-Based Fake Cybersecurity Threat Intelligence Detection Models and Algorithms",
+  "veic": "Applied Sciences 15(19), 10755 (MDPI)",
+  "tipo": "Periódico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "Detecção de CTI falso tratada como detecção de texto gerado, com o ciclo inteiro do envenenamento simulado. Lembrete do dossiê 6: texto de IA não é texto falso, então detector de IA sozinho não decide admissão.",
+  "tags": [
+   "defesa",
+   "poison",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   11
+  ],
+  "src": "CTI de comunidades abertas",
+  "links": [
+   {
+    "lab": "Artigo na MDPI",
+    "url": "https://www.mdpi.com/2076-3417/15/19/10755",
+    "kind": "editor"
+   }
+  ],
+  "doi": "",
+  "num": [],
   "repo": [],
   "open": "Texto aberto"
  }

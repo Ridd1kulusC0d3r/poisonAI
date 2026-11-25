@@ -54,8 +54,13 @@ Os julgamentos usam linguagem estimativa (quase nula, muito improvável, improv�
 
 ## Hipóteses concorrentes
 
-A pergunta central (“por que não há caso público de pipeline de CTI envenenado?”) é analisada com ACH: seis hipóteses, onze evidências, e a hipótese com mais inconsistências é a mais fraca. A matriz é de um só analista; ela rende mais com divergência real. Edite a sua no site.
+A pergunta central (por que o único caso público de fonte contaminada por IA, os CVEs falsos no NVD, não veio de um adversário mirando pipelines de CTI) é analisada com ACH: sete hipóteses, dezessete evidências, e a hipótese com mais inconsistências é a mais fraca. A matriz é de um só analista; ela rende mais com divergência real. Edite a sua no site.
 
 ## Origem do material
 
 Artigo âncora (Palmieri et al., arXiv 2607.03233), cinco dossiês produzidos com assistência de IA, a crítica aos quatro primeiros, o repositório LLmInjection, o relatório completo do GTG-1002 e buscas científicas em 25/11/2026. Tudo o que veio dos dossiês carrega a origem no campo `dos`.
+
+
+## Identidade visual
+
+O site usa a identidade do repositório LLmInjection: papel, tinta e uma única cor de sinal (#b43c0e), Inter e JetBrains Mono, cartões com profundidade suave, abas em pílula fixas com vidro fosco, tema claro e escuro. Todos os gráficos (cadeia, linhas de assunto, linha do tempo, curva dose-resposta, matriz de hipóteses) foram mantidos.

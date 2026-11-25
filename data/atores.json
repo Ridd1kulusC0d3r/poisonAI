@@ -693,5 +693,64 @@
   "fontes": [
    "gambit2026mexico"
   ]
+ },
+ {
+  "id": "slopcve",
+  "nome": "Produtor do lote de CVEs falsos (jul/2026)",
+  "aka": "",
+  "origem": "Desconhecida",
+  "tipo": "Incentivo",
+  "papel": "F",
+  "conf": "Fonte primária (JFrog, OSS-Security) lida nesta rodada",
+  "prio": null,
+  "oque": "Repositório novo e obscuro no GitHub publicou 55 avisos; 54 eram inteiramente falsos e seis de SQLite entraram no NVD com enriquecimento da CISA. Indício de geração por IA; nenhuma intenção comprovada.",
+  "osint": "Não mirou nenhum agente: mirou a fonte que os agentes tratam como verdade. Tratar como caso, não como réu.",
+  "stg": [
+   "S1",
+   "S2"
+  ],
+  "fontes": [
+   "register2026fakecve",
+   "jfrog2026sqlite",
+   "osssec2026reject"
+  ]
+ },
+ {
+  "id": "slopbounty",
+  "nome": "Relatores de bug bounty movidos a recompensa",
+  "aka": "“terror reporting”",
+  "origem": "Difusa",
+  "tipo": "Incentivo",
+  "papel": "F",
+  "conf": "Relato do mantenedor (curl) e da plataforma (Bugcrowd)",
+  "prio": null,
+  "oque": "Volume de relatórios gerados por IA que soam técnicos e não se sustentam; levou o curl a encerrar o programa em 31/01/2026.",
+  "osint": "O ator que faltava em todas as tabelas: não quer enganar ninguém em particular, quer volume. E o volume afoga o verificador.",
+  "stg": [
+   "S1",
+   "S7"
+  ],
+  "fontes": [
+   "stenberg2026curl",
+   "bugcrowd2026slop"
+  ]
+ },
+ {
+  "id": "afpypi",
+  "nome": "Invasor do pacote agent-framework",
+  "aka": "",
+  "origem": "Não informada",
+  "tipo": "Desconhecido",
+  "papel": "A",
+  "conf": "Cobertura de imprensa de vários fornecedores",
+  "prio": null,
+  "oque": "Publicou duas versões maliciosas do pacote oficial de agentes da Microsoft no PyPI, com ladrão de credenciais rodando a cada início do Python.",
+  "osint": "Atacar o framework é atacar todo agente de CTI que o usa, antes de qualquer pergunta.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "agentframework2026"
+  ]
  }
 ]

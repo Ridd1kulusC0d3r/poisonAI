@@ -123,7 +123,10 @@
   "5": "Dossiê 5 (inteligência e Brasil)",
   "6": "Repositório LLmInjection",
   "7": "Busca de 25/11/2026",
-  "8": "Busca científica de 25/11/2026"
+  "8": "Busca científica de 25/11/2026",
+  "9": "Dossiê 6 (a virada: CVEs fantasmas)",
+  "10": "Dossiê 7 (bibliografia anotada)",
+  "11": "Busca ampliada de 25/11/2026"
  },
  "eixos": {
   "0": "E0 Âncora: OSINT agêntico",
@@ -173,7 +176,8 @@
   "vies": "Viés de modelo",
   "defesa": "Detecção e resposta",
   "metodo": "Método de inteligência",
-  "admissao": "Admissão e ingestão de CTI"
+  "admissao": "Admissão e ingestão de CTI",
+  "vuln": "Bases de vulnerabilidade e sistema de honra"
  },
  "ordem_temas": [
   "osintia",
@@ -200,7 +204,8 @@
   "vies",
   "defesa",
   "metodo",
-  "admissao"
+  "admissao",
+  "vuln"
  ],
  "info_temas": {
   "osintia": {
@@ -477,6 +482,17 @@
     "Ataques testados, inclusive adaptativo",
     "Taxa de rejeição de documento legítimo"
    ]
+  },
+  "vuln": {
+   "o_que": "CVE, NVD, avisos de fornecedor e programas de bug bounty como fontes de inteligência que agentes tratam como verdade.",
+   "grupo": "O primeiro caso público de fonte de inteligência contaminada por conteúdo de IA veio por aqui, e não por um feed de CTI: 54 CVEs falsos entraram no NVD com enriquecimento da CISA em julho de 2026. O pipeline funciona no sistema de honra e nenhuma etapa exige reproduzir a falha.",
+   "pergunta": "O registro foi reproduzido por alguém além de quem o pediu? Quem reportou é rastreável? Quanto tempo um registro rejeitado continua vivo em bases derivadas e em respostas de assistentes?",
+   "extrair": [
+    "Quem publicou e quem verificou",
+    "Se houve reprodução",
+    "Data de entrada e data de retratação",
+    "Onde o registro ainda aparece"
+   ]
   }
  },
  "notas_pares": {
@@ -501,7 +517,9 @@
   "metodo|valid": "Feeds reais já discordam entre si (2,5% a 4,0% de sobreposição): sem essa linha de base, todo erro parece ataque.",
   "br|multi": "Na eleição de 2026, a maior parte das mídias com IA veio de perfis comuns e anônimos, e só 371 de 920 estavam rotuladas.",
   "br|apt": "No Brasil, a ameaça de IA mais concreta é o cibercrime bancário local se aproximando da infraestrutura de pagamentos.",
-  "admissao|valid": "Feeds legítimos concordam em só 2,5% a 4,0%: um portão de admissão que exige corroboração rejeita inteligência verdadeira."
+  "admissao|valid": "Feeds legítimos concordam em só 2,5% a 4,0%: um portão de admissão que exige corroboração rejeita inteligência verdadeira.",
+  "vuln|admissao": "Um CVE é um lote de inteligência que chega por uma fonte considerada autoritativa. No caso de julho de 2026, a fonte autoritativa foi o vetor.",
+  "vuln|aluc": "Os CVEs falsos citavam funções que não existem na versão afetada: alucinação de código publicada como vulnerabilidade."
  },
  "categorias_tempo": {
   "atk": "Ataque à IA de defesa",

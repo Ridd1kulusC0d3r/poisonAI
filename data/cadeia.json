@@ -11,7 +11,8 @@
    "PoC falsos em repositórios",
    "Injeções plantadas na web aberta (15,3 mil medidas)",
    "Imagem de satélite fabricada e contas impostoras de OSINT",
-   "Artefatos deixados por agentes autônomos"
+   "Artefatos deixados por agentes autônomos",
+   "Fonte autoritativa contaminada por volume: CVEs falsos com indício de IA chegam ao NVD com enriquecimento oficial (jul/2026)"
   ],
   "defesas": [
    "Registrar proveniência e hash de cada item na coleta",
@@ -19,7 +20,8 @@
    "Listas de fontes sancionadas e de baixa reputação",
    "Congelar o conteúdo no momento da coleta, não da análise",
    "Coleta pareada: comparar o que o agente e um navegador comum recebem",
-   "Portão de admissão antes da indexação: o lote de CTI só entra na base depois de passar pelos controles"
+   "Portão de admissão antes da indexação: o lote de CTI só entra na base depois de passar pelos controles",
+   "Tratar NVD, CVE e avisos como fonte não verificada por padrão; etapa de reprodução antes de virar verdade"
   ],
   "itens": [
    "asp2025pravda",
@@ -34,7 +36,10 @@
    "vigia2026",
    "gtig2026initial",
    "ragh2026",
-   "gmtp2025"
+   "gmtp2025",
+   "register2026fakecve",
+   "jfrog2026sqlite",
+   "oig2026nvd"
   ],
   "atlas": [
    "AML.T0070"
@@ -57,7 +62,9 @@
    "Sanitizar e marcar conteúdo externo",
    "NER especializado e conferência contra o texto-fonte",
    "Remover conteúdo não renderizado antes do modelo",
-   "Separar classificação de sumarização e comparar"
+   "Separar classificação de sumarização e comparar",
+   "Visibilidade provisória com prazo: o que não foi verificado a tempo fica oculto (BPV)",
+   "Perguntas-sentinela na admissão (Coverage Is Not Redundancy)"
   ],
   "itens": [
    "greshake2023",
@@ -71,7 +78,10 @@
    "viaconnect2026edr",
    "seymour2026poster",
    "anthropic2026sep",
-   "admit2025"
+   "admit2025",
+   "bpv2026",
+   "coverredund2026",
+   "ragsieve2026"
   ],
   "atlas": [
    "AML.T0051",
@@ -89,7 +99,9 @@
    "Backdoor na memória do agente (AgentPoison)",
    "Entrada revogada que continua valendo",
    "Grafo corrompido para armar o raciocínio (Oracle Poisoning)",
-   "Diretiva escrita na memória por skill maliciosa"
+   "Diretiva escrita na memória por skill maliciosa",
+   "Envenenamento coordenado que, na porta, é idêntico a um envio legítimo de nicho",
+   "Memórias fabricadas em 1,2% do corpus derrubam a acurácia de 0,85 para 0,30"
   ],
   "defesas": [
    "Proveniência por nó e por aresta",
@@ -118,7 +130,10 @@
    "trustrag2025",
    "corruptrag2025",
    "authchain2025",
-   "ragorigin2026"
+   "ragorigin2026",
+   "coverage2026",
+   "utilityattack2026",
+   "blackhole2026"
   ],
   "atlas": [
    "AML.T0070",
@@ -168,7 +183,8 @@
    "Malware que consulta LLM em execução",
    "Skill maliciosa ou alterada depois da aprovação (rug pull)",
    "Chave de API roubada ou proxy malicioso",
-   "Framework agêntico ofensivo em ritmo de máquina"
+   "Framework agêntico ofensivo em ritmo de máquina",
+   "Framework de agentes trocado na origem (agent-framework no PyPI, nov/2026)"
   ],
   "defesas": [
    "Allowlist e versão fixa de ferramentas",
@@ -192,7 +208,8 @@
    "crowdstrike2026toolpoison",
    "dragos2026canary",
    "checkpoint2025mcpoison",
-   "msft2026secrets"
+   "msft2026secrets",
+   "agentframework2026"
   ],
   "atlas": [
    "AML.T0051",
@@ -235,7 +252,8 @@
    "CTI falso que engana especialistas",
    "Fadiga: checkpoint vira carimbo",
    "Fadiga por falso positivo até desligar o detector (97% sob evasão)",
-   "Detector de imagem que chama o real de falso"
+   "Detector de imagem que chama o real de falso",
+   "Afogamento do verificador: relatórios plausíveis em volume que nenhum humano revisa"
   ],
   "defesas": [
    "Checkpoints obrigatórios antes da decisão",
@@ -256,7 +274,8 @@
    "socpercep2026",
    "bouwman2020cup",
    "horowitz2024bias",
-   "halluvision2026"
+   "halluvision2026",
+   "stenberg2026curl"
   ],
   "atlas": []
  }

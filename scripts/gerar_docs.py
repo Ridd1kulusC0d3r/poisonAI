@@ -150,6 +150,22 @@ def main():
     t.append(tabela(["Ator", "Também", "Origem", "Tipo", "Confiança", "Prioridade", "O que fez"],
                     [[a["nome"], a.get("aka", ""), a["origem"], a["tipo"], a.get("conf", ""), a.get("prio") or "—", a["oque"]] for a in atores]))
     escrever("ATORES.md", "\n".join(t))
+    # a virada (dossiê 6) e o desenho do dossiê 7
+    I = intel["intel"]; V = I.get("virada")
+    if V:
+        t = ["# A virada: o envenenamento já aconteceu, e não foi espião\n", f"**Antes:** {V['antes']}\n", f"**Agora:** {V['agora']}\n", f"> {V['frase']} ({V['frase_fonte']})\n"]
+        t += [f"{n}. **{c[0]}.** {c[1]}" for n, c in enumerate(V["consequencias"], 1)]
+        t.append("\n## Correções aos dossiês 1 a 5\n")
+        t.append(tabela(["Onde", "Como estava", "Correção"], I["correcoes"]))
+        t.append("\n## Cinco projetos com dados públicos\n")
+        t.append(tabela(["#", "Projeto", "Por que", "Como", "Prazo e cuidado", "Pergunta"], I["projetos"]))
+        D7 = I["desenho"]
+        t.append(f"\n## Desenho experimental do dossiê 7\n\n**Pergunta:** {D7['pergunta']}\n\n**Base:** {D7['base']}\n")
+        t.append(tabela(["Fator", "Níveis"], D7["fatores"]))
+        for tit, k in [("Métricas", "metricas"), ("Hipóteses", "hipoteses"), ("Regras", "regras")]:
+            t.append(f"\n**{tit}**\n"); t += [f"- {x}" for x in D7[k]]
+        t.append("\n**Ler antes:** " + ", ".join(link(por[k]) for k in D7["itens"] if k in por))
+        escrever("VIRADA.md", "\n".join(t))
 
 
 if __name__ == "__main__":

@@ -69,7 +69,7 @@
    "A regra de corroboração custa mais do que parece: em IPs e hashes, a corroboração independente é rara até para dado verdadeiro. Funciona melhor para atribuição e narrativa.",
    "O ruído natural pode camuflar o adversário e também tornar o envenenamento desnecessário (H4)."
   ],
-  "pergunta": "Por que, até 25/11/2026, não há caso público confirmado de pipeline de CTI ou OSINT em produção envenenado por conteúdo gerado por IA?",
+  "pergunta": "Até 25/11/2026, o único caso público de fonte de inteligência contaminada por conteúdo gerado por IA (os CVEs falsos no NVD) não veio de um adversário mirando pipelines de CTI. Por quê?",
   "hip": [
    [
     "H1",
@@ -94,93 +94,123 @@
    [
     "H6",
     "O esforço existe, mas mira outro alvo: assistentes públicos e opinião pública."
+   ],
+   [
+    "H7",
+    "A contaminação acontece por produtores movidos a incentivo (recompensa, currículo, reputação), não por adversários estratégicos."
    ]
   ],
   "ev": [
    [
     "E1",
     "O âncora: quase nenhum sistema registra proveniência ou foi testado sob ataque",
-    "CNNNCN",
+    "CNNNCNN",
     "palmieri2026survey"
    ],
    [
     "E2",
     "Envenenamento funciona barato em laboratório (250 documentos; CTI falso aceito)",
-    "CCINCN",
+    "CCINCNC",
     "souly2025near"
    ],
    [
     "E3",
     "O submundo concentra-se em credenciais e acesso roubados, não em manipulação de dados",
-    "NNCNNN",
+    "NNCNNNN",
     "halcyon2026"
    ],
    [
     "E4",
     "Feeds já têm sobreposição de 2,5% a 4,0% e falsos positivos frequentes",
-    "CNCCNN",
+    "CNCCNNN",
     "bouwman2020cup"
    ],
    [
     "E5",
     "Operações russas investem em escala para chegar a chatbots e buscadores",
-    "NNNNNC",
+    "NNNNNCN",
     "asp2025pravda"
    ],
    [
     "E6",
     "Malware já embute texto para enganar ou travar analisadores de IA (Skynet, GuardBreaker, DUSTMAKER)",
-    "CNINCN",
+    "CNINCNN",
     "eset2026guardbreaker"
    ],
    [
     "E7",
     "Atores estatais usam IA sobretudo para acelerar operações, não para enganar defensores",
-    "NNCNNN",
+    "NNCNNNN",
     "msft2026storm0940"
    ],
    [
     "E8",
     "Fornecedores publicam com frequência relatórios sobre uso indevido de IA",
-    "IINNNN",
+    "IINNNNN",
     "gtig2026sep"
    ],
    [
     "E9",
     "Nenhuma oferta de “serviço de envenenamento de CTI” nos levantamentos do submundo",
-    "NNCCCN",
+    "NNCCCNC",
     "rapid7_2026"
    ],
    [
     "E10",
     "Envenenamento de memória observado em produção, mas com fim comercial e contra assistentes do público (Microsoft, AML.CS0072)",
-    "NICNCC",
+    "NICNCCC",
     "msft2026recpoison"
    ],
    [
     "E11",
     "Pesquisa brasileira manipula 14 de 23 modelos de SOC pela telemetria do EDR, em laboratório",
-    "CNINCN",
+    "CNINCNN",
     "viaconnect2026edr"
    ],
    [
     "E12",
     "Injeção em campo contra um pipeline de IA (sandbox de avaliação) para roubar chaves, não para moldar conclusões (Anthropic, GTG-50020)",
-    "NICNCN",
+    "NICNCNN",
     "anthropic2026sep"
    ],
    [
     "E13",
     "Provedores de inferência comprometidos sem saber até serem avisados por canários (Dragos)",
-    "CNNNNN",
+    "CNNNNNN",
     "dragos2026canary"
+   ],
+   [
+    "E14",
+    "54 CVEs falsos com indício de IA entram no NVD com enriquecimento da CISA; motivação desconhecida, sem ator estatal (jul/2026)",
+    "CICICNC",
+    "register2026fakecve"
+   ],
+   [
+    "E15",
+    "O curl encerra o bug bounty: relatórios de IA viram a maior parte do ruído; o mantenedor supõe motivação financeira",
+    "NNNNCNC",
+    "stenberg2026curl"
+   ],
+   [
+    "E16",
+    "NVD com mais de 27 mil registros sem processar; a checagem manual que filtrava registros falsos sumiu (OIG, mai/2026)",
+    "CNNNNNC",
+    "oig2026nvd"
+   ],
+   [
+    "E17",
+    "Pacote oficial de agentes da Microsoft trocado por ladrão de credenciais (nov/2026): o prêmio é acesso, não conclusões",
+    "NNCNCNN",
+    "agentframework2026"
    ]
   ],
-  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1.",
+  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1. A virada do dossiê 6: E14 a E16 mostram que a contaminação já aconteceu, na fonte mais autoritativa do setor, e sem adversário estratégico. H7 é a hipótese mais bem sustentada pela evidência nova e não tem nenhuma inconsistência; ela explica o caso real sem contradizer H3 e H6, que continuam explicando por que não há campanha dirigida. H4 perde força: o ruído não impediu o lote falso de se propagar. E17 reforça H3: quando um adversário mira agentes, mira acesso.",
   "julgamento": [
-   "É provável que a ausência de casos se explique principalmente por H3 e H6.",
+   "É quase certo que fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA (E14, E16).",
+   "É provável que a contaminação observada se explique principalmente por H7; H3 e H6 seguem explicando a falta de campanha dirigida.",
+   "Segue improvável, com confiança baixa, que um adversário estratégico esteja envenenando pipelines de CTI de forma sistemática.",
    "É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).",
-   "Confiança baixa a moderada: autorrelatos de fornecedores e ausência de evidência."
+   "Confiança moderada no primeiro julgamento (fonte primária e reprodução da JFrog); baixa nos demais (autorrelatos e ausência de evidência)."
   ],
   "premissas": [
    [
@@ -218,6 +248,12 @@
     "O problema é igual no Brasil e no eixo anglófono",
     "Não testada",
     "O recorte local muda prioridades (aba Brasil)"
+   ],
+   [
+    "P7",
+    "Fontes autoritativas (NVD, CVE, avisos) foram verificadas antes de publicar",
+    "Falsa no caso de jul/2026",
+    "Toda fonte entra no portão como não verificada por padrão, inclusive as oficiais"
    ]
   ],
   "indic": [
@@ -268,6 +304,24 @@
     "Propaganda estatal medida em dados de treino ou em respostas em português",
     "H6",
     "DFRLab; NewsGuard; pesquisadores lusófonos"
+   ],
+   [
+    "I9",
+    "Novo lote de CVEs ou avisos rejeitados por terem sido gerados por IA",
+    "H7",
+    "Lista OSS-Security; commits de rejeição no cvelistV5; JFrog"
+   ],
+   [
+    "I10",
+    "Registro rejeitado que continua vivo em bases derivadas, scanners ou respostas de assistentes (CVE-zumbi)",
+    "H1/H7",
+    "Bases derivadas; avisos de distribuições; assistentes com busca"
+   ],
+   [
+    "I11",
+    "Pacote de framework de agentes comprometido na origem",
+    "H3/H5",
+    "PyPI e npm; Socket, Endor Labs, StepSecurity"
    ]
   ],
   "cenarios": [
@@ -279,15 +333,21 @@
    ],
    [
     "B. Primeiro caso",
-    "Um caso público de pipeline de CTI ou de assistente de SOC manipulado em produção",
-    "Improvável em 12 meses; tão provável quanto não em 24",
-    "I1, I4 ou I7"
+    "Realizado em forma não prevista: o caso veio pela base de vulnerabilidades e por incentivo, não por feed de CTI e por adversário (jul/2026)",
+    "Realizado",
+    "I9"
    ],
    [
     "C. Industrialização",
     "Serviço de envenenamento oferecido no submundo, com clientes",
     "Muito improvável em 12 meses",
     "I2, I3"
+   ],
+   [
+    "D. Inundação",
+    "Relatórios falsos plausíveis afogam a verificação humana em bases e programas (NVD, bug bounty), e os agentes herdam o lixo",
+    "Muito provável",
+    "I9, I10"
    ]
   ],
   "escala": [
@@ -343,13 +403,6 @@
     "Âncora; nenhum padrão de proveniência adotado."
    ],
    [
-    "JC3",
-    "Um ator já estar envenenando de forma sistemática pipelines de CTI.",
-    "Improvável",
-    "Baixa",
-    "Ausência de evidência sob baixa visibilidade."
-   ],
-   [
     "JC4",
     "No Brasil, a ameaça de IA mais relevante para defensores no curto prazo é a aceleração do cibercrime financeiro local.",
     "Quase certo",
@@ -369,6 +422,20 @@
     "Tão provável quanto não",
     "Baixa",
     "Indícios indiretos; nenhuma auditoria em pt-BR."
+   ],
+   [
+    "JC3",
+    "Fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA.",
+    "Quase certo",
+    "Moderada",
+    "Caso NVD/CISA de jul/2026 (E14) e NVD sem checagem manual (E16)."
+   ],
+   [
+    "JC3b",
+    "Um adversário estratégico já envenena de forma sistemática pipelines de CTI.",
+    "Improvável",
+    "Baixa",
+    "Ausência de evidência sob baixa visibilidade; o caso real veio de incentivo."
    ]
   ],
   "opsec": [
@@ -514,8 +581,159 @@
    "A análise de hipóteses concorrentes é de um só analista, sem revisão por pares nem por equipe.",
    "Probabilidades e prioridades são julgamentos sobre evidência pública.",
    "Dados brasileiros vêm de fornecedores, agências de checagem e uma organização da sociedade civil; não há série oficial independente.",
-   "Itens M (ICD 203, escala estimativa, diamante, níveis de atribuição, instituições brasileiras) foram citados de memória."
-  ]
+   "Itens M (ICD 203, escala estimativa, diamante, níveis de atribuição, instituições brasileiras) foram citados de memória.",
+   "Dossiê 6: o relatório da JFrog, o post da OSS-Security e o relatório do Inspetor-Geral foram localizados nesta rodada; detalhes técnicos (funções citadas, provas de conceito) devem ser lidos no original antes de citação.",
+   "Os números da Mozilla e do volume de CVEs vêm de citação em paper de terceiros (arXiv 2607.20255).",
+   "Dossiê 7: itens marcados como Dossiê B foram localizados por citação de terceiros; vários trabalhos de 2026 são preprints sem revisão."
+  ],
+  "virada": {
+   "antes": "Agentes de CTI/OSINT têm um gap de validação porque foram testados só em ambiente benigno, e adversários podem explorar isso.",
+   "agora": "O ecossistema de inteligência de segurança inteiro opera no sistema de honra, e a IA generativa quebrou a premissa econômica desse sistema: produzir uma afirmação plausível ficou quase gratuito, verificá-la custa o mesmo de sempre. Os agentes de CTI herdam e ampliam essa assimetria, porque consomem automaticamente os registros que o humano já não consegue verificar.",
+   "consequencias": [
+    [
+     "O adversário relevante não é só o Estado",
+     "Há um terceiro tipo de ator que faltava em todas as tabelas: o produtor movido a incentivo. Ele não quer enganar ninguém em particular. Quer volume. E o volume contamina."
+    ],
+    [
+     "O envenenamento não precisa mirar o agente",
+     "Basta mirar a fonte autoritativa que o agente trata como verdade."
+    ],
+    [
+     "O controle que falta é uma etapa de reprodução",
+     "Não um filtro no modelo: um ponto da cadeia em que a afirmação é reproduzida antes de virar verdade."
+    ]
+   ],
+   "frase": "A IA generativa reduziu a quase zero o esforço de produzir um aviso plausível; o esforço de verificar (revisar o código, compilar a versão, reproduzir a prova de conceito) continua o mesmo.",
+   "frase_fonte": "Afek Berger, JFrog, segundo o The Register",
+   "frase_item": "register2026fakecve"
+  },
+  "correcoes": [
+   [
+    "Dossiês 1, 2, 3 e 5; página (ressalvas, cenários)",
+    "“Não há incidente público em que um feed ou base de CTI tenha sido envenenado por conteúdo gerado por IA”",
+    "Há: CVEs falsos, com indício de geração por IA, entraram no NVD com enriquecimento da CISA (jul/2026). O que segue sem caso público é o envenenamento dirigido por ator estatal contra pipeline de CTI."
+   ],
+   [
+    "Dossiê 5, análise de hipóteses",
+    "Seis hipóteses (H1 a H6)",
+    "Acrescentada H7: a contaminação acontece por produtores movidos a incentivo. É a hipótese mais bem sustentada pela evidência nova."
+   ],
+   [
+    "Dossiê 5, julgamento JC3",
+    "“Improvável que alguém esteja envenenando sistematicamente pipelines de CTI”",
+    "Dividido: é quase certo que fontes autoritativas já recebem e às vezes publicam conteúdo falso de IA; segue improvável, com confiança baixa, que isso seja campanha dirigida."
+   ],
+   [
+    "Dossiê 5, cenário B (“primeiro caso”)",
+    "Improvável em 12 meses",
+    "Realizado em forma não prevista: o caso veio pela base de vulnerabilidades, não pelo feed de CTI."
+   ],
+   [
+    "Dossiê 2, tabela de atores",
+    "Só Estados, cibercrime e operações de influência",
+    "Acrescentado o produtor movido a incentivo (aba Atores, tipo Incentivo)."
+   ],
+   [
+    "Dossiê 4, modelagem de ameaças",
+    "Fontes externas tratadas como feeds e fóruns",
+    "NVD, CVE e bases de avisos entram como fonte não verificada por padrão (cadeia, etapa S1)."
+   ]
+  ],
+  "projetos": [
+   [
+    "P1",
+    "CVEs-zumbis: quanto tempo um registro falso sobrevive depois de rejeitado?",
+    "Experimento natural de propagação de erro, com data de injeção e de retratação conhecidas. Mede o erro composto (RQ2) e a retratação, o passo mais omitido do playbook. Ninguém mediu.",
+    "Lista dos identificadores rejeitados; consulta periódica a bases públicas, avisos de distribuições, buscadores e assistentes com busca; registro de quando cada cópia aparece e some. Resultado: a meia-vida de uma retratação.",
+    "Semanas: uma tabela registro × lugar × ainda presente já é nota curta publicável.",
+    "RQ28"
+   ],
+   [
+    "P2",
+    "Quanto da inteligência de vulnerabilidade já é escrita por IA?",
+    "Primeira medida populacional desse tipo em segurança, com método validado (Liang et al.).",
+    "Estimador distribucional aplicado ao repositório público de registros CVE em JSON e ao banco de avisos do GitHub, por ano, por CNA e por tipo de produto, de 2020 a 2026. Cruzar com taxa de rejeição e disputa por CNA.",
+    "Meses; maior visibilidade. Mede exposição, não fraude: texto com IA não é texto falso.",
+    "RQ29"
+   ],
+   [
+    "P3",
+    "Triagem de CVEs fantasmas com sinais simples",
+    "Os sinais da JFrog bastam para priorizar a verificação humana em escala?",
+    "Pontuação com os sinais (fornecedor não corroborou, sem hash de commit, metadados suspeitos, funções inexistentes) aplicada a registros recentes de relatores novos; verificação manual de amostra estratificada; precisão e revocação.",
+    "Semanas. Suspeitas vão para a CNA por divulgação coordenada, nunca para publicação nominal.",
+    "RQ30"
+   ],
+   [
+    "P4",
+    "Agentes e chatbots ainda “lembram” dos CVEs falsos?",
+    "Liga o caso real ao eixo de grooming sem propaganda estatal, e pode ser feito em português.",
+    "Bateria fixa de perguntas sobre os registros rejeitados, repetida todo mês, em vários assistentes e idiomas, com registro das fontes citadas.",
+    "Trilha contínua.",
+    "RQ31"
+   ],
+   [
+    "P5",
+    "Etapa de reprodução e selo de verificação",
+    "Que mudança mínima no formato e no processo dos registros fecharia o buraco?",
+    "Campo de estado de verificação (não verificado, reproduzido pelo fornecedor, reproduzido por terceiro, disputado, rejeitado), com equivalente em taxonomia MISP e rótulo de confiança STIX; encaminhar ao grupo de qualidade do CVE Program e à OSS-Security.",
+    "Depois de ter números de P1 a P3. É a única que muda o sistema diretamente.",
+    "RQ32"
+   ]
+  ],
+  "desenho": {
+   "pergunta": "Quanto a corrupção de conhecimento (PoisonedRAG, CorruptRAG) e a injeção indireta degradam tarefas reais de CTI com recuperação, e quais defesas reduzem o dano sem suprimir inteligência legítima?",
+   "base": "Tarefas de recuperação do CTIConnect, com prioridade para atribuição de ator e ligação CVE↔CWE↔ATT&CK, que têm resposta verificável.",
+   "fatores": [
+    [
+     "Ataque",
+     "Nenhum · PoisonedRAG (5 textos por alvo) · CorruptRAG (1 texto) · Injeção indireta (instrução no relatório) · Grafo (relações compartilhadas) · Braço natural: os 54 CVEs falsos"
+    ],
+    [
+     "Dose",
+     "1, 3, 5 e 10 documentos por alvo"
+    ],
+    [
+     "Defesa",
+     "Nenhuma · RobustRAG · TrustRAG · GMTP · Proveniência assinada na ingestão (RAG-H/RAGShield) · Combinação"
+    ],
+    [
+     "Arquitetura",
+     "RAG simples · Agente com ferramentas e memória"
+    ]
+   ],
+   "metricas": [
+    "Taxa de sucesso do ataque (resposta-alvo produzida, julgada por LLM e não só por texto)",
+    "Acurácia limpa, sem ataque",
+    "Taxa de supressão de evidência legítima: fração de documentos verdadeiros descartados pela defesa",
+    "No agente: propagação para a memória e persistência entre sessões"
+   ],
+   "hipoteses": [
+    "CorruptRAG com um documento supera PoisonedRAG em tarefas de CTI, porque a evidência correta costuma ter várias fontes.",
+    "GMTP perde eficácia contra veneno fluente reescrito por LLM.",
+    "Proveniência assinada reduz o sucesso mais que qualquer defesa por conteúdo, com a menor supressão, mas não protege contra fonte legítima comprometida."
+   ],
+   "regras": [
+    "Tudo em ambiente fechado; nenhum documento envenenado sai da bancada.",
+    "Avaliar cada defesa contra ataque adaptativo (Ranking Is Not Deciding; paper dos firewalls).",
+    "Pelo menos dois modelos, com a variação relatada.",
+    "Tarefas dependentes de recuperação, não só tarefas que o modelo já sabe (Retrieval-Robustness Paradox)."
+   ],
+   "itens": [
+    "cticonnect2025",
+    "zou2025poisonedrag",
+    "corruptrag2025",
+    "robustrag2024",
+    "trustrag2025",
+    "gmtp2025",
+    "ragh2026",
+    "ragshield2026",
+    "ragsieve2026",
+    "rankingnot2026",
+    "rrparadox2026",
+    "register2026fakecve"
+   ]
+  }
  },
  "critica": [
   [

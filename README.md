@@ -2,9 +2,13 @@
 
 **Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
 
-**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [A virada](docs/VIRADA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
 
 > O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
+
+## A virada (dossiê 6)
+
+Em julho de 2026, 54 avisos de vulnerabilidade falsos, com indício de geração por IA, saíram de um repositório obscuro; seis de SQLite entraram no NVD com enriquecimento da CISA, com CVSS de até 9,8, até a JFrog tentar reproduzir e a MITRE rejeitar o lote. É o primeiro caso público de fonte de inteligência contaminada por conteúdo de IA, e o autor não era um Estado. A tese da linha mudou: **o ecossistema de inteligência opera no sistema de honra, e a IA tornou quase gratuito produzir uma afirmação plausível enquanto verificá-la custa o mesmo de sempre.** A aba **A virada** traz o caso, as correções aos dossiês 1 a 5, a hipótese H7 (produtor movido a incentivo), cinco projetos com dados públicos (RQ28 a RQ32) e o desenho experimental do dossiê 7 (um CTIConnect envenenado, com a taxa de supressão de evidência legítima como métrica central).
 
 ## Laboratório
 
@@ -14,9 +18,9 @@ No site, a aba **Laboratório** deixa envenenar uma base de 320 relatórios sint
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **204** | **36** | **34** | **56** | **39** | **13** |
+| **263** | **39** | **40** | **62** | **41** | **17** |
 
-Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 204, 100 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
+Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 263, 133 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
 
 ## O que há aqui
 
@@ -29,7 +33,7 @@ Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **
 | Catálogo por tipo de estudo | [`docs/CATALOGO.md`](docs/CATALOGO.md) |
 | Análise de hipóteses concorrentes, indicadores, cenários e julgamentos com linguagem estimativa | [`docs/HIPOTESES.md`](docs/HIPOTESES.md) |
 | Recorte brasileiro: cibercrime financeiro, eleições de 2026, lusofonia | [`docs/BRASIL.md`](docs/BRASIL.md) |
-| Agenda: 34 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
+| Agenda: 40 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
 | Registro de conferência e correções | [`docs/CONFERENCIA.md`](docs/CONFERENCIA.md) |
 | Atores com rótulos de fornecedor preservados | [`docs/ATORES.md`](docs/ATORES.md) |
 | Pautas para episódios | [`docs/PAUTAS.md`](docs/PAUTAS.md) |

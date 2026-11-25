@@ -373,6 +373,69 @@
     "ragforensics2025",
     "ragorigin2026"
    ]
+  },
+  {
+   "nome": "Dossiê 6: o caso dos CVEs fantasmas",
+   "keys": [
+    "register2026fakecve",
+    "jfrog2026sqlite",
+    "osssec2026reject",
+    "oig2026nvd",
+    "stenberg2026curl",
+    "syed2026neveremitted",
+    "liang2024mapping"
+   ]
+  },
+  {
+   "nome": "Dossiê 7, ordem 1: injeção e corrupção",
+   "keys": [
+    "greshake2023",
+    "zou2025poisonedrag",
+    "corruptrag2025"
+   ]
+  },
+  {
+   "nome": "Dossiê 7, ordem 2: memória",
+   "keys": [
+    "chen2024agentpoison",
+    "minja2025",
+    "mnemonic2026"
+   ]
+  },
+  {
+   "nome": "Dossiê 7, ordem 3: defesa na recuperação e sua crítica",
+   "keys": [
+    "robustrag2024",
+    "trustrag2025",
+    "gmtp2025",
+    "ragsieve2026",
+    "rankingnot2026"
+   ]
+  },
+  {
+   "nome": "Dossiê 7, ordem 4: proveniência e o limite da porta",
+   "keys": [
+    "ragh2026",
+    "ragshield2026",
+    "coverage2026"
+   ]
+  },
+  {
+   "nome": "Dossiê 7, ordem 5 e 6: benchmarks e cuidado metodológico",
+   "keys": [
+    "alam2024ctibench",
+    "cticonnect2025",
+    "firewalls2025"
+   ]
+  },
+  {
+   "nome": "Admissão com tempo e sentinelas (busca ampliada)",
+   "keys": [
+    "bpv2026",
+    "coverredund2026",
+    "globalgating2026",
+    "rrparadox2026"
+   ]
   }
  ],
  "trilha": [
@@ -479,6 +542,18 @@
   {
    "key": "robustrag2024",
    "acao": "Escreva por que a garantia do RobustRAG cai se o atacante for maioria num tema pouco coberto."
+  },
+  {
+   "key": "register2026fakecve",
+   "acao": "Leia o caso e escreva em uma linha o que, no seu portão de admissão, teria barrado os seis CVEs de SQLite."
+  },
+  {
+   "key": "coverage2026",
+   "acao": "Anote a prova central e responda: o seu portão é contenção ou só cobertura? O que você move para a hora da pergunta?"
+  },
+  {
+   "key": "rrparadox2026",
+   "acao": "Liste duas tarefas de CTI em que o modelo não sabe a resposta sem a base. São essas que o seu experimento precisa usar."
   }
  ],
  "llminjection": {

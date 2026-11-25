@@ -450,6 +450,66 @@
    "Envenenamento",
    "alta",
    "≈ RQ1 e RQ5; complementa RQ26"
+  ],
+  [
+   "RQ28",
+   "Quanto tempo um registro de vulnerabilidade rejeitado continua vivo em bases derivadas, scanners e respostas de assistentes?",
+   "A retratação chega a menos lugares e mais tarde que a injeção; assistentes com busca repetem o registro por semanas.",
+   "Projeto P1: consulta periódica aos 54 identificadores rejeitados em bases, avisos, buscadores e assistentes; curva de sobrevivência",
+   "Dossiê 6",
+   "Vulnerabilidade",
+   "alta",
+   "≈ RQ2 (erro composto)"
+  ],
+  [
+   "RQ29",
+   "Que fração das descrições de CVE e de avisos públicos foi produzida ou modificada por LLM, de 2020 a 2026?",
+   "A fração cresce a partir de 2023 e varia muito por CNA.",
+   "Projeto P2: estimador distribucional de Liang et al. sobre o repositório público de CVEs e o banco de avisos do GitHub",
+   "Dossiê 6",
+   "Vulnerabilidade",
+   "alta",
+   "Nova"
+  ],
+  [
+   "RQ30",
+   "Sinais simples (fornecedor não corroborou, sem hash de commit, metadados suspeitos, funções inexistentes) priorizam a verificação humana de CVEs com precisão útil?",
+   "Sim para registros de relatores novos; a revocação cai para relatores estabelecidos.",
+   "Projeto P3: pontuação, amostra estratificada verificada à mão, precisão e revocação; divulgação coordenada",
+   "Dossiê 6",
+   "Vulnerabilidade",
+   "alta",
+   "Liga a RQ27 (portão de admissão)"
+  ],
+  [
+   "RQ31",
+   "Assistentes de IA e agentes de CTI ainda afirmam que os CVEs rejeitados existem, e em que idioma erram mais?",
+   "Sim nos primeiros meses, mais em português do que em inglês.",
+   "Projeto P4: bateria mensal fixa de perguntas, vários assistentes e idiomas, registro de fontes citadas",
+   "Dossiê 6",
+   "Vulnerabilidade",
+   "média",
+   "≈ RQ8 (lusofonia)"
+  ],
+  [
+   "RQ32",
+   "Um campo de estado de verificação no registro (e o equivalente em MISP e STIX) reduz a propagação de afirmações não reproduzidas?",
+   "Reduz se os consumidores automáticos respeitarem o campo; sem isso, vira rótulo ignorado.",
+   "Projeto P5: proposta de formato, simulação sobre os dados de P1 a P3, consulta ao CVE Program e à OSS-Security",
+   "Dossiê 6",
+   "Vulnerabilidade",
+   "média",
+   "Muda o sistema; depende de RQ28 a RQ30"
+  ],
+  [
+   "RQ33",
+   "Quanto cada defesa de RAG descarta de inteligência legítima nova em tarefas de CTI dependentes de recuperação?",
+   "As defesas por conteúdo descartam muito mais evidência limpa em CTI do que nos benchmarks de QA (RAGSieve: TrustRAG 44%, GMTP 22,3%).",
+   "Desenho do dossiê 7 sobre o CTIConnect, com a taxa de supressão como métrica central",
+   "Dossiê 7",
+   "Envenenamento",
+   "alta",
+   "≈ RQ27; métrica central da dissertação"
   ]
  ],
  "lacunas": [
@@ -522,6 +582,26 @@
    "Quase nenhuma defesa de RAG age na admissão, sem conhecer a pergunta",
    "TrustRAG, RobustRAG, GMTP e TRIS agem na recuperação; RAG-H cobre a ingestão, mas não é específica de lotes STIX.",
    "Linha"
+  ],
+  [
+   "Ninguém mediu a meia-vida de um CVE rejeitado",
+   "Os 54 registros de jul/2026 têm data de injeção e de retratação conhecidas: experimento natural ainda não feito.",
+   "Dossiê 6"
+  ],
+  [
+   "Sem estimativa populacional de texto de IA em CVEs e avisos",
+   "O método existe (Liang et al.) e nunca foi aplicado a segurança.",
+   "Dossiê 6"
+  ],
+  [
+   "A taxa de supressão de evidência legítima quase não é reportada",
+   "Defesas são comparadas por sucesso do ataque; quanto inteligência verdadeira elas descartam aparece só em reproduções independentes.",
+   "Dossiê 7"
+  ],
+  [
+   "Defesas avaliadas onde o modelo já sabe a resposta",
+   "Em tarefas dependentes de recuperação, como CTI, as defesas recuperam 26,45% menos (NeurIPS 2026).",
+   "Busca ampliada"
   ]
  ],
  "fases": [

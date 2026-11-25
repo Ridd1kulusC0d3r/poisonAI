@@ -3,28 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linha de pesquisa: alucinação e envenenamento</title>
+<title>poisonAI · alucinação e envenenamento em IA para OSINT e CTI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%2315140f'/%3E%3Cpath d='M96 120h320a40 40 0 0 1 40 40v170a40 40 0 0 1-40 40H246l-78 64v-64H96a40 40 0 0 1-40-40V160a40 40 0 0 1 40-40z' fill='%23B43C0E'/%3E%3Cpath d='M150 196l62 50-62 50' fill='none' stroke='%23f6f5f1' stroke-width='30' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='240' y='276' width='110' height='28' rx='14' fill='%23f6f5f1'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Mesmo sistema do Mapa OSINT do CyberDataLab: cabeçalho-resumo, abas, filtros à esquerda, ficha em gaveta.
    Novas visões: cadeia de ataque do agente OSINT, atores de ameaça e agenda de pesquisa. */
 :root{
-  --bg:#F2F4F6; --surface:#FFFFFF; --ink:#16202A; --muted:#5B6773; --line:#D6DCE2; --accent:#1F4FB8;
-  --accent-soft:#E3EAF8; --ok:#1E7A46; --ok-bg:#DDF1E5; --warn:#8A5A00; --warn-bg:#FBEFCF; --info:#0E6E70; --info-bg:#D9F0EF; --risk:#A3480C; --risk-bg:#FCE3D2;
-  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#f6f5f1; --bg-2:#ecebe4; --surface:#ffffff; --ink:#15140f; --ink-2:#45423a; --muted:#625e55; --line:#d6d2c6; --line-2:#e6e3da; --accent:#b43c0e; --signal-ink:#ffffff;
+  --accent-soft:#f7e6dc; --ok:#2c6b3c; --ok-bg:#e1efe2; --warn:#8a5a00; --warn-bg:#f8edd2; --info:#16626a; --info-bg:#dcefee; --risk:#a8231a; --risk-bg:#fbe2dc;
+  --seq-0:#f5ddcf; --seq-1:#e9b394; --seq-2:#d4804f; --seq-3:#b43c0e; --seq-4:#7c2406;
+  --display:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace; --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --shadow-1:0 1px 2px rgba(20,18,12,.05),0 1px 1px rgba(20,18,12,.03); --shadow-2:0 10px 30px -12px rgba(20,18,12,.18),0 2px 6px rgba(20,18,12,.05);
+  --glass:rgba(246,245,241,.82); --grid-line:rgba(21,20,15,.06);
   --e0:#5E6B78; --e1:#1F4FB8; --e2:#6D45C9; --e3:#0E7F86; --e4:#A3306B; --e5:#C46A0A; --e6:#B83232; --e7:#4C7F25; --e8:#8C6D00; --e9:#7A2E8E; --e10:#2F6F4F; --e11:#334E9E; --e12:#1E7A3C; --e13:#5A4A36;
   --da:#4B3FA6; --da-bg:#E7E4F8; --db:#5B6773; --db-bg:#E6E9EC;
-  --radius:8px; color-scheme:light;
+  --radius:14px; color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0F151B; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#2B3744; --accent:#7EA2FF; --accent-soft:#1E2B45;
-  --ok:#7FD3A0; --ok-bg:#163326; --warn:#F1C66A; --warn-bg:#3A2E12; --info:#7FD6D6; --info-bg:#123436; --risk:#F2A37A; --risk-bg:#3B2216;
+  --bg:#100f0d; --bg-2:#1a1916; --surface:#1c1b17; --ink:#eeebe2; --ink-2:#bdb8aa; --muted:#a29c8e; --line:#36332b; --line-2:#26241f; --accent:#f0885a; --signal-ink:#131210; --accent-soft:#3a2418;
+  --ok:#8fd3a2; --ok-bg:#16301f; --warn:#f1c66a; --warn-bg:#3a2e12; --info:#7fd6d6; --info-bg:#123436; --risk:#ff8f80; --risk-bg:#3d1a16;
+  --seq-0:#3a2a21; --seq-1:#6b3d25; --seq-2:#a85a30; --seq-3:#e07f4e; --seq-4:#f6b48f;
+  --shadow-1:0 1px 2px rgba(0,0,0,.4); --shadow-2:0 14px 34px -14px rgba(0,0,0,.7),0 2px 6px rgba(0,0,0,.35); --glass:rgba(16,15,13,.78); --grid-line:rgba(238,235,226,.05);
   --e0:#97A3AF; --e1:#7EA2FF; --e2:#B396FF; --e3:#5FCFD6; --e4:#F07DB4; --e5:#F2A54A; --e6:#FF8A8A; --e7:#9FD36E; --e8:#E3C24F; --e9:#D59BE6; --e10:#8FD1AE; --e11:#9EB4F2; --e12:#7FD49A; --e13:#CDB89A; --da:#B9B0FF; --da-bg:#28244A; --db:#B4BEC8; --db-bg:#26303A; color-scheme:dark;}}
 :root[data-theme="dark"]{
-  --bg:#0F151B; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#2B3744; --accent:#7EA2FF; --accent-soft:#1E2B45;
-  --ok:#7FD3A0; --ok-bg:#163326; --warn:#F1C66A; --warn-bg:#3A2E12; --info:#7FD6D6; --info-bg:#123436; --risk:#F2A37A; --risk-bg:#3B2216;
+  --bg:#100f0d; --bg-2:#1a1916; --surface:#1c1b17; --ink:#eeebe2; --ink-2:#bdb8aa; --muted:#a29c8e; --line:#36332b; --line-2:#26241f; --accent:#f0885a; --signal-ink:#131210; --accent-soft:#3a2418;
+  --ok:#8fd3a2; --ok-bg:#16301f; --warn:#f1c66a; --warn-bg:#3a2e12; --info:#7fd6d6; --info-bg:#123436; --risk:#ff8f80; --risk-bg:#3d1a16;
+  --seq-0:#3a2a21; --seq-1:#6b3d25; --seq-2:#a85a30; --seq-3:#e07f4e; --seq-4:#f6b48f;
+  --shadow-1:0 1px 2px rgba(0,0,0,.4); --shadow-2:0 14px 34px -14px rgba(0,0,0,.7),0 2px 6px rgba(0,0,0,.35); --glass:rgba(16,15,13,.78); --grid-line:rgba(238,235,226,.05);
   --e0:#97A3AF; --e1:#7EA2FF; --e2:#B396FF; --e3:#5FCFD6; --e4:#F07DB4; --e5:#F2A54A; --e6:#FF8A8A; --e7:#9FD36E; --e8:#E3C24F; --e9:#D59BE6; --e10:#8FD1AE; --e11:#9EB4F2; --e12:#7FD49A; --e13:#CDB89A; --da:#B9B0FF; --da-bg:#28244A; --db:#B4BEC8; --db-bg:#26303A; color-scheme:dark;}
 *{box-sizing:border-box;min-width:0}
 html,body{margin:0}
@@ -64,7 +72,7 @@ input[type=search],select{width:100%;padding:8px 10px;border:1px solid var(--lin
 .chip small{color:var(--muted);font-variant-numeric:tabular-nums}
 .btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:7px 12px;font:500 14px var(--body);cursor:pointer}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-:root[data-theme="dark"] .btn.primary{color:#0F151B}
+:root[data-theme="dark"] .btn.primary{color:#131210}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#0F151B}}
 .btn:hover{border-color:var(--accent)}
 a.btn{text-decoration:none;display:inline-block}
@@ -331,36 +339,183 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
 .crit>div{padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px}.crit .h{font:600 11px var(--mono);text-transform:uppercase;color:var(--muted);background:var(--bg)}
 @media(max-width:760px){.crit{grid-template-columns:1fr}.crit .h{display:none}.crit>div:nth-child(3n+1){border-top:3px solid var(--line)}}
 @media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;color:var(--muted);font-size:12px}.stack td:empty{display:none}}
+
+/* ---------- identidade LLmInjection (v9): papel, tinta e uma cor de sinal; cartões, profundidade suave, controles arredondados.
+   Todos os gráficos e efeitos anteriores ficam; esta camada só muda superfície, tipografia e movimento. */
+body{font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--accent);color:var(--signal-ink)}
+a{color:var(--ink);text-decoration-color:var(--accent);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.015em}
+header.top{position:relative;padding:0 0 6px;border-bottom:1px solid var(--line-2);background:radial-gradient(1100px 380px at 92% -20%,var(--accent-soft),transparent 68%),var(--bg)}
+.mast-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.mast-bar>span:first-child:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;vertical-align:1px;box-shadow:0 0 0 4px var(--accent-soft);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px var(--accent-soft)}50%{box-shadow:0 0 0 7px var(--accent-soft)}}
+.mast-tools{display:inline-flex;gap:8px;align-items:center}
+.mast-tools .tlp{border:1px solid var(--rule,var(--line));border-radius:999px;padding:6px 10px;background:var(--surface)}
+.mast-tools button{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);padding:7px 12px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow-1)}
+.mast-tools button:hover{border-color:var(--ink);color:var(--ink)}
+.mast-title{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:40px;align-items:center;padding:26px 0 22px}
+.mast-title h1{font:800 clamp(30px,4.4vw,54px)/1.03 var(--display);letter-spacing:-.035em;margin:0}
+.mast-title .lede{font:400 17px/1.55 var(--body);color:var(--ink-2);margin:14px 0 0;max-width:60ch}
+.mast-title .rule{display:block;width:120px;height:4px;background:var(--accent);border-radius:2px;margin:18px 0 0}
+.mast-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(20,18,12,.12))}
+.mast-art .redact{animation:redact 6s ease-in-out infinite}
+@keyframes redact{0%,70%,100%{opacity:1}80%{opacity:.25}}
+@media (max-width:860px){.mast-title{grid-template-columns:1fr}.mast-art{max-width:440px}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;align-items:stretch;padding:4px 0 18px}
+.kpi{padding:16px 18px 14px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--radius);position:relative;overflow:hidden;transition:border-color .2s,transform .2s;box-shadow:var(--shadow-1)}
+.kpi:hover{border-color:var(--line);transform:translateY(-1px)}
+.kpi:before{content:"";position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7}
+.kpi b{font:700 30px/1 var(--mono);letter-spacing:-.04em}
+.kpi span{display:block;margin-top:8px;font:600 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stbar{grid-column:1/-1;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow-1)}
+.stbar .bar{height:10px;border-radius:999px}
+.stbar .bar i{transform-origin:left center;animation:grow .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+nav.tabs{top:8px;margin:14px auto 0;max-width:1240px;background:var(--glass);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border:1px solid var(--line-2);border-radius:999px;box-shadow:var(--shadow-2);width:calc(100% - 40px)}
+nav.tabs .wrap{padding:6px;gap:4px;scrollbar-width:none}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs a{font:600 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:0;border-radius:999px;padding:9px 14px;transition:background .15s,color .15s}
+nav.tabs a:hover{color:var(--ink);background:var(--bg-2)}
+nav.tabs a[aria-current="page"]{color:var(--signal-ink);background:var(--accent);border:0}
+nav.tabs .grp{font:700 9.5px var(--mono);letter-spacing:.14em;color:var(--accent);align-self:center;padding:0 4px 0 10px;white-space:nowrap}
+section.view.on{animation:rise .22s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.panel,.card,.chartbox,.tablebox,.mother,.step,.row,.pcard,.fstep,.verdict,.crit{border-color:var(--line-2);box-shadow:var(--shadow-1)}
+.panel,.card,.chartbox,.tablebox,.mother,.crit{border-radius:var(--radius)}
+.card,.pcard,.fstep,.row{transition:border-color .15s,transform .15s,box-shadow .15s}
+.card:hover,.pcard:hover,.fstep:hover,.row:hover{border-color:var(--line);transform:translateY(-1px);box-shadow:var(--shadow-2)}
+.row:hover .t,.pcard:hover .what{color:var(--accent)}
+.chartbox{background:radial-gradient(circle,var(--grid-line) 1px,transparent 1.5px) 0 0/22px 22px,var(--surface)}
+.mother{border-left:4px solid var(--accent)}
+.eyebrow{font:700 10.5px/1.4 var(--mono);letter-spacing:.12em;color:var(--accent)}
+.hero .eyebrow,.mother>.eyebrow:first-child,.vir .eyebrow{display:inline-block;background:var(--accent-soft);border-radius:999px;padding:3px 10px}
+h2.sec{font:750 22px/1.2 var(--display);letter-spacing:-.02em;margin:30px 0 10px}
+h2.sec:before{content:"";display:inline-block;width:18px;height:3px;background:var(--accent);border-radius:2px;margin-right:10px;vertical-align:6px}
+.chip{border-color:var(--line);font:500 13px/1.3 var(--body);transition:border-color .15s,background .15s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.btn{border-radius:999px;font:600 13px var(--body);padding:8px 14px;box-shadow:var(--shadow-1);transition:border-color .15s,color .15s,transform .15s}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn.primary,.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--signal-ink)}
+.btn.primary:hover,.btn.pri:hover{color:var(--signal-ink);filter:brightness(1.08)}
+input[type=search],select,input[type=text]{border-radius:9px;background:var(--surface);border-color:var(--line)}
+input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+.drawer{box-shadow:var(--shadow-2);border-left-color:var(--line)}
+.tip{border-radius:9px;box-shadow:var(--shadow-2);font-family:var(--body)}
+.hero{background:radial-gradient(900px 320px at 100% 0%,var(--accent-soft),transparent 70%),var(--surface);border-color:var(--line-2);border-radius:18px;box-shadow:var(--shadow-2)}
+.herot{font:800 clamp(24px,3.4vw,40px)/1.1 var(--display);letter-spacing:-.03em;max-width:30ch}
+.pcard .num{font:700 clamp(28px,2.6vw,38px)/1 var(--mono);letter-spacing:-.04em;color:var(--accent)}
+.pcard .num.ok{color:var(--ok)}
+.pcard.new{border-color:var(--accent)}
+.pcard.new:after{content:"novo";position:absolute;top:12px;right:12px;font:700 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--signal-ink);background:var(--accent);border-radius:999px;padding:2px 8px}
+.pcard{position:relative}
+.fstep.gate{border:2px solid var(--accent);background:var(--accent-soft)}
+.fstep.gate b,.fstep.gate span{color:var(--ink)}
+.fstep.hot{border-color:var(--risk)}
+.verdict .v{font:700 30px/1.1 var(--mono);letter-spacing:-.03em}
+.pill{font:600 11px/1.3 var(--mono);letter-spacing:.02em}
+/* ---------- a virada */
+.vir{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+@media (max-width:860px){.vir{grid-template-columns:1fr}}
+.vir .was,.vir .now{border-radius:var(--radius);padding:18px 20px;border:1px solid var(--line-2);box-shadow:var(--shadow-1);background:var(--surface)}
+.vir .was p{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--risk);text-decoration-thickness:2px;font-size:17px}
+.vir .now{border:2px solid var(--accent);background:radial-gradient(700px 240px at 100% 0%,var(--accent-soft),transparent 70%),var(--surface)}
+.vir .now p{font:600 18px/1.45 var(--display);margin:8px 0 0}
+.quote{font:italic 400 clamp(19px,2.2vw,26px)/1.4 var(--serif);margin:22px 0 6px;padding:0 0 0 18px;border-left:4px solid var(--accent);max-width:62ch}
+.quote+.note{margin:0 0 6px 22px}
+.cons{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;counter-reset:c}
+.cons .card{counter-increment:c;position:relative;padding-top:42px}
+.cons .card:before{content:counter(c,decimal-leading-zero);position:absolute;top:12px;left:14px;font:700 13px var(--mono);color:var(--accent)}
+.caseline{width:100%;height:auto;display:block}
+.caseline .ev{cursor:pointer}
+.caseline .ev:hover circle,.caseline .ev:focus circle{stroke-width:4}
+.caseline .dash{stroke-dasharray:6 6;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-12}}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.proj .card .id{font:700 12px var(--mono);color:var(--signal-ink);background:var(--accent);border-radius:999px;padding:2px 9px;display:inline-block}
+.factor{display:grid;grid-template-columns:140px minmax(0,1fr);gap:0;border:1px solid var(--line-2);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-1)}
+.factor>div{padding:10px 14px;border-bottom:1px solid var(--line-2);font-size:14px}
+.factor>div:nth-child(odd){font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.factor>div:nth-last-child(-n+2){border-bottom:0}
+@media (max-width:560px){.factor{grid-template-columns:1fr}}
+.supp{width:100%;height:auto;display:block}
+.supp rect.b{transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{nav.tabs,.mast-tools,.drawer,.scrim{display:none!important}}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="eyebrow">Linha de pesquisa · OSINT e CTI com IA · v8 · laboratório interativo · score de leitura · 1964–2026</div>
-    <h1>Alucinação e envenenamento em IA para OSINT e CTI</h1>
-    <p class="lede">Quem envenena as IAs de segurança, como, com que dose e com que evidência, e onde barrar o veneno antes que ele entre na base. Envenene uma base no laboratório, leia os trabalhos na ordem do score e use as abas de ofensiva, defesa e agenda para transformar isso em exercícios, detecções e perguntas de pesquisa.</p>
+    <div class="mast-bar"><span>poisonAI · linha de pesquisa · OSINT e CTI com IA</span><span class="mast-tools"><span class="tlp">TLP:CLEAR</span><button type="button" id="themebtn" aria-label="Alternar tema claro e escuro">Tema</button></span></div>
+    <div class="mast-title">
+      <div><h1>Alucinação e envenenamento em IA para OSINT e CTI</h1>
+        <p class="lede">Quem envenena as IAs de segurança, como, com que dose e com que evidência, e onde barrar o veneno antes que ele entre na base. O primeiro caso real já aconteceu, e não veio de um espião.</p><span class="rule"></span></div>
+      <div class="mast-art" aria-hidden="false"><svg viewBox="0 0 442 240" role="img" aria-label="Registro de vulnerabilidade com barras de tarja; uma linha marcada como não reproduzida">
+  <rect x=".5" y=".5" width="441" height="239" rx="10" fill="var(--surface)" stroke="var(--ink)"/>
+  <g style="font:700 10px var(--mono);letter-spacing:2px;fill:var(--muted)"><text x="22" y="28">REGISTRO · ENRIQUECIDO</text><text x="420" y="28" text-anchor="end">CVSS 9.8</text></g>
+  <line x1="22" y1="38" x2="420" y2="38" stroke="var(--line)"/>
+  <g fill="var(--line)"><rect x="22" y="52" width="150" height="7" rx="2"/><rect x="22" y="70" width="398" height="5" rx="2"/><rect x="22" y="84" width="360" height="5" rx="2"/></g>
+  <rect class="redact" x="22" y="102" width="190" height="14" rx="2" fill="var(--ink)"/><rect x="222" y="106" width="198" height="5" rx="2" fill="var(--line)"/>
+  <rect x="22" y="128" width="398" height="5" rx="2" fill="var(--line)"/>
+  <rect x="22" y="146" width="398" height="24" rx="3" fill="var(--accent)"/>
+  <text x="32" y="162" style="font:700 11.5px var(--mono);fill:var(--signal-ink)">use-after-free em função que não existe</text>
+  <text x="22" y="190" style="font:700 9.5px var(--mono);letter-spacing:1.5px;fill:var(--accent)">PLAUSÍVEL. NÃO REPRODUZIDO. TRATE COMO DADO.</text>
+  <rect class="redact" x="22" y="204" width="120" height="8" rx="2" fill="var(--ink)" style="animation-delay:1.5s"/><rect x="152" y="206" width="150" height="5" rx="2" fill="var(--line)"/>
+</svg></div>
+    </div>
     <div class="kpis" id="kpis"></div>
   </div>
 </header>
 <nav class="tabs" aria-label="Visões">
   <div class="wrap" id="tabs">
-    <a href="#inicio">Início</a><a href="#laboratorio">Laboratório</a><span class="grp">Estudar</span><a href="#catalogo">Catálogo</a><a href="#tipos">Tipos de estudo</a><a href="#tempo">Linha do tempo</a><a href="#linhas">Linhas de assunto</a><a href="#trilha">Trilha de leitura</a><a href="#extrair">Extrair</a><a href="#baixar">Baixar</a><span class="grp">Pesquisar e operar</span><a href="#inteligencia">Inteligência</a><a href="#brasil">Brasil</a><a href="#atores">Atores</a><a href="#cadeia">Cadeia de ataque</a><a href="#ofensiva">Ofensiva</a><a href="#defesa">Defesa</a><a href="#agenda">Agenda</a><a href="#episodios">Episódios</a><a href="#recursos">Recursos</a>
+    <a href="#inicio">Início</a><a href="#virada">A virada</a><a href="#laboratorio">Laboratório</a><span class="grp">Estudar</span><a href="#catalogo">Catálogo</a><a href="#tipos">Tipos de estudo</a><a href="#tempo">Linha do tempo</a><a href="#linhas">Linhas de assunto</a><a href="#trilha">Trilha de leitura</a><a href="#extrair">Extrair</a><a href="#baixar">Baixar</a><span class="grp">Pesquisar e operar</span><a href="#inteligencia">Inteligência</a><a href="#brasil">Brasil</a><a href="#atores">Atores</a><a href="#cadeia">Cadeia de ataque</a><a href="#ofensiva">Ofensiva</a><a href="#defesa">Defesa</a><a href="#agenda">Agenda</a><a href="#episodios">Episódios</a><a href="#recursos">Recursos</a>
   </div>
 </nav>
 <main class="wrap">
     <section class="view" id="v-inicio">
     <div class="hero">
       <div class="eyebrow">Por que isto importa</div>
-      <h2 class="herot">Cinco relatórios falsos podem virar a atribuição que o seu SOC vai repetir. E quase ninguém mede isso.</h2>
-      <p class="herol">Assistentes de IA já leem feeds de CTI, logs e a web aberta para escrever conclusões. Quem controla o que entra controla o que sai. Esta linha junta a evidência, separa o que é laboratório do que é campo e propõe onde barrar o veneno: na porta, antes de indexar.</p>
-      <div class="herocta"><a class="btn pri" href="#laboratorio">Envenenar uma base agora</a><a class="btn" href="#catalogo">Ler os trabalhos em ordem</a><a class="btn" href="#inteligencia">Ver a análise de hipóteses</a></div>
+      <h2 class="herot">Em julho de 2026, 54 vulnerabilidades que nunca existiram entraram na base mais autoritativa do setor. Ninguém atacou um agente: atacaram a fonte que ele trata como verdade.</h2>
+      <p class="herol">A IA tornou quase gratuito produzir uma afirmação plausível; verificá-la custa o mesmo de sempre. Assistentes de SOC leem CVEs, feeds e a web aberta para escrever conclusões. Esta linha junta a evidência, separa laboratório de campo e propõe onde barrar o veneno: na porta, antes de indexar.</p>
+      <div class="herocta"><a class="btn pri" href="#virada">Ver a virada</a><a class="btn" href="#laboratorio">Envenenar uma base agora</a><a class="btn" href="#catalogo">Ler os trabalhos em ordem</a></div>
     </div>
     <div class="punch" id="punch"></div>
     <h2 class="sec">O caminho do veneno</h2>
     <p class="note">Clique numa etapa para ver os trabalhos que a sustentam na cadeia de ataque.</p>
     <div class="flowbox" id="flow"></div>
-    <h2 class="sec">Três coisas que ninguém mediu ainda</h2>
+    <h2 class="sec">O que ninguém mediu ainda</h2>
     <div class="cards" id="gaps3"></div>
+  </section>
+
+  <section class="view" id="v-virada">
+    <div class="mother"><div class="eyebrow">Dossiê 6 · a virada</div><p class="big2">Os dossiês 1 a 5 diziam que não havia caso público de fonte de inteligência envenenada por IA. Havia: atingiu o NVD, com enriquecimento da CISA, e o autor não era um Estado.</p>
+      <p class="note">Fontes primárias localizadas em 25/11/2026: reportagem do The Register, relatório da JFrog, post na OSS-Security e relatório do Inspetor-Geral. Detalhes técnicos devem ser lidos no original antes de citação.</p></div>
+    <h2 class="sec">A tese, antes e agora</h2>
+    <div class="vir"><div class="was"><div class="eyebrow">Antes</div><p id="v-antes"></p></div><div class="now"><div class="eyebrow">Agora</div><p id="v-agora"></p></div></div>
+    <p class="quote" id="v-frase"></p><p class="note" id="v-frasefonte"></p>
+    <div class="cons" id="v-cons"></div>
+    <h2 class="sec">O caso, do envio à retratação</h2>
+    <p class="note">Marcos em ordem, não em escala de tempo. Clique num marco para abrir o trabalho. O trecho tracejado é o que ninguém mediu: onde o registro continua vivo depois de rejeitado.</p>
+    <div class="chartbox"><svg class="caseline" id="caseline" role="img" aria-label="Linha do tempo do caso dos CVEs falsos"></svg></div>
+    <h2 class="sec">O verificador afogado</h2>
+    <div class="punch" id="v-afoga"></div>
+    <h2 class="sec">O que muda nos dossiês 1 a 5</h2>
+    <div class="tablebox"><table class="stack" id="v-corr"><thead><tr><th>Onde</th><th>Como estava</th><th>Correção</th></tr></thead><tbody></tbody></table></div>
+    <h2 class="sec">Cinco projetos com dados públicos</h2>
+    <p class="note">Nenhum exige produzir conteúdo falso. Ordem recomendada: P1 e P3 primeiro, P2 em paralelo, P5 depois de ter números, P4 como trilha contínua.</p>
+    <div class="proj" id="v-proj"></div>
+    <h2 class="sec">A métrica que quase ninguém reporta: quanto a defesa joga fora</h2>
+    <p class="note">Reprodução independente citada pelo dossiê 7 (RAGSieve). Em CTI, documento limpo descartado é inteligência nova suprimida.</p>
+    <div class="chartbox"><svg class="supp" id="supp" role="img" aria-label="Veneno removido e evidência limpa removida por defesa"></svg></div>
+    <h2 class="sec">Desenho experimental do dossiê 7: um CTIConnect envenenado</h2>
+    <div class="mother"><p style="font:600 17px/1.45 var(--display);margin:0 0 6px" id="d-perg"></p><p class="note" id="d-base" style="margin:0"></p></div>
+    <div class="factor" id="d-fat"></div>
+    <div class="two wide" style="margin-top:12px"><div class="panel"><span class="l">Métricas</span><ul class="ext" id="d-met"></ul><span class="l" style="margin-top:12px">Hipóteses</span><ul class="ext" id="d-hip"></ul></div>
+      <div class="panel"><span class="l">Regras</span><ul class="ext" id="d-reg"></ul><span class="l" style="margin-top:12px">Ler antes</span><div id="d-itens"></div></div></div>
   </section>
 
   <section class="view" id="v-laboratorio">
@@ -551,8 +706,8 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
     <h2 class="sec">Análise de hipóteses concorrentes</h2>
     <p class="note"><b id="achq"></b> Clique numa célula para alternar entre consistente (C), neutra (N) e inconsistente (I). Pela regra de Heuer, a hipótese com mais inconsistências é a mais fraca; consistência não prova nada. Suas mudanças ficam salvas.</p>
     <div class="tablebox"><table class="ach" id="ach"></table></div>
-    <p><button class="btn" id="achreset">Voltar à matriz do dossiê 5</button></p>
-    <div class="two wide"><div class="panel"><span class="l">Hipóteses</span><div id="hips"></div></div><div class="panel"><span class="l">Leitura e julgamento do dossiê 5</span><p style="font-size:14px" id="leitura"></p><ul class="ext" id="julg"></ul></div></div>
+    <p><button class="btn" id="achreset">Voltar à matriz original (dossiês 5 e 6)</button></p>
+    <div class="two wide"><div class="panel"><span class="l">Hipóteses</span><div id="hips"></div></div><div class="panel"><span class="l">Leitura e julgamento (dossiês 5 e 6)</span><p style="font-size:14px" id="leitura"></p><ul class="ext" id="julg"></ul></div></div>
     <h2 class="sec">Premissas-chave</h2>
     <div class="tablebox"><table class="stack" id="prem"><thead><tr><th>#</th><th>Premissa dos dossiês 1 a 4</th><th>Sustentação</th><th>Se estiver errada</th></tr></thead><tbody></tbody></table></div>
     <h2 class="sec">Indicadores e alertas</h2>
@@ -569,7 +724,7 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
     <div class="cards"><div class="card"><h3>Pegada de coleta</h3><ul class="chk" id="opsec"></ul></div><div class="card"><h3>Antes de cada episódio</h3><ul class="chk" id="divulga"></ul></div></div>
     <h2 class="sec">Métricas do produto de inteligência</h2>
     <div class="tablebox"><table class="stack" id="imet"><thead><tr><th>Métrica</th><th>Como medir</th><th>Meta inicial</th></tr></thead><tbody></tbody></table></div>
-    <div class="panel" style="margin-top:12px"><span class="l">Ressalvas do dossiê 5</span><ul class="ext" id="ressalvas"></ul></div>
+    <div class="panel" style="margin-top:12px"><span class="l">Ressalvas dos dossiês 5 a 7</span><ul class="ext" id="ressalvas"></ul></div>
   </section>
 
   <section class="view" id="v-brasil">
@@ -1347,7 +1502,7 @@ function drawIntel(){
   $("#imet tbody").innerHTML=T.metricas.map(m=>`<tr><td><b>${esc(m[0])}</b></td><td>${esc(m[1])}</td><td>${esc(m[2])}</td></tr>`).join("");
   $("#ressalvas").innerHTML=T.ressalvas.map(x=>`<li>${esc(x)}</li>`).join("");
 }
-function achState(){ const s=LS(ACHK,null); return s && s.length===D.intel.ev.length ? s : D.intel.ev.map(e=>e[2]); }
+function achState(){ const s=LS(ACHK,null); return s && s.length===D.intel.ev.length && s.every(r=>r.length===D.intel.hip.length) ? s : D.intel.ev.map(e=>e[2]); }
 function drawACH(){
   const T=D.intel, st=achState(), H=T.hip.map(h=>h[0]);
   const inc=H.map((_,j)=>st.filter(r=>r[j]==="I").length), con=H.map((_,j)=>st.filter(r=>r[j]==="C").length);
@@ -1382,18 +1537,20 @@ function drawBR(){
 
 // ---------- v8: início e laboratório
 function drawInicio(){
-  const P=[["78,5%","dos relatórios de CTI falsos foram julgados verdadeiros por profissionais de segurança","ranade2021fakecti"],
+  const P=[["54","vulnerabilidades que nunca existiram entraram no NVD com enriquecimento oficial, em julho de 2026","register2026fakecve",1],
+    ["26,45%","a menos de proteção quando a resposta só existe na base, como em CTI: as defesas foram testadas onde o modelo já sabe","rrparadox2026",1],
+    ["44%","dos documentos limpos o TrustRAG descartou numa reprodução independente: inteligência verdadeira jogada fora","trustrag2025",1],
+    ["78,5%","dos relatórios de CTI falsos foram julgados verdadeiros por profissionais de segurança","ranade2021fakecti"],
     ["5","textos falsos por pergunta bastaram para 90% de sucesso contra um RAG com milhões de documentos","zou2025poisonedrag"],
     ["14 de 23","modelos de IA de SOC foram manipulados só pela telemetria do EDR, numa pesquisa brasileira","viaconnect2026edr"],
     ["2,5%","a 4,0%: o quanto dois grandes fornecedores de CTI concordam sobre os mesmos 22 atores","bouwman2020cup"],
+    ["1,2%","do corpus em memórias fabricadas derrubou a acurácia de um agente de 0,85 para 0,30","utilityattack2026",1],
     ["250","documentos bastaram para implantar um backdoor em modelos de vários tamanhos","souly2025near"],
-    ["3","provedores de inferência tiveram prompts e chaves expostos sem saber, até serem avisados","dragos2026canary"],
-    ["549","de 920 mídias com IA no 1º turno de 2026 estavam sem o rótulo obrigatório","vigia2026"],
-    ["1º","caso em campo de injeção contra um pipeline de IA: um sandbox de avaliação entregou chaves","anthropic2026sep"]];
-  $("#punch").innerHTML=P.map(p=>{ const it=byKey(p[2]); return `<button class="pcard" data-open="${it?it.id:""}"><span class="num">${p[0]}</span><span class="what">${esc(p[1])}</span><span class="src">${it?esc(it.veic)+" · "+esc(it.st):""}</span></button>`; }).join("");
-  const F=[["Fontes e feeds","onde o atacante publica","S1"],["Coleta e extração","texto vira entidade","S2"],["Portão de admissão","decide antes de indexar","gate"],["Base, grafo e memória","onde o veneno mora","S3"],["Modelo e agente","pesos, ferramentas, chaves","S5"],["Relatório","o resumo que alguém lê","S6"],["Analista","a última chance","S7"]];
+    ["33 min","separaram as duas versões maliciosas do framework oficial de agentes da Microsoft no PyPI","agentframework2026",1]];
+  $("#punch").innerHTML=P.map(p=>{ const it=byKey(p[2]); return `<button class="pcard${p[3]?" new":""}" data-open="${it?it.id:""}"><span class="num">${p[0]}</span><span class="what">${esc(p[1])}</span><span class="src">${it?esc(it.veic)+" · "+esc(it.st):""}</span></button>`; }).join("");
+  const F=[["Fontes, feeds e CVEs","onde o veneno entra, até pela via oficial","S1"],["Coleta e extração","texto vira entidade","S2"],["Portão de admissão","decide antes de indexar","gate"],["Base, grafo e memória","onde o veneno mora","S3"],["Modelo e agente","pesos, ferramentas, chaves","S5"],["Relatório","o resumo que alguém lê","S6"],["Analista","a última chance","S7"]];
   $("#flow").innerHTML=F.map(f=>f[2]==="gate"?`<a class="fstep gate" href="#laboratorio"><b>${esc(f[0])}</b><span>${esc(f[1])} · teste no laboratório</span></a>`:`<button class="fstep${f[2]==="S3"?" hot":""}" data-gostage="${f[2]}"><b>${esc(f[0])}</b><span>${esc(f[1])}</span></button>`).join('<span aria-hidden="true" style="align-self:center;color:var(--muted)">→</span>');
-  const G=D.lacunas.filter(l=>/benchmark adversarial|checkpoint humano|admissão/i.test(l[0])).slice(0,3);
+  const G=D.lacunas.filter(l=>/meia-vida|supressão de evidência|benchmark adversarial|admissão/i.test(l[0])).slice(0,4);
   $("#gaps3").innerHTML=G.map(l=>`<div class="card" style="border-left:4px solid var(--risk)"><h3>${esc(l[0])}</h3><p class="note">${esc(l[1])}</p></div>`).join("");
 }
 
@@ -1492,7 +1649,9 @@ function labLessons(){
     ["Rajada pega volume, não paciência","Ligue o portão, escolha “reputação comprada” e “imita a pergunta”: com 3 ou 4 relatórios a atribuição vira; com 25, a rajada dispara e barra. O atacante paciente planta pouco. Com “espalhado”, vira a partir de 5.","corruptrag2025"],
     ["Reputação comprada passa por proveniência e idade","Com fonte “com reputação comprada”, autor conhecido e histórico longo passam pelo portão. Só a corroboração segura.","openai2026io"],
     ["Corroboração barra o veneno e a novidade junto","Ligue a corroboração: o falso cai, mas a campanha-21 verdadeira, de fonte única, cai também. Fornecedores concordam em só 2,5% a 4,0%.","bouwman2020cup"],
-    ["Este laboratório é otimista","Aqui a resposta é a maioria de 5 documentos. Um LLM real pode ser convencido por um único texto autoritário, e um atacante adaptativo conhece o portão.","nist2025aml"]];
+    ["A fonte autoritativa também mente","Escolha “reputação comprada”: autor conhecido e histórico longo passam pela proveniência. Foi o que aconteceu com os CVEs falsos, que chegaram por um canal oficial.","register2026fakecve"],
+    ["Corroboração tem um preço que quase ninguém mede","Quanto o portão joga fora de inteligência verdadeira é a métrica central. Numa reprodução independente, o TrustRAG descartou 44% dos documentos limpos.","trustrag2025"],
+    ["Este laboratório é otimista","Aqui a resposta é a maioria de 5 documentos e a busca é BM25, que é menos robusta que a densa. Um LLM real pode ser convencido por um único texto autoritário, um atacante adaptativo conhece o portão, e há prova de que o portão sozinho não contém envenenamento coordenado.","coverage2026"]];
   $("#lab-lessons").innerHTML=Ls.map(l=>{ const it=byKey(l[2]); return `<div class="card"><h3>${esc(l[0])}</h3><p style="font-size:14px">${esc(l[1])}</p>${it?`<button class="linkish" data-open="${it.id}">#${it.id} ${esc(it.tit.length>60?it.tit.slice(0,58)+"…":it.tit)}</button>`:""}</div>`; }).join("");
 }
 document.addEventListener("input", e=>{ if(e.target.id==="lab-n"){ LAB.n=+e.target.value; drawLab(); } });
@@ -1510,6 +1669,63 @@ document.addEventListener("click", e=>{
 });
 window.__lab={LAB,labRun};
 
+// ---------- v9: a virada (dossiê 6), desenho do dossiê 7 e tema
+function drawVirada(){
+  const V=D.intel.virada, T=D.intel; if(!V||!$("#v-antes")) return;
+  $("#v-antes").textContent=V.antes; $("#v-agora").textContent=V.agora;
+  $("#v-frase").textContent="“"+V.frase+"”";
+  const fi=byKey(V.frase_item); $("#v-frasefonte").innerHTML=esc(V.frase_fonte)+(fi?` · <button class="linkish" data-open="${fi.id}">abrir #${fi.id}</button>`:"");
+  $("#v-cons").innerHTML=V.consequencias.map(c=>`<div class="card"><h3>${esc(c[0])}</h3><p style="font-size:14px;margin:6px 0 0">${esc(c[1])}</p></div>`).join("");
+  $("#v-corr tbody").innerHTML=T.correcoes.map(c=>`<tr><td><b>${esc(c[0])}</b></td><td style="color:var(--muted)">${esc(c[1])}</td><td>${esc(c[2])}</td></tr>`).join("");
+  $("#v-proj").innerHTML=T.projetos.map(p=>`<div class="card"><span class="id">${p[0]}</span> <button class="linkish" data-rqgo="${p[5]}" style="font:600 12px var(--mono)">${p[5]}</button><h3 style="margin:8px 0 6px">${esc(p[1])}</h3><p style="font-size:14px;margin:0 0 8px">${esc(p[2])}</p><span class="l">Como</span><p style="font-size:13.5px;margin:0 0 8px">${esc(p[3])}</p><p class="note" style="margin:0">${esc(p[4])}</p></div>`).join("");
+  const AF=[["54 de 55","avisos do lote eram inteiramente falsos; seis chegaram ao NVD com enriquecimento da CISA","register2026fakecve"],
+    ["10,0","foi a nota que a Red Hat chegou a dar a um CVE de função que não existe","register2026fakecve"],
+    ["27 mil","registros sem processar no NVD no fim de 2025; a checagem manual que filtrava virou fila","oig2026nvd"],
+    ["0 de 238","registros do GitHub dizem quem reportou: sem autoria, o sistema de honra não tem a quem cobrar","syed2026neveremitted"],
+    ["97","de 1.596 vulnerabilidades reais divulgadas pelo Glasswing estavam corrigidas na data da nota da CSA","csa2026glasswing"],
+    ["31/01","fim do bug bounty do curl, depois de seis anos, por excesso de relatórios de IA","stenberg2026curl"]];
+  $("#v-afoga").innerHTML=AF.map(p=>{ const it=byKey(p[2]); return `<button class="pcard" data-open="${it?it.id:""}"><span class="num">${esc(p[0])}</span><span class="what">${esc(p[1])}</span><span class="src">${it?esc(it.veic):""}</span></button>`; }).join("");
+  drawCaseline(); drawSupp();
+  const DS=T.desenho; $("#d-perg").textContent=DS.pergunta; $("#d-base").textContent=DS.base;
+  $("#d-fat").innerHTML=DS.fatores.map(f=>`<div>${esc(f[0])}</div><div>${esc(f[1])}</div>`).join("");
+  $("#d-met").innerHTML=DS.metricas.map(x=>`<li>${esc(x)}</li>`).join(""); $("#d-hip").innerHTML=DS.hipoteses.map(x=>`<li>${esc(x)}</li>`).join("");
+  $("#d-reg").innerHTML=DS.regras.map(x=>`<li>${esc(x)}</li>`).join(""); $("#d-itens").innerHTML=itemButtons(DS.itens.map(byKey).filter(Boolean));
+}
+function drawCaseline(){
+  const svg=$("#caseline"); if(!svg) return;
+  const EV=[["27/07","MITRE publica seis CVEs de SQLite","CVSS de 9,8 a 7,5","register2026fakecve","var(--risk)"],
+    ["fim de jul.","NVD marca crítico; CISA enriquece","a Red Hat chega a dar 10,0","oig2026nvd","var(--risk)"],
+    ["30/07","JFrog compila e reproduz","nenhum dos seis reproduz","jfrog2026sqlite","var(--ok)"],
+    ["31/07","MITRE rejeita o lote inteiro","“sistema de honra”","osssec2026reject","var(--ok)"],
+    ["03/08","The Register publica o caso","GitHub ainda não tinha agido","register2026fakecve","var(--accent)"],
+    ["26/08","Créditos de quem reporta somem","0 de 238 registros do GitHub","syed2026neveremitted","var(--info)"],
+    ["17/11","Framework de agentes trocado na origem","agent-framework no PyPI","agentframework2026","var(--risk)"]];
+  const W=1160,L=150,R=150,y0=128,n=EV.length,step=(W-L-R)/(n-1),x=i=>L+i*step;
+  let g=`<line x1="${L-40}" x2="${W-R+40}" y1="${y0}" y2="${y0}" stroke="var(--line)" stroke-width="2"/>`;
+  g+=`<line class="dash" x1="${x(3)}" x2="${W-R+40}" y1="${y0}" y2="${y0}" stroke="var(--accent)" stroke-width="3"/>`;
+  g+=`<text x="${(x(3)+W-R)/2}" y="${y0+106}" text-anchor="middle" style="font:600 11.5px var(--mono);fill:var(--accent)">depois da rejeição: onde o registro segue vivo? (CVE-zumbi, projeto P1, ninguém mediu)</text>`;
+  EV.forEach((e,i)=>{ const it=byKey(e[3]), cx=x(i), up=i%2===0, ty=up?y0-70:y0+42;
+    g+=`<g class="ev" ${it?`data-open="${it.id}"`:""} tabindex="0" role="button" aria-label="${esc(e[1])}"><line x1="${cx}" y1="${y0}" x2="${cx}" y2="${up?ty+22:ty-14}" stroke="${e[4]}" stroke-width="1.5"/><circle cx="${cx}" cy="${y0}" r="8" fill="var(--surface)" stroke="${e[4]}" stroke-width="3"/>
+      <text x="${cx}" y="${ty-14}" text-anchor="middle" style="font:700 11px var(--mono);fill:${e[4]}">${esc(e[0])}</text><text x="${cx}" y="${ty+2}" text-anchor="middle" style="font:600 12.5px var(--body);fill:var(--ink)">${esc(e[1])}</text><text x="${cx}" y="${ty+17}" text-anchor="middle" style="font:12px var(--body)">${esc(e[2])}</text></g>`; });
+  svg.setAttribute("viewBox",`0 0 ${W} ${y0+120}`); svg.style.minWidth="900px"; svg.innerHTML=g;
+  svg.querySelectorAll(".ev").forEach(n=>n.addEventListener("keydown",ev=>{ if((ev.key==="Enter"||ev.key===" ")&&n.dataset.open){ ev.preventDefault(); openItem(+n.dataset.open); } }));
+}
+function drawSupp(){
+  const svg=$("#supp"); if(!svg) return;
+  const R=[["TrustRAG",85.8,44,"trustrag2025"],["GMTP",69.5,22.3,"gmtp2025"]];
+  const W=760,L=110,BW=W-L-80,rh=26; let g="", y=30;
+  g+=`<text x="${L}" y="16" style="font:600 11px var(--mono);fill:var(--accent)">■ veneno removido</text><text x="${L+170}" y="16" style="font:600 11px var(--mono);fill:var(--risk)">■ evidência limpa removida (inteligência suprimida)</text>`;
+  R.forEach((r,i)=>{ const it=byKey(r[3]);
+    g+=`<text x="${L-12}" y="${y+rh+4}" text-anchor="end" style="font:700 13px var(--body);fill:var(--ink)">${r[0]}</text>`;
+    g+=`<rect class="b" x="${L}" y="${y}" width="${BW*r[1]/100}" height="${rh-6}" rx="5" fill="var(--accent)" style="animation-delay:${i*.15}s"/><text x="${L+BW*r[1]/100+8}" y="${y+15}" style="font:700 12px var(--mono);fill:var(--ink)">${String(r[1]).replace(".",",")}%</text>`;
+    g+=`<rect class="b" x="${L}" y="${y+rh}" width="${BW*r[2]/100}" height="${rh-6}" rx="5" fill="var(--risk)" style="animation-delay:${i*.15+.1}s"/><text x="${L+BW*r[2]/100+8}" y="${y+rh+15}" style="font:700 12px var(--mono);fill:var(--ink)">${String(r[2]).replace(".",",")}%</text>`;
+    if(it) g+=`<a href="#" data-open="${it.id}"><text x="${W-4}" y="${y+rh+4}" text-anchor="end" style="font:600 11px var(--mono);fill:var(--accent);text-decoration:underline">#${it.id}</text></a>`;
+    y+=rh*2+22; });
+  svg.setAttribute("viewBox",`0 0 ${W} ${y}`); svg.innerHTML=g;
+}
+(function(){ const K="poisonai-tema"; const set=t=>{ if(t) document.documentElement.setAttribute("data-theme",t); else document.documentElement.removeAttribute("data-theme"); };
+  set(LS(K,null)); const b=$("#themebtn"); if(b) b.addEventListener("click",()=>{ const cur=document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"); const n=cur==="dark"?"light":"dark"; set(n); SV(K,n); }); })();
+
 // ---------- recursos
 function drawResources(){
   const vc=v=>v.startsWith("Confere")?"v-ok":v==="Corrigir"?"v-fix":"v-mid";
@@ -1523,7 +1739,7 @@ function drawResources(){
 }
 
 // ---------- rotas
-const VIEWS=["inicio","laboratorio","catalogo","tipos","tempo","linhas","trilha","extrair","baixar","inteligencia","brasil","atores","cadeia","ofensiva","defesa","agenda","episodios","recursos"];
+const VIEWS=["inicio","virada","laboratorio","catalogo","tipos","tempo","linhas","trilha","extrair","baixar","inteligencia","brasil","atores","cadeia","ofensiva","defesa","agenda","episodios","recursos"];
 function route(){
   const h=location.hash.slice(1), v=VIEWS.includes(h)?h:"inicio";
   if(route.last && route.last!==v) window.scrollTo(0,0); route.last=v;
@@ -1537,7 +1753,7 @@ function remember(){ try{ localStorage.setItem(PK, JSON.stringify({tags:[...S.ta
 try{ const p=JSON.parse(localStorage.getItem(PK)||"{}"); (p.tags||[]).forEach(x=>{ if(TOP[x]) S.tags.add(x); }); (Array.isArray(p.met)?p.met:[]).forEach(x=>{ if(STUDY[x]) S.met.add(x); }); (p.lado||[]).forEach(x=>S.lado.add(x)); (p.dos||[]).forEach(x=>S.dos.add(x)); (p.pr||[]).forEach(x=>S.pr.add(x)); (p.cl||[]).forEach(x=>S.cl.add(x)); (p.eixo||[]).forEach(x=>S.eixo.add(x)); (p.ft||[]).forEach(x=>S.ft.add(x)); (p.st||[]).forEach(x=>S.st.add(x)); S.tipo=p.tipo||""; S.aut=p.aut||""; S.sort=p.sort||"score"; }catch(e){}
 
 kpis(); initSelects(); $("#f-tipo").value=S.tipo; $("#f-aut").value=S.aut; $("#sort").value=S.sort;
-drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
+drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); drawVirada(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
 addEventListener("hashchange", route); route();
 })();
 </script>

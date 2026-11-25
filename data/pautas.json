@@ -354,6 +354,26 @@
     "gmtp2025",
     "zou2025poisonedrag"
    ]
+  ],
+  [
+   "D6",
+   "54 vulnerabilidades que nunca existiram",
+   "Nota 10,0 dada por engano, a maior base do mundo enganada, um sistema de honra, um mantenedor exausto e um motivo que ninguém sabe.",
+   [
+    "register2026fakecve",
+    "jfrog2026sqlite",
+    "stenberg2026curl"
+   ]
+  ],
+  [
+   "D7",
+   "A taxa que ninguém reporta",
+   "Quanto inteligência verdadeira as defesas de RAG jogam fora, e por que essa é a métrica que importa em CTI.",
+   [
+    "ragsieve2026",
+    "trustrag2025",
+    "rrparadox2026"
+   ]
   ]
  ]
 }
