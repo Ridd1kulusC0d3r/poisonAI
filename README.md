@@ -2,7 +2,7 @@
 
 **Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
 
-**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [A virada](docs/VIRADA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [A virada](docs/VIRADA.md) · [Dossiê 7 por score](docs/DOSSIE7.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
 
 > O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
 
@@ -18,9 +18,9 @@ No site, a aba **Laboratório** deixa envenenar uma base de 320 relatórios sint
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **263** | **39** | **40** | **62** | **41** | **17** |
+| **264** | **39** | **40** | **62** | **41** | **17** |
 
-Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 263, 133 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
+Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 264, 136 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
 
 ## O que há aqui
 

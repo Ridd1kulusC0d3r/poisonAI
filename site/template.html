@@ -445,6 +445,14 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
 .supp rect.b{transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 @media print{nav.tabs,.mast-tools,.drawer,.scrim{display:none!important}}
+.s7leg{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0;font:600 11px var(--mono);color:var(--muted)}
+.s7leg i{display:inline-block;width:12px;height:8px;border-radius:2px;margin-right:6px;vertical-align:0}
+.s7bar{display:flex;height:9px;width:150px;border-radius:999px;overflow:hidden;background:var(--bg-2);margin-top:6px}
+.s7bar i{display:block;height:100%;transform-origin:left;animation:grow .7s cubic-bezier(.2,.8,.2,1) both}
+.s7n{font:700 22px/1 var(--mono);letter-spacing:-.03em}
+.s7c{display:inline-block;margin-top:4px;font:700 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 8px}
+.s7c.a{background:var(--accent);color:var(--signal-ink)}.s7c.b{background:var(--accent-soft);color:var(--ink)}.s7c.c{background:var(--bg-2);color:var(--muted)}
+.s7tag{font:600 10.5px var(--mono);color:var(--muted);display:block;margin-top:4px}
 </style>
 </head>
 <body>
@@ -516,6 +524,12 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
     <div class="factor" id="d-fat"></div>
     <div class="two wide" style="margin-top:12px"><div class="panel"><span class="l">Métricas</span><ul class="ext" id="d-met"></ul><span class="l" style="margin-top:12px">Hipóteses</span><ul class="ext" id="d-hip"></ul></div>
       <div class="panel"><span class="l">Regras</span><ul class="ext" id="d-reg"></ul><span class="l" style="margin-top:12px">Ler antes</span><div id="d-itens"></div></div></div>
+    <h2 class="sec">Dossiê 7 por score da dissertação</h2>
+    <p class="note" id="s7-regra"></p>
+    <div class="chips" id="s7-fam" role="group" aria-label="Filtrar por família"></div>
+    <div class="s7leg"><span><i style="background:var(--seq-2)"></i>score geral ÷ 2</span><span><i style="background:var(--accent)"></i>relevância para o portão</span><span><i style="background:var(--info)"></i>na ordem do dossiê</span><span><i style="background:var(--risk)"></i>mede custo ou limite</span></div>
+    <div class="tablebox"><table class="stack" id="s7"><thead><tr><th>#</th><th>Score</th><th>Trabalho</th><th>Família</th><th>Por que ler</th></tr></thead><tbody></tbody></table></div>
+    <div class="panel" style="margin-top:12px"><span class="l">Ordem de leitura sugerida pelo dossiê 7</span><ol class="ext" id="s7-ordem"></ol></div>
   </section>
 
   <section class="view" id="v-laboratorio">
@@ -1726,6 +1740,27 @@ function drawSupp(){
 (function(){ const K="poisonai-tema"; const set=t=>{ if(t) document.documentElement.setAttribute("data-theme",t); else document.documentElement.removeAttribute("data-theme"); };
   set(LS(K,null)); const b=$("#themebtn"); if(b) b.addEventListener("click",()=>{ const cur=document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"); const n=cur==="dark"?"light":"dark"; set(n); SV(K,n); }); })();
 
+
+// ---------- v9b: score da dissertação do dossiê 7
+let S7F=null;
+function s7rows(){ const D7=D.intel.dossie7; return D7.itens.map(r=>{ const it=byKey(r[0]); if(!it) return null;
+  const p={base:Math.round(it.score/2),rel:r[2]*10,ordem:r[3]?10:0,custo:r[4]?10:0}; const t=p.base+p.rel+p.ordem+p.custo;
+  return {it,fam:r[1],rel:r[2],passo:r[3],custo:r[4],por:r[5],p,t,cl:t>=70?"a":t>=50?"b":"c"}; }).filter(Boolean).sort((a,b)=>b.t-a.t||b.it.score-a.it.score); }
+function drawS7(){
+  if(!D.intel.dossie7||!$("#s7")) return;
+  const D7=D.intel.dossie7, R=s7rows(), fams=[...new Set(D7.itens.map(r=>r[1]))];
+  $("#s7-regra").textContent=D7.regra;
+  $("#s7-ordem").innerHTML=D7.ordem.map(o=>`<li>${esc(o)}</li>`).join("");
+  $("#s7-fam").innerHTML=[`<button class="chip" data-s7="" aria-pressed="${!S7F}">Todas <span class="n">${R.length}</span></button>`].concat(fams.map(f=>`<button class="chip" data-s7="${esc(f)}" aria-pressed="${S7F===f}">${esc(f)} <span class="n">${R.filter(x=>x.fam===f).length}</span></button>`)).join("");
+  const CL={a:"Núcleo",b:"No semestre",c:"Consulta"};
+  $("#s7 tbody").innerHTML=R.filter(x=>!S7F||x.fam===S7F).map((x,i)=>`<tr><td data-l="#">${i+1}</td>
+    <td data-l="Score"><span class="s7n">${x.t}</span><br><span class="s7c ${x.cl}">${CL[x.cl]}</span><div class="s7bar" title="geral ÷ 2: ${x.p.base} · relevância: ${x.p.rel} · ordem: ${x.p.ordem} · custo/limite: ${x.p.custo}"><i style="width:${x.p.base}%;background:var(--seq-2)"></i><i style="width:${x.p.rel}%;background:var(--accent)"></i><i style="width:${x.p.ordem}%;background:var(--info)"></i><i style="width:${x.p.custo}%;background:var(--risk)"></i></div></td>
+    <td data-l="Trabalho"><button class="linkish" data-open="${x.it.id}" style="text-align:left">${esc(x.it.tit)}</button><span class="s7tag">${esc(x.it.veic)} · nota ${esc(x.it.nota_fonte||"—")} · ${esc(x.it.st)}</span></td>
+    <td data-l="Família">${esc(x.fam)}${x.passo?`<span class="s7tag">ordem do dossiê: passo ${x.passo}</span>`:""}</td>
+    <td data-l="Por que ler">${esc(x.por)}</td></tr>`).join("");
+}
+document.addEventListener("click",e=>{ const b=e.target.closest("[data-s7]"); if(!b) return; S7F=b.dataset.s7||null; drawS7(); });
+
 // ---------- recursos
 function drawResources(){
   const vc=v=>v.startsWith("Confere")?"v-ok":v==="Corrigir"?"v-fix":"v-mid";
@@ -1753,7 +1788,7 @@ function remember(){ try{ localStorage.setItem(PK, JSON.stringify({tags:[...S.ta
 try{ const p=JSON.parse(localStorage.getItem(PK)||"{}"); (p.tags||[]).forEach(x=>{ if(TOP[x]) S.tags.add(x); }); (Array.isArray(p.met)?p.met:[]).forEach(x=>{ if(STUDY[x]) S.met.add(x); }); (p.lado||[]).forEach(x=>S.lado.add(x)); (p.dos||[]).forEach(x=>S.dos.add(x)); (p.pr||[]).forEach(x=>S.pr.add(x)); (p.cl||[]).forEach(x=>S.cl.add(x)); (p.eixo||[]).forEach(x=>S.eixo.add(x)); (p.ft||[]).forEach(x=>S.ft.add(x)); (p.st||[]).forEach(x=>S.st.add(x)); S.tipo=p.tipo||""; S.aut=p.aut||""; S.sort=p.sort||"score"; }catch(e){}
 
 kpis(); initSelects(); $("#f-tipo").value=S.tipo; $("#f-aut").value=S.aut; $("#sort").value=S.sort;
-drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); drawVirada(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
+drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); drawVirada(); drawS7(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
 addEventListener("hashchange", route); route();
 })();
 </script>

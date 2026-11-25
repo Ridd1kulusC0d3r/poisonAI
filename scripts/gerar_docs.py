@@ -166,6 +166,24 @@ def main():
             t.append(f"\n**{tit}**\n"); t += [f"- {x}" for x in D7[k]]
         t.append("\n**Ler antes:** " + ", ".join(link(por[k]) for k in D7["itens"] if k in por))
         escrever("VIRADA.md", "\n".join(t))
+    # dossiê 7 por score da dissertação
+    D7 = intel["intel"].get("dossie7")
+    if D7:
+        rows = []
+        for k, fam, rel, passo, custo, porq in D7["itens"]:
+            it = por.get(k)
+            if not it:
+                continue
+            base = int(it["score"] / 2 + 0.5)
+            tot = base + rel * 10 + (10 if passo else 0) + (10 if custo else 0)
+            cl = "Núcleo da dissertação" if tot >= 70 else "Ler no semestre" if tot >= 50 else "Consulta"
+            rows.append((tot, it["score"], [str(tot), cl, link(it), fam, f"{base} + {rel*10} + {10 if passo else 0} + {10 if custo else 0}", f"passo {passo}" if passo else "—", it.get("nota_fonte", "—"), porq]))
+        rows.sort(key=lambda r: (-r[0], -r[1]))
+        t = ["# Dossiê 7 por score da dissertação\n", D7["regra"] + "\n", "Componentes: geral ÷ 2 + relevância + ordem do dossiê + custo ou limite.\n"]
+        t.append(tabela(["Score", "Classe", "Trabalho", "Família", "Componentes", "Ordem", "Nota", "Por que ler"], [r[2] for r in rows]))
+        t.append("\n## Ordem de leitura sugerida pelo dossiê 7\n")
+        t += [f"{n}. {o}" for n, o in enumerate(D7["ordem"], 1)]
+        escrever("DOSSIE7.md", "\n".join(t))
 
 
 if __name__ == "__main__":

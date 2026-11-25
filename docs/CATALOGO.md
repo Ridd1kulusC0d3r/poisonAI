@@ -2,7 +2,7 @@
 
 # Catálogo por tipo de estudo
 
-263 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
+264 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
 
 
 ## Medição em escala (dados reais) · peso 5 · 19 trabalhos
@@ -51,11 +51,11 @@ Prova: Que o ataque é possível e quanto custa (dose, condição). Não prova: 
 | 69 | 2026 | [MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks](https://arxiv.org/pdf/2512.08289) | ACM CCS 2026 · arXiv 2512.08289 | Ataque à IA | A | Conferido na fonte |
 | 60 | 2026 | [Memory Poisoning Attack and Defense on Memory Based LLM-Agents](https://arxiv.org/abs/2601.05504) | arXiv 2601.05504 | Ataque à IA | A | Dossiê A |
 | 68 | 2026 | [Oracle Poisoning: Corrupting Knowledge Graphs to Weaponise AI Agent Reasoning](https://arxiv.org/pdf/2605.09822) | arXiv 2605.09822 | Ataque à IA | A | Dossiê A |
+| 69 | 2026 | [PoisonArena: Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation](https://arxiv.org/pdf/2505.12574) | KDD 2026 · arXiv 2505.12574 | Ataque à IA | A | Conferido na fonte |
 | 70 | 2026 | [Poisoning the SOC: Prompt Injection via Ingested Telemetry](https://aivillage.org/posters/poisoning-the-soc-prompt-injection-via-ingested-telemetry/) | AI Village, DEF CON 34 (pôster) | Ataque à IA | A | Conferido na fonte |
 | 85 | 2026 | [Poisoning the Watchtower: Prompt Injection Attacks Against LLM-Augmented Security Operations Through Adversarial Log Content](https://arxiv.org/pdf/2605.24421) | arXiv 2605.24421 | Ataque à IA | A | Preprint conferido |
 | 53 | 2026 | [Rouxii: agentes que reconhecem honeypots](https://arxiv.org/abs/2609.26555v1) | arXiv 2609.26555 | Ataque à IA | A | Dossiê A |
 | 65 | 2026 | [Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems](https://arxiv.org/html/2603.18034v1) | arXiv 2603.18034 | Ataque à IA | A | Preprint conferido |
-| 69 | 2026 | [Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation](https://arxiv.org/pdf/2505.12574) | KDD 2026 · arXiv 2505.12574 | Ataque à IA | A | Conferido na fonte |
 | 68 | 2026 | [Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking](https://arxiv.org/pdf/2608.21230) | arXiv 2608.21230 | Defesa | A | Preprint conferido |
 | 77 | 2026 | [Your AI-Powered SOC Is Following My Instructions: Indirect Prompt Injection via EDR Telemetry](https://labs.zenity.io/post/waiting-for-you-in-new-york) | Viaconnect, AI Agent Security Summit 2026 (Zenity, Nova York, 21/10/2026) | Ataque à IA | A | Conferido na fonte |
 | 67 | 2025 | [A Few Words Can Distort Graphs: Knowledge Poisoning Attacks on Graph-based Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/pdf/2508.04276) | arXiv 2508.04276 | Ataque à IA | A | Preprint conferido |
@@ -119,7 +119,7 @@ Prova: Base comum para medir e replicar. Não prova: Validade ecológica: o benc
 | 59 | 2026 | [LogInject: benchmark de injeção em logs](https://secjuice.com/attackers-write-your-logs-your-socs-ai-assistant-reads-them/) | Karanjai et al. (jul/2026), via cobertura | Ataque à IA | B | Dossiê B |
 | 57 | 2026 | [prompt-injection-soc-telemetry: corpus e harness para medir injeção em telemetria narrada por LLM](https://github.com/Yeagerist0/prompt-injection-soc-telemetry) | GitHub (Yeagerist0) | Ataque à IA | A | Conferido na fonte |
 | 56 | 2025 | [AthenaBench: A Dynamic Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2511.01144) | arXiv 2511.01144 | Capacidade (o que a IA faz) | A | Preprint conferido |
-| 63 | 2025 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/pdf/2505.18543) | arXiv 2505.18543 | Ataque à IA | A | Dossiê A |
+| 63 | 2025 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/abs/2505.18543) | arXiv 2505.18543 | Ataque à IA | A | Preprint conferido |
 | 57 | 2025 | [Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models (BIPIA)](https://arxiv.org/abs/2312.14197) | KDD 2025 · arXiv 2312.14197 | Ataque à IA | A | Dossiê A |
 | 58 | 2025 | [CTI-HAL: A Human-Annotated Dataset for Cyber Threat Intelligence Analysis](https://arxiv.org/pdf/2504.05866) | arXiv 2504.05866 | Capacidade (o que a IA faz) | A | Preprint conferido |
 | 69 | 2025 | [CTIConnect: A Benchmark for Retrieval-Augmented LLMs over Heterogeneous Cyber Threat Intelligence](https://arxiv.org/pdf/2510.11974) | arXiv 2510.11974 | Capacidade (o que a IA faz) | A | Dossiê A |
@@ -129,7 +129,7 @@ Prova: Base comum para medir e replicar. Não prova: Validade ecológica: o benc
 | 56 | 2025 | [MCPTox: benchmark de tool poisoning em servidores MCP reais](https://arxiv.org/pdf/2508.14925) | arXiv 2508.14925 | Ataque à IA | A | Dossiê A |
 | 54 | 2025 | WASP: benchmark de injeção contra agentes web autônomos | 2025 | Ataque à IA | B | Dossiê B |
 | 63 | 2024 | [A dataset of Open Source Intelligence (OSINT) Tweets about the Russo-Ukrainian war](https://arxiv.org/pdf/2409.01052) | ISCRAM 2024 · arXiv 2409.01052 | Medição do fenômeno | A | Dossiê A |
-| 48 | 2024 | [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/pdf/2406.13352) | NeurIPS 2024 (Datasets and Benchmarks) · arXiv 2406.13352 | Medição do fenômeno | — | A conferir |
+| 58 | 2024 | [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/pdf/2406.13352) | NeurIPS 2024 (Datasets and Benchmarks) · arXiv 2406.13352 | Medição do fenômeno | A | Conferido na fonte |
 | 70 | 2024 | [CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2406.07599) | NeurIPS 2024 (Datasets and Benchmarks) | Capacidade (o que a IA faz) | A | Conferido na fonte |
 | 53 | 2024 | [CyberMetric: A Benchmark Dataset based on Retrieval-Augmented Generation for Evaluating LLMs in Cybersecurity Knowledge](https://arxiv.org/pdf/2402.07688) | IEEE CSR 2024 | Capacidade (o que a IA faz) | A | Conferido na fonte |
 | 55 | 2024 | [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents](https://arxiv.org/pdf/2403.02691v2) | Findings of ACL 2024 · arXiv 2403.02691 | Ataque à IA | A | Dossiê A |
@@ -173,7 +173,7 @@ Prova: O que os sistemas respondiam naquelas perguntas e datas. Não prova: A ca
 | 45 | 2024 | Portal Kombat: rede pró-Kremlin de sites espelho | VIGINUM, França (fev/2024) | Medição do fenômeno | A | Dossiê A |
 
 
-## Defesa / método · peso 3 · 37 trabalhos
+## Defesa / método · peso 3 · 38 trabalhos
 
 Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez contra adversário que conhece a defesa.
 
@@ -184,7 +184,6 @@ Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez cont
 | 54 | 2026 | [Adversarial Robustness of Retrieval-Based Fact-Checking: Detecting and Mitigating Evidence Contamination](https://arxiv.org/pdf/2611.02139) | arXiv 2611.02139 | Defesa | A | Preprint conferido |
 | 44 | 2026 | [AgentSnare: iscas para agentes de ataque](https://arxiv.org/html/2607.26998) | arXiv 2607.26998 | Defesa | A | Dossiê A |
 | 44 | 2026 | [AgentTrap: armadilhas contra agentes de pentest públicos](https://arxiv.org/html/2610.02869v1) | arXiv 2610.02869 | Defesa | A | Dossiê A |
-| 49 | 2026 | [Corpus composition and hybrid BM25 + vector retrieval as architectural defense against RAG poisoning](https://arxiv.org/html/2603.18034) | arXiv 2603.18034 | Defesa | A | Preprint conferido |
 | 76 | 2026 | [Coverage Is Not Containment: A Fundamental Limit of Admission-Time Defenses Against Coordinated Poisoning of Vector Retrieval](https://arxiv.org/pdf/2608.16044) | arXiv 2608.16044 | Fundamento | A | Preprint conferido |
 | 60 | 2026 | [Coverage Is Not Redundancy: Maintenance Cost and Exposure of Query-Aware Admission Indexes in Vector Databases Under Workload Drift](https://alphaxiv.org/abs/2608.16043v1) | arXiv 2608.16043 | Defesa | A | Preprint conferido |
 | 44 | 2026 | [Efficient Auditing of Adversarial AI Agent Behavior from Agent Traces](https://arxiv.org/pdf/2610.07256) | arXiv 2610.07256 | Defesa | A | Dossiê A |
@@ -197,6 +196,7 @@ Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez cont
 | 57 | 2026 | [RAGShield: Provenance-Verified Defense-in-Depth Against Knowledge Base Poisoning in Government Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2604.00387) | arXiv 2604.00387 | Defesa | A | Preprint conferido |
 | 63 | 2026 | [RAGSieve: Self-Referenced Local Contrast for Knowledge-Poison Detection in Retrieval-Augmented Generation](https://arxiv.org/abs/2608.13010) | arXiv 2608.13010 | Defesa | A | Preprint conferido |
 | 49 | 2026 | [RAGuard: A Layered Defense Framework for Retrieval-Augmented Generation Systems Against Data Poisoning](https://arxiv.org/pdf/2607.26339) | arXiv 2607.26339 | Defesa | A | Preprint conferido |
+| 49 | 2026 | [Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems](https://arxiv.org/html/2603.18034) | arXiv 2603.18034 | Defesa | A | Preprint conferido |
 | 58 | 2026 | [TRIS: A Tri-Layer Retrieval Integrity Sieve Against Knowledge Poisoning](https://aclanthology.org/2026.findings-emnlp.2122.pdf) | Findings of EMNLP 2026 | Defesa | A | Conferido na fonte |
 | 49 | 2026 | [Tracing Target Answers in Poisoned Retrieval Corpora via Token Influence Attribution](https://arxiv.org/abs/2606.25721) | arXiv 2606.25721 | Defesa | A | Dossiê A |
 | 54 | 2026 | [TriShieldRAG: A Three-Ring Defense-in-Depth Framework Against Knowledge Corruption in Retrieval-Augmented Generation](https://www.alphaxiv.org/abs/2607.23838) | arXiv 2607.23838 | Defesa | A | Preprint conferido |
@@ -208,6 +208,7 @@ Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez cont
 | 47 | 2025 | [Defeating Prompt Injections by Design (CaMeL)](https://arxiv.org/abs/2503.18813) | arXiv 2503.18813 | Defesa | A | Dossiê A |
 | 56 | 2025 | [GLM-Based Fake Cybersecurity Threat Intelligence Detection Models and Algorithms](https://www.mdpi.com/2076-3417/15/19/10755) | Applied Sciences 15(19), 10755 (MDPI) | Defesa | A | Conferido na fonte |
 | 56 | 2025 | [ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search](https://arxiv.org/pdf/2509.23519v2) | NeurIPS 2025 · arXiv 2509.23519 | Defesa | A | Preprint conferido |
+| 52 | 2025 | [Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG)](https://arxiv.org/abs/2410.22954) | arXiv 2410.22954 | Defesa | A | Preprint conferido |
 | 86 | 2025 | [Safeguarding RAG Pipelines with GMTP: A Gradient-based Masked Token Probability Method for Poisoned Document Detection](https://aclanthology.org/2025.findings-acl.1263.pdf) | Findings of ACL 2025, pp. 24597–24614 | Defesa | A | Conferido na fonte |
 | 51 | 2025 | SeCon-RAG: filtragem semântica em dois estágios e geração sem conflito | NeurIPS 2025 | Defesa | A | Dossiê A |
 | 59 | 2025 | [Traceback of Poisoning Attacks to Retrieval-Augmented Generation (RAGForensics)](https://arxiv.org/pdf/2504.21668v2) | ACM Web Conference 2025 · arXiv 2504.21668 | Defesa | A | Conferido na fonte |

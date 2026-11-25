@@ -733,6 +733,467 @@
     "rrparadox2026",
     "register2026fakecve"
    ]
+  },
+  "dossie7": {
+   "regra": "Score da dissertação (0 a 100) = metade do score de leitura geral (até 50) + 10 por ponto de relevância para o portão de admissão (0 a 3, até 30) + 10 se o dossiê 7 põe o trabalho na ordem de leitura + 10 se o trabalho mede o custo ou o limite de uma defesa (inteligência legítima descartada, sucesso residual, benchmark fraco). Relevância 3: muda o desenho do portão ou do experimento; 2: ataque ou defesa que o experimento precisa incluir; 1: contexto da família. Classes: 70 ou mais, núcleo da dissertação; 50 a 69, ler no semestre; abaixo de 50, consulta.",
+   "ordem": [
+    "Greshake → PoisonedRAG → CorruptRAG",
+    "AgentPoison → MINJA → survey de memória",
+    "RobustRAG → TrustRAG → GMTP → RAGSieve → Ranking Is Not Deciding",
+    "RAG-H → RAGShield → Coverage Is Not Containment",
+    "CTIBench → CTIConnect",
+    "Are Firewalls All You Need, or Stronger Benchmarks?"
+   ],
+   "itens": [
+    [
+     "zou2025poisonedrag",
+     "Ataque: base do RAG",
+     3,
+     1,
+     0,
+     "O seu método de ataque; cinco textos por pergunta, 90%."
+    ],
+    [
+     "corruptrag2025",
+     "Ataque: base do RAG",
+     3,
+     1,
+     0,
+     "A crítica que mais muda o método: um texto basta, rotulando o verdadeiro como desatualizado."
+    ],
+    [
+     "liang2025graphrag",
+     "Ataque: base do RAG",
+     3,
+     0,
+     0,
+     "Análogo do PoisonedRAG para grafo de CTI: várias perguntas de uma vez."
+    ],
+    [
+     "badrag2024",
+     "Ataque: base do RAG",
+     2,
+     0,
+     0,
+     "Ataque por tema: um ator ou uma família inteira contaminados."
+    ],
+    [
+     "phantom2024",
+     "Ataque: base do RAG",
+     2,
+     0,
+     0,
+     "Inerte na admissão, ativo na pergunta certa."
+    ],
+    [
+     "authchain2025",
+     "Ataque: base do RAG",
+     2,
+     0,
+     0,
+     "Autoridade fabricada num só documento."
+    ],
+    [
+     "rsb2025",
+     "Ataque: base do RAG",
+     2,
+     0,
+     1,
+     "13 ataques contra 7 defesas: base para comparar."
+    ],
+    [
+     "archmatters2026",
+     "Ataque: base do RAG",
+     2,
+     0,
+     0,
+     "Confirma que ninguém testou arquiteturas agênticas."
+    ],
+    [
+     "trojanrag2024",
+     "Ataque: base do RAG",
+     1,
+     0,
+     0,
+     "Backdoor no recuperador, não no corpus."
+    ],
+    [
+     "ragfamily2025",
+     "Ataque: base do RAG",
+     1,
+     0,
+     0,
+     "Família ampla; PoisonedEye abre o caso multimodal."
+    ],
+    [
+     "chen2024agentpoison",
+     "Ataque: memória",
+     2,
+     2,
+     0,
+     "Modela o insider ou a fonte comprometida."
+    ],
+    [
+     "minja2025",
+     "Ataque: memória",
+     2,
+     2,
+     0,
+     "Atacante que só conversa com o assistente."
+    ],
+    [
+     "mnemonic2026",
+     "Ataque: memória",
+     1,
+     2,
+     0,
+     "Porta de entrada da família de memória."
+    ],
+    [
+     "utilityattack2026",
+     "Ataque: memória",
+     3,
+     0,
+     1,
+     "Testa triagem de conteúdo e ranking por proveniência: as defesas desta linha."
+    ],
+    [
+     "evobreak2026",
+     "Ataque: memória",
+     2,
+     0,
+     0,
+     "Nenhum filtro por item pega: o portão precisa olhar o lote."
+    ],
+    [
+     "amemguard2026",
+     "Ataque: memória",
+     1,
+     0,
+     1,
+     "Detectores com LLM deixam passar 66% do veneno."
+    ],
+    [
+     "mempoison2026",
+     "Ataque: memória",
+     1,
+     0,
+     0,
+     "MINJA em condições menos idealizadas."
+    ],
+    [
+     "memsad2026",
+     "Ataque: memória",
+     1,
+     0,
+     1,
+     "Avaliação frouxa subestima o ataque em quatro vezes."
+    ],
+    [
+     "ghostwriter2026",
+     "Ataque: memória",
+     1,
+     0,
+     0,
+     "Memórias de produção vulneráveis."
+    ],
+    [
+     "greshake2023",
+     "Ataque: injeção",
+     2,
+     1,
+     0,
+     "Fundação: injeção usa instrução, PoisonedRAG fabrica conhecimento."
+    ],
+    [
+     "firewalls2025",
+     "Ataque: injeção",
+     2,
+     6,
+     1,
+     "Defesa perfeita quase sempre é benchmark fraco."
+    ],
+    [
+     "debenedetti2024agentdojo",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Padrão para avaliar defesas de agentes."
+    ],
+    [
+     "bipia2025",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Cenário de resumo, o mais exposto."
+    ],
+    [
+     "injecagent2024",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Injeção em agentes com ferramentas."
+    ],
+    [
+     "wasp2025",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "O coletor de OSINT é um agente web."
+    ],
+    [
+     "camel2025",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Defesa por desenho, cara de implementar."
+    ],
+    [
+     "saturation2026",
+     "Ataque: injeção",
+     1,
+     0,
+     1,
+     "Use mais de um benchmark."
+    ],
+    [
+     "ipiwild2026",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Ponte entre laboratório e campo."
+    ],
+    [
+     "zenity2025agentflayer",
+     "Ataque: injeção",
+     1,
+     0,
+     0,
+     "Injeção sem clique em agentes corporativos."
+    ],
+    [
+     "trustrag2025",
+     "Defesa: recuperação",
+     3,
+     3,
+     1,
+     "Removeu 85,8% do veneno e 44% do limpo."
+    ],
+    [
+     "robustrag2024",
+     "Defesa: recuperação",
+     2,
+     3,
+     1,
+     "Robustez certificada, com custo em acurácia limpa."
+    ],
+    [
+     "rarag2025",
+     "Defesa: recuperação",
+     2,
+     0,
+     1,
+     "Confiabilidade aprendida por cruzamento de fontes: corroboração com o mesmo risco."
+    ],
+    [
+     "reliabilityrag2025",
+     "Defesa: recuperação",
+     2,
+     0,
+     0,
+     "Reputação acumulada da fonte como sinal difícil de manipular."
+    ],
+    [
+     "authrank2025",
+     "Defesa: recuperação",
+     2,
+     0,
+     1,
+     "Credibilidade por citação; admite suprimir o novo."
+    ],
+    [
+     "seconrag2025",
+     "Defesa: recuperação",
+     1,
+     0,
+     0,
+     "Comparar com TrustRAG; caro."
+    ],
+    [
+     "radar2026",
+     "Defesa: recuperação",
+     1,
+     0,
+     0,
+     "Busca web, o cenário de OSINT."
+    ],
+    [
+     "gmtp2025",
+     "Defesa: detecção",
+     3,
+     3,
+     1,
+     "Depende da pergunta; descartou 22,3% do limpo."
+    ],
+    [
+     "ragsieve2026",
+     "Defesa: detecção",
+     3,
+     3,
+     1,
+     "A comparação independente, e um detector sem pergunta."
+    ],
+    [
+     "rankingnot2026",
+     "Defesa: detecção",
+     3,
+     3,
+     1,
+     "Leia antes de declarar qualquer defesa eficaz."
+    ],
+    [
+     "ragforensics2025",
+     "Defesa: detecção",
+     1,
+     0,
+     0,
+     "Forense depois da falha."
+    ],
+    [
+     "tokeninfl2026",
+     "Defesa: detecção",
+     1,
+     0,
+     0,
+     "Forense por influência de tokens."
+    ],
+    [
+     "ragh2026",
+     "Defesa: proveniência na ingestão",
+     3,
+     4,
+     0,
+     "O mais próximo do seu tema: CTI, 300 documentos, 90 envenenados."
+    ],
+    [
+     "ragshield2026",
+     "Defesa: proveniência na ingestão",
+     3,
+     4,
+     1,
+     "Atestação na ingestão; o insider ainda alcança 17,5%."
+    ],
+    [
+     "coverage2026",
+     "Defesa: proveniência na ingestão",
+     3,
+     4,
+     1,
+     "Prova o limite da admissão contra envenenamento coordenado."
+    ],
+    [
+     "ragsec2026",
+     "Defesa: proveniência na ingestão",
+     2,
+     0,
+     1,
+     "Assinatura vence conteúdo sob ataque adaptativo."
+    ],
+    [
+     "trishield2026",
+     "Defesa: proveniência na ingestão",
+     2,
+     0,
+     1,
+     "Resultado negativo honesto sobre três anéis."
+    ],
+    [
+     "cticonnect2025",
+     "Benchmark de CTI",
+     3,
+     5,
+     0,
+     "A base do CTIConnect envenenado."
+    ],
+    [
+     "alam2024ctibench",
+     "Benchmark de CTI",
+     2,
+     5,
+     0,
+     "Livro fechado: mede memória, não recuperação."
+    ],
+    [
+     "unreliable2usable2026",
+     "Benchmark de CTI",
+     2,
+     0,
+     0,
+     "Sinais de confiança na extração de entidades."
+    ],
+    [
+     "sevenllm2024",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Corpus bilíngue de tarefas de CTI."
+    ],
+    [
+     "alam2025athena",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Dinâmico, reduz contaminação de treino."
+    ],
+    [
+     "minerva2026",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Tarefas de CTI como sinais verificáveis."
+    ],
+    [
+     "benchpipe2026",
+     "Benchmark de CTI",
+     1,
+     0,
+     1,
+     "Notas de benchmark dependem do pipeline."
+    ],
+    [
+     "cybersoceval2025",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Tarefas de SOC."
+    ],
+    [
+     "excytin2025",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Investigação por agentes."
+    ],
+    [
+     "cyberdefbench2026",
+     "Benchmark de CTI",
+     1,
+     0,
+     0,
+     "Caçada por agentes."
+    ]
+   ]
   }
  },
  "critica": [

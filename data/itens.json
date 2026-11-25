@@ -255,7 +255,8 @@
   "lado": "cap",
   "dos": [
    0,
-   1
+   1,
+   10
   ]
  },
  {
@@ -293,7 +294,8 @@
   ],
   "lado": "cap",
   "dos": [
-   0
+   0,
+   10
   ]
  },
  {
@@ -658,7 +660,8 @@
   "lado": "atk",
   "dos": [
    0,
-   1
+   1,
+   10
   ]
  },
  {
@@ -706,7 +709,8 @@
   "lado": "atk",
   "dos": [
    0,
-   1
+   1,
+   10
   ]
  },
  {
@@ -950,7 +954,8 @@
   "lado": "atk",
   "dos": [
    0,
-   1
+   1,
+   10
   ]
  },
  {
@@ -1001,13 +1006,15 @@
   "tit": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
   "veic": "NeurIPS 2024 (Datasets and Benchmarks) · arXiv 2406.13352",
   "tipo": "Conferência",
-  "st": "A conferir",
+  "st": "Conferido na fonte",
   "doi": "",
   "aut": [
    "Debenedetti, Edoardo"
   ],
-  "nota": "Ambiente de teste de injeção em agentes. Visto só como referência em outro artigo: confira título e autores.",
-  "num": [],
+  "nota": "Ambiente de teste de injeção em agentes. Visto só como referência em outro artigo: confira título e autores. Padrão de fato para avaliar defesas de agentes; o paper dos firewalls mostra que ele precisa ser endurecido.",
+  "num": [
+   "Ambiente dinâmico com 97 tarefas realistas para avaliar ataques e defesas (segundo o dossiê 7)."
+  ],
   "tags": [
    "inj",
    "tools",
@@ -1025,7 +1032,8 @@
   ],
   "lado": "med",
   "dos": [
-   0
+   0,
+   10
   ]
  },
  {
@@ -2041,7 +2049,8 @@
   ],
   "lado": "med",
   "dos": [
-   0
+   0,
+   10
   ]
  },
  {
@@ -2355,7 +2364,8 @@
   "lado": "def",
   "dos": [
    1,
-   4
+   4,
+   10
   ],
   "src": "MS MARCO e CTI",
   "links": [
@@ -2416,31 +2426,39 @@
   "tit": "Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)",
   "veic": "arXiv 2505.18543",
   "tipo": "Preprint",
-  "st": "Dossiê A",
+  "st": "Preprint conferido",
   "aut": [
    "Autores no PDF"
   ],
-  "nota": "Benchmark adaptável a CTI para a RQ1.",
+  "nota": "Base pronta para comparar o seu ataque e a sua defesa com os demais: 13 ataques contra 7 defesas no mesmo arcabouço. A conclusão serve de linha de abertura para a dissertação: nenhuma defesa atual protege de forma robusta.",
   "num": [
-   "13 ataques, 7 defesas, 6 arquiteturas de RAG; sistemas agênticos baseados em RAG continuam suscetíveis."
+   "5 datasets de QA e 10 variantes, 13 métodos de envenenamento e 7 defesas (de processo, de detecção e híbridas).",
+   "Os ataques funcionam bem nos datasets padrão; RAG multimodal e agentes com RAG continuam suscetíveis; as defesas atuais não dão proteção robusta."
   ],
   "tags": [
    "admissao",
    "bench",
+   "defesa",
    "poison",
    "rag"
   ],
   "met": "Benchmark / dataset",
   "lado": "atk",
   "dos": [
-   1
+   1,
+   10
   ],
   "src": "Benchmarks de QA",
   "links": [
    {
-    "lab": "PDF no arXiv",
-    "url": "https://arxiv.org/pdf/2505.18543",
-    "kind": "pdf"
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2505.18543",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2505.18543v1",
+    "kind": "aberto"
    }
   ],
   "doi": "",
@@ -3793,7 +3811,8 @@
   "dos": [
    2,
    3,
-   4
+   4,
+   10
   ],
   "src": "Web aberta",
   "links": [
@@ -4690,7 +4709,8 @@
   "met": "Benchmark / dataset",
   "lado": "cap",
   "dos": [
-   4
+   4,
+   10
   ],
   "src": "Investigação de SOC",
   "links": [
@@ -4725,7 +4745,8 @@
   "met": "Benchmark / dataset",
   "lado": "cap",
   "dos": [
-   4
+   4,
+   10
   ],
   "src": "Cenários de defesa",
   "links": [
@@ -7370,7 +7391,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Agentes com memória",
   "links": [
@@ -7884,7 +7906,8 @@
   "met": "Experimento de ataque em laboratório",
   "lado": "atk",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Perguntas multi-hop",
   "links": [
@@ -7927,7 +7950,8 @@
   "met": "Defesa / método",
   "lado": "def",
   "dos": [
-   8
+   8,
+   10
   ],
   "src": "Benchmarks de QA",
   "links": [
@@ -10000,14 +10024,14 @@
   "ano": 2026,
   "eixo": 11,
   "ft": "AC",
-  "tit": "Corpus composition and hybrid BM25 + vector retrieval as architectural defense against RAG poisoning",
+  "tit": "Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems",
   "veic": "arXiv 2603.18034",
   "tipo": "Preprint",
   "st": "Preprint conferido",
   "aut": [
    "Autores no PDF"
   ],
-  "nota": "Defesa arquitetural barata contra ataques guiados por gradiente. Vale como linha de base para qualquer portão: comparar contra recuperação híbrida antes de propor algo caro.",
+  "nota": "Trata o domínio do corpus como variável de segurança de primeira classe, e mostra a recuperação híbrida como defesa arquitetural barata. Linha de base obrigatória para qualquer portão.",
   "num": [
    "Em 50 ataques, a recuperação híbrida reduziu o sucesso dos ataques guiados por gradiente de 38% para 0%."
   ],
@@ -10076,7 +10100,7 @@
   "ano": 2026,
   "eixo": 4,
   "ft": "AC",
-  "tit": "Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation",
+  "tit": "PoisonArena: Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation",
   "veic": "KDD 2026 · arXiv 2505.12574",
   "tipo": "Conferência",
   "st": "Conferido na fonte",
@@ -10222,5 +10246,54 @@
   "num": [],
   "repo": [],
   "open": "Texto aberto"
+ },
+ {
+  "key": "rarag2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG)",
+  "veic": "arXiv 2410.22954",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Hwang, Jeongyeon",
+   "Park, Junyoung",
+   "Park, Hyejin",
+   "Kim, Dongwoo",
+   "Park, Sangdon",
+   "Ok, Jungseul"
+  ],
+  "nota": "Estima a confiabilidade de cada fonte cruzando o que as fontes dizem, sem checagem manual, e recupera só das fontes confiáveis. É a versão aprendida do controle de corroboração do laboratório, com o mesmo risco: a fonte nova e única começa com reputação baixa.",
+  "num": [
+   "Recupera por fonte, das κ fontes mais confiáveis e relevantes, e agrega por votação ponderada pela confiabilidade.",
+   "Supera as linhas de base quando as fontes têm confiabilidade heterogênea e escala com o número de fontes."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   10
+  ],
+  "src": "Cenários com fontes de confiabilidade heterogênea",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Resumo no arXiv",
+    "url": "https://arxiv.org/abs/2410.22954",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Código no GitHub",
+    "url": "https://github.com/ml-postech/RA-RAG",
+    "kind": "dados"
+   }
+  ],
+  "doi": "",
+  "repo": []
  }
 ]

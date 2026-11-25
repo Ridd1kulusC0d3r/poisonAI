@@ -45,12 +45,12 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 70 | [Complacency and Bias in Human Use of Automation: An Attentional Integration](https://pubmed.ncbi.nlm.nih.gov/21077562/) | 2010 | Revisão / survey | A | evidencia 18, nucleo 5, conexoes 15, verificacao 10, revisao 10, recencia 2, trilha 10 |
 
 
-## Leia depois (143)
+## Leia depois (145)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
 | 69 | [MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks](https://arxiv.org/pdf/2512.08289) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, verificacao 10, revisao 10, recencia 10 |
-| 69 | [Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation](https://arxiv.org/pdf/2505.12574) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, verificacao 10, revisao 10, recencia 10 |
+| 69 | [PoisonArena: Uncovering Competing Poisoning Attacks in Retrieval-Augmented Generation](https://arxiv.org/pdf/2505.12574) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, verificacao 10, revisao 10, recencia 10 |
 | 69 | [CTIConnect: A Benchmark for Retrieval-Augmented LLMs over Heterogeneous Cyber Threat Intelligence](https://arxiv.org/pdf/2510.11974) | 2025 | Benchmark / dataset | A | evidencia 24, nucleo 15, conexoes 6, verificacao 10, revisao 6, recencia 8 |
 | 69 | [Practical Poisoning Attacks against Retrieval-Augmented Generation (CorruptRAG)](https://arxiv.org/html/2504.03957v2) | 2025 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, conexoes 6, verificacao 10, revisao 6, recencia 8 |
 | 69 | [Certifiably Robust RAG against Retrieval Corruption (RobustRAG)](https://arxiv.org/pdf/2405.15556) | 2024 | Defesa / método | A | evidencia 18, nucleo 10, conexoes 9, verificacao 10, revisao 6, recencia 6, trilha 10 |
@@ -87,7 +87,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 64 | [Mapping the Increasing Use of LLMs in Scientific Papers](https://arxiv.org/abs/2404.01268) | 2024 | Medição em escala (dados reais) | A | evidencia 30, nucleo 5, conexoes 3, verificacao 10, revisao 10, recencia 6 |
 | 63 | [From Chasing Ghosts to Missed Attacks: Perspectives and Perceptions of SOC Practitioners on LLM Integration, Risks, and Readiness](https://arxiv.org/pdf/2608.00672) | 2026 | Estudo com humanos | A | evidencia 24, nucleo 10, conexoes 3, verificacao 10, revisao 6, recencia 10 |
 | 63 | [RAGSieve: Self-Referenced Local Contrast for Knowledge-Poison Detection in Retrieval-Augmented Generation](https://arxiv.org/abs/2608.13010) | 2026 | Defesa / método | A | evidencia 18, nucleo 10, conexoes 9, verificacao 10, revisao 6, recencia 10 |
-| 63 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/pdf/2505.18543) | 2025 | Benchmark / dataset | A | evidencia 24, nucleo 15, verificacao 10, revisao 6, recencia 8 |
+| 63 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/abs/2505.18543) | 2025 | Benchmark / dataset | A | evidencia 24, nucleo 15, verificacao 10, revisao 6, recencia 8 |
 | 63 | [A dataset of Open Source Intelligence (OSINT) Tweets about the Russo-Ukrainian war](https://arxiv.org/pdf/2409.01052) | 2024 | Benchmark / dataset | A | evidencia 24, nucleo 10, conexoes 3, verificacao 10, revisao 10, recencia 6 |
 | 63 | [Reading the Tea Leaves: A Comparative Analysis of Threat Intelligence](https://www.usenix.org/conference/usenixsecurity19/presentation/li) | 2019 | Medição em escala (dados reais) | A | evidencia 30, nucleo 5, conexoes 6, verificacao 10, revisao 10, recencia 2 |
 | 62 | [Never Emitted: Reporter Attribution in GitHub's Machine-Readable Vulnerability Records](https://arxiv.org/pdf/2609.33099) | 2026 | Medição em escala (dados reais) | A | evidencia 30, conexoes 6, verificacao 10, revisao 6, recencia 10 |
@@ -127,6 +127,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 58 | [Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses](https://arxiv.org/pdf/2610.33849) | 2026 | Avaliação empírica de modelos | A | evidencia 24, nucleo 5, conexoes 3, verificacao 10, revisao 6, recencia 10 |
 | 58 | Grok struggles with fact-checking amid Israel-Iran war | 2025 | Auditoria / investigação de sociedade civil | A | evidencia 18, nucleo 10, conexoes 9, verificacao 10, revisao 3, recencia 8 |
 | 58 | [CTI-HAL: A Human-Annotated Dataset for Cyber Threat Intelligence Analysis](https://arxiv.org/pdf/2504.05866) | 2025 | Benchmark / dataset | A | evidencia 24, nucleo 10, verificacao 10, revisao 6, recencia 8 |
+| 58 | [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/pdf/2406.13352) | 2024 | Benchmark / dataset | A | evidencia 24, nucleo 5, conexoes 3, verificacao 10, revisao 10, recencia 6 |
 | 57 | [ClawHavoc: skills maliciosas no ClawHub](https://obot.ai/blog/mcp-security-agent-skills-supply-chain/) | 2026 | Incidente / caso documentado | B | evidencia 18, nucleo 5, conexoes 15, verificacao 6, revisao 3, recencia 10 |
 | 57 | [Imagens de satélite geradas por IA na guerra EUA–Israel–Irã](https://www.al-monitor.com/originals/2026/03/fake-ai-satellite-imagery-spurs-us-iran-war-disinformation) | 2026 | Incidente / caso documentado | C | evidencia 18, nucleo 10, conexoes 12, verificacao 4, revisao 3, recencia 10 |
 | 57 | [prompt-injection-soc-telemetry: corpus e harness para medir injeção em telemetria narrada por LLM](https://github.com/Yeagerist0/prompt-injection-soc-telemetry) | 2026 | Benchmark / dataset | A | evidencia 24, nucleo 10, verificacao 10, revisao 3, recencia 10 |
@@ -175,6 +176,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 53 | [CyberMetric: A Benchmark Dataset based on Retrieval-Augmented Generation for Evaluating LLMs in Cybersecurity Knowledge](https://arxiv.org/pdf/2402.07688) | 2024 | Benchmark / dataset | A | evidencia 24, conexoes 3, verificacao 10, revisao 10, recencia 6 |
 | 52 | [Vibe hacking: two AI-augmented campaigns target government and financial sectors in Latin America (SHADOW-AETHER-040)](https://www.trendmicro.com/en_us/research/26/e/vibe-hacking-two-ai-augmented-campaigns-target-government-and-financial-sectors-in-latin-america.html) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 5, conexoes 6, verificacao 10, revisao 3, recencia 10 |
 | 52 | [GenAI used for phishing websites impersonating Brazil's government](https://www.zscaler.com/blogs/security-research/genai-used-phishing-websites-impersonating-brazil-s-government) | 2025 | Incidente / caso documentado | A | evidencia 18, nucleo 10, conexoes 3, verificacao 10, revisao 3, recencia 8 |
+| 52 | [Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG)](https://arxiv.org/abs/2410.22954) | 2025 | Defesa / método | A | evidencia 18, nucleo 10, verificacao 10, revisao 6, recencia 8 |
 | 52 | [Staying ahead of threat actors in the age of AI](https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/) | 2024 | Relatório de ameaça (autorrelato) | A | evidencia 18, conexoes 15, verificacao 10, revisao 3, recencia 6 |
 | 52 | [Generative AI and Security Operations Center Productivity: Evidence from Live Operations](https://arxiv.org/abs/2411.03116) | 2024 | Medição em escala (dados reais) | — | evidencia 30, nucleo 10, revisao 6, recencia 6 |
 | 51 | [The CTI echo chamber: Fragmentation, overlap, and vendor specificity in twenty years of cyber threat reporting](https://arxiv.org/pdf/2602.17458) | 2026 | Medição em escala (dados reais) | — | evidencia 30, nucleo 5, revisao 6, recencia 10 |
@@ -194,7 +196,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 50 | [MCP Security Notification: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification) | 2025 | Prova de conceito | A | evidencia 12, nucleo 5, conexoes 12, verificacao 10, revisao 3, recencia 8 |
 
 
-## Consulta (86)
+## Consulta (85)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
@@ -205,13 +207,12 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 49 | [MEMSAD: detecção de anomalia semântica contra envenenamento de memória](https://arxiv.org/pdf/2605.03482) | 2026 | Defesa / método | A | evidencia 18, nucleo 5, verificacao 10, revisao 6, recencia 10 |
 | 49 | [Tracing Target Answers in Poisoned Retrieval Corpora via Token Influence Attribution](https://arxiv.org/abs/2606.25721) | 2026 | Defesa / método | A | evidencia 18, nucleo 5, verificacao 10, revisao 6, recencia 10 |
 | 49 | [Minerva: aprendizado por reforço com recompensas verificáveis para LLMs de CTI](https://arxiv.org/pdf/2602.00513) | 2026 | Defesa / método | A | evidencia 18, nucleo 5, verificacao 10, revisao 6, recencia 10 |
-| 49 | [Corpus composition and hybrid BM25 + vector retrieval as architectural defense against RAG poisoning](https://arxiv.org/html/2603.18034) | 2026 | Defesa / método | A | evidencia 18, nucleo 5, verificacao 10, revisao 6, recencia 10 |
+| 49 | [Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems](https://arxiv.org/html/2603.18034) | 2026 | Defesa / método | A | evidencia 18, nucleo 5, verificacao 10, revisao 6, recencia 10 |
 | 49 | Cloak, Honey, Trap: proactive defenses against LLM agents (CHeaT) | 2025 | Defesa / método | A | evidencia 18, conexoes 3, verificacao 10, revisao 10, recencia 8 |
 | 49 | [On the Security Risks of Knowledge Graph Reasoning (ROAR)](https://arxiv.org/abs/2406.00083) | 2023 | Experimento de ataque em laboratório | — | evidencia 24, nucleo 15, revisao 6, recencia 4 |
 | 48 | [Rogue AI Agents In Your SOCs and SIEMs: Indirect Prompt Injection via Log Files](https://www.levelblue.com/blogs/spiderlabs-blog/rogue-ai-agents-in-your-socs-and-siems-indirect-prompt-injection-via-log-files) | 2026 | Prova de conceito | A | evidencia 12, nucleo 10, conexoes 3, verificacao 10, revisao 3, recencia 10 |
 | 48 | [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llmrisk/llm04-data-and-model-poisoning/) | 2025 | Padrão / framework / guia | A | evidencia 12, nucleo 15, verificacao 10, revisao 3, recencia 8 |
 | 48 | [Analyzing Political Bias in LLMs via Target-Oriented Sentiment Classification](https://arxiv.org/pdf/2505.19776) | 2025 | Avaliação empírica de modelos | A | evidencia 24, verificacao 10, revisao 6, recencia 8 |
-| 48 | [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/pdf/2406.13352) | 2024 | Benchmark / dataset | — | evidencia 24, nucleo 5, conexoes 3, revisao 10, recencia 6 |
 | 47 | [GTIG AI Threat Tracker: Distillation, Experimentation, and (Continued) Integration of AI for Adversarial Use](https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, conexoes 6, verificacao 10, revisao 3, recencia 10 |
 | 47 | [Criminal AI-as-a-Service in 2026: How the Underground Market Is Operationalizing Cybercrime](https://www.rapid7.com/blog/post/tr-criminal-ai-underground-market-operationalizing-cybercrime-2026) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, conexoes 6, verificacao 10, revisao 3, recencia 10 |
 | 47 | [Inside the loop: detecting agentic offensive frameworks (ARTEX)](https://www.elastic.co/security-labs/threat-command/agentic-offensive-frameworks-detection-artex) | 2026 | Defesa / método | A | evidencia 18, conexoes 6, verificacao 10, revisao 3, recencia 10 |
