@@ -2,7 +2,7 @@
 
 **Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
 
-**[Abrir o site](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
 
 > O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
 
@@ -45,6 +45,13 @@ make dose       # roda o experimento dose-resposta
 ```
 
 Python 3.10 ou mais novo, **só biblioteca padrão**. Para editar, mude os JSON em `data/` e rode `make`. Os arquivos em `docs/` e `site/index.html` são gerados.
+
+## Publicar o site
+
+O site é o mesmo artefato interativo, gerado de `data/` por `make site`. Há dois jeitos de publicar no GitHub Pages (Settings → Pages):
+
+1. **GitHub Actions** (recomendado): o workflow `Site` gera e publica a cada push na `main`.
+2. **Deploy from a branch → `gh-pages` / root**: a branch `gh-pages` traz só o site pronto.
 
 ## Princípios
 

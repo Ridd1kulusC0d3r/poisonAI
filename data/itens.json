@@ -1701,12 +1701,12 @@
   ],
   "nota": "O relatório completo mostra o outro lado do gap de validação: o agente do atacante exagerou e inventou achados, e alguém precisou validar tudo. Repare na proporção de 1 a 6 horas de máquina para 2 a 20 minutos de revisão humana.",
   "num": [
-   "GTG-1002, avaliado com alta confiança como grupo estatal chinês: cerca de 30 alvos, sucesso em poucos.",
-   "A IA executou de 80% a 90% da campanha; humanos decidiram em 4 a 6 pontos críticos.",
+   "GTG-1002, avaliado com alta confiança como grupo estatal chinês: cerca de 30 alvos e um punhado de intrusões validadas.",
+   "A IA executou de 80% a 90% do trabalho tático; fases autônomas de 1 a 6 horas contra revisão humana de 2 a 20 minutos.",
+   "O ator decompôs o ataque em tarefas que pareciam benignas e se passou por funcionário de empresa de segurança fazendo teste defensivo.",
    "Segundo a Anthropic, o Claude “frequentemente exagerou achados e às vezes fabricou dados”: credenciais que não funcionavam, descobertas que eram informação pública.",
-   "Registrado no MITRE ATT&CK como campanha C0062, segundo o dossiê 1. Sem corroboração independente da atribuição.",
-   "Cerca de 30 alvos e poucas intrusões validadas; a IA fez 80% a 90% do trabalho tático, com fases autônomas de 1 a 6 horas e revisão humana de 2 a 20 minutos.",
-   "O ator decompôs o ataque em tarefas que pareciam benignas e se passou por funcionário de empresa de segurança fazendo teste defensivo."
+   "O relatório não descreve injeção de prompt nem envenenamento: a manipulação foi engenharia social por encenação.",
+   "Registrado no MITRE ATT&CK como campanha C0062, segundo o dossiê 1. Sem corroboração independente da atribuição."
   ],
   "tags": [
    "apt",
@@ -1720,11 +1720,6 @@
    {
     "lab": "Relatório completo (PDF, 14 páginas)",
     "url": "https://assets.claude.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf",
-    "kind": "pdf"
-   },
-   {
-    "lab": "PDF do relatório",
-    "url": "https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf",
     "kind": "pdf"
    },
    {
@@ -1842,12 +1837,18 @@
    "Davies, Xander",
    "Hamin, Maia"
   ],
-  "nota": "Vocabulário para a metodologia: tipo de sistema, fase do ciclo de vida, objetivo, capacidade e conhecimento do atacante.",
-  "num": [],
+  "nota": "Vocabulário e limites para a metodologia. A lição para esta linha: uma defesa só vale se testada contra quem a conhece (RQ5, RQ26).",
+  "num": [
+   "Aprovado em 20/03/2025. Duas metades: IA preditiva (disponibilidade, integridade, privacidade) e IA generativa (as mesmas mais uso indevido, além de cadeia de suprimentos).",
+   "Envenenamento de dados: o adversário controla parte dos dados de treino, inserindo ou alterando amostras. Envenenamento de modelo: controla o modelo e seus parâmetros, mais comum em aprendizado federado e cadeia de suprimentos.",
+   "Seções próprias para injeção de prompt (3.4), cadeia de suprimentos (3.2) e segurança de agentes (3.5).",
+   "Não há provas de segurança teórica para os algoritmos de ML usados; quase toda mitigação é empírica e muitas caíram diante de ataques adaptativos. O relatório pede avaliação adaptativa rigorosa."
+  ],
   "tags": [
+   "defesa",
    "gov",
-   "poison",
-   "inj"
+   "inj",
+   "poison"
   ],
   "met": "Padrão / framework / guia",
   "src": "Literatura",

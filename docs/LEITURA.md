@@ -37,7 +37,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 70 | [Complacency and Bias in Human Use of Automation: An Attentional Integration](https://pubmed.ncbi.nlm.nih.gov/21077562/) | 2010 | Revisão / survey | A | evidencia 18, nucleo 5, conexoes 15, verificacao 10, revisao 10, recencia 2, trilha 10 |
 
 
-## Leia depois (95)
+## Leia depois (96)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
@@ -85,6 +85,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 59 | [A single operator, two AI platforms, nine government agencies](https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 15, conexoes 3, verificacao 10, revisao 3, recencia 10 |
 | 59 | [GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools](https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools) | 2025 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 5, conexoes 15, verificacao 10, revisao 3, recencia 8 |
 | 59 | [Threat Intelligence Report: August 2025](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf) | 2025 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 5, conexoes 15, verificacao 10, revisao 3, recencia 8 |
+| 59 | [Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (NIST AI 100-2e2025)](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-2e2025.pdf) | 2025 | Padrão / framework / guia | A | evidencia 12, nucleo 10, conexoes 6, verificacao 10, revisao 3, recencia 8, trilha 10 |
 | 59 | [CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2406.07599) | 2024 | Benchmark / dataset | A | evidencia 24, conexoes 9, verificacao 10, revisao 10, recencia 6 |
 | 59 | [Evaluating the Usability of LLMs in Threat Intelligence Enrichment](https://arxiv.org/pdf/2409.15072) | 2024 | Estudo com humanos | A | evidencia 24, nucleo 10, conexoes 3, verificacao 10, revisao 6, recencia 6 |
 | 58 | [What is Human in Judgment? Automation Bias and Algorithm Aversion Among United States Military Academy Cadets](https://arxiv.org/html/2604.04333) | 2026 | Estudo com humanos | A | evidencia 24, nucleo 5, conexoes 3, verificacao 10, revisao 6, recencia 10 |
@@ -138,7 +139,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 50 | [MCP Security Notification: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification) | 2025 | Prova de conceito | A | evidencia 12, nucleo 5, conexoes 12, verificacao 10, revisao 3, recencia 8 |
 
 
-## Consulta (76)
+## Consulta (75)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
@@ -164,7 +165,6 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 46 | [CyberStrikeAI: intrusões em educação na África e na América Latina](https://securelist.com/cyberstrikeai-attacks/121715/) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 5, verificacao 10, revisao 3, recencia 10 |
 | 46 | [AI Security Report 2026](https://research.checkpoint.com/2026/ai-security-report-2026/) | 2026 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 5, verificacao 10, revisao 3, recencia 10 |
 | 46 | [International AI Safety Report 2026](https://arxiv.org/pdf/2602.21012) | 2026 | Revisão / survey | A | evidencia 18, nucleo 5, verificacao 10, revisao 3, recencia 10 |
-| 46 | [Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (NIST AI 100-2e2025)](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-2e2025.pdf) | 2025 | Padrão / framework / guia | A | evidencia 12, nucleo 10, conexoes 3, verificacao 10, revisao 3, recencia 8 |
 | 46 | [Ataques ao Gemini por convites de agenda (AML.CS0063)](https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09) | 2025 | Prova de conceito | A | evidencia 12, nucleo 10, conexoes 3, verificacao 10, revisao 3, recencia 8 |
 | 45 | [postmark-mcp: rug pull em servidor MCP de e-mail](https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09) | 2025 | Incidente / caso documentado | A | evidencia 18, conexoes 6, verificacao 10, revisao 3, recencia 8 |
 | 45 | [Teste de 24 LLMs em geolocalização](https://gijn.org/stories/updated-test-24-llms-ai-geolocation/) | 2025 | Auditoria / investigação de sociedade civil | B | evidencia 18, nucleo 10, verificacao 6, revisao 3, recencia 8 |

@@ -434,6 +434,10 @@
   {
    "key": "horowitz2024bias",
    "acao": "Anote o tamanho da amostra e o desenho: é a régua para a RQ4."
+  },
+  {
+   "key": "nist2025aml",
+   "acao": "Classifique três ataques do catálogo pela taxonomia do NIST: objetivo, capacidade e fase do ciclo de vida."
   }
  ],
  "llminjection": {
