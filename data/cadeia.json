@@ -18,7 +18,8 @@
    "Exigir independência de fontes antes de aceitar um fato",
    "Listas de fontes sancionadas e de baixa reputação",
    "Congelar o conteúdo no momento da coleta, não da análise",
-   "Coleta pareada: comparar o que o agente e um navegador comum recebem"
+   "Coleta pareada: comparar o que o agente e um navegador comum recebem",
+   "Portão de admissão antes da indexação: o lote de CTI só entra na base depois de passar pelos controles"
   ],
   "itens": [
    "asp2025pravda",
@@ -31,7 +32,9 @@
    "afp2026satellite",
    "aisi2026incident",
    "vigia2026",
-   "gtig2026initial"
+   "gtig2026initial",
+   "ragh2026",
+   "gmtp2025"
   ],
   "atlas": [
    "AML.T0070"
@@ -94,7 +97,8 @@
    "Versionar o grafo e permitir rollback",
    "Expiração e revogação conferidas na recuperação",
    "Memória versionada com diferença revisável",
-   "Credibilidade de fonte no grafo (AuthRank)"
+   "Credibilidade de fonte no grafo (AuthRank)",
+   "Rastreamento do texto responsável quando o veneno passou (RAGForensics, RAGOrigin)"
   ],
   "itens": [
    "zou2025poisonedrag",
@@ -111,7 +115,10 @@
    "atlas_cs0040",
    "msft2026skvector",
    "amemguard2026",
-   "trustrag2025"
+   "trustrag2025",
+   "corruptrag2025",
+   "authchain2025",
+   "ragorigin2026"
   ],
   "atlas": [
    "AML.T0070",

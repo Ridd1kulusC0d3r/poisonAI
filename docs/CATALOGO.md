@@ -2,7 +2,7 @@
 
 # Catálogo por tipo de estudo
 
-197 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
+204 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
 
 
 ## Medição em escala (dados reais) · peso 5 · 14 trabalhos
@@ -23,11 +23,11 @@ Prova: Que o fenômeno existe e com que frequência, fora do laboratório. Não 
 | 42 | 2024 | [LLM Agent Honeypot: Monitoring AI Hacking Agents in the Wild](https://arxiv.org/pdf/2410.13919) | arXiv 2410.13919 | Defesa | — | A conferir |
 | 60 | 2024 | [Modelos maliciosos no Hugging Face com backdoor em pickle](https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/) | JFrog (fev/2024) | Medição do fenômeno | A | Dossiê A |
 | 61 | 2023 | [Beyond the Surface: Investigating Malicious CVE Proof of Concept Exploits on GitHub](https://arxiv.org/pdf/2210.08374) | arXiv 2210.08374 (v2, 2023); ferramenta SecurePoC na USENIX WOOT 2025 | Medição do fenômeno | A | Conferido na fonte |
-| 87 | 2020 | [A Different Cup of TI? The Added Value of Commercial Threat Intelligence](https://www.usenix.org/conference/usenixsecurity20/presentation/bouwman) | USENIX Security 2020 | Medição do fenômeno | A | Conferido na fonte |
+| 92 | 2020 | [A Different Cup of TI? The Added Value of Commercial Threat Intelligence](https://www.usenix.org/conference/usenixsecurity20/presentation/bouwman) | USENIX Security 2020 | Medição do fenômeno | A | Conferido na fonte |
 | 63 | 2019 | [Reading the Tea Leaves: A Comparative Analysis of Threat Intelligence](https://www.usenix.org/conference/usenixsecurity19/presentation/li) | USENIX Security 2019 | Medição do fenômeno | A | Dossiê A |
 
 
-## Experimento de ataque em laboratório · peso 4 · 27 trabalhos
+## Experimento de ataque em laboratório · peso 4 · 29 trabalhos
 
 Prova: Que o ataque é possível e quanto custa (dose, condição). Não prova: Que alguém o usa de fato, nem que funciona em produção.
 
@@ -39,12 +39,12 @@ Prova: Que o ataque é possível e quanto custa (dose, condição). Não prova: 
 | 60 | 2026 | [Knowledge Base Poisoning Attacks and Defense for Policy-Aware LLM-RAG Framework](https://arxiv.org/abs/2607.04379) | arXiv 2607.04379 | Ataque à IA | A | Preprint conferido |
 | 70 | 2026 | [Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents (Lazarus)](https://arxiv.org/pdf/2611.15118) | arXiv 2611.15118 (12/11/2026) | Ataque à IA | A | Preprint conferido |
 | 56 | 2026 | LogJack: injeção em logs contra agentes de depuração de nuvem | arXiv (15/04/2026), via cobertura | Ataque à IA | B | Dossiê B |
-| 64 | 2026 | [MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks](https://arxiv.org/pdf/2512.08289) | ACM CCS 2026 · arXiv 2512.08289 | Ataque à IA | A | Conferido na fonte |
+| 69 | 2026 | [MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks](https://arxiv.org/pdf/2512.08289) | ACM CCS 2026 · arXiv 2512.08289 | Ataque à IA | A | Conferido na fonte |
 | 68 | 2026 | [Oracle Poisoning: Corrupting Knowledge Graphs to Weaponise AI Agent Reasoning](https://arxiv.org/pdf/2605.09822) | arXiv 2605.09822 | Ataque à IA | A | Dossiê A |
 | 70 | 2026 | [Poisoning the SOC: Prompt Injection via Ingested Telemetry](https://aivillage.org/posters/poisoning-the-soc-prompt-injection-via-ingested-telemetry/) | AI Village, DEF CON 34 (pôster) | Ataque à IA | A | Conferido na fonte |
 | 85 | 2026 | [Poisoning the Watchtower: Prompt Injection Attacks Against LLM-Augmented Security Operations Through Adversarial Log Content](https://arxiv.org/pdf/2605.24421) | arXiv 2605.24421 | Ataque à IA | A | Preprint conferido |
 | 53 | 2026 | [Rouxii: agentes que reconhecem honeypots](https://arxiv.org/abs/2609.26555v1) | arXiv 2609.26555 | Ataque à IA | A | Dossiê A |
-| 60 | 2026 | [Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems](https://arxiv.org/html/2603.18034v1) | arXiv 2603.18034 | Ataque à IA | A | Preprint conferido |
+| 65 | 2026 | [Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems](https://arxiv.org/html/2603.18034v1) | arXiv 2603.18034 | Ataque à IA | A | Preprint conferido |
 | 77 | 2026 | [Your AI-Powered SOC Is Following My Instructions: Indirect Prompt Injection via EDR Telemetry](https://labs.zenity.io/post/waiting-for-you-in-new-york) | Viaconnect, AI Agent Security Summit 2026 (Zenity, Nova York, 21/10/2026) | Ataque à IA | A | Conferido na fonte |
 | 67 | 2025 | [A Few Words Can Distort Graphs: Knowledge Poisoning Attacks on Graph-based Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/pdf/2508.04276) | arXiv 2508.04276 | Ataque à IA | A | Preprint conferido |
 | 66 | 2025 | [ADMIT: Few-shot Knowledge Poisoning Attacks on RAG-based Fact Checking](https://arxiv.org/html/2510.13842v1) | arXiv 2510.13842 | Ataque à IA | A | Preprint conferido |
@@ -52,12 +52,14 @@ Prova: Que o ataque é possível e quanto custa (dose, condição). Não prova: 
 | 79 | 2025 | [False Alarms, Real Damage: Adversarial Attacks Using LLM-based Models on Text-based Cyber Threat Intelligence Systems](https://arxiv.org/pdf/2507.06252) | Future Generation Computer Systems (2026) · arXiv 2507.06252 | Ataque à IA | A | Conferido na fonte |
 | 87 | 2025 | [GraphRAG under Fire](https://arxiv.org/pdf/2501.14050) | IEEE S&P 2026 · arXiv 2501.14050 | Ataque à IA | A | Preprint conferido |
 | 48 | 2025 | MINJA: memory injection attack against LLM agents | Dong et al. (2025) | Ataque à IA | — | A conferir |
-| 87 | 2025 | [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](https://usenix.org/system/files/usenixsecurity25-zou-poisonedrag.pdf) | USENIX Security 2025 | Ataque à IA | A | Conferido na fonte |
+| 66 | 2025 | [One Shot Dominance: Knowledge Poisoning Attack on Retrieval-Augmented Generation Systems (AuthChain)](https://arxiv.org/html/2505.11548v4) | arXiv 2505.11548 | Ataque à IA | A | Preprint conferido |
+| 92 | 2025 | [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](https://usenix.org/system/files/usenixsecurity25-zou-poisonedrag.pdf) | USENIX Security 2025 | Ataque à IA | A | Conferido na fonte |
 | 78 | 2025 | [Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples](https://arxiv.org/pdf/2510.07192) | arXiv 2510.07192 (pôster na NeurIPS 2026) | Ataque à IA | A | Preprint conferido |
-| 68 | 2024 | [AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases](https://arxiv.org/pdf/2407.12784) | NeurIPS 2024 | Ataque à IA | A | Conferido na fonte |
+| 66 | 2025 | [Practical Poisoning Attacks against Retrieval-Augmented Generation (CorruptRAG)](https://arxiv.org/html/2504.03957v2) | arXiv 2504.03957 | Ataque à IA | A | Preprint conferido |
+| 84 | 2024 | [AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases](https://arxiv.org/pdf/2407.12784) | NeurIPS 2024 | Ataque à IA | A | Conferido na fonte |
 | 66 | 2024 | [Poisoning Web-Scale Training Datasets is Practical](https://arxiv.org/pdf/2302.10149) | IEEE S&P 2024, pp. 407–425 | Ataque à IA | A | Conferido na fonte |
 | 44 | 2024 | [Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training](https://arxiv.org/pdf/2401.05566) | arXiv 2401.05566 | Ataque à IA | — | A conferir |
-| 74 | 2023 | [Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/pdf/2302.12173) | AISec@CCS 2023, pp. 79–90 | Ataque à IA | A | Conferido na fonte |
+| 82 | 2023 | [Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/pdf/2302.12173) | AISec@CCS 2023, pp. 79–90 | Ataque à IA | A | Conferido na fonte |
 | 49 | 2023 | [On the Security Risks of Knowledge Graph Reasoning (ROAR)](https://arxiv.org/abs/2406.00083) | arXiv 2406.00083 (citado como USENIX Security) | Ataque à IA | — | A conferir |
 | 88 | 2021 | [Generating Fake Cyber Threat Intelligence Using Transformer-Based Models](https://arxiv.org/pdf/2102.04351) | IJCNN 2021 | Ataque à IA | A | Conferido na fonte |
 
@@ -93,15 +95,15 @@ Prova: Base comum para medir e replicar. Não prova: Validade ecológica: o benc
 | 59 | 2026 | [LogInject: benchmark de injeção em logs](https://secjuice.com/attackers-write-your-logs-your-socs-ai-assistant-reads-them/) | Karanjai et al. (jul/2026), via cobertura | Ataque à IA | B | Dossiê B |
 | 57 | 2026 | [prompt-injection-soc-telemetry: corpus e harness para medir injeção em telemetria narrada por LLM](https://github.com/Yeagerist0/prompt-injection-soc-telemetry) | GitHub (Yeagerist0) | Ataque à IA | A | Conferido na fonte |
 | 56 | 2025 | [AthenaBench: A Dynamic Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2511.01144) | arXiv 2511.01144 | Capacidade (o que a IA faz) | A | Preprint conferido |
-| 58 | 2025 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/pdf/2505.18543) | arXiv 2505.18543 | Ataque à IA | A | Dossiê A |
+| 63 | 2025 | [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation (RSB)](https://arxiv.org/pdf/2505.18543) | arXiv 2505.18543 | Ataque à IA | A | Dossiê A |
 | 58 | 2025 | [CTI-HAL: A Human-Annotated Dataset for Cyber Threat Intelligence Analysis](https://arxiv.org/pdf/2504.05866) | arXiv 2504.05866 | Capacidade (o que a IA faz) | A | Preprint conferido |
-| 58 | 2025 | [CTIConnect: A Benchmark for Retrieval-Augmented LLMs over Heterogeneous Cyber Threat Intelligence](https://arxiv.org/pdf/2510.11974) | arXiv 2510.11974 | Capacidade (o que a IA faz) | A | Dossiê A |
+| 66 | 2025 | [CTIConnect: A Benchmark for Retrieval-Augmented LLMs over Heterogeneous Cyber Threat Intelligence](https://arxiv.org/pdf/2510.11974) | arXiv 2510.11974 | Capacidade (o que a IA faz) | A | Dossiê A |
 | 86 | 2025 | [CyberThreat-Eval: Can Large Language Models Automate Real-World Threat Research?](https://arxiv.org/pdf/2603.09452) | Transactions on Machine Learning Research (11/2025) · arXiv 2603.09452 | Capacidade (o que a IA faz) | A | Conferido na fonte |
 | 53 | 2025 | [ExCyTIn-Bench: benchmark de investigação de ameaças com agentes](https://arxiv.org/pdf/2507.14201) | arXiv 2507.14201 | Capacidade (o que a IA faz) | A | Dossiê A |
 | 56 | 2025 | [MCPTox: benchmark de tool poisoning em servidores MCP reais](https://arxiv.org/pdf/2508.14925) | arXiv 2508.14925 | Ataque à IA | A | Dossiê A |
 | 63 | 2024 | [A dataset of Open Source Intelligence (OSINT) Tweets about the Russo-Ukrainian war](https://arxiv.org/pdf/2409.01052) | ISCRAM 2024 · arXiv 2409.01052 | Medição do fenômeno | A | Dossiê A |
 | 48 | 2024 | [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/pdf/2406.13352) | NeurIPS 2024 (Datasets and Benchmarks) · arXiv 2406.13352 | Medição do fenômeno | — | A conferir |
-| 59 | 2024 | [CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2406.07599) | NeurIPS 2024 (Datasets and Benchmarks) | Capacidade (o que a IA faz) | A | Conferido na fonte |
+| 67 | 2024 | [CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/pdf/2406.07599) | NeurIPS 2024 (Datasets and Benchmarks) | Capacidade (o que a IA faz) | A | Conferido na fonte |
 | 53 | 2024 | [CyberMetric: A Benchmark Dataset based on Retrieval-Augmented Generation for Evaluating LLMs in Cybersecurity Knowledge](https://arxiv.org/pdf/2402.07688) | IEEE CSR 2024 | Capacidade (o que a IA faz) | A | Conferido na fonte |
 
 
@@ -140,7 +142,7 @@ Prova: O que os sistemas respondiam naquelas perguntas e datas. Não prova: A ca
 | 45 | 2024 | Portal Kombat: rede pró-Kremlin de sites espelho | VIGINUM, França (fev/2024) | Medição do fenômeno | A | Dossiê A |
 
 
-## Defesa / método · peso 3 · 16 trabalhos
+## Defesa / método · peso 3 · 21 trabalhos
 
 Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez contra adversário que conhece a defesa.
 
@@ -154,11 +156,16 @@ Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez cont
 | 44 | 2026 | [Efficient Auditing of Adversarial AI Agent Behavior from Agent Traces](https://arxiv.org/pdf/2610.07256) | arXiv 2610.07256 | Defesa | A | Dossiê A |
 | 47 | 2026 | [Inside the loop: detecting agentic offensive frameworks (ARTEX)](https://www.elastic.co/security-labs/threat-command/agentic-offensive-frameworks-detection-artex) | Elastic Security Labs (2026) | Defesa | A | Dossiê A |
 | 50 | 2026 | [Optional Traps: o valor mensurável do engano contra agentes](https://arxiv.org/html/2611.19295) | arXiv 2611.19295 | Defesa | A | Dossiê A |
-| 53 | 2026 | [TRIS: A Tri-Layer Retrieval Integrity Sieve Against Knowledge Poisoning](https://aclanthology.org/2026.findings-emnlp.2122.pdf) | Findings of EMNLP 2026 | Defesa | A | Conferido na fonte |
-| 55 | 2025 | [AuthRank: Scoring Source Credibility to Counter Poisoning in CTI LLM Pipelines](https://arxiv.org/pdf/2510.20768) | arXiv 2510.20768 (UT Austin ARL) | Defesa | A | Dossiê A |
+| 85 | 2026 | [RAG-H: A RAG-Hardened SOC Framework for Trustworthy Threat Intelligence and AI Defence](https://papers.academic-conferences.org/index.php/eccws/article/view/4741) | ECCWS 2026 (European Conference on Cyber Warfare and Security) | Defesa | A | Conferido na fonte |
+| 49 | 2026 | [RAGuard: A Layered Defense Framework for Retrieval-Augmented Generation Systems Against Data Poisoning](https://arxiv.org/pdf/2607.26339) | arXiv 2607.26339 | Defesa | A | Preprint conferido |
+| 58 | 2026 | [TRIS: A Tri-Layer Retrieval Integrity Sieve Against Knowledge Poisoning](https://aclanthology.org/2026.findings-emnlp.2122.pdf) | Findings of EMNLP 2026 | Defesa | A | Conferido na fonte |
+| 64 | 2026 | [Who Taught the Lie? Responsibility Attribution for Poisoned Knowledge in Retrieval-Augmented Generation (RAGOrigin)](https://arxiv.org/pdf/2509.13772) | IEEE S&P 2026 · arXiv 2509.13772 | Defesa | A | Preprint conferido |
+| 60 | 2025 | [AuthRank: Scoring Source Credibility to Counter Poisoning in CTI LLM Pipelines](https://arxiv.org/pdf/2510.20768) | arXiv 2510.20768 (UT Austin ARL) | Defesa | A | Dossiê A |
 | 49 | 2025 | Cloak, Honey, Trap: proactive defenses against LLM agents (CHeaT) | USENIX Security 2025 | Defesa | A | Dossiê A |
-| 55 | 2025 | [TrustRAG: Enhancing Robustness and Trustworthiness in Retrieval-Augmented Generation](https://arxiv.org/pdf/2501.00879) | arXiv 2501.00879 | Defesa | A | Preprint conferido |
-| 45 | 2024 | [Certifiably Robust RAG against Retrieval Corruption (RobustRAG)](https://arxiv.org/pdf/2405.15556) | arXiv 2405.15556 | Defesa | A | Preprint conferido |
+| 83 | 2025 | [Safeguarding RAG Pipelines with GMTP: A Gradient-based Masked Token Probability Method for Poisoned Document Detection](https://aclanthology.org/2025.findings-acl.1263.pdf) | Findings of ACL 2025, pp. 24597–24614 | Defesa | A | Conferido na fonte |
+| 59 | 2025 | [Traceback of Poisoning Attacks to Retrieval-Augmented Generation (RAGForensics)](https://arxiv.org/pdf/2504.21668v2) | ACM Web Conference 2025 · arXiv 2504.21668 | Defesa | A | Conferido na fonte |
+| 76 | 2025 | [TrustRAG: Enhancing Robustness and Trustworthiness in Retrieval-Augmented Generation](https://arxiv.org/pdf/2501.00879) | arXiv 2501.00879 | Defesa | A | Preprint conferido |
+| 66 | 2024 | [Certifiably Robust RAG against Retrieval Corruption (RobustRAG)](https://arxiv.org/pdf/2405.15556) | arXiv 2405.15556 | Defesa | A | Preprint conferido |
 | 60 | 2024 | [Detecting hallucinations in large language models using semantic entropy](https://pmc.ncbi.nlm.nih.gov/articles/PMC11186750) | Nature 630: 625–630 | Defesa | A | Conferido na fonte |
 | 51 | 2024 | [Hacking Back the AI-Hacker: Prompt Injection as a Defense Against LLM-driven Cyberattacks (Mantis)](https://arxiv.org/pdf/2410.20911) | arXiv 2410.20911 | Defesa | A | Dossiê A |
 | 45 | 2023 | [Verify-and-Edit: A Knowledge-Enhanced Chain-of-Thought Framework](https://arxiv.org/pdf/2305.03268) | ACL 2023 · arXiv 2305.03268 | Defesa | — | A conferir |

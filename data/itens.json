@@ -228,8 +228,9 @@
    "github.com/xashru/cti-bench"
   ],
   "tags": [
-   "bench",
-   "apt"
+   "admissao",
+   "apt",
+   "bench"
   ],
   "met": "Benchmark / dataset",
   "src": "NIST, MITRE, CVE, CWE",
@@ -628,14 +629,16 @@
   "nota": "Primeiro ataque de corrupção da base de um RAG. É o modelo de ameaça mais próximo de um agente OSINT que indexa feeds abertos.",
   "num": [
    "90% de sucesso injetando 5 textos maliciosos por pergunta-alvo numa base com milhões de textos.",
-   "As defesas avaliadas não bastaram."
+   "As defesas avaliadas não bastaram.",
+   "Resumo no arXiv: 90% de sucesso do ataque com cinco textos maliciosos por pergunta-alvo, numa base com milhões de textos; as defesas avaliadas foram insuficientes."
   ],
   "repo": [
    "github.com/sleeepeer/PoisonedRAG"
   ],
   "tags": [
-   "rag",
-   "poison"
+   "admissao",
+   "poison",
+   "rag"
   ],
   "met": "Experimento de ataque em laboratório",
   "src": "Benchmarks de QA",
@@ -680,9 +683,10 @@
    "Backdoor via memória ou base RAG: sucesso médio acima de 80%, com taxa de veneno abaixo de 0,1% e até 1% de impacto no uso normal."
   ],
   "tags": [
+   "admissao",
    "mem",
-   "rag",
-   "poison"
+   "poison",
+   "rag"
   ],
   "met": "Experimento de ataque em laboratório",
   "src": "Agentes reais (3)",
@@ -927,6 +931,7 @@
    "Demonstrado contra o Bing Chat e motores de autocompletar código."
   ],
   "tags": [
+   "admissao",
    "inj",
    "osintia"
   ],
@@ -2339,9 +2344,10 @@
    "Prova de conceito em CTI com cerca de 300 trechos, que os autores chamam de ilustrativa."
   ],
   "tags": [
-   "rag",
+   "admissao",
+   "defesa",
    "poison",
-   "defesa"
+   "rag"
   ],
   "met": "Defesa / método",
   "lado": "def",
@@ -2417,9 +2423,10 @@
    "13 ataques, 7 defesas, 6 arquiteturas de RAG; sistemas agênticos baseados em RAG continuam suscetíveis."
   ],
   "tags": [
-   "rag",
+   "admissao",
+   "bench",
    "poison",
-   "bench"
+   "rag"
   ],
   "met": "Benchmark / dataset",
   "lado": "atk",
@@ -2524,9 +2531,10 @@
   ],
   "nota": "Benchmark benigno de RAG em CTI: base para montar a versão envenenada (RQ1).",
   "tags": [
+   "admissao",
    "bench",
-   "rag",
-   "osintia"
+   "osintia",
+   "rag"
   ],
   "met": "Benchmark / dataset",
   "lado": "cap",
@@ -4795,9 +4803,10 @@
    "14 profissionais entrevistados valorizam curadoria e tempo do analista mais que cobertura."
   ],
   "tags": [
-   "valid",
+   "admissao",
+   "humano",
    "metodo",
-   "humano"
+   "valid"
   ],
   "met": "Medição em escala (dados reais)",
   "lado": "med",
@@ -7024,9 +7033,10 @@
    "No GPT-4o, 82% de acurácia e 5% de sucesso do ataque com 100% de envenenamento no HotpotQA."
   ],
   "tags": [
-   "rag",
+   "admissao",
    "defesa",
-   "poison"
+   "poison",
+   "rag"
   ],
   "met": "Defesa / método",
   "lado": "def",
@@ -7064,8 +7074,9 @@
   ],
   "nota": "Isola cada documento e agrega com segurança: robustez certificada, mas supõe que os documentos benignos são maioria. Num feed de CTI semeado, essa premissa pode cair.",
   "tags": [
-   "rag",
-   "defesa"
+   "admissao",
+   "defesa",
+   "rag"
   ],
   "met": "Defesa / método",
   "lado": "def",
@@ -7102,8 +7113,9 @@
    "No MS MARCO, 4% de sucesso do ataque contra 20% da linha de comparação."
   ],
   "tags": [
-   "rag",
-   "defesa"
+   "admissao",
+   "defesa",
+   "rag"
   ],
   "met": "Defesa / método",
   "lado": "def",
@@ -7140,9 +7152,10 @@
    "Sucesso do ataque de 46,7% (GPT-5.3) a 93,3% (Llama 4) entre cinco famílias de modelos."
   ],
   "tags": [
-   "rag",
+   "admissao",
+   "defesa",
    "poison",
-   "defesa"
+   "rag"
   ],
   "met": "Experimento de ataque em laboratório",
   "lado": "atk",
@@ -7175,8 +7188,9 @@
   ],
   "nota": "Caixa-preta e sem conhecer a pergunta: o modelo de ameaça mais próximo de quem semeia relatórios falsos sem saber o que o analista vai perguntar.",
   "tags": [
-   "rag",
-   "poison"
+   "admissao",
+   "poison",
+   "rag"
   ],
   "met": "Experimento de ataque em laboratório",
   "lado": "atk",
@@ -7651,6 +7665,288 @@
    {
     "lab": "PDF no arXiv",
     "url": "https://arxiv.org/pdf/2511.22441v1",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "gmtp2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Safeguarding RAG Pipelines with GMTP: A Gradient-based Masked Token Probability Method for Poisoned Document Detection",
+  "veic": "Findings of ACL 2025, pp. 24597–24614",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "doi": "10.18653/v1/2025.findings-acl.1263",
+  "aut": [
+   "Kim, San",
+   "Kim, Jonghwi",
+   "Jeon, Yejin",
+   "Lee, Gary Geunbae"
+  ],
+  "nota": "Detector de documento envenenado. Usa o gradiente da similaridade entre pergunta e documento, então na forma original depende da pergunta. Para usar na admissão, é preciso simular as perguntas prováveis do analista. Pega bem tokens “trapaceiros” pouco naturais; contra texto fluente (PoisonedRAG em caixa-preta), é hipótese a testar.",
+  "num": [
+   "Acha os tokens que mais pesam na similaridade, mascara e mede a probabilidade com um modelo de linguagem mascarado; tokens injetados têm probabilidade anormalmente baixa.",
+   "Elimina mais de 90% do conteúdo envenenado e mantém os documentos relevantes, segundo os autores."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "poison",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Benchmarks de QA",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "PDF na ACL Anthology",
+    "url": "https://aclanthology.org/2025.findings-acl.1263.pdf",
+    "kind": "pdf"
+   },
+   {
+    "lab": "Código no GitHub",
+    "url": "https://github.com/mountinyy/GMTP",
+    "kind": "dados"
+   }
+  ],
+  "repo": []
+ },
+ {
+  "key": "ragh2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "RAG-H: A RAG-Hardened SOC Framework for Trustworthy Threat Intelligence and AI Defence",
+  "veic": "ECCWS 2026 (European Conference on Cyber Warfare and Security)",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "O trabalho mais próximo de um portão de admissão para CTI: defesa em várias camadas do pipeline inteiro, começando pela ingestão, e avaliada pelo impacto na missão do SOC, não só pela acurácia da resposta. Leitura obrigatória para posicionar qualquer defesa de admissão.",
+  "num": [
+   "Critica as defesas atuais por cobrirem etapas isoladas do RAG, sem garantia de integridade de ponta a ponta, e por medirem acurácia em vez de impacto no SOC.",
+   "Os resultados indicam que controles de confiança, consistência e governança em camadas reduzem bastante os efeitos do envenenamento."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "soc",
+   "admissao",
+   "osintia"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Pipeline de CTI para SOC",
+  "links": [
+   {
+    "lab": "Página do artigo (ECCWS)",
+    "url": "https://papers.academic-conferences.org/index.php/eccws/article/view/4741",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "raguard2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "RAGuard: A Layered Defense Framework for Retrieval-Augmented Generation Systems Against Data Poisoning",
+  "veic": "arXiv 2607.26339",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Defesa em duas camadas (recuperação e filtro na geração), com a contribuição de cada camada medida separadamente: bom modelo de como reportar uma defesa em camadas.",
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Corpora de QA",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2607.26339",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "corruptrag2025",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Practical Poisoning Attacks against Retrieval-Augmented Generation (CorruptRAG)",
+  "veic": "arXiv 2504.03957",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Um único texto envenenado. Derruba a premissa de que a defesa pode contar com maioria benigna ou com anomalia no lote.",
+  "tags": [
+   "rag",
+   "poison",
+   "admissao"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2504.03957v2",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "authchain2025",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "One Shot Dominance: Knowledge Poisoning Attack on Retrieval-Augmented Generation Systems (AuthChain)",
+  "veic": "arXiv 2505.11548",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Um documento só, com cadeia de evidência autocontida e tom de autoridade: o formato de um relatório de CTI bem escrito.",
+  "tags": [
+   "rag",
+   "poison",
+   "admissao"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Perguntas multi-hop",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2505.11548v4",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragforensics2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Traceback of Poisoning Attacks to Retrieval-Augmented Generation (RAGForensics)",
+  "veic": "ACM Web Conference 2025 · arXiv 2504.21668",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "doi": "10.1145/3696410.3714756",
+  "aut": [
+   "Zhang, Baolei",
+   "Xin, Haoran",
+   "Fang, Minghong",
+   "Liu, Zhuqing",
+   "Yi, Biao",
+   "Li, Tong",
+   "Liu, Zheli"
+  ],
+  "nota": "O passo depois da admissão: quando um veneno passou, achar quais textos da base causaram a resposta errada.",
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2504.21668v2",
+    "kind": "pdf"
+   }
+  ],
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ragorigin2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Who Taught the Lie? Responsibility Attribution for Poisoned Knowledge in Retrieval-Augmented Generation (RAGOrigin)",
+  "veic": "IEEE S&P 2026 · arXiv 2509.13772",
+  "tipo": "Conferência",
+  "st": "Preprint conferido",
+  "aut": [
+   "Zhang, Baolei",
+   "Xin, Haoran",
+   "Chen, Yuxi",
+   "Liu, Zhuqing",
+   "Yi, Biao",
+   "Fang, Minghong",
+   "et al."
+  ],
+  "nota": "Rastreamento mais robusto que o RAGForensics, avaliado em sete datasets e quinze ataques. Mostra que o RAGForensics falha contra AgentPoison, BadRAG e Phantom.",
+  "num": [
+   "Depois de remover os textos rastreados pelo RAGForensics, o ataque BadRAG ainda tem sucesso de pelo menos 0,69 nos cinco datasets."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "admissao"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Sete datasets",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2509.13772",
     "kind": "pdf"
    }
   ],

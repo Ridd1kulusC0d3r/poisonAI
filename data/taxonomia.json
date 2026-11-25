@@ -172,7 +172,8 @@
   "multi": "Evidência visual e multimodal",
   "vies": "Viés de modelo",
   "defesa": "Detecção e resposta",
-  "metodo": "Método de inteligência"
+  "metodo": "Método de inteligência",
+  "admissao": "Admissão e ingestão de CTI"
  },
  "ordem_temas": [
   "osintia",
@@ -198,7 +199,8 @@
   "multi",
   "vies",
   "defesa",
-  "metodo"
+  "metodo",
+  "admissao"
  ],
  "info_temas": {
   "osintia": {
@@ -464,6 +466,17 @@
     "Confiança analítica",
     "Fonte da evidência (A, B, M)"
    ]
+  },
+  "admissao": {
+   "o_que": "Defesas que decidem, antes de indexar, se um documento ou lote entra na base que alimenta o RAG ou o agente.",
+   "grupo": "Quase toda defesa de RAG publicada age na recuperação ou na geração, e precisa da pergunta. Na admissão não há pergunta: o detector tem de funcionar sem ela, contra ataques que também não dependem dela (MIRAGE) ou usam um documento só (CorruptRAG, AuthChain). Rastreamento (RAGForensics, RAGOrigin) é o complemento depois da falha.",
+   "pergunta": "A defesa precisa conhecer a pergunta-alvo? Funciona com um único documento envenenado? Quanto rejeita de inteligência nova e legítima?",
+   "extrair": [
+    "Momento (admissão, recuperação, geração, rastreamento)",
+    "Precisa da pergunta?",
+    "Ataques testados, inclusive adaptativo",
+    "Taxa de rejeição de documento legítimo"
+   ]
   }
  },
  "notas_pares": {
@@ -487,7 +500,8 @@
   "desinf|valid": "O debate do grooming é de método: 33% da NewsGuard contra 5% do estudo revisado, com perguntas diferentes.",
   "metodo|valid": "Feeds reais já discordam entre si (2,5% a 4,0% de sobreposição): sem essa linha de base, todo erro parece ataque.",
   "br|multi": "Na eleição de 2026, a maior parte das mídias com IA veio de perfis comuns e anônimos, e só 371 de 920 estavam rotuladas.",
-  "br|apt": "No Brasil, a ameaça de IA mais concreta é o cibercrime bancário local se aproximando da infraestrutura de pagamentos."
+  "br|apt": "No Brasil, a ameaça de IA mais concreta é o cibercrime bancário local se aproximando da infraestrutura de pagamentos.",
+  "admissao|valid": "Feeds legítimos concordam em só 2,5% a 4,0%: um portão de admissão que exige corroboração rejeita inteligência verdadeira."
  },
  "categorias_tempo": {
   "atk": "Ataque à IA de defesa",

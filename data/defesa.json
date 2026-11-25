@@ -54,7 +54,7 @@
    "Grafo e recuperação",
    "Poucos documentos desviam respostas",
    "PoisonedRAG; GraphRAG",
-   "Regra de corroboração: nada com fonte única",
+   "Portão de admissão antes da indexação; regra de corroboração com cuidado (feeds concordam pouco)",
    "S3"
   ],
   [

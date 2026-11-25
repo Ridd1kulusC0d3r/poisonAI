@@ -344,6 +344,16 @@
     "horowitz2024bias",
     "parasuraman2010"
    ]
+  ],
+  [
+   "D5",
+   "Barrar o veneno na porta",
+   "Por que quase toda defesa de RAG age tarde demais, e o que um portão de admissão de CTI precisa medir.",
+   [
+    "ragh2026",
+    "gmtp2025",
+    "zou2025poisonedrag"
+   ]
   ]
  ]
 }

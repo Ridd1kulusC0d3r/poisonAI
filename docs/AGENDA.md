@@ -52,6 +52,7 @@
 | RQ24 | Qual a taxa de discordância natural entre as fontes de CTI que usamos? | Alta, como em Bouwman et al. | Medir sobreposição e atraso entre os feeds da casa antes de qualquer bancada adversarial | Dossiê 5 | Método | alta | linha de base de RQ1 e RQ2 |
 | RQ25 | Envenenamento de memória por links (como o da Microsoft) atinge assistentes usados por analistas de CTI? | Sim, se o analista usa assistente com memória e clica em links de fontes abertas. | Bancada com assistentes de memória e links de relatórios; medir o que persiste | LLmInjection | Envenenamento | média | ATLAS AML.CS0072; complementa QP7 |
 | RQ26 | Recuperadores híbridos e defesas como TrustRAG resistem a relatórios de CTI semeados sem conhecer a pergunta (modelo MIRAGE)? | Resistem melhor que RAG puro, mas não quando os falsos são maioria. | Bancada da RQ1 com MIRAGE, TrustRAG, RobustRAG e BM25 híbrido | Busca científica | Envenenamento | alta | complementa RQ1 e RQ5 |
+| RQ27 | Um portão de admissão que decide, antes de indexar, se um lote de CTI entra na base de um assistente de SOC reduz o sucesso do envenenamento sem rejeitar inteligência nova e legítima? | Reduz contra ataques com tokens pouco naturais; contra documento único fluente e consultas desconhecidas (CorruptRAG, AuthChain, MIRAGE), só com sinais próprios de CTI (proveniência STIX, reputação da fonte no tempo, consistência com outros feeds). | PoisonedRAG em caixa-branca e caixa-preta, MIRAGE e CorruptRAG contra lotes STIX; consultas de analista simuladas para rodar detectores dependentes da pergunta (GMTP) na admissão; medir sucesso do ataque, rejeição de lotes legítimos novos e ataque adaptativo que conhece o portão | Linha | Envenenamento | alta | ≈ RQ1 e RQ5; complementa RQ26 |
 
 
 ## Lacunas confirmadas
@@ -71,6 +72,7 @@
 | Nenhum feed ou grafo de produção comprovadamente envenenado em público | A ausência é a justificativa central da linha. | Dossiês 1 a 3 |
 | Nenhuma série oficial independente sobre IA no cibercrime brasileiro | Só telemetria de fornecedores. | Dossiê 5 |
 | Ecossistema brasileiro de compartilhamento sem mapeamento para IA | CERT.br, CTIR Gov, regulador financeiro e MISP setoriais: coleta pendente. | Dossiê 5 |
+| Quase nenhuma defesa de RAG age na admissão, sem conhecer a pergunta | TrustRAG, RobustRAG, GMTP e TRIS agem na recuperação; RAG-H cobre a ingestão, mas não é específica de lotes STIX. | Linha |
 
 
 ## Fases

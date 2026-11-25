@@ -44,7 +44,7 @@ def bib(it):
     return f"@{typ}{{{it['key']},\n" + ",\n".join(f) + "\n}\n"
 
 
-NUCLEO = {"aluc", "valid", "poison", "rag", "mem", "inj", "soc", "osintia", "humano", "desinf", "br"}
+NUCLEO = {"aluc", "valid", "poison", "rag", "mem", "inj", "soc", "osintia", "humano", "desinf", "br", "admissao"}
 NOTA = {"Conferido na fonte": "A", "Preprint conferido": "A", "Dossiê A": "A", "Conferido via cobertura": "B",
         "Dossiê B": "B", "Alegação (C)": "D", "A conferir": "—"}
 PESO_NOTA = {"A": 10, "B": 6, "C": 4, "D": 2, "—": 0}

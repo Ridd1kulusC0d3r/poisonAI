@@ -88,8 +88,8 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Status | Trabalhos |
 |---|---|
 | Dossiê A | 69 |
-| Conferido na fonte | 60 |
-| Preprint conferido | 25 |
+| Conferido na fonte | 63 |
+| Preprint conferido | 29 |
 | A conferir | 18 |
 | Dossiê B | 16 |
 | Conferido via cobertura | 8 |

@@ -352,6 +352,27 @@
     "atlas_cs0045",
     "atlas_cs0063"
    ]
+  },
+  {
+   "nome": "Defesa na admissão: leitura central",
+   "keys": [
+    "zou2025poisonedrag",
+    "chen2024agentpoison",
+    "greshake2023",
+    "trustrag2025",
+    "robustrag2024",
+    "gmtp2025",
+    "ragh2026",
+    "alam2024ctibench",
+    "cticonnect2025"
+   ]
+  },
+  {
+   "nome": "Rastreamento depois da falha (Nankai)",
+   "keys": [
+    "ragforensics2025",
+    "ragorigin2026"
+   ]
   }
  ],
  "trilha": [
@@ -438,6 +459,26 @@
   {
    "key": "nist2025aml",
    "acao": "Classifique três ataques do catálogo pela taxonomia do NIST: objetivo, capacidade e fase do ciclo de vida."
+  },
+  {
+   "key": "ragh2026",
+   "acao": "Leia o RAG-H e escreva em três linhas o que o seu portão de admissão faz que ele não faz."
+  },
+  {
+   "key": "gmtp2025",
+   "acao": "Anote se o GMTP precisa da pergunta. Se precisar, como você geraria as perguntas na admissão?"
+  },
+  {
+   "key": "chen2024agentpoison",
+   "acao": "Liste o que muda quando o alvo é a memória de um agente, e não a base de um RAG."
+  },
+  {
+   "key": "trustrag2025",
+   "acao": "Anote o que o TrustRAG supõe sobre a proporção de documentos envenenados no top-K."
+  },
+  {
+   "key": "robustrag2024",
+   "acao": "Escreva por que a garantia do RobustRAG cai se o atacante for maioria num tema pouco coberto."
   }
  ],
  "llminjection": {

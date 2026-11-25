@@ -10,9 +10,9 @@
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **197** | **36** | **33** | **56** | **38** | **13** |
+| **204** | **36** | **34** | **56** | **39** | **13** |
 
-Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 197, 93 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
+Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 204, 100 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
 
 ## O que há aqui
 
@@ -25,11 +25,15 @@ Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **
 | Catálogo por tipo de estudo | [`docs/CATALOGO.md`](docs/CATALOGO.md) |
 | Análise de hipóteses concorrentes, indicadores, cenários e julgamentos com linguagem estimativa | [`docs/HIPOTESES.md`](docs/HIPOTESES.md) |
 | Recorte brasileiro: cibercrime financeiro, eleições de 2026, lusofonia | [`docs/BRASIL.md`](docs/BRASIL.md) |
-| Agenda: 33 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
+| Agenda: 34 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
 | Registro de conferência e correções | [`docs/CONFERENCIA.md`](docs/CONFERENCIA.md) |
 | Atores com rótulos de fornecedor preservados | [`docs/ATORES.md`](docs/ATORES.md) |
 | Pautas para episódios | [`docs/PAUTAS.md`](docs/PAUTAS.md) |
 | Experimento de brinquedo: dose-resposta de envenenamento num RAG BM25 | [`scripts/dose_resposta.py`](scripts/dose_resposta.py) |
+
+## Defesa na admissão
+
+Quase toda defesa de RAG publicada age na recuperação ou na geração, e precisa conhecer a pergunta. Esta linha estuda também o portão **antes da indexação**: decidir se um lote de CTI entra na base que alimenta o assistente de SOC (RQ27). Leitura central no site (filtro “Admissão e ingestão de CTI”) e em [docs/LEITURA.md](docs/LEITURA.md).
 
 ## A tese, em uma linha
 
