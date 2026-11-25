@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "Se usar este material, cite assim."
-title: "PoisonedAI: alucinação e envenenamento em IA para OSINT e inteligência de ameaças"
+title: "poisonAI: alucinação e envenenamento em IA para OSINT e inteligência de ameaças"
 type: dataset
 authors:
   - family-names: "Lourenço"
     given-names: "Deivison"
-repository-code: "https://github.com/Ridd1kulusC0d3r/PoisonedAI"
-url: "https://ridd1kulusc0d3r.github.io/PoisonedAI/"
+repository-code: "https://github.com/Ridd1kulusC0d3r/poisonAI"
+url: "https://ridd1kulusc0d3r.github.io/poisonAI/"
 date-released: 2026-11-25
 license: Apache-2.0
 keywords: [OSINT, "threat intelligence", "data poisoning", "prompt injection", "hallucination", "LLM grooming", Brasil]
