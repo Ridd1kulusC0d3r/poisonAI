@@ -1,10 +1,10 @@
-# Poço Envenenado
+# PoisonedAI
 
 **Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
 
-**[Abrir o site](https://ridd1kulusc0d3r.github.io/PocoEnvenenado/)** · [Comece aqui](COMECE-AQUI.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Abrir o site](https://ridd1kulusc0d3r.github.io/PoisonedAI/)** · [Comece aqui](COMECE-AQUI.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
 
-> “Envenenar o poço” é desacreditar a fonte antes que alguém beba dela. Aqui o problema é o inverso e o mesmo: o que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada.
+> O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
 
 ## Em números
 
