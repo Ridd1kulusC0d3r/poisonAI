@@ -6,6 +6,10 @@
 
 > O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
 
+## Laboratório
+
+No site, a aba **Laboratório** deixa envenenar uma base de 320 relatórios sintéticos e ver a atribuição virar de APT-C para APT-B. Dá para ligar um **portão de admissão** (proveniência, idade da fonte, corroboração, rajada, linguagem dirigida à IA) e ver o que ele barra e o que ele rejeita sem querer. Tudo roda no navegador, sem texto de ataque real.
+
 ## Em números
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
