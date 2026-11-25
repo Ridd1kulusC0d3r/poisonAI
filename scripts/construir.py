@@ -44,6 +44,38 @@ def bib(it):
     return f"@{typ}{{{it['key']},\n" + ",\n".join(f) + "\n}\n"
 
 
+NUCLEO = {"aluc", "valid", "poison", "rag", "mem", "inj", "soc", "osintia", "humano", "desinf", "br"}
+NOTA = {"Conferido na fonte": "A", "Preprint conferido": "A", "Dossiê A": "A", "Conferido via cobertura": "B",
+        "Dossiê B": "B", "Alegação (C)": "D", "A conferir": "—"}
+PESO_NOTA = {"A": 10, "B": 6, "C": 4, "D": 2, "—": 0}
+PESO_REV = {"Revisado por pares": 10, "Preprint": 6, "Literatura cinzenta": 3}
+
+
+def nota_fonte(it):
+    """Escala do LLmInjection (A a E). Cobertura de imprensa vale C."""
+    n = it.get("grade") or NOTA[it["st"]]
+    if n == "B" and it["ft"] == "IM":
+        n = "C"
+    return n
+
+
+def score_leitura(it, peso, refs, trilha):
+    """Score de leitura de 0 a 100. A fórmula está em METODOLOGIA.md."""
+    rec = 10 if it["ano"] >= 2026 else 8 if it["ano"] == 2025 else 6 if it["ano"] == 2024 else 4 if it["ano"] >= 2021 else 2
+    partes = {
+        "evidencia": peso * 6,
+        "nucleo": min(len(NUCLEO & set(it["tags"])), 3) * 5,
+        "conexoes": min(refs, 5) * 3,
+        "verificacao": PESO_NOTA[it["nota_fonte"]],
+        "revisao": PESO_REV[it["pr"]],
+        "recencia": rec,
+        "trilha": 10 if it["key"] in trilha else 0,
+    }
+    total = sum(partes.values())
+    classe = "Leia primeiro" if total >= 70 else "Leia depois" if total >= 50 else "Consulta"
+    return total, classe, partes
+
+
 def montar():
     tax = ler("taxonomia.json")
     itens_brutos = ler("itens.json")
@@ -105,6 +137,16 @@ def montar():
                 erros.append(f"referência a item inexistente: {k}")
     for q in agenda["qps"]:
         q["itens"] = agenda["qp_itens"][q["id"]]
+
+    contagem = {}
+    for ks in refs:
+        for k in ks:
+            contagem[k] = contagem.get(k, 0) + 1
+    trilha = {t["key"] for t in rec["trilha"]}
+    pesos = {t["n"]: t["p"] for t in tax["tipos_de_estudo"]}
+    for it in itens:
+        it["nota_fonte"] = nota_fonte(it)
+        it["score"], it["classe"], it["score_partes"] = score_leitura(it, pesos[it["met"]], contagem.get(it["key"], 0), trilha)
 
     payload = dict(
         items=itens, eixos=tax["eixos"], ft=tax["tipos_de_fonte"], topics=tax["temas"], topicOrder=tax["ordem_temas"],

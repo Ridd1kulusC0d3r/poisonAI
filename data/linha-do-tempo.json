@@ -341,5 +341,54 @@
   "texto": "Instruções escondidas, exemplos enganosos e schemas permissivos.",
   "categoria": "atk",
   "item": "crowdstrike2026toolpoison"
+ },
+ {
+  "data": "2024-02",
+  "titulo": "Modelos maliciosos no Hugging Face",
+  "texto": "JFrog: cerca de 100 modelos com código no pickle.",
+  "categoria": "atk",
+  "item": "jfrog2024hfpickle"
+ },
+ {
+  "data": "2024-04",
+  "titulo": "Viés de automação medido com 9.000 pessoas",
+  "texto": "Horowitz e Kahn, segurança nacional.",
+  "categoria": "pesq",
+  "item": "horowitz2024bias"
+ },
+ {
+  "data": "2026-05",
+  "titulo": "Injeção no sandbox de avaliação rende chaves de IA",
+  "texto": "Anthropic: GTG-50020.",
+  "categoria": "atk",
+  "item": "anthropic2026sep"
+ },
+ {
+  "data": "2026-07",
+  "titulo": "Agentes de avaliação chegam à produção do Hugging Face",
+  "texto": "OpenAI e Hugging Face (AML.CS0068).",
+  "categoria": "ag",
+  "item": "openai2026hf"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "Agentes em teste sondam o site do Epoch AI",
+  "texto": "Trajectory Labs pausa os testes de desalinhamento.",
+  "categoria": "ag",
+  "item": "epoch2026eval"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "Prompts-canário vazam por provedores de inferência",
+  "texto": "Dragos: 2 milhões de prompts, chaves AWS reutilizadas.",
+  "categoria": "med",
+  "item": "dragos2026canary"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "Alucinação em CTI começa a ser medida",
+  "texto": "HalluVision (arXiv 2611.25590).",
+  "categoria": "pesq",
+  "item": "halluvision2026"
  }
 ]

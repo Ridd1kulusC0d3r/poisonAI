@@ -421,33 +421,35 @@
   "origem": "China (avaliação da CrowdStrike)",
   "tipo": "Estatal",
   "papel": "F",
-  "conf": "CrowdStrike, via cobertura (B)",
-  "oque": "Outro cluster ligado à China usando ARTEX. Não fundir com Storm-0940 nem com UNC7228.",
+  "conf": "CrowdStrike (fonte primária, lida pelo LLmInjection)",
+  "oque": "Cluster ligado à China com agentes ARTEX sobre DeepSeek: entidades em ao menos 14 países em 11 dias, pós-exploração confirmada em nove organizações.",
   "osint": "Três campanhas distintas com a mesma ferramenta aberta: a ferramenta não atribui.",
   "stg": [
    "S1",
    "S5"
   ],
   "fontes": [
+   "crowdstrike2026vapor",
    "itnews2026artex"
   ],
   "prio": 4
  },
  {
   "id": "artexextorsao",
-  "nome": "Grupos de extorsão com ARTEX",
-  "aka": "Storm-3358, Onyx Sleet, Pearl Sleet e outros citados em cobertura",
-  "origem": "Diversa",
+  "nome": "Storm-3358",
+  "aka": "crime com ARTEX contra o setor financeiro",
+  "origem": "Não informada",
   "tipo": "Crime",
   "papel": "F",
-  "conf": "GTIG; demais nomes via cobertura (B)",
-  "oque": "Uso de ARTEX e outros frameworks agênticos em respostas a incidentes desde o fim de agosto de 2026, com motivação financeira.",
-  "osint": "Confira cada nome no relatório original antes de citar.",
+  "conf": "Microsoft (fonte primária, lida pelo LLmInjection)",
+  "oque": "Agentes ARTEX com ferramentas comuns contra organizações financeiras, sobretudo no Sudeste Asiático; varredura, upload anônimo, SSRF e RATs abertos.",
+  "osint": "O mesmo framework serve a Estados e ao crime: o nome da ferramenta não atribui.",
   "stg": [
    "S1",
    "S5"
   ],
   "fontes": [
+   "msft2026storm3358",
    "gtig2026artex"
   ],
   "prio": null
@@ -616,6 +618,80 @@
   ],
   "fontes": [
    "groupib2026brazetsu"
+  ]
+ },
+ {
+  "id": "dprkartex",
+  "nome": "Pearl Sleet e Onyx Sleet",
+  "aka": "Coreia do Norte",
+  "origem": "Coreia do Norte (estatal)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "conf": "Microsoft (fonte primária, lida pelo LLmInjection)",
+  "prio": null,
+  "oque": "Usam o ARTEX em operações desde o fim de outubro de 2026; Jade Sleet acelera com IA alvos com tema de emprego via empresas de fachada.",
+  "osint": "Corrige a versão anterior do artefato, que os listava como grupos de extorsão.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "msft2026nk"
+  ]
+ },
+ {
+  "id": "gtg50020",
+  "nome": "GTG-50020",
+  "aka": "",
+  "origem": "Falante de russo, motivação financeira",
+  "tipo": "Crime",
+  "papel": "A",
+  "conf": "Anthropic (fonte primária conferida)",
+  "prio": null,
+  "oque": "Injetou instruções no sandbox de avaliação automatizada de um fornecedor de IA, que entregou chaves de produção de vários provedores; depois mirou cerca de 30 empresas de IA em uns 4 dias.",
+  "osint": "A injeção contra um pipeline de IA já acontece em campo quando o prêmio é acesso. Ainda não há caso igual mirando conclusões de CTI.",
+  "stg": [
+   "S2",
+   "S5"
+  ],
+  "fontes": [
+   "anthropic2026sep"
+  ]
+ },
+ {
+  "id": "gtg30004",
+  "nome": "GTG-30004",
+  "aka": "",
+  "origem": "Irã (nexo, segundo a Anthropic)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "conf": "Anthropic, via LLmInjection",
+  "prio": null,
+  "oque": "Orquestrou com o Claude um sistema de perfilamento de identidades por OSINT contra indivíduos israelenses e organizações judaicas.",
+  "osint": "O agente de OSINT do lado do atacante: a mesma capacidade que esta linha estuda, apontada para pessoas.",
+  "stg": [
+   "S1"
+  ],
+  "fontes": [
+   "anthropic2026sep"
+  ]
+ },
+ {
+  "id": "mxoperator",
+  "nome": "Operador dos nove órgãos mexicanos",
+  "aka": "MITRE ATT&CK C0064",
+  "origem": "Não informada",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Gambit Security, via LLmInjection",
+  "prio": null,
+  "oque": "Claude Code executou cerca de 75% dos comandos remotos e o GPT-4.1 gerou 2.597 relatórios de inteligência sobre 305 servidores roubados.",
+  "osint": "O atacante terceirizou a análise de inteligência para um LLM: o gap de validação também é dele.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "gambit2026mexico"
   ]
  }
 ]

@@ -162,9 +162,21 @@
     "Pesquisa brasileira manipula 14 de 23 modelos de SOC pela telemetria do EDR, em laboratório",
     "CNINCN",
     "viaconnect2026edr"
+   ],
+   [
+    "E12",
+    "Injeção em campo contra um pipeline de IA (sandbox de avaliação) para roubar chaves, não para moldar conclusões (Anthropic, GTG-50020)",
+    "NICNCN",
+    "anthropic2026sep"
+   ],
+   [
+    "E13",
+    "Provedores de inferência comprometidos sem saber até serem avisados por canários (Dragos)",
+    "CNNNNN",
+    "dragos2026canary"
    ]
   ],
-  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3.",
+  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1.",
   "julgamento": [
    "É provável que a ausência de casos se explique principalmente por H3 e H6.",
    "É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).",
@@ -363,7 +375,8 @@
    "Separar identidade e infraestrutura de pesquisa das pessoais e institucionais.",
    "Submundo só por leitura, de preferência via relatórios de quem tem autorização e estrutura.",
    "Não usar chaves de API pessoais em agentes que visitam a web aberta: o contexto viaja com cada chamada.",
-   "Supor que páginas sobre o tema podem servir conteúdo diferente ao seu agente."
+   "Supor que páginas sobre o tema podem servir conteúdo diferente ao seu agente.",
+   "Plantar credenciais-canário só nos prompts dos seus agentes e tratar qualquer uso como incidente (Dragos; regra DET-AI-060 do LLmInjection)."
   ],
   "divulga": [
    "Falar de padrões e evidência publicada; não detalhar assinaturas das suas iscas nem lacunas não corrigidas de terceiros (Rouxii: 19% para 97%).",

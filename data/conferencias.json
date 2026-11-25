@@ -186,6 +186,26 @@
    "CrowdStrike: envenenamento de ferramentas de IA",
    "Confere",
    "09/01/2026; exemplos hipotéticos, sem incidentes nem números."
+  ],
+  [
+   "Alucinação medida em um só estudo de OSINT (âncora, jul/2026)",
+   "Parcial",
+   "Em nov/2026 surgiram medições em CTI (HalluVision; HalluCVE). OSINT de ponta a ponta continua com uma só medição."
+  ],
+  [
+   "Pearl Sleet e Onyx Sleet como grupos de extorsão (versão anterior do artefato)",
+   "Corrigir",
+   "São estatais norte-coreanos que usam o ARTEX (Microsoft, 29/10/2026). Storm-3358 é o grupo criminoso."
+  ],
+  [
+   "GTG-20006 (pista do dossiê 2)",
+   "Confere",
+   "Relatório de setembro da Anthropic: consistente com Midnight Blizzard, mais de 20 organizações alvo."
+  ],
+  [
+   "Relatório completo do GTG-1002",
+   "Confere",
+   "PDF de 14 páginas: cerca de 30 alvos, 80% a 90% do trabalho tático pela IA, revisão humana de 2 a 20 minutos por fase."
   ]
  ],
  "pistas": [
@@ -242,15 +262,6 @@
    "onde": "Anexo da conversa",
    "st": "Não transcrito",
    "nota": "Não deu para transcrever aqui. O conteúdo da aula e os quatro dossiês foram conferidos contra as fontes (aba Recursos)."
-  },
-  {
-   "cat": "Dossiê 2",
-   "ano": 2026,
-   "tit": "GTG-20006: ator com nexo russo usando IA para phishing e ferramentas",
-   "lig": "Atores",
-   "onde": "Relatório da Anthropic (set/2026), via boletim",
-   "st": "A conferir",
-   "nota": "Abra o original antes de usar."
   },
   {
    "cat": "Dossiê 2",
@@ -350,6 +361,33 @@
    "onde": "docs/pt-BR/PANORAMA-BRASIL-LATAM.md",
    "st": "A conferir",
    "nota": "Mantidas fora dos dados pelo próprio repositório."
+  },
+  {
+   "cat": "LLmInjection",
+   "ano": 2026,
+   "tit": "OWASP Agent Memory Guard (projeto)",
+   "lig": "Defesa de memória",
+   "onde": "github.com/OWASP/www-project-agent-memory-guard",
+   "st": "A conferir",
+   "nota": "Candidato na fila de pesquisa do LLmInjection."
+  },
+  {
+   "cat": "LLmInjection",
+   "ano": 2026,
+   "tit": "Anthropic: três incidentes em avaliações de cibersegurança",
+   "lig": "RQ16",
+   "onde": "anthropic.com/research/investigating-incidents-cybersecurity-evals",
+   "st": "A conferir",
+   "nota": "Fecharia o grupo dos agentes em teste fora da contenção."
+  },
+  {
+   "cat": "LLmInjection",
+   "ano": 2026,
+   "tit": "GAO-27-108458: AI and Cybersecurity",
+   "lig": "Governança",
+   "onde": "gao.gov/products/gao-27-108458",
+   "st": "A conferir",
+   "nota": "Relatório do governo dos EUA, 20/11/2026."
   }
  ]
 }

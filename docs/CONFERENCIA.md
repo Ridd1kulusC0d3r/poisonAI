@@ -51,6 +51,10 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Viaconnect: 14 de 23 modelos manipulados pela telemetria do EDR | Confere via cobertura | AI Agent Security Summit, 21/10/2026; a palestra e o artigo não foram lidos. |
 | Viaconnect: só cobertura de imprensa | Corrigir | A agenda oficial da Zenity Labs confirma o resumo: Elastic Security sem modificação; linha de comando, nome de processo e User-Agent; 14 de 23 modelos. |
 | CrowdStrike: envenenamento de ferramentas de IA | Confere | 09/01/2026; exemplos hipotéticos, sem incidentes nem números. |
+| Alucinação medida em um só estudo de OSINT (âncora, jul/2026) | Parcial | Em nov/2026 surgiram medições em CTI (HalluVision; HalluCVE). OSINT de ponta a ponta continua com uma só medição. |
+| Pearl Sleet e Onyx Sleet como grupos de extorsão (versão anterior do artefato) | Corrigir | São estatais norte-coreanos que usam o ARTEX (Microsoft, 29/10/2026). Storm-3358 é o grupo criminoso. |
+| GTG-20006 (pista do dossiê 2) | Confere | Relatório de setembro da Anthropic: consistente com Midnight Blizzard, mais de 20 organizações alvo. |
+| Relatório completo do GTG-1002 | Confere | PDF de 14 páginas: cerca de 30 alvos, 80% a 90% do trabalho tático pela IA, revisão humana de 2 a 20 minutos por fase. |
 
 
 ## Pistas ainda não promovidas
@@ -63,7 +67,6 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Citado na revisão | — | Yurtalan: LLMs locais de pesos abertos em OSINT policial (ref. [14]) | Referência [14] | Argumento on-premise; a revisão cita uma decisão italiana de proteção de dados como contexto. |
 | Framework | 2025 | OWASP Top 10 for Agentic Applications | OWASP (dez/2025, segundo a Bugcrowd) | Lista própria para agentes, irmã do Top 10 de LLM. |
 | Material da aula | 2026 | Áudio “Como hackers envenenam IAs de cibersegurança” (23 min) | Anexo da conversa | Não deu para transcrever aqui. O conteúdo da aula e os quatro dossiês foram conferidos contra as fontes (aba Recursos). |
-| Dossiê 2 | 2026 | GTG-20006: ator com nexo russo usando IA para phishing e ferramentas | Relatório da Anthropic (set/2026), via boletim | Abra o original antes de usar. |
 | Dossiê 2 | 2026 | TRM Labs: índice de adoção de IA no cripto-crime (54/100 em 2026) | TRM Labs (ago/2026), via cobertura | Plataforma onion DIG virou chat sem censura. |
 | Dossiê 2 | 2026 | Linha de vermes de prompt: AgentWorm, Zombie Agents, Mind Viruses, Share-Borne AI Virus (arXiv 2609.35576) | arXiv | Laboratório; nenhum verme confirmado em campo. |
 | Dossiê 2 | 2026 | Exposição: 492 servidores MCP sem autenticação (Trend Micro) | Cobertura secundária | Mais dezenas de milhares de instâncias OpenClaw expostas no início de 2026. |
@@ -75,16 +78,19 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Dossiê 5 | 2026 | Relatório completo da Kaspersky com ransomware, phishing e participação regional | Kaspersky | O comunicado não traz esses números. |
 | LLmInjection | 2026 | Ler a palestra ou artigo da Viaconnect (EDR → SOC com IA) | Zenity AI Agent Security Summit 2026 | Possível parceria de replicação no Brasil. |
 | LLmInjection | 2026 | Pistas do panorama Brasil ainda sem fonte primária: Serasa e Banco Central sobre golpes com Pix e deepfake; PixRevolution (Recorded Future) | docs/pt-BR/PANORAMA-BRASIL-LATAM.md | Mantidas fora dos dados pelo próprio repositório. |
+| LLmInjection | 2026 | OWASP Agent Memory Guard (projeto) | github.com/OWASP/www-project-agent-memory-guard | Candidato na fila de pesquisa do LLmInjection. |
+| LLmInjection | 2026 | Anthropic: três incidentes em avaliações de cibersegurança | anthropic.com/research/investigating-incidents-cybersecurity-evals | Fecharia o grupo dos agentes em teste fora da contenção. |
+| LLmInjection | 2026 | GAO-27-108458: AI and Cybersecurity | gao.gov/products/gao-27-108458 | Relatório do governo dos EUA, 20/11/2026. |
 
 
 ## Status por trabalho
 
 | Status | Trabalhos |
 |---|---|
-| Conferido na fonte | 53 |
-| Dossiê A | 47 |
-| Dossiê B | 17 |
-| A conferir | 14 |
-| Preprint conferido | 13 |
-| Conferido via cobertura | 7 |
+| Dossiê A | 69 |
+| Conferido na fonte | 60 |
+| Preprint conferido | 25 |
+| A conferir | 18 |
+| Dossiê B | 16 |
+| Conferido via cobertura | 8 |
 | Alegação (C) | 1 |

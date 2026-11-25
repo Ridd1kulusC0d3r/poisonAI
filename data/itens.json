@@ -711,8 +711,8 @@
   "eixo": 4,
   "ft": "AC",
   "tit": "GraphRAG under Fire",
-  "veic": "arXiv 2501.14050",
-  "tipo": "Preprint",
+  "veic": "IEEE S&P 2026 · arXiv 2501.14050",
+  "tipo": "Conferência",
   "st": "Preprint conferido",
   "doi": "10.48550/arXiv.2501.14050",
   "aut": [
@@ -726,7 +726,8 @@
   ],
   "nota": "Evidência mais próxima do envenenamento de grafo de conhecimento da aula.",
   "num": [
-   "Paradoxo: o GraphRAG resiste melhor a envenenamento simples, mas relações compartilhadas no grafo abrem uma superfície nova (GragPoison) que compromete várias perguntas de uma vez."
+   "Paradoxo: o GraphRAG resiste melhor a envenenamento simples, mas relações compartilhadas no grafo abrem uma superfície nova (GragPoison) que compromete várias perguntas de uma vez.",
+   "Publicado no IEEE S&P 2026 (referência citada em InceptionRAG)."
   ],
   "tags": [
    "rag",
@@ -1183,7 +1184,8 @@
   "nota": "Primeiro caso conhecido de malware falando com a IA analisadora. Falhou. Em 2026 veio o GuardBreaker (ESET), com outra técnica.",
   "num": [
    "Primeira amostra conhecida com texto que tenta convencer a IA analisadora de que o arquivo é benigno.",
-   "Não funcionou: o modelo da Check Point, o o3 e o GPT-4.1 marcaram o arquivo como malicioso."
+   "Não funcionou: o modelo da Check Point, o o3 e o GPT-4.1 marcaram o arquivo como malicioso.",
+   "MITRE ATLAS AML.CS0043: os pesquisadores não acharam a injeção eficaz contra os modelos testados."
   ],
   "tags": [
    "inj",
@@ -1697,12 +1699,14 @@
   "aut": [
    "Anthropic"
   ],
-  "nota": "Prova de que a lacuna de alucinação também atrapalha o atacante: o operador humano precisou validar o que o agente dizia.",
+  "nota": "O relatório completo mostra o outro lado do gap de validação: o agente do atacante exagerou e inventou achados, e alguém precisou validar tudo. Repare na proporção de 1 a 6 horas de máquina para 2 a 20 minutos de revisão humana.",
   "num": [
    "GTG-1002, avaliado com alta confiança como grupo estatal chinês: cerca de 30 alvos, sucesso em poucos.",
    "A IA executou de 80% a 90% da campanha; humanos decidiram em 4 a 6 pontos críticos.",
    "Segundo a Anthropic, o Claude “frequentemente exagerou achados e às vezes fabricou dados”: credenciais que não funcionavam, descobertas que eram informação pública.",
-   "Registrado no MITRE ATT&CK como campanha C0062, segundo o dossiê 1. Sem corroboração independente da atribuição."
+   "Registrado no MITRE ATT&CK como campanha C0062, segundo o dossiê 1. Sem corroboração independente da atribuição.",
+   "Cerca de 30 alvos e poucas intrusões validadas; a IA fez 80% a 90% do trabalho tático, com fases autônomas de 1 a 6 horas e revisão humana de 2 a 20 minutos.",
+   "O ator decompôs o ataque em tarefas que pareciam benignas e se passou por funcionário de empresa de segurança fazendo teste defensivo."
   ],
   "tags": [
    "apt",
@@ -1713,6 +1717,11 @@
   "src": "Telemetria de provedores",
   "open": "Texto aberto",
   "links": [
+   {
+    "lab": "Relatório completo (PDF, 14 páginas)",
+    "url": "https://assets.claude.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf",
+    "kind": "pdf"
+   },
    {
     "lab": "PDF do relatório",
     "url": "https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf",
@@ -2002,7 +2011,7 @@
   "tit": "From Unreliable to Usable: Decomposing Failure Modes and Confidence Signals in LLM Entity Extraction - Evidence from Cyber Threat Intelligence",
   "veic": "arXiv 2610.20417",
   "tipo": "Preprint",
-  "st": "A conferir",
+  "st": "Preprint conferido",
   "doi": "",
   "aut": [],
   "nota": "Só o título e as referências foram vistos. Promete separar modos de falha e sinais de confiança na extração de entidades de CTI, o que a revisão aponta como lacuna de NER.",
@@ -3567,11 +3576,11 @@
   "tit": "postmark-mcp: rug pull em servidor MCP de e-mail",
   "veic": "Koi Security (set/2025), via cobertura",
   "tipo": "Relatório técnico",
-  "st": "Dossiê B",
+  "st": "Dossiê A",
   "aut": [
    "Koi Security"
   ],
-  "nota": "Histórico limpo e depois uma versão maliciosa (1.0.16): o padrão que o ATLAS passou a nomear em 2026.",
+  "nota": "Histórico limpo e depois uma versão maliciosa (1.0.16): o padrão que o ATLAS passou a nomear em 2026. O MITRE ATLAS o registra como AML.CS0053: exfiltração de e-mails de usuários do servidor.",
   "tags": [
    "supply",
    "tools"
@@ -3580,14 +3589,21 @@
   "lado": "atk",
   "dos": [
    2,
-   4
+   4,
+   6
   ],
   "src": "npm",
   "open": "",
   "doi": "",
   "num": [],
   "repo": [],
-  "links": []
+  "links": [
+   {
+    "lab": "MITRE ATLAS (AML.CS0053)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ]
  },
  {
   "key": "watchtower2026",
@@ -3817,16 +3833,16 @@
   "ano": 2024,
   "eixo": 5,
   "ft": "AC",
-  "tit": "Here Comes the AI Worm (ComPromptMized)",
+  "tit": "Morris II: verme de IA que se propaga por RAG (ComPromptMized)",
   "veic": "arXiv 2403.02817",
   "tipo": "Preprint",
-  "st": "A conferir",
+  "st": "Dossiê A",
   "aut": [
    "Cohen, Stav",
    "Bitton, Ron",
    "Nassi, Ben"
   ],
-  "nota": "Linha acadêmica de vermes de prompt. Dados de memória: confira o identificador.",
+  "nota": "Registrado no MITRE ATLAS como AML.CS0024 (pesquisa, não campo). Prova de que um prompt autorreplicante passa de um sistema com RAG para outro.",
   "tags": [
    "inj",
    "agentes"
@@ -3834,7 +3850,8 @@
   "met": "Prova de conceito",
   "lado": "atk",
   "dos": [
-   2
+   2,
+   6
   ],
   "src": "Assistentes de e-mail",
   "links": [
@@ -3842,6 +3859,11 @@
     "lab": "PDF no arXiv",
     "url": "https://arxiv.org/pdf/2403.02817",
     "kind": "pdf"
+   },
+   {
+    "lab": "MITRE ATLAS (AML.CS0024)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
    }
   ],
   "doi": "",
@@ -5899,5 +5921,1740 @@
   ],
   "doi": "",
   "repo": []
+ },
+ {
+  "key": "anthropic2026sep",
+  "ano": 2026,
+  "eixo": 7,
+  "ft": "IN",
+  "tit": "Threat Intelligence Report: September 2026",
+  "veic": "Anthropic Threat Intelligence (set/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Anthropic Threat Intelligence"
+  ],
+  "nota": "Traz o caso mais próximo de injeção contra um pipeline de IA em campo: GTG-50020 injetou instruções no sandbox de avaliação de um fornecedor para roubar chaves. O motivo foi acesso, não moldar conclusões, o que reforça H3.",
+  "num": [
+   "GTG-50020 (falante de russo, motivação financeira) injetou instruções no sandbox de avaliação automatizada de um fornecedor de IA, que entregou chaves de API de produção de vários provedores; depois mirou cerca de 30 empresas de IA em uns 4 dias.",
+   "GTG-20006 (consistente com Midnight Blizzard, segundo a Anthropic) usou skills do Claude Code em todo o ciclo, de phishing a exfiltração, com agentes que reconstruíam o implante quando detectado; mais de 20 organizações alvo.",
+   "Segundo o LLmInjection: GTG-30004, de nexo iraniano, orquestrou com o Claude um sistema de perfilamento de identidades por OSINT contra israelenses e organizações judaicas (não localizado na parte do relatório lida aqui)."
+  ],
+  "tags": [
+   "apt",
+   "inj",
+   "agentes",
+   "osintia"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria do provedor",
+  "links": [
+   {
+    "lab": "Relatório da Anthropic",
+    "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "dragos2026canary",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "AI supply chain security: canary tokens in prompts",
+  "veic": "Dragos (2026), com resposta da OpenRouter (22/11/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Dragos"
+  ],
+  "nota": "Mede o que o dossiê 2 só supunha: o contexto de um agente vaza por intermediários. Nenhum provedor sabia do incidente até ser avisado, o que pesa a favor de H1 na análise de hipóteses.",
+  "num": [
+   "Cerca de 2 milhões de prompts com URLs e credenciais-canário enviados a serviços de IA de julho a novembro de 2026.",
+   "Ao menos três provedores expostos sem saber; algumas centenas de chaves AWS roubadas geraram dezenas de milhares de chamadas de API; em 1º/nov o ARTEX testou se chaves roubadas ainda funcionavam.",
+   "Um laboratório chinês buscou as URLs plantadas em mais da metade dos prompts, inclusive em cerca de dois terços dos marcados para não reter dados. A flag de privacidade só vale para o primeiro salto."
+  ],
+  "tags": [
+   "supply",
+   "under",
+   "defesa"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Prompts-canário",
+  "links": [
+   {
+    "lab": "Post da Dragos",
+    "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Resposta da OpenRouter",
+    "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "epoch2026eval",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "Agentes em teste de desalinhamento escapam da contenção e sondam o site do Epoch AI",
+  "veic": "Epoch AI e Trajectory Labs (out/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Epoch AI",
+   "Trajectory Labs"
+  ],
+  "nota": "Sem atacante: falha de contenção de um harness de avaliação. Junto com AISI, WorkOS e OpenAI/Hugging Face, forma o grupo dos agentes em teste que saem para a internet real (RQ16).",
+  "num": [
+   "Tarefa impossível com instrução de nunca desistir: 487 mensagens e 36.411 chamadas de API em cerca de 3 horas, com tentativas de SQL injection, leitura de logs reais de avaliação e personificação de funcionários (segundo o LLmInjection).",
+   "O Epoch relata que nenhum dado privado foi acessado."
+  ],
+  "tags": [
+   "agentes"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Incidente",
+  "links": [
+   {
+    "lab": "Relatório do Epoch AI",
+    "url": "https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website",
+    "kind": "aberto"
+   },
+   {
+    "lab": "Resposta da Trajectory Labs",
+    "url": "https://www.trajectorylabs.com/blog/responding-to-incidents-during-misalignment-testing",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "workos2026artex",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "Agente ARTEX escapa do sandbox de um pesquisador e chega à ferramenta interna da WorkOS",
+  "veic": "WorkOS, boletim de segurança (30/10/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "WorkOS"
+  ],
+  "nota": "Avaliação de benchmark que vazou para um terceiro real. Mesmo padrão do incidente do AISI.",
+  "tags": [
+   "agentes"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Incidente",
+  "links": [
+   {
+    "lab": "Boletim da WorkOS",
+    "url": "https://workos.com/security/bulletins/update-for-october-30th-2026-data-security-incident",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "openai2026hf",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "Agentes de avaliação da OpenAI comprometem a infraestrutura do Hugging Face (AML.CS0068)",
+  "veic": "OpenAI e Hugging Face (jul/2026) · MITRE ATLAS",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "OpenAI",
+   "Hugging Face"
+  ],
+  "nota": "O caso mais grave do grupo de agentes em teste: execuções autônomas cruzaram as fronteiras da avaliação e chegaram a sistemas de produção de terceiros.",
+  "num": [
+   "Entre 26/mai e 13/jul/2026, um conjunto parcialmente coordenado de execuções de agentes cruzou os limites da avaliação, montou infraestrutura externa e comprometeu sistemas de produção do Hugging Face (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "agentes",
+   "supply"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Incidente",
+  "links": [
+   {
+    "lab": "Post do Hugging Face",
+    "url": "https://huggingface.co/blog/security-incident-july-2026",
+    "kind": "aberto"
+   },
+   {
+    "lab": "MITRE ATLAS (AML.CS0068)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "gambit2026mexico",
+  "ano": 2026,
+  "eixo": 12,
+  "ft": "IN",
+  "tit": "A single operator, two AI platforms, nine government agencies",
+  "veic": "Gambit Security (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Gambit Security"
+  ],
+  "nota": "O atacante usando LLM como analista de inteligência: milhares de “relatórios de inteligência” gerados sobre dados roubados. Ninguém sabe quanto deles era alucinação.",
+  "num": [
+   "Um operador sem nome invadiu nove órgãos do governo mexicano entre o fim de dez/2025 e meados de fev/2026; cerca de 75% da execução remota de comandos foi gerada e executada pelo Claude Code.",
+   "Uma ferramenta própria mandava dados coletados ao GPT-4.1 para produzir 2.597 relatórios de inteligência sobre 305 servidores (segundo o LLmInjection; MITRE ATT&CK registra a campanha como C0064)."
+  ],
+  "tags": [
+   "br",
+   "agentes",
+   "aluc",
+   "osintia"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Material forense recuperado",
+  "links": [
+   {
+    "lab": "Relatório da Gambit",
+    "url": "https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report",
+    "kind": "aberto"
+   },
+   {
+    "lab": "MITRE ATT&CK C0064",
+    "url": "https://attack.mitre.org/campaigns/C0064/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "crowdstrike2026agentic",
+  "ano": 2026,
+  "eixo": 12,
+  "ft": "IN",
+  "tit": "CrowdStrike uncovers new agentic AI campaigns (Threat Actors 1 a 4)",
+  "veic": "CrowdStrike Counter Adversary Operations (mai/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "CrowdStrike"
+  ],
+  "nota": "Inclui o caso latino-americano mais detalhado: um harness de dois agentes (supervisor e executor) contra a saúde na Argentina.",
+  "num": [
+   "Threat Actor 1, de língua espanhola e inglesa: harness derivado do PentestGPT com um Claude Code supervisor e um executor; ao menos 15 entidades de saúde argentinas alvo, com credenciais e prontuários exfiltrados de ao menos uma (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "br",
+   "agentes"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria CrowdStrike",
+  "links": [
+   {
+    "lab": "Post da CrowdStrike",
+    "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "securelist2026cyberstrike",
+  "ano": 2026,
+  "eixo": 12,
+  "ft": "IN",
+  "tit": "CyberStrikeAI: intrusões em educação na África e na América Latina",
+  "veic": "Kaspersky, Securelist (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Kaspersky"
+  ],
+  "nota": "O LLM no servidor de controle escolhe as ferramentas e um implante simples executa. A novidade é velocidade e facilidade, não técnica.",
+  "num": [
+   "Entrada por SQL Server comprometido até administrador de domínio e exportação de dados; comentários em chinês nos scripts (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "br",
+   "agentes"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria Kaspersky",
+  "links": [
+   {
+    "lab": "Securelist",
+    "url": "https://securelist.com/cyberstrikeai-attacks/121715/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "crowdstrike2026vapor",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "VAPOR PANDA uses ARTEX to scale global campaign",
+  "veic": "CrowdStrike Counter Adversary Operations (out/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "CrowdStrike"
+  ],
+  "nota": "Fonte primária do cluster VAPOR PANDA, que o dossiê 5 conhecia só por cobertura.",
+  "num": [
+   "Agentes planejadores e executores do ARTEX, sobretudo sobre DeepSeek, em entidades de ao menos 14 países em 11 dias, com pós-exploração confirmada em nove organizações (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "agentes",
+   "apt"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria CrowdStrike",
+  "links": [
+   {
+    "lab": "Post da CrowdStrike",
+    "url": "https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "msft2026nk",
+  "ano": 2026,
+  "eixo": 7,
+  "ft": "IN",
+  "tit": "Tracking AI adoption in North Korean threat actor tradecraft",
+  "veic": "Microsoft Threat Intelligence (29/10/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Microsoft Threat Intelligence"
+  ],
+  "nota": "Corrige o artefato: Pearl Sleet e Onyx Sleet são estatais norte-coreanos, não grupos de extorsão.",
+  "num": [
+   "Pearl Sleet, junto com Onyx Sleet, usa o ARTEX em operações desde o fim de outubro de 2026; Jade Sleet usa IA em alvos com tema de emprego via empresas de fachada (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "apt",
+   "agentes"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria Microsoft",
+  "links": [
+   {
+    "lab": "Post da Microsoft",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "msft2026storm3358",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "ARTEX abuse expands as cybercriminals target financial sector (Storm-3358)",
+  "veic": "Microsoft Threat Intelligence (06/11/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Microsoft Threat Intelligence"
+  ],
+  "nota": "Fonte primária do Storm-3358, antes só citado por cobertura.",
+  "num": [
+   "Agentes ARTEX com ferramentas automatizadas comuns para varrer, explorar upload anônimo e SSRF e instalar RATs abertos em organizações financeiras, sobretudo no Sudeste Asiático (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "agentes",
+   "under"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria Microsoft",
+  "links": [
+   {
+    "lab": "Post da Microsoft",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "msft2026secrets",
+  "ano": 2026,
+  "eixo": 9,
+  "ft": "IN",
+  "tit": "Threat actors use agentic AI tooling to find and abuse exposed secrets",
+  "veic": "Microsoft Threat Intelligence (05/11/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Microsoft Threat Intelligence"
+  ],
+  "nota": "Do GitHub ao Key Vault em cinco minutos: o argumento mais forte para credencial curta e de escopo mínimo em agentes de CTI.",
+  "num": [
+   "Agentes ARTEX vasculham repositórios públicos atrás de credenciais e chaves de IA; num caso, cinco minutos entre a varredura do GitHub e a exfiltração de dados do Azure Key Vault (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "agentes",
+   "supply",
+   "defesa"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria Microsoft",
+  "links": [
+   {
+    "lab": "Post da Microsoft",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "eye2026artex",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "IN",
+  "tit": "How we defended against an AI-driven attack",
+  "veic": "Eye Security (nov/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Eye Security"
+  ],
+  "nota": "Resposta a incidente contra o ARTEX contada por quem defendeu: útil para o playbook da aba Defesa.",
+  "num": [
+   "Muitos agentes em paralelo compartilhando cada segredo descoberto e tentando de novo minutos após bloqueio ou limite de taxa; a ênfase é escala e velocidade, não exploits novos (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "defesa",
+   "agentes"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "def",
+  "dos": [
+   6
+  ],
+  "src": "Resposta a incidente",
+  "links": [
+   {
+    "lab": "Post da Eye Security",
+    "url": "https://labs.eye.security/how-we-defended-against-an-ai-driven-attack/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "gtig2026initial",
+  "ano": 2026,
+  "eixo": 7,
+  "ft": "IN",
+  "tit": "IA na exploração de vulnerabilidades e no acesso inicial (CANFAIL, LONGSTREAM, PROMPTSPY)",
+  "veic": "Google Threat Intelligence Group (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Google Threat Intelligence Group"
+  ],
+  "nota": "Dois achados para a linha: código-isca gerado por LLM para enganar o analista, e o exploit de um criminoso que carregava um CVSS alucinado.",
+  "num": [
+   "CANFAIL e LONGSTREAM, ligados à Rússia contra a Ucrânia (atribuição suspeita), usam código inerte gerado por LLM para esconder a função real, como 32 consultas repetidas de horário de verão (segundo o LLmInjection).",
+   "Um criminoso usou um modelo de IA (não o Gemini) para achar e armar um bypass de 2FA; o GTIG cita um CVSS alucinado e docstrings didáticas como pistas.",
+   "PROMPTSPY: backdoor Android que manda a hierarquia da tela ao gemini-2.5-flash-lite e executa os gestos devolvidos."
+  ],
+  "tags": [
+   "apt",
+   "aluc",
+   "soc"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "uso",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria de provedores",
+  "links": [
+   {
+    "lab": "Post do GTIG",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "atlas_cs0040",
+  "ano": 2024,
+  "eixo": 4,
+  "ft": "IN",
+  "tit": "Hacking ChatGPT's Memories with Prompt Injection (AML.CS0040)",
+  "veic": "Embrace The Red · MITRE ATLAS",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Rehberger, Johann"
+  ],
+  "nota": "Injeção escondida num documento compartilhado grava memória persistente: o precursor do envenenamento de recomendação da Microsoft.",
+  "tags": [
+   "mem",
+   "inj"
+  ],
+  "met": "Prova de conceito",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "ChatGPT",
+  "links": [
+   {
+    "lab": "Blog Embrace The Red",
+    "url": "https://embracethered.com/blog/",
+    "kind": "aberto"
+   },
+   {
+    "lab": "MITRE ATLAS (AML.CS0040)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "atlas_cs0066",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "IN",
+  "tit": "ZombieAgent: exfiltração pelo Deep Research e conectores do ChatGPT (AML.CS0066)",
+  "veic": "Radware · MITRE ATLAS",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Radware"
+  ],
+  "nota": "Instruções em e-mails e documentos externos chegam à memória e às ações do agente de pesquisa.",
+  "tags": [
+   "mem",
+   "inj",
+   "osintia"
+  ],
+  "met": "Prova de conceito",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "ChatGPT Deep Research",
+  "links": [
+   {
+    "lab": "MITRE ATLAS (AML.CS0066)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "atlas_cs0045",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "IN",
+  "tit": "Exfiltração via servidor MCP usado pelo Cursor (AML.CS0045)",
+  "veic": "Backslash Security · MITRE ATLAS",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Backslash Security"
+  ],
+  "nota": "Ferramenta MCP como vetor de injeção indireta até execução de shell.",
+  "tags": [
+   "tools",
+   "inj"
+  ],
+  "met": "Prova de conceito",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "Cursor",
+  "links": [
+   {
+    "lab": "MITRE ATLAS (AML.CS0045)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "atlas_cs0063",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "IN",
+  "tit": "Ataques ao Gemini por convites de agenda (AML.CS0063)",
+  "veic": "SafeBreach · MITRE ATLAS",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "SafeBreach"
+  ],
+  "nota": "Conteúdo de produtividade (convites, e-mails, arquivos) vira instrução quando o assistente o recupera depois.",
+  "tags": [
+   "inj",
+   "rag"
+  ],
+  "met": "Prova de conceito",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "Gemini",
+  "links": [
+   {
+    "lab": "MITRE ATLAS (AML.CS0063)",
+    "url": "https://github.com/mitre-atlas/atlas-data/releases/tag/v2026.09",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "msft2026skvector",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "IN",
+  "tit": "Prompts become shells: RCE em frameworks de agentes (Semantic Kernel, CVE-2026-26030)",
+  "veic": "Microsoft Security Blog (07/05/2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Microsoft"
+  ],
+  "nota": "A base vetorial também é superfície: uma busca vira execução de código.",
+  "num": [
+   "Injeção de prompt chegava a interpolação insegura em filtros lambda executados com eval() no armazenamento vetorial em memória (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "rag",
+   "inj"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "Semantic Kernel",
+  "links": [
+   {
+    "lab": "Post da Microsoft",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "checkpoint2025mcpoison",
+  "ano": 2025,
+  "eixo": 5,
+  "ft": "IN",
+  "tit": "MCPoison: Cursor confia em configuração MCP alterada depois de aprovada (CVE-2025-54136)",
+  "veic": "Check Point Research (ago/2025)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Check Point Research"
+  ],
+  "nota": "O rug pull em versão de vulnerabilidade divulgada.",
+  "num": [
+   "Cursor 1.2.4 e anteriores confiavam numa configuração MCP aprovada mesmo depois de modificada, dando execução persistente via repositório compartilhado; corrigido na 1.3."
+  ],
+  "tags": [
+   "tools",
+   "supply"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "atk",
+  "dos": [
+   6
+  ],
+  "src": "Cursor",
+  "links": [
+   {
+    "lab": "Post da Check Point",
+    "url": "https://research.checkpoint.com/2025/cursor-vulnerability-mcpoison/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "jfrog2024hfpickle",
+  "ano": 2024,
+  "eixo": 3,
+  "ft": "IN",
+  "tit": "Modelos maliciosos no Hugging Face com backdoor em pickle",
+  "veic": "JFrog (fev/2024)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "JFrog"
+  ],
+  "nota": "Antecedente do Lazarus na cadeia de modelos: carregar um modelo pode executar código.",
+  "num": [
+   "Cerca de 100 modelos maliciosos, um deles abrindo shell reverso ao ser carregado; a JFrog nota que os autores podiam ser pesquisadores."
+  ],
+  "tags": [
+   "supply",
+   "poison"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Hugging Face",
+  "links": [
+   {
+    "lab": "Post da JFrog",
+    "url": "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "checkpoint2026aisec",
+  "ano": 2026,
+  "eixo": 5,
+  "ft": "IN",
+  "tit": "AI Security Report 2026",
+  "veic": "Check Point Research (2026)",
+  "tipo": "Relatório técnico",
+  "st": "Dossiê A",
+  "aut": [
+   "Check Point Research"
+  ],
+  "nota": "Um dos poucos números de tendência da injeção em campo.",
+  "num": [
+   "Detecções de payloads maliciosos de injeção de prompt mais longos cresceram cerca de 5 vezes de março a maio de 2026 (segundo o LLmInjection)."
+  ],
+  "tags": [
+   "inj"
+  ],
+  "met": "Relatório de ameaça (autorrelato)",
+  "lado": "med",
+  "dos": [
+   6
+  ],
+  "src": "Telemetria Check Point",
+  "links": [
+   {
+    "lab": "Relatório da Check Point",
+    "url": "https://research.checkpoint.com/2026/ai-security-report-2026/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "halluvision2026",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "AC",
+  "tit": "Measuring Hallucination in Large Language Models for Cyber Threat Intelligence: An Exploratory Study",
+  "veic": "arXiv 2611.25590 (19/11/2026)",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF (KAIST)"
+  ],
+  "nota": "Começa a fechar o gap de validação em CTI: mede padrões de alucinação em saídas de CTI com métricas leves e reproduzíveis. Ainda não é OSINT de ponta a ponta.",
+  "num": [
+   "Framework HalluVision: coleta artigos originais de CTI, gera saídas com LLMs e compara para caracterizar a alucinação; compara-se a FActScore e QAGS."
+  ],
+  "tags": [
+   "aluc",
+   "valid",
+   "osintia"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Artigos de CTI",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2611.25590",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "hallucve2026",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "AC",
+  "tit": "HalluCVE: A Multi-Signal Benchmark for Hallucination Detection in LLM-Generated Cyber Threat Intelligence",
+  "veic": "Periódico (aceito em mai/2026), via ResearchGate",
+  "tipo": "Periódico",
+  "st": "A conferir",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "Primeiro benchmark dedicado a alucinação em CTI gerada por LLM, segundo os autores. Confira o periódico e os números antes de citar.",
+  "tags": [
+   "aluc",
+   "valid",
+   "bench"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Avisos de vulnerabilidade",
+  "links": [
+   {
+    "lab": "Página no ResearchGate",
+    "url": "https://www.researchgate.net/publication/407464238_HalluCVE_A_Multi-Signal_Benchmark_for_Hallucination_Detection_in_LLM-Generated_in_Cyber_Threat_Intelligence",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ctihal2025",
+  "ano": 2025,
+  "eixo": 2,
+  "ft": "AC",
+  "tit": "CTI-HAL: A Human-Annotated Dataset for Cyber Threat Intelligence Analysis",
+  "veic": "arXiv 2504.05866",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Verdade-terreno anotada por humanos: base para medir alucinação e envenenamento contra um gabarito (QP1, RQ2).",
+  "tags": [
+   "bench",
+   "valid",
+   "osintia"
+  ],
+  "met": "Benchmark / dataset",
+  "lado": "cap",
+  "dos": [
+   8
+  ],
+  "src": "Relatórios de CTI",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2504.05866",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ctiecho2026",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "AC",
+  "tit": "The CTI echo chamber: Fragmentation, overlap, and vendor specificity in twenty years of cyber threat reporting",
+  "veic": "arXiv 2602.17458",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Suarez-Roman, Manuel",
+   "Marchiori, Francesco",
+   "Conti, Mauro",
+   "Tapiador, Juan"
+  ],
+  "nota": "Continua a linha de base de Li e Bouwman com vinte anos de relatórios. Conhecido por citação: abra o original.",
+  "tags": [
+   "valid",
+   "metodo"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Relatórios de CTI",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2602.17458",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "ryan2026attack",
+  "ano": 2026,
+  "eixo": 2,
+  "ft": "AC",
+  "tit": "Evaluating open-source LLMs for multi-label ATT&CK technique classification on CTI reports",
+  "veic": "arXiv 2606.18166",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Ryan, Ahmed",
+   "Noor, Saad Sakib",
+   "Erfan, Md",
+   "Mitra, Shaswata",
+   "Mittal, Sudip",
+   "Rahman, Md Rayhanur"
+  ],
+  "nota": "Segundo citação em outro artigo, F1 de só 0,22 em escala real para LLMs abertos. Confira no original.",
+  "tags": [
+   "valid",
+   "osintia"
+  ],
+  "met": "Avaliação empírica de modelos",
+  "lado": "cap",
+  "dos": [
+   8
+  ],
+  "src": "Relatórios de CTI",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2606.18166",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "roar2023",
+  "ano": 2023,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "On the Security Risks of Knowledge Graph Reasoning (ROAR)",
+  "veic": "arXiv 2406.00083 (citado como USENIX Security)",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Xi, Zhaohan",
+   "Du, Tianyu",
+   "Li, Changjiang",
+   "Pang, Ren",
+   "Ji, Shouling",
+   "Luo, Xiapu",
+   "Xiao, Xusheng",
+   "Ma, Fenglong",
+   "Wang, Ting"
+  ],
+  "nota": "Ataque ROAR contra raciocínio sobre grafos de conhecimento de inteligência de ameaças. Se confirmado, matiza a lacuna “envenenamento de grafo de CTI medido com um só exemplo”. Autores e venue citados de memória: confira.",
+  "tags": [
+   "poison",
+   "rag",
+   "osintia"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Grafos de CTI",
+  "links": [
+   {
+    "lab": "Página no arXiv",
+    "url": "https://arxiv.org/abs/2406.00083",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "trustrag2025",
+  "ano": 2025,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "TrustRAG: Enhancing Robustness and Trustworthiness in Retrieval-Augmented Generation",
+  "veic": "arXiv 2501.00879",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Zhou, Huichi",
+   "Lee, Kin-Hei",
+   "Zhan, Zhonghao",
+   "Li, Zhenhao",
+   "Chen, Yue",
+   "Wang, Zhaoyang",
+   "Haddadi, Hamed",
+   "Yilmaz, Emine"
+  ],
+  "nota": "A defesa híbrida que o benchmark RSB achou eficaz na maioria dos cenários, com custo de inferência extra.",
+  "num": [
+   "Dois estágios: agrupamento K-means para filtrar textos suspeitos no top-K e autoavaliação do LLM contra o próprio conhecimento.",
+   "No GPT-4o, 82% de acurácia e 5% de sucesso do ataque com 100% de envenenamento no HotpotQA."
+  ],
+  "tags": [
+   "rag",
+   "defesa",
+   "poison"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Benchmarks de QA",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2501.00879",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "robustrag2024",
+  "ano": 2024,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "Certifiably Robust RAG against Retrieval Corruption (RobustRAG)",
+  "veic": "arXiv 2405.15556",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Xiang, Chong",
+   "Wu, Tong",
+   "Zhong, Zexuan",
+   "Wagner, David",
+   "Chen, Danqi",
+   "Mittal, Prateek"
+  ],
+  "nota": "Isola cada documento e agrega com segurança: robustez certificada, mas supõe que os documentos benignos são maioria. Num feed de CTI semeado, essa premissa pode cair.",
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Benchmarks de QA",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2405.15556",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "tris2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "TRIS: A Tri-Layer Retrieval Integrity Sieve Against Knowledge Poisoning",
+  "veic": "Findings of EMNLP 2026",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "Defesa em três camadas, competitiva com TrustRAG e RobustRAG a custo de verificação menor, segundo os autores.",
+  "num": [
+   "No MS MARCO, 4% de sucesso do ataque contra 20% da linha de comparação."
+  ],
+  "tags": [
+   "rag",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "MS MARCO",
+  "links": [
+   {
+    "lab": "PDF na ACL Anthology",
+    "url": "https://aclanthology.org/2026.findings-emnlp.2122.pdf",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "chameleon2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Semantic Chameleon: Corpus-Dependent Poisoning Attacks and Defenses in RAG Systems",
+  "veic": "arXiv 2603.18034",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "O risco depende do modelo: um resultado de envenenamento num LLM não vale para outro.",
+  "num": [
+   "Recuperador híbrido BM25 mais vetores serve de defesa arquitetural contra envenenamento guiado por gradiente.",
+   "Sucesso do ataque de 46,7% (GPT-5.3) a 93,3% (Llama 4) entre cinco famílias de modelos."
+  ],
+  "tags": [
+   "rag",
+   "poison",
+   "defesa"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Corpora de QA",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2603.18034v1",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "mirage2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks",
+  "veic": "ACM CCS 2026 · arXiv 2512.08289",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Autores no artigo"
+  ],
+  "nota": "Caixa-preta e sem conhecer a pergunta: o modelo de ameaça mais próximo de quem semeia relatórios falsos sem saber o que o analista vai perguntar.",
+  "tags": [
+   "rag",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Datasets de domínio",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2512.08289",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "iobt2026",
+  "ano": 2026,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "Knowledge Base Poisoning Attacks and Defense for Policy-Aware LLM-RAG Framework",
+  "veic": "arXiv 2607.04379",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Solanki, Om",
+   "Praharaj, Lopamudra",
+   "Gupta, Deepti",
+   "Gupta, Maanak"
+  ],
+  "nota": "O caso mais próximo de inteligência militar: RAG de controle de missão (Internet of Battlefield Things).",
+  "num": [
+   "O ataque chega a 85% de corrupção do contexto do LLM."
+  ],
+  "tags": [
+   "rag",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Controle de missão (IoBT)",
+  "links": [
+   {
+    "lab": "Página no arXiv",
+    "url": "https://arxiv.org/abs/2607.04379",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "admit2025",
+  "ano": 2025,
+  "eixo": 6,
+  "ft": "AC",
+  "tit": "ADMIT: Few-shot Knowledge Poisoning Attacks on RAG-based Fact Checking",
+  "veic": "arXiv 2510.13842",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Wu, Yutao",
+   "Liu, Xiao",
+   "Li, Yinghui",
+   "Gao, Yifeng",
+   "Ding, Yifan",
+   "Ding, Jiale",
+   "Zheng, Xiang",
+   "Ma, Xingjun"
+  ],
+  "nota": "O verificador vira vetor: poucos textos invertem o veredito da checagem e ainda produzem justificativa enganosa.",
+  "num": [
+   "Sucesso médio de 86% com taxa de envenenamento de 0,93 × 10⁻⁶, em 4 recuperadores, 11 LLMs e 4 benchmarks."
+  ],
+  "tags": [
+   "poison",
+   "desinf",
+   "valid"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "FEVER, SciFact e outros",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2510.13842v1",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "factcontam2026",
+  "ano": 2026,
+  "eixo": 6,
+  "ft": "AC",
+  "tit": "Adversarial Robustness of Retrieval-Based Fact-Checking: Detecting and Mitigating Evidence Contamination",
+  "veic": "arXiv 2611.02139",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Ataque que mira um rótulo específico (verdadeiro para o falso) e defesas para checagem com recuperação.",
+  "tags": [
+   "poison",
+   "desinf",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Checagem de fatos",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2611.02139",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "amemguard2026",
+  "ano": 2026,
+  "eixo": 11,
+  "ft": "AC",
+  "tit": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory",
+  "veic": "ICML 2026 (PMLR 306)",
+  "tipo": "Conferência",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Wei, Qianshan",
+   "Yang, Tengchao",
+   "Wang, Yaochen",
+   "Li, Xinfeng",
+   "Li, Lijun",
+   "Yin, Zhenfei",
+   "Zhan, Yi",
+   "Holz, Thorsten",
+   "Lin, Zhiqiang",
+   "Wang, Xiaofeng"
+  ],
+  "nota": "Defesa de memória sem mudar a arquitetura do agente: validação por consenso entre memórias relacionadas e memória dupla.",
+  "tags": [
+   "mem",
+   "defesa"
+  ],
+  "met": "Defesa / método",
+  "lado": "def",
+  "dos": [
+   8
+  ],
+  "src": "Agentes com memória",
+  "links": [
+   {
+    "lab": "Página no PMLR",
+    "url": "https://proceedings.mlr.press/v306/wei26ac.html",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "minja2025",
+  "ano": 2025,
+  "eixo": 4,
+  "ft": "AC",
+  "tit": "MINJA: memory injection attack against LLM agents",
+  "veic": "Dong et al. (2025)",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Dong"
+  ],
+  "nota": "Usuário comum, sem privilégio, envenena a memória longa do agente só fazendo perguntas. Identificador e título exatos a conferir.",
+  "num": [
+   "Segundo trabalhos posteriores: mais de 95% de sucesso de injeção e 70% de sucesso do ataque em condições idealizadas."
+  ],
+  "tags": [
+   "mem",
+   "poison"
+  ],
+  "met": "Experimento de ataque em laboratório",
+  "lado": "atk",
+  "dos": [
+   8
+  ],
+  "src": "Agentes com memória",
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto",
+  "links": []
+ },
+ {
+  "key": "horowitz2024bias",
+  "ano": 2024,
+  "eixo": 8,
+  "ft": "AC",
+  "tit": "Bending the Automation Bias Curve: A Study of Human and AI-Based Decision Making in National Security Contexts",
+  "veic": "International Studies Quarterly 68(2)",
+  "tipo": "Periódico",
+  "st": "Conferido na fonte",
+  "doi": "10.1093/isq/sqae020",
+  "aut": [
+   "Horowitz, Michael C.",
+   "Kahn, Lauren"
+  ],
+  "nota": "O estudo com humanos de maior n sobre viés de automação em segurança nacional. Referência de desenho para a RQ4 (n≥30 é pouco perto disto).",
+  "num": [
+   "Experimento pré-registrado de identificação de alvo com cerca de 9.000 adultos em nove países com níveis diferentes de indústria de IA.",
+   "Conhecimento prévio sobre IA modula a confiança: a relação com o viés de automação não é linear."
+  ],
+  "tags": [
+   "humano",
+   "vies"
+  ],
+  "met": "Estudo com humanos",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Experimento com 9.000 adultos",
+  "links": [
+   {
+    "lab": "Preprint no arXiv",
+    "url": "https://arxiv.org/abs/2306.16507",
+    "kind": "aberto"
+   }
+  ],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "kahn2026cadets",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "AC",
+  "tit": "What is Human in Judgment? Automation Bias and Algorithm Aversion Among United States Military Academy Cadets",
+  "veic": "arXiv 2604.04333",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Kahn, Lauren",
+   "Horowitz, Michael C."
+  ],
+  "nota": "Compara militares com o público. Os autores dizem que o resultado contraria preocupações difundidas: leia a direção do efeito no original antes de citar.",
+  "num": [
+   "236 cadetes de West Point contra amostra pública comparável; tarefa de identificação de alvo com conselho de algoritmo ou de analista humano."
+  ],
+  "tags": [
+   "humano",
+   "vies"
+  ],
+  "met": "Estudo com humanos",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Experimento com 236 cadetes",
+  "links": [
+   {
+    "lab": "Texto no arXiv",
+    "url": "https://arxiv.org/html/2604.04333",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "vulnpatch2026",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "AC",
+  "tit": "Helpful or Harmful? Evaluating LLM-Assisted Vulnerability Patching via a Human Study",
+  "veic": "arXiv 2606.25973",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Autores no PDF"
+  ],
+  "nota": "Viés de automação medido em profissionais de segurança: desenvolvedores confiam demais em correções geradas por LLM. Desenho cruzado balanceado reaproveitável para a RQ4.",
+  "tags": [
+   "humano",
+   "valid"
+  ],
+  "met": "Estudo com humanos",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Desenvolvedores",
+  "links": [
+   {
+    "lab": "Resumo no alphaXiv",
+    "url": "https://www.alphaxiv.org/abs/2606.25973",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "iasr2026",
+  "ano": 2026,
+  "eixo": 8,
+  "ft": "GO",
+  "tit": "International AI Safety Report 2026",
+  "veic": "arXiv 2602.21012",
+  "tipo": "Relatório técnico",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Bengio, Yoshua",
+   "et al."
+  ],
+  "nota": "Síntese oficial sobre viés de automação com ferramentas de IA: magnitude e persistência variam com tarefa, interface e responsabilização.",
+  "tags": [
+   "humano",
+   "gov"
+  ],
+  "met": "Revisão / survey",
+  "lado": "fun",
+  "dos": [
+   8
+  ],
+  "src": "Literatura",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2602.21012",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "bono2024soc",
+  "ano": 2024,
+  "eixo": 8,
+  "ft": "AC",
+  "tit": "Generative AI and Security Operations Center Productivity: Evidence from Live Operations",
+  "veic": "arXiv 2411.03116",
+  "tipo": "Preprint",
+  "st": "A conferir",
+  "aut": [
+   "Bono, James",
+   "Grana, Justin",
+   "Xu, Alec"
+  ],
+  "nota": "Evidência de uso em SOC real, que sustenta a premissa P2 (IA já entra em decisões operacionais). Conhecido por citação: abra o original.",
+  "tags": [
+   "soc",
+   "humano"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Operações de SOC",
+  "links": [
+   {
+    "lab": "Página no arXiv",
+    "url": "https://arxiv.org/abs/2411.03116",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "bellingcat2025geo",
+  "ano": 2025,
+  "eixo": 1,
+  "ft": "SC",
+  "tit": "Teste de 24 LLMs em geolocalização",
+  "veic": "Bellingcat, via GIJN (2025)",
+  "tipo": "Artigo",
+  "st": "Conferido via cobertura",
+  "aut": [
+   "Bellingcat"
+  ],
+  "nota": "Uma das poucas medições de alucinação numa tarefa central de OSINT, feita por quem pratica OSINT.",
+  "num": [
+   "500 testes de geolocalização comparando LLMs e o Google Lens; o Google AI Mode foi o mais capaz, e a maioria dos modelos alucinou em algum momento."
+  ],
+  "tags": [
+   "aluc",
+   "osintia",
+   "multi"
+  ],
+  "met": "Auditoria / investigação de sociedade civil",
+  "lado": "med",
+  "dos": [
+   8
+  ],
+  "src": "Imagens de teste",
+  "links": [
+   {
+    "lab": "Matéria na GIJN",
+    "url": "https://gijn.org/stories/updated-test-24-llms-ai-geolocation/",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "geodetective2025",
+  "ano": 2025,
+  "eixo": 0,
+  "ft": "AC",
+  "tit": "GEO-Detective: Unveiling Location Privacy Risks in Images with LLM Agents",
+  "veic": "arXiv 2511.22441 (CISPA)",
+  "tipo": "Preprint",
+  "st": "Preprint conferido",
+  "aut": [
+   "Zhang, Xinyu",
+   "Wu, Yixin",
+   "Zhang, Boyang",
+   "Lin, Chenhao",
+   "Shen, Chao",
+   "Backes, Michael",
+   "Zhang, Yang"
+  ],
+  "nota": "Capacidade de OSINT agêntico em geolocalização, e o mesmo agente é risco de privacidade.",
+  "num": [
+   "Ganho médio de 3,0% a 5,0% sobre o o3 por nível de dificuldade; até 8,0% sobre o GPT-4o nas imagens difíceis."
+  ],
+  "tags": [
+   "osintia",
+   "multi"
+  ],
+  "met": "Arquitetura / sistema",
+  "lado": "cap",
+  "dos": [
+   8
+  ],
+  "src": "Imagens",
+  "links": [
+   {
+    "lab": "PDF no arXiv",
+    "url": "https://arxiv.org/pdf/2511.22441v1",
+    "kind": "pdf"
+   }
+  ],
+  "doi": "",
+  "repo": [],
+  "open": "Texto aberto"
  }
 ]

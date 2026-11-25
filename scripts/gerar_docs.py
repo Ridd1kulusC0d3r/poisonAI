@@ -34,9 +34,20 @@ def escrever(nome, texto):
     print("docs/" + nome)
 
 
+def pontuar():
+    """Reusa o cálculo do score de construir.py para manter uma só fórmula."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("construir", RAIZ / "scripts" / "construir.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    _, itens, erros = mod.montar()
+    if erros:
+        raise SystemExit("\n".join(erros))
+    return itens
+
+
 def main():
     DOCS.mkdir(exist_ok=True)
-    itens = ler("itens.json")
+    itens = pontuar()
     tax, agenda, intel = ler("taxonomia.json"), ler("agenda.json"), ler("inteligencia.json")
     conf, pautas, atores = ler("conferencias.json"), ler("pautas.json"), ler("atores.json")
     por = {i["key"]: i for i in itens}
@@ -51,9 +62,20 @@ def main():
             continue
         t.append(f"\n## {tipo['n']} · peso {tipo['p']} · {len(its)} trabalhos\n")
         t.append(f"Prova: {tipo['prova']} Não prova: {tipo['nao']}\n")
-        t.append(tabela(["Ano", "Trabalho", "Veículo", "Lado", "Status"],
-                        [[i["ano"], link(i), i["veic"], tax["lados"][i["lado"]], i["st"]] for i in its]))
+        t.append(tabela(["Score", "Ano", "Trabalho", "Veículo", "Lado", "Nota", "Status"],
+                        [[i["score"], i["ano"], link(i), i["veic"], tax["lados"][i["lado"]], i["nota_fonte"], i["st"]] for i in its]))
     escrever("CATALOGO.md", "\n".join(t))
+
+    # ordem de leitura
+    t = ["# Ordem de leitura\n",
+         "Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METODOLOGIA.md](../METODOLOGIA.md). É uma régua para decidir a ordem, não uma nota de qualidade.\n"]
+    for classe in ("Leia primeiro", "Leia depois", "Consulta"):
+        its = sorted([i for i in itens if i["classe"] == classe], key=lambda i: (-i["score"], -i["ano"]))
+        t.append(f"\n## {classe} ({len(its)})\n")
+        t.append(tabela(["Score", "Trabalho", "Ano", "Tipo de estudo", "Nota", "Por quê"],
+                        [[i["score"], link(i), i["ano"], i["met"], i["nota_fonte"],
+                          ", ".join(f"{k} {v}" for k, v in i["score_partes"].items() if v)] for i in its]))
+    escrever("LEITURA.md", "\n".join(t))
 
     # hipóteses concorrentes e julgamentos
     I = intel["intel"]

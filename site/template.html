@@ -286,6 +286,9 @@ nav.tabs .grp:first-child{border-left:0;margin-left:0;padding-left:0}
 dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-size:13px;margin:6px 0}dl.mini dt{color:var(--muted)}dl.mini dd{margin:0}
 .lado{font:500 12px/1.3 var(--body);border-radius:4px;padding:1px 6px;background:var(--bg);border:1px solid var(--line)}
 
+.sc{display:inline-block;min-width:30px;text-align:center;font:700 12px/1.6 var(--mono);border-radius:6px;padding:0 5px;margin-right:6px}
+.sc-a{background:var(--ok-bg);color:var(--ok)} .sc-b{background:var(--warn-bg);color:var(--warn)} .sc-c{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.scbar{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.scbar span{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px}.scbar b{color:var(--ink);margin-right:3px}
 .ach{border-collapse:collapse;width:100%;font-size:14px}
 .ach th,.ach td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}
 .ach td.c{text-align:center;width:52px;padding:0}
@@ -308,7 +311,7 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="eyebrow">Linha de pesquisa · OSINT e CTI com IA · v4 com os dossiês 1 a 5 e o LLmInjection · 1964–2026</div>
+    <div class="eyebrow">Linha de pesquisa · OSINT e CTI com IA · v6 com dossiês, LLmInjection e busca científica · score de leitura · 1964–2026</div>
     <h1>Alucinação e envenenamento em IA para OSINT e CTI</h1>
     <p class="lede">Do artigo de Palmieri et al. (2026) para fora: quem envenena as IAs de segurança, como, com que dose e com que evidência. Cada trabalho traz tipo de estudo, peso da evidência e status de verificação; as abas de ofensiva, defesa e agenda transformam isso em exercícios, detecções e perguntas de pesquisa.</p>
     <div class="kpis" id="kpis"></div>
@@ -330,6 +333,7 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
         <div><span class="l">Tipo de estudo</span><div class="chips" id="f-met"></div></div>
         <div><span class="l">Lado</span><div class="chips" id="f-lado"></div></div>
         <div><span class="l">Origem</span><div class="chips" id="f-dos"></div></div>
+        <div><span class="l">Score de leitura</span><div class="chips" id="f-cl"></div></div>
         <div><span class="l">Revisão por pares</span><div class="chips" id="f-pr"></div></div>
         <div><span class="l">Status</span><div class="chips" id="f-st"></div></div>
         <div><label class="l" for="f-tipo">Tipo</label><select id="f-tipo"></select></div>
@@ -341,7 +345,7 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
           <div class="count" id="count"></div>
           <div class="acts">
             <label for="sort" class="note">Ordenar</label>
-            <select id="sort"><option value="ano-d">Mais recentes</option><option value="ano-a">Mais antigos</option><option value="eixo">Por eixo</option><option value="peso">Peso da evidência</option></select>
+            <select id="sort"><option value="score">Score de leitura</option><option value="ano-d">Mais recentes</option><option value="ano-a">Mais antigos</option><option value="eixo">Por eixo</option><option value="peso">Peso da evidência</option></select>
             <button class="btn" id="cp-bib">Copiar BibTeX</button>
             <button class="btn" id="cp-csv">Copiar CSV</button>
           </div>
@@ -382,6 +386,9 @@ dl.mini{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 8px;font-s
     <div class="tablebox" id="tipolado"></div>
     <h2 class="sec">Revisão por pares e verificação</h2>
     <div class="cards" id="prcards"></div>
+    <h2 class="sec">Score de leitura</h2>
+    <p class="note">De 0 a 100: evidência (peso do tipo × 6, até 30) + núcleo da linha (temas centrais, até 15) + conexões com cadeia, atores, perguntas e hipóteses (até 15) + verificação da fonte (até 10) + revisão por pares (até 10) + recência (até 10) + trilha de leitura (10). 70 ou mais: leia primeiro; 50 a 69: leia depois; abaixo de 50: consulta. É uma régua para decidir a ordem de leitura, não uma nota de qualidade.</p>
+    <div class="tablebox"><table class="stack" id="topread"><thead><tr><th>#</th><th>Score</th><th>Trabalho</th><th>Tipo de estudo</th><th>Nota</th></tr></thead><tbody></tbody></table></div>
   </section>
 
   <section class="view" id="v-tempo">
@@ -637,6 +644,8 @@ const ST = {"Conferido na fonte":["st-ok","Conferido"],"Conferido via cobertura"
 const STUDY = {}; D.study.forEach(t=>STUDY[t.n]=t); const peso = it => (STUDY[it.met]||{p:0}).p;
 const dots = n => `<span class="dots5" title="Peso da evidência: ${n} de 5" aria-label="Peso ${n} de 5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span>`;
 const LADO = D.lados, ORIG = D.orig;
+const scCls = it => it.score>=70 ? "sc-a" : it.score>=50 ? "sc-b" : "sc-c";
+const SCL = {evidencia:"evidência",nucleo:"núcleo da linha",conexoes:"conexões",verificacao:"verificação",revisao:"revisão",recencia:"recência",trilha:"trilha"};
 const MYK="linha-envenenamento-conferi-v3"; let MYCK={}; try{ MYCK=JSON.parse(localStorage.getItem(MYK)||"{}"); }catch(e){}
 const stPill = s => { const m = ST[s] || ["st-anx", s]; return `<span class="pill ${m[0]}">${esc(m[1])}</span>`; };
 const link = it => it.doi ? "https://doi.org/" + it.doi : (it.links[0]||{}).url || "";
@@ -649,16 +658,16 @@ const strip = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().repl
 const display = {};
 I.forEach(it => { it.nk = it.aut.map(strip); it.aut.forEach(a => { const k = strip(a); if (!display[k]) display[k] = a; }); });
 
-const S = {q:"", tags:new Set(), eixo:new Set(), ft:new Set(), st:new Set(), met:new Set(), lado:new Set(), dos:new Set(), pr:new Set(), tipo:"", aut:"", sort:"ano-d"};
+const S = {q:"", tags:new Set(), eixo:new Set(), ft:new Set(), st:new Set(), met:new Set(), lado:new Set(), dos:new Set(), pr:new Set(), cl:new Set(), tipo:"", aut:"", sort:"score"};
 const TOP = D.topics, TO = D.topicOrder;
 function filtered(){
   const q = strip(S.q);
   let r = I.filter(it =>
     (!S.tags.size || [...S.tags].every(t => it.tags.includes(t))) &&
-    (!S.met.size || S.met.has(it.met)) && (!S.lado.size || S.lado.has(it.lado)) && (!S.dos.size || it.dos.some(d=>S.dos.has(String(d)))) && (!S.pr.size || S.pr.has(it.pr)) && (!S.eixo.size || S.eixo.has(it.eixo)) && (!S.ft.size || S.ft.has(it.ft)) &&
+    (!S.met.size || S.met.has(it.met)) && (!S.lado.size || S.lado.has(it.lado)) && (!S.dos.size || it.dos.some(d=>S.dos.has(String(d)))) && (!S.pr.size || S.pr.has(it.pr)) && (!S.cl.size || S.cl.has(it.classe)) && (!S.eixo.size || S.eixo.has(it.eixo)) && (!S.ft.size || S.ft.has(it.ft)) &&
     (!S.st.size || S.st.has(it.st)) && (!S.tipo || it.tipo === S.tipo) && (!S.aut || it.nk.includes(S.aut)) &&
     (!q || strip([it.tit, it.veic, it.aut.join(" "), it.doi, it.nota, it.num.join(" "), it.tipo, E[it.eixo], it.met, it.src, it.tags.map(t=>TOP[t]).join(" ")].join(" ")).includes(q)));
-  const cmp = {"ano-d":(a,b)=>b.ano-a.ano||a.id-b.id, "ano-a":(a,b)=>a.ano-b.ano||a.id-b.id, "eixo":(a,b)=>a.eixo-b.eixo||a.ano-b.ano, "peso":(a,b)=>peso(b)-peso(a)||b.ano-a.ano}[S.sort];
+  const cmp = {"ano-d":(a,b)=>b.ano-a.ano||a.id-b.id, "ano-a":(a,b)=>a.ano-b.ano||a.id-b.id, "eixo":(a,b)=>a.eixo-b.eixo||a.ano-b.ano, "peso":(a,b)=>peso(b)-peso(a)||b.ano-a.ano, "score":(a,b)=>b.score-a.score||b.ano-a.ano}[S.sort] || ((a,b)=>b.score-a.score);
   return r.sort(cmp);
 }
 function indepCount(){ return I.length - D.groups.reduce((s,g)=>s+g.keys.length-1, 0); }
@@ -672,6 +681,7 @@ function kpis(){
    <div class="kpi"><b>${indepCount()}</b><span>origens independentes</span></div>
    <div class="kpi"><b>${D.actors.length}</b><span>atores de ameaça</span></div>
    <div class="kpi"><b>${D.study.filter(t=>I.some(i=>i.met===t.n)).length}</b><span>tipos de estudo</span></div>
+   <div class="kpi"><b>${I.filter(i=>i.classe==="Leia primeiro").length}</b><span>para ler primeiro</span></div>
    <div class="kpi"><b>${D.rq.length}</b><span>perguntas de pesquisa</span></div>
    <div class="kpi"><b>${D.epis.length}</b><span>pautas</span></div>
    <div class="stbar"><div class="bar">${segs}</div><div class="legend">${leg}</div></div>`;
@@ -685,6 +695,7 @@ function drawFilters(){
   $("#f-met").innerHTML = D.study.filter(t=>I.some(i=>i.met===t.n)).map(t => chip(esc(t.n)+" "+dots(t.p), I.filter(i=>i.met===t.n).length, S.met.has(t.n), `data-met="${esc(t.n)}"`)).join("");
   $("#f-lado").innerHTML = Object.keys(LADO).map(k => chip(esc(LADO[k]), I.filter(i=>i.lado===k).length, S.lado.has(k), `data-lado="${k}"`)).join("");
   $("#f-dos").innerHTML = Object.keys(ORIG).map(k => chip(esc(ORIG[k]), I.filter(i=>i.dos.includes(+k)).length, S.dos.has(k), `data-dos="${k}"`)).join("");
+  $("#f-cl").innerHTML = ["Leia primeiro","Leia depois","Consulta"].map(k => chip(esc(k), I.filter(i=>i.classe===k).length, S.cl.has(k), `data-cl="${esc(k)}"`)).join("");
   $("#f-pr").innerHTML = ["Revisado por pares","Preprint","Literatura cinzenta"].map(k => chip(esc(k), I.filter(i=>i.pr===k).length, S.pr.has(k), `data-pr="${esc(k)}"`)).join("");
   $("#f-st").innerHTML = Object.keys(ST).filter(s=>I.some(i=>i.st===s)).map(s => chip(esc(ST[s][1]), I.filter(i=>i.st===s).length, S.st.has(s), `data-st="${esc(s)}"`)).join("");
 }
@@ -706,6 +717,7 @@ document.addEventListener("click", e => {
   else if (c.dataset.lado) tog(S.lado, c.dataset.lado);
   else if (c.dataset.dos) tog(S.dos, c.dataset.dos);
   else if (c.dataset.pr) tog(S.pr, c.dataset.pr);
+  else if (c.dataset.cl) tog(S.cl, c.dataset.cl);
   else return;
   drawFilters(); drawList(); remember();
 });
@@ -713,7 +725,7 @@ $("#q").addEventListener("input", e => { S.q = e.target.value; drawList(); });
 $("#f-tipo").addEventListener("change", e => { S.tipo = e.target.value; drawList(); remember(); });
 $("#f-aut").addEventListener("change", e => { S.aut = e.target.value; drawList(); remember(); });
 $("#sort").addEventListener("change", e => { S.sort = e.target.value; drawList(); remember(); });
-$("#clear").addEventListener("click", () => { S.q=""; [S.tags,S.met,S.lado,S.dos,S.pr,S.eixo,S.ft,S.st].forEach(x=>x.clear()); S.tipo=""; S.aut=""; ["#q","#f-tipo","#f-aut"].forEach(s=>$(s).value=""); drawFilters(); drawList(); remember(); });
+$("#clear").addEventListener("click", () => { S.q=""; [S.tags,S.met,S.lado,S.dos,S.pr,S.cl,S.eixo,S.ft,S.st].forEach(x=>x.clear()); S.tipo=""; S.aut=""; ["#q","#f-tipo","#f-aut"].forEach(s=>$(s).value=""); drawFilters(); drawList(); remember(); });
 
 const ACC={pdf:["PDF aberto","st-ok"],aberto:["Texto aberto","st-doi"],dados:["Dados abertos","st-doi"],editor:["Só no editor","st-pre"],registro:["Só registro","st-anx"],busca:["Procurar","st-anx"]};
 const KIND={pdf:"PDF",aberto:"Aberto",dados:"Dados",editor:"Editor",registro:"Registro"};
@@ -729,7 +741,7 @@ function linksHTML(it){
 function rowInner(it){
   return `<button class="row" data-open="${it.id}"><span class="stripe" style="background:${ecol(it.eixo)}"></span><span class="yr">${it.ano}</span>
    <span><span class="t">${esc(it.tit)}</span><div class="meta">#${it.id} · ${esc(it.veic)} · ${esc(E[it.eixo])} · ${esc(FT[it.ft])}</div></span>
-   <span class="right">${stPill(it.st)}<span class="ftp" title="${esc(it.met)}">${esc(it.met.split(" (")[0].split(" / ")[0])} ${dots(peso(it))}</span></span></button>`;
+   <span class="right"><span class="sc ${scCls(it)}" title="Score de leitura: ${it.score} de 100 (${esc(it.classe)})">${it.score}</span>${stPill(it.st)}<span class="ftp" title="${esc(it.met)}">${esc(it.met.split(" (")[0].split(" / ")[0])} ${dots(peso(it))}</span></span></button>`;
 }
 function rowHTML(it){
   const b=bestText(it), lab={pdf:"PDF",aberto:"Ler",dados:"Dados",editor:"Editor",registro:"Registro"}[b.kind]||"Buscar";
@@ -759,6 +771,8 @@ function openItem(id){
    <dt>Autoria</dt><dd>${it.aut.length?it.aut.map(esc).join("; "):"a conferir"}</dd>
    ${it.doi?`<dt>DOI</dt><dd><a href="https://doi.org/${esc(it.doi)}" target="_blank" rel="noopener">${esc(it.doi)}</a></dd>`:""}
    <dt>Assuntos</dt><dd>${it.tags.map(t=>`<span class="tag">${esc(TOP[t])}</span>`).join("")}</dd>
+   <dt>Score de leitura</dt><dd><span class="sc ${scCls(it)}">${it.score}</span> ${esc(it.classe)}<div class="scbar">${Object.entries(it.score_partes).map(([k,v])=>`<span title="${SCL[k]}: ${v}"><b>${v}</b>${SCL[k]}</span>`).join("")}</div></dd>
+   <dt>Nota da fonte</dt><dd><b>${esc(it.nota_fonte)}</b> <span class="note">escala A a E do LLmInjection${it.nota_fonte==="—"?"; ainda sem fonte conferida":""}</span></dd>
    <dt>Tipo de estudo</dt><dd>${esc(it.met)} ${dots(peso(it))}<div class="note">${esc((STUDY[it.met]||{}).prova||"")}</div></dd>
    <dt>Checkpoint</dt><dd><label class="ckbox"><input type="checkbox" data-myck="${esc(it.key)}" ${MYCK[it.key]?"checked":""}> Conferi no original</label></dd>
    <dt>Lado</dt><dd><span class="lado">${esc(LADO[it.lado])}</span></dd><dt>Revisão</dt><dd>${esc(it.pr)}</dd>
@@ -795,7 +809,7 @@ $("#mclose").addEventListener("click", ()=>$("#modal").classList.remove("open"))
 const qq=v=>`"${String(v==null?"":v).replace(/"/g,'""')}"`;
 $("#cp-bib").addEventListener("click", () => { const r=filtered(); copy(r.map(i=>i.bib).join("\n"), `BibTeX de ${r.length} trabalhos copiado`); });
 $("#cp-csv").addEventListener("click", () => { const r=filtered();
-  const rows=[["#","Ano","Título","Eixo","Tipo de estudo","Peso","Lado","Revisão","Origem","Tipo de fonte","Veículo","Tipo","Status","Link","Acesso","Autoria","Nota"]].concat(r.map(i=>[i.id,i.ano,i.tit,E[i.eixo],i.met,peso(i),LADO[i.lado],i.pr,i.org,FT[i.ft],i.veic,i.tipo,i.st,link(i),ACC[i.acc][0],i.aut.join("; "),i.nota]));
+  const rows=[["#","Score","Classe","Nota da fonte","Ano","Título","Eixo","Tipo de estudo","Peso","Lado","Revisão","Origem","Tipo de fonte","Veículo","Tipo","Status","Link","Acesso","Autoria","Nota"]].concat(r.map(i=>[i.id,i.score,i.classe,i.nota_fonte,i.ano,i.tit,E[i.eixo],i.met,peso(i),LADO[i.lado],i.pr,i.org,FT[i.ft],i.veic,i.tipo,i.st,link(i),ACC[i.acc][0],i.aut.join("; "),i.nota]));
   copy(rows.map(x=>x.map(qq).join(",")).join("\n"), `CSV de ${r.length} trabalhos copiado`); });
 
 const tip = $("#tip");
@@ -1110,6 +1124,9 @@ function drawTipos(){
   $("#prcards").innerHTML = prs.map(p=>{ const a=I.filter(i=>i.pr===p); return `<div class="card"><h3>${esc(p)}</h3><div class="big">${a.length}</div><p class="note">${a.filter(conf).length} conferidos nesta linha · peso médio ${avg(a)}</p><button class="btn" data-filtpr="${esc(p)}">Ver no catálogo</button></div>`; }).join("")
    + `<div class="card"><h3>Origem</h3>${bars(Object.fromEntries(Object.keys(ORIG).map(k=>[ORIG[k],I.filter(i=>i.dos.includes(+k)).length])), I.length)}</div>`;
 }
+function drawTop(){
+  $("#topread tbody").innerHTML = I.filter(i=>i.classe==="Leia primeiro").sort((a,b)=>b.score-a.score||b.ano-a.ano).map((i,n)=>`<tr><td style="font-family:var(--mono)">${n+1}</td><td><span class="sc ${scCls(i)}">${i.score}</span></td><td><button class="linkish" data-open="${i.id}">${esc(i.tit)}</button><div class="note">${i.ano} · ${esc(i.veic)}</div></td><td>${esc(i.met)}</td><td style="font-family:var(--mono)">${esc(i.nota_fonte)}</td></tr>`).join("");
+}
 document.addEventListener("click", e=>{
   const t=e.target.closest("[data-tipo]"); if(t){ curTipo=t.dataset.tipo; drawTipos(); return; }
   const m=e.target.closest("[data-filtmet]"); if(m){ S.met=new Set([m.dataset.filtmet]); drawFilters(); drawList(); remember(); location.hash="catalogo"; return; }
@@ -1306,12 +1323,12 @@ function route(){
   if(v==="linhas" && !drawLanes.done){ drawLanes(); drawTopicMap(); drawDossier(); drawCooc(); drawBridges(); drawLanes.done=true; }
   hideTip();
 }
-const PK="linha-envenenamento-filtros-v2";
-function remember(){ try{ localStorage.setItem(PK, JSON.stringify({tags:[...S.tags],met:[...S.met],lado:[...S.lado],dos:[...S.dos],pr:[...S.pr],eixo:[...S.eixo],ft:[...S.ft],st:[...S.st],tipo:S.tipo,aut:S.aut,sort:S.sort})); }catch(e){} }
-try{ const p=JSON.parse(localStorage.getItem(PK)||"{}"); (p.tags||[]).forEach(x=>{ if(TOP[x]) S.tags.add(x); }); (Array.isArray(p.met)?p.met:[]).forEach(x=>{ if(STUDY[x]) S.met.add(x); }); (p.lado||[]).forEach(x=>S.lado.add(x)); (p.dos||[]).forEach(x=>S.dos.add(x)); (p.pr||[]).forEach(x=>S.pr.add(x)); (p.eixo||[]).forEach(x=>S.eixo.add(x)); (p.ft||[]).forEach(x=>S.ft.add(x)); (p.st||[]).forEach(x=>S.st.add(x)); S.tipo=p.tipo||""; S.aut=p.aut||""; S.sort=p.sort||"ano-d"; }catch(e){}
+const PK="linha-envenenamento-filtros-v3";
+function remember(){ try{ localStorage.setItem(PK, JSON.stringify({tags:[...S.tags],met:[...S.met],lado:[...S.lado],dos:[...S.dos],pr:[...S.pr],cl:[...S.cl],eixo:[...S.eixo],ft:[...S.ft],st:[...S.st],tipo:S.tipo,aut:S.aut,sort:S.sort})); }catch(e){} }
+try{ const p=JSON.parse(localStorage.getItem(PK)||"{}"); (p.tags||[]).forEach(x=>{ if(TOP[x]) S.tags.add(x); }); (Array.isArray(p.met)?p.met:[]).forEach(x=>{ if(STUDY[x]) S.met.add(x); }); (p.lado||[]).forEach(x=>S.lado.add(x)); (p.dos||[]).forEach(x=>S.dos.add(x)); (p.pr||[]).forEach(x=>S.pr.add(x)); (p.cl||[]).forEach(x=>S.cl.add(x)); (p.eixo||[]).forEach(x=>S.eixo.add(x)); (p.ft||[]).forEach(x=>S.ft.add(x)); (p.st||[]).forEach(x=>S.st.add(x)); S.tipo=p.tipo||""; S.aut=p.aut||""; S.sort=p.sort||"score"; }catch(e){}
 
 kpis(); initSelects(); $("#f-tipo").value=S.tipo; $("#f-aut").value=S.aut; $("#sort").value=S.sort;
-drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
+drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
 addEventListener("hashchange", route); route();
 })();
 </script>

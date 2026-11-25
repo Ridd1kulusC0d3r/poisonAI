@@ -7,13 +7,7 @@
    "h": "H1: a taxa cresce da extração para o relatório, e a atribuição de ator concentra os erros graves.",
    "m": "Verdade-terreno em STIX (no estilo de Mezzi) ou CyberThreat-Eval; anotar cada afirmação do relatório como apoiada, não apoiada ou contradita; entropia semântica como sinal.",
    "agenda": "Medição de alucinação",
-   "fecha": "A lacuna nº 1 da revisão: só um número medido, em condição favorável.",
-   "itens": [
-    "mezzi2025unreliable",
-    "chen2025cte",
-    "farquhar2024semantic",
-    "palmieri2026survey"
-   ]
+   "fecha": "A lacuna nº 1 da revisão: só um número medido, em condição favorável."
   },
   {
    "id": "QP2",
@@ -22,15 +16,7 @@
    "h": "H2: poucos documentos bastam quando imitam o vocabulário da pergunta; no grafo, uma relação falsa compartilhada afeta várias perguntas.",
    "m": "Curva dose-resposta (0, 1, 2, 3, 5, 10, 25 documentos) em RAG vetorial e em GraphRAG; métricas: troca de atribuição, fração do top-k envenenada, tempo até detecção.",
    "agenda": "Robustez adversarial",
-   "fecha": "Agentes só foram avaliados em condição benigna.",
-   "itens": [
-    "zou2025poisonedrag",
-    "liang2025graphrag",
-    "wen2025fewwords",
-    "souly2025near",
-    "alam2024ctibench",
-    "atlas2025rag"
-   ]
+   "fecha": "Agentes só foram avaliados em condição benigna."
   },
   {
    "id": "QP3",
@@ -39,12 +25,7 @@
    "h": "H3: a citação aumenta a aceitação do erro; mostrar proveniência e incerteza reduz esse efeito.",
    "m": "Experimento entre grupos com analistas: alucinação sem fonte × erro com citação envenenada × erro com citação e aviso de proveniência.",
    "agenda": "Human–AI teaming",
-   "fecha": "Junta alucinação e envenenamento, que a literatura trata separados.",
-   "itens": [
-    "ranade2021fakecti",
-    "parasuraman2010",
-    "zou2025poisonedrag"
-   ]
+   "fecha": "Junta alucinação e envenenamento, que a literatura trata separados."
   },
   {
    "id": "QP4",
@@ -53,12 +34,7 @@
    "h": "H4: a taxa de aceitação do falso fica acima de 50% e cai quando o analista vê proveniência e uma segunda fonte.",
    "m": "Replicar Ranade (2021) com n maior e modelos de 2026; medir aceitação, tempo e confiança; instrumentos de viés de automação.",
    "agenda": "Human–AI teaming",
-   "fecha": "O único estudo com humanos tem n=10 e usa GPT-2.",
-   "itens": [
-    "ranade2021fakecti",
-    "parasuraman2010",
-    "anthropic2025aug"
-   ]
+   "fecha": "O único estudo com humanos tem n=10 e usa GPT-2."
   },
   {
    "id": "QP5",
@@ -67,14 +43,7 @@
    "h": "H5: perguntas enviesadas puxam mais fontes de operações de influência, como no estudo do ISD, também em português.",
    "m": "Bateria de perguntas neutras, enviesadas e maliciosas em pt-BR, no molde do ISD e do ITS Rio; classificar domínios citados.",
    "agenda": "Multilíngue",
-   "fecha": "Os estudos de grooming são em inglês e línguas europeias.",
-   "itens": [
-    "isd2025chatbots",
-    "newsguard2025pravda",
-    "asp2025pravda",
-    "itsrio2026boca",
-    "internetlab2026papo"
-   ]
+   "fecha": "Os estudos de grooming são em inglês e línguas europeias."
   },
   {
    "id": "QP6",
@@ -83,13 +52,7 @@
    "h": "H6: a ausência de corroboração independente separa nós plantados de nós legítimos melhor que o conteúdo do texto.",
    "m": "Marcar cada nó com o número de fontes independentes e o tempo até a segunda fonte; avaliar como detector na curva da QP2.",
    "agenda": "Robustez adversarial",
-   "fecha": "Possível ponte com a sua dissertação sobre detecção pela ausência.",
-   "itens": [
-    "liang2025graphrag",
-    "revoked2026",
-    "dash2026memory",
-    "carlini2024web"
-   ]
+   "fecha": "Possível ponte com a sua dissertação sobre detecção pela ausência."
   },
   {
    "id": "QP7",
@@ -98,14 +61,7 @@
    "h": "H7: campos de texto livre devolvidos por ferramentas funcionam como injeção indireta.",
    "m": "Servidores MCP de teste que devolvem saídas com instruções; medir ações induzidas, no estilo do estudo de 22,9% da Dynatrace. Hipótese desta linha, não achado publicado.",
    "agenda": "Reprodutibilidade e ferramentas abertas",
-   "fecha": "Une injeção e ferramentas no caso específico de OSINT.",
-   "itens": [
-    "invariant2025tpa",
-    "cyberark2025fsp",
-    "dynatrace2026mcp",
-    "gtig2025",
-    "checkpoint2025skynet"
-   ]
+   "fecha": "Une injeção e ferramentas no caso específico de OSINT."
   }
  ],
  "qp_itens": {
@@ -239,7 +195,7 @@
    "RQ2",
    "Como o erro se propaga entre coleta, NER, grafo, RAG e relatório?",
    "Amplificação superlinear na etapa de grafo.",
-   "Contaminação controlada de 0 a 20%; rastreio por afirmação; reanotação do dataset de Niu et al.",
+   "Contaminação controlada de 0 a 20%; rastreio por afirmação; reanotação do dataset de Niu et al.; gabarito possível no CTI-HAL e métrica no HalluVision",
    "Dossiê 1",
    "Alucinação",
    "alta",
@@ -259,7 +215,7 @@
    "RQ4",
    "Checkpoints humanos detectam conteúdo adversarial?",
    "Perto do acaso sem proveniência; melhora com nota de fonte.",
-   "Experimento com n≥30 e itens semeados; alfabetização em LLM e pressão de tempo",
+   "Experimento com n≥30 e itens semeados; alfabetização em LLM e pressão de tempo; desenho de referência em Horowitz e Kahn (n≈9.000) e no estudo cruzado de correções assistidas por LLM",
    "Dossiê 1",
    "Humano",
    "alta",
@@ -474,6 +430,16 @@
    "Envenenamento",
    "média",
    "ATLAS AML.CS0072; complementa QP7"
+  ],
+  [
+   "RQ26",
+   "Recuperadores híbridos e defesas como TrustRAG resistem a relatórios de CTI semeados sem conhecer a pergunta (modelo MIRAGE)?",
+   "Resistem melhor que RAG puro, mas não quando os falsos são maioria.",
+   "Bancada da RQ1 com MIRAGE, TrustRAG, RobustRAG e BM25 híbrido",
+   "Busca científica",
+   "Envenenamento",
+   "alta",
+   "complementa RQ1 e RQ5"
   ]
  ],
  "lacunas": [
@@ -489,12 +455,12 @@
   ],
   [
    "Envenenamento de grafo de CTI medido só com um exemplo",
-   "Ranade 2021, demonstração qualitativa.",
+   "Ranade 2021, demonstração qualitativa. O ataque ROAR (2023) mira raciocínio sobre grafos de CTI: confira e reavalie a lacuna.",
    "Dossiê 1"
   ],
   [
    "Eficácia do checkpoint humano não testada",
-   "Estudos com n=10, n=3 e n=10; nenhum com n≥30.",
+   "Estudos com n=10, n=3 e n=10; nenhum com n≥30. Fora de CTI há estudos grandes (Horowitz e Kahn, n≈9.000), mas não com analistas de inteligência.",
    "Âncora"
   ],
   [

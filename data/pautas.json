@@ -309,6 +309,41 @@
     "gtig2026breeze",
     "unit42_2026latam"
    ]
+  ],
+  [
+   "D5",
+   "O sandbox que entregou as chaves",
+   "GTG-50020 e a primeira injeção em campo contra um pipeline de IA, por dinheiro.",
+   [
+    "anthropic2026sep"
+   ]
+  ],
+  [
+   "D5",
+   "Seu prompt não é privado",
+   "Dois milhões de prompts-canário e as chaves que voltaram usadas.",
+   [
+    "dragos2026canary"
+   ]
+  ],
+  [
+   "D5",
+   "Quando o agente de teste foge",
+   "AISI, Epoch, WorkOS e Hugging Face: avaliação que vira incidente.",
+   [
+    "aisi2026incident",
+    "epoch2026eval",
+    "openai2026hf"
+   ]
+  ],
+  [
+   "D5",
+   "9.000 pessoas e a máquina",
+   "O que a ciência sabe de viés de automação em segurança, e o que falta medir em CTI.",
+   [
+    "horowitz2024bias",
+    "parasuraman2010"
+   ]
   ]
  ]
 }

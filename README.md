@@ -2,7 +2,7 @@
 
 **Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
 
-**[Abrir o site](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Abrir o site](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
 
 > O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
 
@@ -10,9 +10,9 @@
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **152** | **32** | **32** | **49** | **34** | **11** |
+| **197** | **36** | **33** | **56** | **38** | **13** |
 
-Cada trabalho traz **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 152, 73 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
+Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 197, 93 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
 
 ## O que há aqui
 
@@ -21,10 +21,11 @@ Cada trabalho traz **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** 
 | Site interativo: catálogo com filtros, tipos de estudo, linha do tempo, atores, cadeia de ataque em sete etapas, ofensiva, defesa, agenda, pautas | [`site/index.html`](site/index.html) |
 | Dados abertos, um JSON por tema | [`data/`](data/) |
 | Bibliografia BibTeX gerada | [`data/referencias.bib`](data/referencias.bib) |
+| **Ordem de leitura por score: comece por aqui** | [`docs/LEITURA.md`](docs/LEITURA.md) |
 | Catálogo por tipo de estudo | [`docs/CATALOGO.md`](docs/CATALOGO.md) |
 | Análise de hipóteses concorrentes, indicadores, cenários e julgamentos com linguagem estimativa | [`docs/HIPOTESES.md`](docs/HIPOTESES.md) |
 | Recorte brasileiro: cibercrime financeiro, eleições de 2026, lusofonia | [`docs/BRASIL.md`](docs/BRASIL.md) |
-| Agenda: 32 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
+| Agenda: 33 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
 | Registro de conferência e correções | [`docs/CONFERENCIA.md`](docs/CONFERENCIA.md) |
 | Atores com rótulos de fornecedor preservados | [`docs/ATORES.md`](docs/ATORES.md) |
 | Pautas para episódios | [`docs/PAUTAS.md`](docs/PAUTAS.md) |

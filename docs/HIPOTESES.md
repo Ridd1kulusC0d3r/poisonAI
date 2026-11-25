@@ -28,13 +28,15 @@
 | E9. Nenhuma oferta de “serviço de envenenamento de CTI” nos levantamentos do submundo | N | N | C | C | C | N |
 | E10. Envenenamento de memória observado em produção, mas com fim comercial e contra assistentes do público (Microsoft, AML.CS0072) | N | I | C | N | C | C |
 | E11. Pesquisa brasileira manipula 14 de 23 modelos de SOC pela telemetria do EDR, em laboratório | C | N | I | N | C | N |
+| E12. Injeção em campo contra um pipeline de IA (sandbox de avaliação) para roubar chaves, não para moldar conclusões (Anthropic, GTG-50020) | N | I | C | N | C | N |
+| E13. Provedores de inferência comprometidos sem saber até serem avisados por canários (Dragos) | C | N | N | N | N | N |
 
-Inconsistências por hipótese: H1 = 1, H2 = 2, H3 = 3, H4 = 0, H5 = 0, H6 = 0. Pela regra de Heuer, mais inconsistência é hipótese mais fraca.
+Inconsistências por hipótese: H1 = 1, H2 = 3, H3 = 3, H4 = 0, H5 = 0, H6 = 0. Pela regra de Heuer, mais inconsistência é hipótese mais fraca.
 
 
 ## Leitura
 
-H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3.
+H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1.
 
 - É provável que a ausência de casos se explique principalmente por H3 e H6.
 - É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).

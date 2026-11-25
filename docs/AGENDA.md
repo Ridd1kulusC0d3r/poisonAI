@@ -27,9 +27,9 @@
 | QP6 | Detectar veneno pela ausência de corroboração | Ausência de segunda fonte separa nós plantados. | Contagem de fontes independentes por nó | Artefato | Envenenamento | média | complementa RQ5 e RQ17 |
 | QP7 | Ferramenta envenenada no agente OSINT | Saídas de ferramenta funcionam como injeção. | Servidores MCP de teste | Artefato | Ferramentas | média | ≈ RQ10 |
 | RQ1 | Quanto CTI falso de LLM é preciso para inverter uma atribuição feita por um agente ReAct com RAG? | Número quase constante e pequeno. | Sandbox fechado; geração controlada; curva dose-resposta (AnnoCTR, CTIBench, CTIConnect, RSB) | Dossiê 1 | Envenenamento | alta |  |
-| RQ2 | Como o erro se propaga entre coleta, NER, grafo, RAG e relatório? | Amplificação superlinear na etapa de grafo. | Contaminação controlada de 0 a 20%; rastreio por afirmação; reanotação do dataset de Niu et al. | Dossiê 1 | Alucinação | alta |  |
+| RQ2 | Como o erro se propaga entre coleta, NER, grafo, RAG e relatório? | Amplificação superlinear na etapa de grafo. | Contaminação controlada de 0 a 20%; rastreio por afirmação; reanotação do dataset de Niu et al.; gabarito possível no CTI-HAL e métrica no HalluVision | Dossiê 1 | Alucinação | alta |  |
 | RQ3 | MISP, OpenCTI e STIX/TAXII propagam IOCs envenenados entre organizações? | Sim, por correlações e sightings automáticos. | Testbed federado com instâncias isoladas | Dossiê 1 | Envenenamento | média |  |
-| RQ4 | Checkpoints humanos detectam conteúdo adversarial? | Perto do acaso sem proveniência; melhora com nota de fonte. | Experimento com n≥30 e itens semeados; alfabetização em LLM e pressão de tempo | Dossiê 1 | Humano | alta |  |
+| RQ4 | Checkpoints humanos detectam conteúdo adversarial? | Perto do acaso sem proveniência; melhora com nota de fonte. | Experimento com n≥30 e itens semeados; alfabetização em LLM e pressão de tempo; desenho de referência em Horowitz e Kahn (n≈9.000) e no estudo cruzado de correções assistidas por LLM | Dossiê 1 | Humano | alta |  |
 | RQ5 | Notas de confiabilidade (Almirantado, AuthRank) reduzem o envenenamento sem suprimir inteligência nova? | Há trade-off mensurável. | Ataque × supressão de relatórios legítimos novos (zero-days) | Dossiê 1 | Defesa | média |  |
 | RQ6 | Analisadores de malware por LLM resistem a injeções imperativas, narrativas e de gatilho de recusa? | Narrativas e gatilhos de recusa superam as imperativas. | Avaliação cruzada; amostras Skynet e GuardBreaker; protocolo ALIBI | Dossiê 1 | IA no SOC | média |  |
 | RQ7 | Chatbots em pt-BR repetem narrativas da Pravda mais que em inglês? | Sim, por vazios de dados em português. | Auditoria longitudinal com perguntas amplas e estreitas | Dossiê 1 | Multilíngue | média |  |
@@ -51,6 +51,7 @@
 | RQ23 | Quanto erra o modelo copiloto (software mais checagem humana) na eleição de 2026? | Software sozinho erra muito; a checagem humana corrige, com custo de tempo. | Reanalisar amostra do VigIA: acerto e falso positivo por etapa | Dossiê 5 | Humano | média | PIR-4; complementa RQ4 |
 | RQ24 | Qual a taxa de discordância natural entre as fontes de CTI que usamos? | Alta, como em Bouwman et al. | Medir sobreposição e atraso entre os feeds da casa antes de qualquer bancada adversarial | Dossiê 5 | Método | alta | linha de base de RQ1 e RQ2 |
 | RQ25 | Envenenamento de memória por links (como o da Microsoft) atinge assistentes usados por analistas de CTI? | Sim, se o analista usa assistente com memória e clica em links de fontes abertas. | Bancada com assistentes de memória e links de relatórios; medir o que persiste | LLmInjection | Envenenamento | média | ATLAS AML.CS0072; complementa QP7 |
+| RQ26 | Recuperadores híbridos e defesas como TrustRAG resistem a relatórios de CTI semeados sem conhecer a pergunta (modelo MIRAGE)? | Resistem melhor que RAG puro, mas não quando os falsos são maioria. | Bancada da RQ1 com MIRAGE, TrustRAG, RobustRAG e BM25 híbrido | Busca científica | Envenenamento | alta | complementa RQ1 e RQ5 |
 
 
 ## Lacunas confirmadas
@@ -59,8 +60,8 @@
 |---|---|---|
 | Não existe benchmark adversarial para agentes de CTI/OSINT | RSB e MCPTox são genéricos; CTIBench e CyberThreat-Eval são benignos. | Dossiê 1 |
 | Erro composto ao longo do pipeline nunca foi medido | “No paper attempts to quantify the combined error rate.” | Âncora |
-| Envenenamento de grafo de CTI medido só com um exemplo | Ranade 2021, demonstração qualitativa. | Dossiê 1 |
-| Eficácia do checkpoint humano não testada | Estudos com n=10, n=3 e n=10; nenhum com n≥30. | Âncora |
+| Envenenamento de grafo de CTI medido só com um exemplo | Ranade 2021, demonstração qualitativa. O ataque ROAR (2023) mira raciocínio sobre grafos de CTI: confira e reavalie a lacuna. | Dossiê 1 |
+| Eficácia do checkpoint humano não testada | Estudos com n=10, n=3 e n=10; nenhum com n≥30. Fora de CTI há estudos grandes (Horowitz e Kahn, n≈9.000), mas não com analistas de inteligência. | Âncora |
 | Triagem de malware por LLM sem métricas de campo | ALIBI e GuardBreaker sem taxa de sucesso pública. | Dossiê 1 |
 | Grooming não medido em português | Nem em outras línguas fora do eixo ocidental. | Dossiê 1 |
 | Proveniência sem medida de supressão de inteligência nova | Limitação admitida pelo AuthRank. | Dossiê 1 |

@@ -327,6 +327,31 @@
     "spiderlabs2026logs",
     "watchtower2026"
    ]
+  },
+  {
+   "nome": "Agentes em teste fora da contenção",
+   "keys": [
+    "aisi2026incident",
+    "epoch2026eval",
+    "workos2026artex",
+    "openai2026hf"
+   ]
+  },
+  {
+   "nome": "Horowitz e Kahn: viés de automação em segurança",
+   "keys": [
+    "horowitz2024bias",
+    "kahn2026cadets"
+   ]
+  },
+  {
+   "nome": "MITRE ATLAS v2026.09: estudos de caso de memória e ferramentas",
+   "keys": [
+    "atlas_cs0040",
+    "atlas_cs0066",
+    "atlas_cs0045",
+    "atlas_cs0063"
+   ]
   }
  ],
  "trilha": [
@@ -401,6 +426,14 @@
   {
    "key": "vigia2026",
    "acao": "Escreva o que um agente de coleta teria absorvido na eleição sem rótulo de IA."
+  },
+  {
+   "key": "halluvision2026",
+   "acao": "Compare o desenho do HalluVision com a sua QP1: o que ele mede que você também precisaria medir?"
+  },
+  {
+   "key": "horowitz2024bias",
+   "acao": "Anote o tamanho da amostra e o desenho: é a régua para a RQ4."
   }
  ],
  "llminjection": {
@@ -453,6 +486,18 @@
     "Orquestração de ataque por agente",
     "Observada em campo",
     "LLMI-T015.md"
+   ],
+   [
+    "LLMI-T026",
+    "Propagação de instrução entre agentes",
+    "Observada em campo",
+    "LLMI-T026.md"
+   ],
+   [
+    "LLMI-T025",
+    "Gatilhos multimodais",
+    "Demonstrada em pesquisa",
+    "LLMI-T025.md"
    ]
   ],
   "leitura": "Envenenamento de dados, de RAG e de memória como pesquisa; memória por links, scanners e ferramentas já em campo. É a mesma conclusão da análise de hipóteses, por outro caminho.",
@@ -504,6 +549,42 @@
     "Escala A a E e confiança separada",
     "Base para unificar os status deste artefato",
     "docs/SOURCE-GRADING.md"
+   ],
+   [
+    "Exercício E3 (ferramenta adulterada)",
+    "TC-MCP-031 · DET-AI-015",
+    "Rug pull: descrição de ferramenta MCP mudou depois da aprovação",
+    "docs/TEST-CASES.md"
+   ],
+   [
+    "Envenenamento de ferramenta (CrowdStrike)",
+    "DET-AI-017",
+    "Conteúdo escondido em metadados voltados ao agente",
+    "docs/DETECTION-ENGINEERING.md"
+   ],
+   [
+    "Exercício E6 (checkpoint)",
+    "TC-SC-009 · DET-AI-005",
+    "Deriva de proveniência do artefato de modelo",
+    "docs/DETECTION-ENGINEERING.md"
+   ],
+   [
+    "Envenenamento de recomendação",
+    "TC-LINK-033",
+    "Link pré-preenchido que grava memória do assistente",
+    "docs/TEST-CASES.md"
+   ],
+   [
+    "Exercício E1 com injeção",
+    "TC-PI-002",
+    "Injeção indireta em RAG",
+    "docs/TEST-CASES.md"
+   ],
+   [
+    "Contenção de agentes",
+    "Vocabulário em português",
+    "Termos para conter agentes, em pt-BR",
+    "docs/pt-BR/VOCABULARIO-CONTENCAO-AGENTES.md"
    ]
   ],
   "gh": "https://github.com/Ridd1kulusC0d3r/LLmInjection/blob/main/"
