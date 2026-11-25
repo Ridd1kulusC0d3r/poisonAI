@@ -1,0 +1,345 @@
+[
+ {
+  "data": "2021-01",
+  "titulo": "Campanha norte-coreana contra pesquisadores de segurança",
+  "texto": "Contas e blogs falsos com conteúdo técnico para enganar a comunidade de CTI.",
+  "categoria": "atk",
+  "item": "tag2021researchers"
+ },
+ {
+  "data": "2021-07",
+  "titulo": "CTI falso engana caçadores de ameaça",
+  "texto": "Ranade et al. mostram CTI gerado por GPT-2 aceito por especialistas e corrompendo um grafo.",
+  "categoria": "pesq",
+  "item": "ranade2021fakecti"
+ },
+ {
+  "data": "2024-02",
+  "titulo": "Microsoft e OpenAI: cinco estatais usam LLMs",
+  "texto": "Uso como assistente; nenhuma técnica nova.",
+  "categoria": "uso",
+  "item": "msft2024"
+ },
+ {
+  "data": "2024-02",
+  "titulo": "VIGINUM expõe o Portal Kombat",
+  "texto": "A rede de sites que viraria a rede Pravda.",
+  "categoria": "infl",
+  "item": "viginum2024"
+ },
+ {
+  "data": "2025-02",
+  "titulo": "Nasce o termo “LLM grooming”",
+  "texto": "American Sunlight Project: 3,6 milhões de artigos por ano para os coletores das IAs.",
+  "categoria": "infl",
+  "item": "asp2025pravda"
+ },
+ {
+  "data": "2025-03",
+  "titulo": "NewsGuard: chatbots repetem a Pravda em 33,55%",
+  "texto": "10 chatbots, 15 narrativas, 450 respostas.",
+  "categoria": "med",
+  "item": "newsguard2025pravda"
+ },
+ {
+  "data": "2025-03",
+  "titulo": "Pravda citada em 44 Wikipédias",
+  "texto": "DFRLab e CheckFirst: 1.907 links para 162 sites.",
+  "categoria": "med",
+  "item": "dfrlab2025wiki"
+ },
+ {
+  "data": "2025-04",
+  "titulo": "Envenenamento de ferramentas MCP ganha nome",
+  "texto": "Invariant Labs mostra instruções escondidas na descrição de ferramentas.",
+  "categoria": "atk",
+  "item": "invariant2025tpa"
+ },
+ {
+  "data": "2025-06",
+  "titulo": "EchoLeak: um e-mail faz o Copilot vazar dados",
+  "texto": "Injeção indireta zero-click (CVE-2025-32711).",
+  "categoria": "atk",
+  "item": "echoleak2025"
+ },
+ {
+  "data": "2025-06",
+  "titulo": "Skynet: o primeiro malware que fala com a IA analisadora",
+  "texto": "Tentou convencer a IA de que era benigno; falhou.",
+  "categoria": "atk",
+  "item": "checkpoint2025skynet"
+ },
+ {
+  "data": "2025-06",
+  "titulo": "Grok falha na checagem da guerra Israel–Irã",
+  "texto": "DFRLab: cerca de 130 mil posts; vídeos gerados por IA autenticados.",
+  "categoria": "med",
+  "item": "dfrlab2025grok"
+ },
+ {
+  "data": "2025-07",
+  "titulo": "Al Jazeera contesta: só 5%",
+  "texto": "Perguntas mais amplas, outro resultado. Vazios de dados, não grooming.",
+  "categoria": "med",
+  "item": "aljazeera2025"
+ },
+ {
+  "data": "2025-08",
+  "titulo": "GTG-2002: agente de código extorque 17 organizações",
+  "texto": "Relatório de ameaça da Anthropic.",
+  "categoria": "uso",
+  "item": "anthropic2025aug"
+ },
+ {
+  "data": "2025-10",
+  "titulo": "250 documentos bastam para um backdoor",
+  "texto": "Anthropic, UK AISI e Alan Turing Institute.",
+  "categoria": "pesq",
+  "item": "souly2025near"
+ },
+ {
+  "data": "2025-10",
+  "titulo": "Estudo revisado por pares: 5% e 8%",
+  "texto": "Alyukov et al. na HKS Misinformation Review.",
+  "categoria": "med",
+  "item": "alyukov2025hks"
+ },
+ {
+  "data": "2025-11",
+  "titulo": "Malware que consulta LLM em execução",
+  "texto": "GTIG: PROMPTFLUX, PROMPTSTEAL da APT28 e outros.",
+  "categoria": "uso",
+  "item": "gtig2025"
+ },
+ {
+  "data": "2025-11",
+  "titulo": "GTG-1002: espionagem 80–90% conduzida por IA",
+  "texto": "E o agente alucinou credenciais e achados.",
+  "categoria": "uso",
+  "item": "anthropic2025gtg1002"
+ },
+ {
+  "data": "2025-12",
+  "titulo": "OWASP Top 10 para aplicações agênticas",
+  "texto": "Primeira lista de riscos só para agentes.",
+  "categoria": "def",
+  "item": "owaspagentic2025"
+ },
+ {
+  "data": "2026-02",
+  "titulo": "Cadeia de skills envenenada",
+  "texto": "Snyk ToxicSkills: 76 payloads maliciosos; ClawHavoc: 1.184 skills.",
+  "categoria": "atk",
+  "item": "snyk2026toxicskills"
+ },
+ {
+  "data": "2026-03",
+  "titulo": "Satélites falsos na guerra com o Irã",
+  "texto": "Imagens geradas por IA e contas impostoras de OSINT.",
+  "categoria": "infl",
+  "item": "afp2026satellite"
+ },
+ {
+  "data": "2026-03",
+  "titulo": "Coral Sleet com fluxo de ataque totalmente habilitado por IA",
+  "texto": "Microsoft Threat Intelligence.",
+  "categoria": "uso",
+  "item": "msft2026tradecraft"
+ },
+ {
+  "data": "2026-04",
+  "titulo": "Propaganda estatal no Common Crawl",
+  "texto": "DFRLab: Pravda, Glassbridge e RT no arquivo que alimenta o treino.",
+  "categoria": "med",
+  "item": "dfrlab2026pipeline"
+ },
+ {
+  "data": "2026-04",
+  "titulo": "GrafanaGhost: logs viram instrução",
+  "texto": "Assistente de IA do Grafana exfiltra via Markdown.",
+  "categoria": "atk",
+  "item": "grafanaghost2026"
+ },
+ {
+  "data": "2026-05",
+  "titulo": "Poisoning the Watchtower",
+  "texto": "Manipulação de contexto em logs: 96% de sucesso sem defesa.",
+  "categoria": "pesq",
+  "item": "watchtower2026"
+ },
+ {
+  "data": "2026-07",
+  "titulo": "O âncora nomeia o gap de validação",
+  "texto": "Palmieri et al.: alucinação medida em um só sistema OSINT.",
+  "categoria": "pesq",
+  "item": "palmieri2026survey"
+ },
+ {
+  "data": "2026-07",
+  "titulo": "Agentes em teste oficial agem na internet real",
+  "texto": "UK AISI: 19 ações fora do escopo em 10 de 122 execuções.",
+  "categoria": "ag",
+  "item": "aisi2026incident"
+ },
+ {
+  "data": "2026-08",
+  "titulo": "Eleições brasileiras: chatbots recomendam candidatos",
+  "texto": "Ekō, ITS Rio e InternetLab.",
+  "categoria": "med",
+  "item": "eko2026"
+ },
+ {
+  "data": "2026-09",
+  "titulo": "GuardBreaker: gatilho de recusa contra a IA do SOC",
+  "texto": "ESET: UAC-0099 em ataque à Ucrânia.",
+  "categoria": "atk",
+  "item": "eset2026guardbreaker"
+ },
+ {
+  "data": "2026-09",
+  "titulo": "GTIG: do prompt à autonomia",
+  "texto": "Preço de contas de IA dobra; SANDWORM usa o Gemini.",
+  "categoria": "uso",
+  "item": "gtig2026sep"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "Submundo de IA em números",
+  "texto": "Halcyon: anúncios de IA de menos de 50 para mais de 1.400 por mês.",
+  "categoria": "uso",
+  "item": "halcyon2026"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "Storm-0940 usa o ARTEX",
+  "texto": "Framework aberto de pentest agêntico em ataque de cadeia de suprimentos.",
+  "categoria": "uso",
+  "item": "msft2026storm0940"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "NIST, NSA e CISA: resposta a incidentes com agentes",
+  "texto": "Dez práticas em cinco fases.",
+  "categoria": "def",
+  "item": "nistcisa2026ir"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "MadPot captura a memória dos agentes atacantes",
+  "texto": "Iscas que imitavam APIs de LLM.",
+  "categoria": "def",
+  "item": "aws2026madpot"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "Lazarus: backdoor com sete neurônios",
+  "texto": "Envenenamento depois do treino, direto nos pesos.",
+  "categoria": "pesq",
+  "item": "lazarus2026"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "Injeção indireta medida na web aberta",
+  "texto": "15,3 mil injeções em 1,2 bilhão de URLs.",
+  "categoria": "med",
+  "item": "ipiwild2026"
+ },
+ {
+  "data": "2019-08",
+  "titulo": "Feeds de CTI quase não se sobrepõem",
+  "texto": "Li et al.: a maioria dos indicadores é exclusiva de uma fonte.",
+  "categoria": "met",
+  "item": "li2019tealeaves"
+ },
+ {
+  "data": "2020-08",
+  "titulo": "Fornecedores pagos concordam em 2,5% a 4,0%",
+  "texto": "Bouwman et al.: a linha de base de ruído antes de qualquer adversário.",
+  "categoria": "met",
+  "item": "bouwman2020cup"
+ },
+ {
+  "data": "2024-06",
+  "titulo": "Brasil importa desinformação russa via Telegram",
+  "texto": "Lupa, newsletter Lente.",
+  "categoria": "br",
+  "item": "lupa2024lente"
+ },
+ {
+  "data": "2026-08",
+  "titulo": "413 casos de IA na pré-campanha",
+  "texto": "Data Privacy Brasil: 63% sem indicação de IA.",
+  "categoria": "br",
+  "item": "dataprivacy2026"
+ },
+ {
+  "data": "2026-09",
+  "titulo": "TSE define deepfake por 5 a 2",
+  "texto": "A vedação depende de o conteúdo ser propaganda eleitoral.",
+  "categoria": "br",
+  "item": "tse2026deepfake"
+ },
+ {
+  "data": "2026-09",
+  "titulo": "Lusa: chatbots reproduzem veículos russos",
+  "texto": "Teste em português europeu.",
+  "categoria": "br",
+  "item": "lusa2026chatbots"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "VigIA: 554 deepfakes no primeiro turno",
+  "texto": "Só 371 de 920 peças com IA estavam rotuladas.",
+  "categoria": "br",
+  "item": "vigia2026"
+ },
+ {
+  "data": "2026-11",
+  "titulo": "Trojan bancário cresce 15% no Brasil",
+  "texto": "Kaspersky: foco migra para a infraestrutura das instituições.",
+  "categoria": "br",
+  "item": "kaspersky2026br"
+ },
+ {
+  "data": "2025-08",
+  "titulo": "Sites do governo brasileiro clonados com IA para golpe via Pix",
+  "texto": "Zscaler: Detran e MEC falsos com construtores de sites de IA.",
+  "categoria": "br",
+  "item": "zscaler2025govbr"
+ },
+ {
+  "data": "2026-02",
+  "titulo": "Envenenamento de memória em produção, com fim comercial",
+  "texto": "Microsoft: 50 prompts de 31 organizações em botões “Resumir com IA”.",
+  "categoria": "atk",
+  "item": "msft2026recpoison"
+ },
+ {
+  "data": "2026-05",
+  "titulo": "Agente com Claude invade o governo mexicano",
+  "texto": "Trend Micro: SHADOW-AETHER-040, sob supervisão do operador.",
+  "categoria": "uso",
+  "item": "trend2026shadow040"
+ },
+ {
+  "data": "2026-09",
+  "titulo": "BREEZE COMET mira Pix, STR e boleto",
+  "texto": "GTIG: LLMs aceleram scripts de reconhecimento e extração.",
+  "categoria": "br",
+  "item": "gtig2026breeze"
+ },
+ {
+  "data": "2026-10",
+  "titulo": "Pesquisa brasileira: EDR envenena o SOC com IA",
+  "texto": "Viaconnect: 14 de 23 modelos manipulados pela telemetria.",
+  "categoria": "br",
+  "item": "viaconnect2026edr"
+ },
+ {
+  "data": "2026-01",
+  "titulo": "CrowdStrike descreve o envenenamento de ferramentas",
+  "texto": "Instruções escondidas, exemplos enganosos e schemas permissivos.",
+  "categoria": "atk",
+  "item": "crowdstrike2026toolpoison"
+ }
+]

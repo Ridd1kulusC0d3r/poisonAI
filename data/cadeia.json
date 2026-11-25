@@ -1,0 +1,243 @@
+[
+ {
+  "id": "S1",
+  "nome": "Coleta",
+  "sub": "web, redes, feeds, dark web",
+  "ataques": [
+   "Inundação de fontes para coletores (LLM grooming)",
+   "SEO adversarial para o buscador do agente",
+   "Domínio expirado e janela de snapshot (split-view, frontrunning)",
+   "CTI falso plausível em blogs e feeds",
+   "PoC falsos em repositórios",
+   "Injeções plantadas na web aberta (15,3 mil medidas)",
+   "Imagem de satélite fabricada e contas impostoras de OSINT",
+   "Artefatos deixados por agentes autônomos"
+  ],
+  "defesas": [
+   "Registrar proveniência e hash de cada item na coleta",
+   "Exigir independência de fontes antes de aceitar um fato",
+   "Listas de fontes sancionadas e de baixa reputação",
+   "Congelar o conteúdo no momento da coleta, não da análise",
+   "Coleta pareada: comparar o que o agente e um navegador comum recebem"
+  ],
+  "itens": [
+   "asp2025pravda",
+   "nestaas2025aseo",
+   "carlini2024web",
+   "ranade2021fakecti",
+   "elyadmani2023poc",
+   "ipiwild2026",
+   "dfrlab2026pipeline",
+   "afp2026satellite",
+   "aisi2026incident",
+   "vigia2026"
+  ],
+  "atlas": [
+   "AML.T0070"
+  ]
+ },
+ {
+  "id": "S2",
+  "nome": "Ingestão e extração",
+  "sub": "parsing, NER, IoCs",
+  "ataques": [
+   "Injeção indireta dentro de documentos e páginas",
+   "Texto para a IA dentro de amostras de malware",
+   "NER fraco que deixa passar ou inventa entidades",
+   "Texto de autoridade ou contexto forjado dentro de logs",
+   "Gatilho de recusa que para a análise (GuardBreaker)",
+   "Narrativa de legitimidade dentro do binário (ALIBI)"
+  ],
+  "defesas": [
+   "Separar dado de instrução no prompt",
+   "Sanitizar e marcar conteúdo externo",
+   "NER especializado e conferência contra o texto-fonte",
+   "Remover conteúdo não renderizado antes do modelo",
+   "Separar classificação de sumarização e comparar"
+  ],
+  "itens": [
+   "greshake2023",
+   "checkpoint2025skynet",
+   "gtig2025",
+   "unreliable2usable2026",
+   "watchtower2026",
+   "loginject2026",
+   "eset2026guardbreaker",
+   "alibi2026",
+   "viaconnect2026edr",
+   "seymour2026poster"
+  ],
+  "atlas": [
+   "AML.T0051",
+   "AML.T0015"
+  ]
+ },
+ {
+  "id": "S3",
+  "nome": "Memória, RAG e grafo",
+  "sub": "índice vetorial, Neo4j, sessão",
+  "ataques": [
+   "Poucos textos plantados por pergunta (PoisonedRAG)",
+   "Relação falsa compartilhada no grafo (GragPoison)",
+   "Documento falso dentro de entrada legítima (T0071)",
+   "Backdoor na memória do agente (AgentPoison)",
+   "Entrada revogada que continua valendo",
+   "Grafo corrompido para armar o raciocínio (Oracle Poisoning)",
+   "Diretiva escrita na memória por skill maliciosa"
+  ],
+  "defesas": [
+   "Proveniência por nó e por aresta",
+   "Quarentena para fato novo sem segunda fonte",
+   "Versionar o grafo e permitir rollback",
+   "Expiração e revogação conferidas na recuperação",
+   "Memória versionada com diferença revisável",
+   "Credibilidade de fonte no grafo (AuthRank)"
+  ],
+  "itens": [
+   "zou2025poisonedrag",
+   "liang2025graphrag",
+   "wen2025fewwords",
+   "chen2026kepo",
+   "chen2024agentpoison",
+   "dash2026memory",
+   "revoked2026",
+   "atlas2025rag",
+   "oracle2026",
+   "authrank2025",
+   "clawhavoc2026"
+  ],
+  "atlas": [
+   "AML.T0070",
+   "AML.T0071",
+   "AML.T0080"
+  ]
+ },
+ {
+  "id": "S4",
+  "nome": "Raciocínio do modelo",
+  "sub": "o LLM decide e escreve",
+  "ataques": [
+   "Alucinação de entidade, fonte ou credencial",
+   "Backdoor instalado no treino (250 documentos)",
+   "Excesso de confiança e inconsistência",
+   "Backdoor por edição de poucos neurônios (Lazarus)",
+   "Viés do modelo na atribuição entre Estados"
+  ],
+  "defesas": [
+   "Medir incerteza semântica por afirmação",
+   "Rodar o mesmo caso mais de uma vez e comparar",
+   "Calibrar e exibir a confiança",
+   "Hash e origem do checkpoint conferidos com referência"
+  ],
+  "itens": [
+   "farquhar2024semantic",
+   "souly2025near",
+   "hubinger2024sleeper",
+   "mezzi2025unreliable",
+   "anthropic2025gtg1002",
+   "lazarus2026",
+   "bias2503"
+  ],
+  "atlas": [
+   "AML.T0020"
+  ]
+ },
+ {
+  "id": "S5",
+  "nome": "Ferramentas e ação",
+  "sub": "Shodan, VirusTotal, MCP",
+  "ataques": [
+   "Descrição, esquema ou saída de ferramenta envenenados",
+   "Servidor MCP impostor",
+   "Pacote alucinado registrado por terceiros",
+   "Malware que consulta LLM em execução",
+   "Skill maliciosa ou alterada depois da aprovação (rug pull)",
+   "Chave de API roubada ou proxy malicioso",
+   "Framework agêntico ofensivo em ritmo de máquina"
+  ],
+  "defesas": [
+   "Allowlist e versão fixa de ferramentas",
+   "Menor privilégio e sandbox",
+   "Conferir pacotes contra o registro oficial",
+   "Telemetria de chamadas de ferramenta",
+   "Credenciais curtas e de escopo mínimo; alerta de custo",
+   "Detecção por ritmo e laço de planejamento, não por hash"
+  ],
+  "itens": [
+   "invariant2025tpa",
+   "cyberark2025fsp",
+   "csa2026mcp",
+   "dynatrace2026mcp",
+   "spracklen2025package",
+   "debenedetti2024agentdojo",
+   "snyk2026toxicskills",
+   "koi2025postmark",
+   "msft2026storm0940",
+   "elastic2026artex",
+   "crowdstrike2026toolpoison"
+  ],
+  "atlas": [
+   "AML.T0051",
+   "AML.T0054"
+  ]
+ },
+ {
+  "id": "S6",
+  "nome": "Relatório e disseminação",
+  "sub": "STIX, alertas, briefing",
+  "ataques": [
+   "Atribuição de ator errada, mas bem escrita",
+   "Métrica lexical que premia texto pobre",
+   "IoC falso exportado em STIX para parceiros",
+   "Resumo que rebaixa a gravidade sem evidência nova"
+  ],
+  "defesas": [
+   "Cada afirmação com citação verificável",
+   "Verificação pós-geração antes de exportar",
+   "Escala de probabilidade explícita no texto",
+   "Cada afirmação do relatório aponta para a evidência bruta",
+   "Retratação a quem recebeu relatório contaminado"
+  ],
+  "itens": [
+   "chen2025cte",
+   "tihanyi2024cybermetric",
+   "alam2024ctibench",
+   "zhao2023verifyedit",
+   "shafee2025falsealarms",
+   "meng2025vuln"
+  ],
+  "atlas": []
+ },
+ {
+  "id": "S7",
+  "nome": "Analista",
+  "sub": "Camada 8",
+  "ataques": [
+   "Viés de automação: aceitar sem conferir",
+   "CTI falso que engana especialistas",
+   "Fadiga: checkpoint vira carimbo",
+   "Fadiga por falso positivo até desligar o detector (97% sob evasão)",
+   "Detector de imagem que chama o real de falso"
+  ],
+  "defesas": [
+   "Checkpoints obrigatórios antes da decisão",
+   "Mostrar proveniência e incerteza ao analista",
+   "Hipóteses concorrentes (ACH) e red team cognitivo",
+   "Medir a taxa de aceitação de erro plantado",
+   "Itens semeados para medir a atenção do revisor (n≥30)",
+   "Nota por afirmação (código do Almirantado)"
+  ],
+  "itens": [
+   "parasuraman2010",
+   "ranade2021fakecti",
+   "palmieri2026survey",
+   "anthropic2025aug",
+   "shafee2025falsealarms",
+   "newsguard2026detect",
+   "srikanth2024usability",
+   "socpercep2026",
+   "bouwman2020cup"
+  ],
+  "atlas": []
+ }
+]

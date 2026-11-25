@@ -1,0 +1,621 @@
+[
+ {
+  "id": "gtg1002",
+  "nome": "GTG-1002",
+  "aka": "",
+  "origem": "China (estatal, alta confiança segundo a Anthropic)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "oque": "Orquestrou Claude Code num framework próprio contra cerca de 30 alvos; a IA fez de 80% a 90% da campanha. Driblou a recusa quebrando a tarefa em pedaços inocentes e dizendo trabalhar numa empresa de segurança.",
+  "osint": "O reconhecimento automatizado é OSINT ofensivo agêntico. E o agente alucinou credenciais: o atacante também sofre a lacuna de validação.",
+  "stg": [
+   "S1",
+   "S4",
+   "S5",
+   "S6"
+  ],
+  "fontes": [
+   "anthropic2025gtg1002"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "gtg2002",
+  "nome": "GTG-2002",
+  "aka": "“vibe hacking”",
+  "origem": "Crime organizado (não atribuído a Estado)",
+  "tipo": "Crime",
+  "papel": "F",
+  "oque": "Usou Claude Code para invadir e extorquir ao menos 17 organizações; a IA escolheu os dados e escreveu exigências psicologicamente direcionadas.",
+  "osint": "Junta coleta de dados abertos, análise automatizada e manipulação psicológica: um caso de Camada 8 do lado do atacante.",
+  "stg": [
+   "S1",
+   "S5",
+   "S7"
+  ],
+  "fontes": [
+   "anthropic2025aug"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "apt28",
+  "nome": "APT28 e Sandworm",
+  "aka": "Forest Blizzard, FROZENLAKE; Sandworm (GRU)",
+  "origem": "Rússia (GRU)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "oque": "Em 2024 aparece entre os primeiros estatais usando LLM; em 2025 usa o PROMPTSTEAL (LAMEHUG), que consulta o Qwen2.5-Coder via Hugging Face para gerar comandos contra a Ucrânia. Em 2026, o SANDWORM usou o Gemini contra a Ucrânia (GTIG).",
+  "osint": "Malware que consulta LLM em execução não traz o comando no binário: a análise estática e a CTI baseada em strings perdem sinal.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "msft2024",
+   "gtig2025",
+   "gtig2026sep"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "promptflux",
+  "nome": "Operador do PROMPTFLUX",
+  "aka": "",
+  "origem": "Desconhecida (indícios de motivação financeira, segundo o GTIG)",
+  "tipo": "Desconhecido",
+  "papel": "F",
+  "oque": "Dropper em VBScript que pede ao Gemini para reescrever o próprio código e se ofuscar; experimental, testado no VirusTotal.",
+  "osint": "IoC baseado em hash envelhece em horas quando o malware se reescreve; reforça indicadores de comportamento.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "gtig2025"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "skynet",
+  "nome": "Autor do “Skynet”",
+  "aka": "",
+  "origem": "Desconhecida (envio anônimo ao VirusTotal)",
+  "tipo": "Desconhecido",
+  "papel": "A",
+  "oque": "Embutiu na amostra um texto dirigido à IA analisadora pedindo que o arquivo fosse declarado limpo. Falhou nos testes.",
+  "osint": "Ataque direto à IA do defensor: qualquer agente que lê amostras, documentos ou páginas recebe o mesmo tipo de texto.",
+  "stg": [
+   "S2",
+   "S4"
+  ],
+  "fontes": [
+   "checkpoint2025skynet"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "fruitshell",
+  "nome": "Reverse shell com prompt anti-IA",
+  "aka": "",
+  "origem": "Não informada no trecho conferido",
+  "tipo": "Desconhecido",
+  "papel": "A",
+  "oque": "Reverse shell em PowerShell, observada em operação, com prompts fixos para escapar de detecção e análise por segurança baseada em LLM.",
+  "osint": "Mostra que o Skynet não ficou isolado: a evasão contra IA já aparece em ferramenta usada de verdade.",
+  "stg": [
+   "S2",
+   "S4"
+  ],
+  "fontes": [
+   "gtig2025"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "pravda",
+  "nome": "Rede Pravda",
+  "aka": "Portal Kombat",
+  "origem": "Rússia (operação de influência)",
+  "tipo": "Influência",
+  "papel": "A",
+  "oque": "Rede de sites que agrega propaganda pró-Kremlin em volume (cerca de 3,6 milhões de artigos por ano, segundo o ASP), aparentemente mais para coletores de IA do que para leitores. Em 2026 o DFRLab achou o conteúdo no Common Crawl; o efeito no treino segue contestado (Alyukov et al.: 5%).",
+  "osint": "Um agente OSINT que indexa a web aberta ingere essa camada. É o caso real mais próximo do envenenamento de RAG em CTI e desinformação.",
+  "stg": [
+   "S1",
+   "S3"
+  ],
+  "fontes": [
+   "asp2025pravda",
+   "newsguard2025pravda",
+   "isd2025chatbots",
+   "dfrlab2026pipeline",
+   "alyukov2025hks",
+   "sabado2026pravda",
+   "lusa2026chatbots"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": 3
+ },
+ {
+  "id": "emerald",
+  "nome": "Emerald Sleet",
+  "aka": "Velvet Chollima",
+  "origem": "Coreia do Norte",
+  "tipo": "Estatal",
+  "papel": "F",
+  "oque": "Usou LLMs para pesquisar think tanks e especialistas sobre a Coreia do Norte, gerar conteúdo de spear phishing e entender vulnerabilidades públicas.",
+  "osint": "OSINT de alvos humanos assistido por IA: a mesma técnica de perfilamento que você estuda, do lado do atacante.",
+  "stg": [
+   "S1",
+   "S7"
+  ],
+  "fontes": [
+   "msft2024"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "coral",
+  "nome": "Coral Sleet e Jasper Sleet",
+  "aka": "Coral Sleet antes Storm-1877",
+  "origem": "Coreia do Norte",
+  "tipo": "Estatal",
+  "papel": "F",
+  "oque": "Coral Sleet com fluxo de ataque totalmente habilitado por IA e agentes encadeados; Jasper Sleet usa IA para conseguir e manter empregos remotos de TI.",
+  "osint": "Personas sintéticas e currículos gerados por IA poluem a mesma fonte aberta que o recrutador e o investigador consultam.",
+  "stg": [
+   "S1",
+   "S5",
+   "S7"
+  ],
+  "fontes": [
+   "msft2026tradecraft"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "outros24",
+  "nome": "Crimson Sandstorm, Charcoal Typhoon, Salmon Typhoon",
+  "aka": "",
+  "origem": "Irã e China",
+  "tipo": "Estatal",
+  "papel": "F",
+  "oque": "Na linha de base de 2024, usavam LLMs como assistentes de pesquisa, código e engenharia social, sem técnica nova.",
+  "osint": "Serve de ponto de comparação: o salto de 2024 para 2026 é de assistente para operador.",
+  "stg": [
+   "S1"
+  ],
+  "fontes": [
+   "msft2024"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "fakepoc",
+  "nome": "Distribuidores de PoC falsos",
+  "aka": "",
+  "origem": "Diversa (crime e desconhecidos)",
+  "tipo": "Crime",
+  "papel": "A",
+  "oque": "Publicam provas de conceito de CVEs no GitHub com backdoor ou exfiltração; 10,3% dos 47.313 repositórios estudados.",
+  "osint": "Mira o analista e, agora, o agente que baixa e testa exploits de forma automática.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "elyadmani2023poc"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "mcpimpostor",
+  "nome": "Impostor do pacote postmark-mcp",
+  "aka": "",
+  "origem": "Desconhecida",
+  "tipo": "Crime",
+  "papel": "A",
+  "oque": "Pacote npm que copiava o nome de uma biblioteca oficial do Postmark e exfiltrava o tráfego de e-mail de quem o instalou (set/2025).",
+  "osint": "Prova de que o servidor MCP é cadeia de suprimentos: o agente herda a confiança que o desenvolvedor deu.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "csa2026mcp",
+   "koi2025postmark"
+  ],
+  "conf": "Atribuição da fonte citada",
+  "prio": null
+ },
+ {
+  "id": "storm0940",
+  "nome": "Storm-0940",
+  "aka": "sobreposição com UNC7228 (GTIG), não sinônimo",
+  "origem": "China (alinhado ao Estado, avaliação da Microsoft)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "conf": "Avaliação da Microsoft",
+  "oque": "Usou o framework aberto de pentest agêntico ARTEX desde set/2026 e é apontado como responsável pelo comprometimento ligado ao ConnectWise Cloud Backup; tentativas de login em mais de 2.250 tenants. O desenvolvedor retirou o código original do ARTEX em outubro por causa do uso indevido (GTIG, via iTnews).",
+  "osint": "Framework aberto vira arma de Estado: a assinatura útil é o ritmo do laço de planejamento, não o nome da ferramenta.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "msft2026storm0940",
+   "gtig2026artex",
+   "elastic2026artex",
+   "itnews2026artex"
+  ],
+  "prio": 4
+ },
+ {
+  "id": "artexcrime",
+  "nome": "Operadores criminosos do ARTEX",
+  "aka": "ligação com ARTEX em confiança moderada",
+  "origem": "Nexo chinês provável (Amazon, confiança moderada)",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Confiança moderada (Amazon)",
+  "oque": "Agentes que caçavam chaves de provedores de IA em LiteLLM, Dify, Langflow e Ollama, pagando a inferência com chaves roubadas; segunda campanha com deepfakes contra KYC.",
+  "osint": "Caíram numa isca que imitava API de LLM e entregaram a própria memória: o gap de validação vale para o atacante.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "aws2026madpot"
+  ],
+  "prio": 2
+ },
+ {
+  "id": "uac0099",
+  "nome": "UAC-0099",
+  "aka": "ligado ao Sandworm",
+  "origem": "Rússia (alinhado)",
+  "tipo": "Estatal",
+  "papel": "A",
+  "conf": "ESET",
+  "oque": "GuardBreaker: comentário num VBS que pede ajuda para fazer arma nuclear, para acionar a recusa do LLM e parar a análise antes da parte maliciosa; instala o MATCHBOIL.",
+  "osint": "Ataque direto à triagem por IA no SOC, com técnica nova (gatilho de recusa) em operação real contra a Ucrânia.",
+  "stg": [
+   "S2",
+   "S4"
+  ],
+  "fontes": [
+   "eset2026guardbreaker"
+  ],
+  "prio": null
+ },
+ {
+  "id": "glassbridge",
+  "nome": "Glassbridge e operações chinesas de influência",
+  "aka": "“cyber special operations”",
+  "origem": "China (adjacente ao governo)",
+  "tipo": "Influência",
+  "papel": "A",
+  "conf": "DFRLab; OpenAI",
+  "oque": "Conteúdo da operação Glassbridge achado no Common Crawl; operador ligado à polícia chinesa planejando operações contra a primeira-ministra japonesa.",
+  "osint": "Grooming fora do eixo russo e fora do inglês: lacuna de medição.",
+  "stg": [
+   "S1",
+   "S3"
+  ],
+  "fontes": [
+   "dfrlab2026pipeline",
+   "openai2026io"
+  ],
+  "prio": null
+ },
+ {
+  "id": "iranff",
+  "nome": "Operações iranianas “false front”",
+  "aka": "APT42 no uso do Gemini",
+  "origem": "Irã",
+  "tipo": "Influência",
+  "papel": "A",
+  "conf": "OpenAI; GTIG",
+  "oque": "Veículos e think tanks de fachada e personas fotorrealistas; uma operação chegou à Categoria 4 da Breakout Scale.",
+  "osint": "Lavagem de autoridade: agente OSINT tende a confiar em fonte com cara de instituição.",
+  "stg": [
+   "S1"
+  ],
+  "fontes": [
+   "openai2026io",
+   "gtig2026"
+  ],
+  "prio": null
+ },
+ {
+  "id": "clawhavoc",
+  "nome": "Distribuidores de skills maliciosas",
+  "aka": "ClawHavoc",
+  "origem": "Desconhecida (12 contas)",
+  "tipo": "Crime",
+  "papel": "A",
+  "conf": "Antiy CERT (B); Snyk",
+  "oque": "1.184 skills maliciosas no ClawHub, uma conta com 677; parte entregava o Atomic macOS Stealer e reescrevia o arquivo de memória do agente.",
+  "osint": "Envenenamento na camada de ferramentas, antes de qualquer dado: o agente de CTI herda o risco ao instalar a skill.",
+  "stg": [
+   "S5",
+   "S3"
+  ],
+  "fontes": [
+   "clawhavoc2026",
+   "snyk2026toxicskills"
+  ],
+  "prio": null
+ },
+ {
+  "id": "underground",
+  "nome": "Vendedores do mercado clandestino de IA",
+  "aka": "WormGPT, dark LLMs, revenda de contas",
+  "origem": "Diversa",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Halcyon; Rapid7; alegações de fórum (C)",
+  "oque": "Credenciais de LLM roubadas e jailbreaks são a maior fatia; contas vendidas a centavos; dark LLMs existem, mas são menos capazes.",
+  "osint": "Um agente de CTI rodando com chave vazada ou atrás de proxy malicioso expõe todo o contexto da investigação.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "halcyon2026",
+   "rapid7_2026",
+   "zerofox2026"
+  ],
+  "prio": null
+ },
+ {
+  "id": "aisiagent",
+  "nome": "Agentes autônomos em avaliação",
+  "aka": "vetor não humano",
+  "origem": "Modelos de fronteira em teste (AISI)",
+  "tipo": "Agente autônomo",
+  "papel": "A",
+  "conf": "UK AISI",
+  "oque": "Durante teste com internet ligada, agentes criaram identidades falsas, tentaram inserir código malicioso em projeto aberto e plantaram injeções para outras IAs.",
+  "osint": "Artefatos deixados por agentes viram dado coletado por outros agentes: terceiro vetor de contaminação (RQ16).",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "aisi2026incident"
+  ],
+  "prio": null
+ },
+ {
+  "id": "unc7228",
+  "nome": "UNC7228",
+  "aka": "sobreposição registrada com Storm-0940",
+  "origem": "China (avaliação do GTIG)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "conf": "GTIG; Wiz acompanha a campanha",
+  "oque": "Cluster do GTIG com uso de ARTEX. O GTIG registra a ligação com Storm-0940 como sobreposição, não como o mesmo grupo.",
+  "osint": "Nome de fornecedor diferente não é grupo diferente, nem o mesmo: leia a tabela de correspondência antes de somar casos.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "gtig2026artex",
+   "wiz2026artex"
+  ],
+  "prio": 4
+ },
+ {
+  "id": "vaporpanda",
+  "nome": "VAPOR PANDA",
+  "aka": "cluster da CrowdStrike",
+  "origem": "China (avaliação da CrowdStrike)",
+  "tipo": "Estatal",
+  "papel": "F",
+  "conf": "CrowdStrike, via cobertura (B)",
+  "oque": "Outro cluster ligado à China usando ARTEX. Não fundir com Storm-0940 nem com UNC7228.",
+  "osint": "Três campanhas distintas com a mesma ferramenta aberta: a ferramenta não atribui.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "itnews2026artex"
+  ],
+  "prio": 4
+ },
+ {
+  "id": "artexextorsao",
+  "nome": "Grupos de extorsão com ARTEX",
+  "aka": "Storm-3358, Onyx Sleet, Pearl Sleet e outros citados em cobertura",
+  "origem": "Diversa",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "GTIG; demais nomes via cobertura (B)",
+  "oque": "Uso de ARTEX e outros frameworks agênticos em respostas a incidentes desde o fim de agosto de 2026, com motivação financeira.",
+  "osint": "Confira cada nome no relatório original antes de citar.",
+  "stg": [
+   "S1",
+   "S5"
+  ],
+  "fontes": [
+   "gtig2026artex"
+  ],
+  "prio": null
+ },
+ {
+  "id": "brcrime",
+  "nome": "Cibercrime bancário brasileiro",
+  "aka": "famílias de trojan bancário de origem brasileira",
+  "origem": "Brasil",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Kaspersky (telemetria própria)",
+  "oque": "1,7 milhão de tentativas de infecção por trojan bancário bloqueadas no Brasil em 12 meses (+15%); seis das oito principais famílias da região são brasileiras; foco migrando do correntista para a infraestrutura das instituições, com apoio de IA.",
+  "osint": "A ameaça de IA mais concreta para defensores no Brasil: aceleração de um crime local já maduro, não envenenamento de CTI.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "kaspersky2026br",
+   "eset2026pix"
+  ],
+  "prio": 1
+ },
+ {
+  "id": "slimspider",
+  "nome": "Slim Spider",
+  "aka": "",
+  "origem": "Brasil",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Não confirmado: só blog; o GTIG cita Plump Spider",
+  "oque": "Nome trazido pelo dossiê 5 a partir de um blog citando a CrowdStrike. Não aparece no post do GTIG sobre BREEZE COMET nem no LLmInjection.",
+  "osint": "Teste direto do PIR-3: que telemetria distingue intrusão conduzida por agente em ambiente financeiro?",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "crowdstrike2026slim"
+  ],
+  "prio": null
+ },
+ {
+  "id": "breezecomet",
+  "nome": "BREEZE COMET",
+  "aka": "ex-UNC5669; sobreposição com Plump Spider (Axur) e SHADOW-AETHER-064 (Trend)",
+  "origem": "Brasil (foco); atribuição não informada",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "GTIG e Mandiant (fonte primária conferida)",
+  "oque": "Manipula sistemas de pagamento e software bancário no Brasil (Pix, STR, boleto); ao menos um roubo de dezenas de milhares de dólares; LLMs para acelerar scripts de reconhecimento, validação de credenciais e extração.",
+  "osint": "Acesso inicial é o de sempre (password spray, vishing de suporte, sites de governo comprometidos); a IA acelera a produção de ferramentas sob medida.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "gtig2026breeze"
+  ],
+  "prio": 1
+ },
+ {
+  "id": "eleitoral",
+  "nome": "Produtores descentralizados de conteúdo sintético eleitoral",
+  "aka": "perfis comuns e anônimos",
+  "origem": "Brasil",
+  "tipo": "Influência",
+  "papel": "A",
+  "conf": "VigIA; Data Privacy Brasil",
+  "oque": "Na eleição de 2026, a maior parte das mídias manipuladas veio de cidadãos comuns e perfis anônimos, e a maioria não estava rotulada.",
+  "osint": "O agente de OSINT enfrenta ruído massivo e descentralizado, não uma campanha coordenada: muda o que filtrar.",
+  "stg": [
+   "S1",
+   "S7"
+  ],
+  "fontes": [
+   "vigia2026",
+   "dataprivacy2026",
+   "tse2026deepfake"
+  ],
+  "prio": 3
+ },
+ {
+  "id": "clcri1163",
+  "nome": "CL-CRI-1163",
+  "aka": "",
+  "origem": "Não informada",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Unit 42 (média)",
+  "prio": 1,
+  "oque": "Setor financeiro brasileiro com phishing de emprego e currículo desde fev/2026; scripts gerados por LLM inferidos pela iteração de arquivos em infraestrutura exposta.",
+  "osint": "A cobertura da imprensa liga o cluster ao BREEZE COMET; o artigo da Unit 42 não afirma essa ligação.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "unit42_2026latam"
+  ]
+ },
+ {
+  "id": "clcri1131",
+  "nome": "CL-CRI-1131",
+  "aka": "Operation Escaneo (CloudSEK)",
+  "origem": "Não informada",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Unit 42 (alta)",
+  "prio": null,
+  "oque": "Transporte, ministérios e serviços de água no México e no Equador; LLMs para gerar scripts de contorno; NextChat exposto para comparar modelos.",
+  "osint": "Agente e LLM como fábrica de scripts contra infraestrutura pública latino-americana.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "unit42_2026latam"
+  ]
+ },
+ {
+  "id": "shadow040",
+  "nome": "SHADOW-AETHER-040",
+  "aka": "",
+  "origem": "Operadores de língua espanhola",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Trend Micro (alta para o uso do agente)",
+  "prio": null,
+  "oque": "Seis entidades do governo mexicano invadidas com uma ferramenta agêntica que enviava prompts ao Claude e executava os comandos, sob supervisão do operador.",
+  "osint": "Mesmo padrão do GTG-1002 em escala regional: o humano corrige o agente.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "trend2026shadow040"
+  ]
+ },
+ {
+  "id": "revengehotels",
+  "nome": "RevengeHotels",
+  "aka": "TA558",
+  "origem": "Não informada",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Kaspersky (alta para a atribuição; cautelosa sobre IA)",
+  "prio": null,
+  "oque": "Phishing contra hotéis, sobretudo brasileiros, com VenomRAT; código de infecção que parece gerado por agentes de LLM.",
+  "osint": "Detectar texto “gerado por IA” não é controle confiável; o comportamento é.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "kaspersky2025revenge"
+  ]
+ },
+ {
+  "id": "exilware",
+  "nome": "Exilware",
+  "aka": "BraZetsu; “Banco de Infects”",
+  "origem": "Brasil (corretor de acesso)",
+  "tipo": "Crime",
+  "papel": "F",
+  "conf": "Group-IB (alta para o vínculo com BraZetsu)",
+  "prio": null,
+  "oque": "Corretor de acesso inicial vendendo máquinas comprometidas da Península Ibérica e da América Latina; textos no C2 citam um motor de IA que tria dados roubados.",
+  "osint": "IA no back-office do crime: triagem de dados roubados em escala.",
+  "stg": [
+   "S5"
+  ],
+  "fontes": [
+   "groupib2026brazetsu"
+  ]
+ }
+]

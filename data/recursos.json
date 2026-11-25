@@ -1,0 +1,511 @@
+{
+ "frameworks": [
+  {
+   "nome": "MITRE ATLAS",
+   "papel": "Táticas e técnicas contra sistemas de IA, no molde do ATT&CK",
+   "links": [
+    [
+     "AML.T0070 (D3FEND)",
+     "https://d3fend.mitre.org/offensive-technique/attack/AML.T0070/"
+    ],
+    [
+     "AML.T0071 (D3FEND)",
+     "https://d3fend.mitre.org/offensive-technique/attack/AML.T0071/"
+    ]
+   ],
+   "tese": "Use para dar ID a cada experimento."
+  },
+  {
+   "nome": "OWASP LLM Top 10 2025",
+   "papel": "Lista de riscos de aplicações com LLM",
+   "links": [
+    [
+     "LLM04 Data and Model Poisoning",
+     "https://genai.owasp.org/llmrisk/llm04-data-and-model-poisoning/"
+    ]
+   ],
+   "tese": "LLM04 (envenenamento) e LLM09 (desinformação) são os rótulos da linha."
+  },
+  {
+   "nome": "NIST AI 100-2e2025",
+   "papel": "Taxonomia e terminologia de aprendizado de máquina adversarial",
+   "links": [
+    [
+     "PDF",
+     "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-2e2025.pdf"
+    ],
+    [
+     "CSRC",
+     "https://csrc.nist.gov/pubs/ai/100/2/e2025/final"
+    ]
+   ],
+   "tese": "Vocabulário para a seção de método."
+  },
+  {
+   "nome": "Revisão de Palmieri et al.",
+   "papel": "Taxonomia de 11 categorias do OSINT agêntico",
+   "links": [
+    [
+     "arXiv",
+     "https://arxiv.org/abs/2607.03233"
+    ]
+   ],
+   "tese": "Âncora para posicionar cada pergunta da linha."
+  },
+  {
+   "nome": "CSA MAESTRO",
+   "papel": "Modelagem de ameaças de IA agêntica em sete camadas",
+   "links": [
+    [
+     "Post da CSA",
+     "https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro"
+    ]
+   ],
+   "tese": "Passo 1: decompor o sistema."
+  },
+  {
+   "nome": "OWASP Top 10 Agentic 2026",
+   "papel": "Riscos de aplicações agênticas",
+   "links": [
+    [
+     "OWASP",
+     "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ],
+    [
+     "Ameaças e mitigações",
+     "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    ]
+   ],
+   "tese": "Rótulo de risco para agentes."
+  },
+  {
+   "nome": "OWASP AIVSS",
+   "papel": "Pontuação de vulnerabilidades de IA",
+   "links": [
+    [
+     "Site",
+     "https://aivss.owasp.org/"
+    ]
+   ],
+   "tese": "Passo 3: pontuar."
+  },
+  {
+   "nome": "OpenTelemetry GenAI",
+   "papel": "Convenções de telemetria de agentes",
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/open-telemetry/semantic-conventions-genai"
+    ]
+   ],
+   "tese": "Sem telemetria do agente não há detecção."
+  }
+ ],
+ "repositorios": [
+  [
+   "github.com/secintelligence/CyberThreat-Eval",
+   "Benchmark de fluxo real de CTI (código)"
+  ],
+  [
+   "huggingface.co/datasets/xse/CyberThreat-Eval",
+   "Dados do CyberThreat-Eval"
+  ],
+  [
+   "github.com/xashru/cti-bench",
+   "CTIBench: tarefas de CTI, incluindo atribuição de ator"
+  ],
+  [
+   "github.com/cybermetric/CyberMetric",
+   "CyberMetric: 10.000 questões de cibersegurança"
+  ],
+  [
+   "github.com/sleeepeer/PoisonedRAG",
+   "Código do ataque PoisonedRAG"
+  ],
+  [
+   "billchan226.github.io/AgentPoison",
+   "Página do AgentPoison com código"
+  ],
+  [
+   "github.com/Cyreslab-AI/awesome-ai-cyber-deception",
+   "Lista curada de engano com IA"
+  ],
+  [
+   "github.com/open-telemetry/semantic-conventions-genai",
+   "Convenções de telemetria de IA generativa"
+  ]
+ ],
+ "consultas": [
+  [
+   "Google Acadêmico: núcleo da linha",
+   "(\"knowledge poisoning\" OR \"RAG poisoning\" OR \"data poisoning\") (\"threat intelligence\" OR CTI OR OSINT) (LLM OR agent)"
+  ],
+  [
+   "Google Acadêmico: alucinação em CTI",
+   "(hallucination OR \"factual consistency\" OR calibration) (\"cyber threat intelligence\" OR OSINT) (\"large language model\" OR LLM) -survey"
+  ],
+  [
+   "arXiv: grafo e memória",
+   "site:arxiv.org (GraphRAG OR \"knowledge graph\" OR \"agent memory\") (poisoning OR backdoor) 2026"
+  ],
+  [
+   "Atores e IA (relatórios)",
+   "(\"threat actor\" OR APT) (\"use of AI\" OR \"AI-enabled\" OR \"LLM\") (report OR tracker) (GTIG OR Anthropic OR Microsoft OR OpenAI) 2026"
+  ],
+  [
+   "LLM grooming em português",
+   "(\"LLM grooming\" OR \"envenenamento de IA\" OR \"rede Pravda\") (chatbot OR \"inteligência artificial\") (Brasil OR \"América Latina\")"
+  ],
+  [
+   "Humano no circuito em segurança",
+   "(\"automation bias\" OR \"human-AI teaming\") (SOC OR \"security analyst\" OR \"threat hunter\") (LLM OR \"generative AI\")"
+  ],
+  [
+   "Monitoramento (EN)",
+   "\"CTI poisoning\" OR \"threat intelligence poisoning\" LLM; \"RAG poisoning\" agent security; \"knowledge graph poisoning\" cybersecurity; \"LLM grooming\"; \"prompt injection\" malware analysis; \"fake threat intelligence\" generation; \"automation bias\" SOC analysts"
+  ],
+  [
+   "Monitoramento (PT)",
+   "\"envenenamento de dados\" IA cibersegurança; \"inteligência de ameaças\" LLM alucinação; \"LLM grooming\" desinformação; \"injeção de prompt\" malware; \"rede Pravda\" chatbots"
+  ],
+  [
+   "Engano contra agentes",
+   "(honeypot OR honeytoken OR deception OR decoy) (\"LLM agent\" OR \"AI agent\" OR \"autonomous agent\") (attacker OR pentest) 2026"
+  ]
+ ],
+ "grupos_acompanhar": [
+  [
+   "Academia",
+   "UMBC Ebiquity (Joshi, Finin, Piplai); LASIGE/Lisboa (Bessani, Ferreira, Shafee); UT Austin ARL (AuthRank); Zhaohan Xi e Jinyuan Jia; Keele/Liverpool (Ghanem); Hochschule München (Kruspe)"
+  ],
+  [
+   "Pesquisa de influência",
+   "DFRLab, CheckFirst, American Sunlight Project, NewsGuard, VIGINUM"
+  ],
+  [
+   "Empresas e governo",
+   "GTIG, Anthropic Threat Intelligence, OpenAI Intelligence & Investigations, Microsoft Threat Intelligence, Amazon Threat Intelligence, UK AISI, Alan Turing Institute/CETaS"
+  ],
+  [
+   "Brasil",
+   "CERT.br, CTIR Gov, Agência Lupa, Laboratório de IA da Unicamp, Data Privacy Brasil, InternetLab, ITS Rio, comunidades MISP setoriais"
+  ]
+ ],
+ "familias": [
+  {
+   "nome": "Mesmos autores: framework e revisão de Palmieri",
+   "keys": [
+    "palmieri2025framework",
+    "palmieri2026survey"
+   ]
+  },
+  {
+   "nome": "Rede Pravda e LLM grooming (três medições do mesmo fenômeno)",
+   "keys": [
+    "asp2025pravda",
+    "newsguard2025pravda",
+    "isd2025chatbots"
+   ]
+  },
+  {
+   "nome": "Eleições brasileiras de 2026 e chatbots",
+   "keys": [
+    "itsrio2026boca",
+    "internetlab2026papo",
+    "eko2026"
+   ]
+  },
+  {
+   "nome": "Envenenamento de GraphRAG",
+   "keys": [
+    "liang2025graphrag",
+    "wen2025fewwords",
+    "chen2026kepo"
+   ]
+  },
+  {
+   "nome": "Benchmarks de CTI do laboratório da RIT",
+   "keys": [
+    "alam2024ctibench",
+    "alam2025athena"
+   ]
+  },
+  {
+   "nome": "Envenenamento de ferramentas MCP",
+   "keys": [
+    "invariant2025tpa",
+    "cyberark2025fsp",
+    "csa2026mcp",
+    "dynatrace2026mcp",
+    "mcptox2025"
+   ]
+  },
+  {
+   "nome": "Relatórios de abuso da Anthropic",
+   "keys": [
+    "anthropic2025aug",
+    "anthropic2025gtg1002"
+   ]
+  },
+  {
+   "nome": "Relatórios do GTIG",
+   "keys": [
+    "gtig2025",
+    "gtig2026",
+    "gtig2026sep",
+    "gtig2026artex",
+    "itnews2026artex",
+    "gtig2026breeze"
+   ]
+  },
+  {
+   "nome": "Microsoft e OpenAI",
+   "keys": [
+    "msft2024",
+    "msft2026tradecraft",
+    "openai2026feb",
+    "msft2026storm0940",
+    "openai2026io"
+   ]
+  },
+  {
+   "nome": "Niu et al.: dataset e análise",
+   "keys": [
+    "niu2024dataset",
+    "niu2025bullshint"
+   ]
+  },
+  {
+   "nome": "Equipe Alyukov e Makhortykh: artigo revisado e opinião",
+   "keys": [
+    "alyukov2025hks",
+    "aljazeera2025"
+   ]
+  },
+  {
+   "nome": "DFRLab sobre a rede Pravda",
+   "keys": [
+    "dfrlab2025wiki",
+    "dfrlab2026pipeline",
+    "dfrlab2025grok"
+   ]
+  },
+  {
+   "nome": "NewsGuard: auditorias de chatbots e detectores",
+   "keys": [
+    "newsguard2025pravda",
+    "newsguard2026detect"
+   ]
+  },
+  {
+   "nome": "Skills de agentes: Snyk e casos derivados",
+   "keys": [
+    "snyk2026toxicskills",
+    "clawhavoc2026"
+   ]
+  },
+  {
+   "nome": "Agência Lupa: VigIA, Observatório e newsletter",
+   "keys": [
+    "vigia2026",
+    "lupa2026obs",
+    "lupa2024lente"
+   ]
+  },
+  {
+   "nome": "Repercussão lusófona da rede Pravda",
+   "keys": [
+    "sabado2026pravda",
+    "pplware2026lingua"
+   ]
+  },
+  {
+   "nome": "Injeção em telemetria de SOC (mesma superfície)",
+   "keys": [
+    "viaconnect2026edr",
+    "seymour2026poster",
+    "spiderlabs2026logs",
+    "watchtower2026"
+   ]
+  }
+ ],
+ "trilha": [
+  {
+   "key": "palmieri2026survey",
+   "acao": "Copie a frase da lacuna de validação para o seu caderno e anote o único número medido: 4%."
+  },
+  {
+   "key": "mezzi2025unreliable",
+   "acao": "Anote os três defeitos que o artigo mede em relatórios de tamanho real."
+  },
+  {
+   "key": "chen2025cte",
+   "acao": "Liste os três estágios do fluxo e marque em qual o LLM falhou mais."
+  },
+  {
+   "key": "ranade2021fakecti",
+   "acao": "Anote os números brutos: 78,5% das falsas contra 73,6% das verdadeiras julgadas verdadeiras."
+  },
+  {
+   "key": "souly2025near",
+   "acao": "Compare 250 documentos no treino com 5 textos por pergunta no PoisonedRAG: qual ameaça é mais barata para CTI?"
+  },
+  {
+   "key": "zou2025poisonedrag",
+   "acao": "Desenhe o ataque em quatro caixas: texto plantado, recuperação, contexto, resposta."
+  },
+  {
+   "key": "liang2025graphrag",
+   "acao": "Escreva o paradoxo do GraphRAG numa frase."
+  },
+  {
+   "key": "atlas2025rag",
+   "acao": "Escolha o ID ATLAS (T0070 ou T0071) que descreve o experimento da QP2."
+  },
+  {
+   "key": "greshake2023",
+   "acao": "Aponte um ponto do seu pipeline OSINT onde dado vira instrução."
+  },
+  {
+   "key": "anthropic2025gtg1002",
+   "acao": "Grife o trecho em que o agente ofensivo alucinou e escreva o que isso diz sobre o defensor."
+  },
+  {
+   "key": "isd2025chatbots",
+   "acao": "Faça 5 perguntas sobre um tema brasileiro num chatbot e conte as fontes estatais estrangeiras citadas."
+  },
+  {
+   "key": "parasuraman2010",
+   "acao": "Escreva a hipótese de viés de automação para o seu checkpoint humano (QP4)."
+  },
+  {
+   "key": "niu2025bullshint",
+   "acao": "Corrija na sua MSL a citação de Niu: ~2 milhões de tweets de ~1.040 usuários, 9% não validados."
+  },
+  {
+   "key": "alyukov2025hks",
+   "acao": "Escreva numa linha a diferença entre LLM grooming e vazio de dados."
+  },
+  {
+   "key": "watchtower2026",
+   "acao": "Marque qual tarefa do seu SOC usa sumarização por IA hoje."
+  },
+  {
+   "key": "aws2026madpot",
+   "acao": "Escreva por que a memória capturada de um agente não é prova sozinha."
+  },
+  {
+   "key": "bouwman2020cup",
+   "acao": "Antes de medir envenenamento, meça a discordância natural entre os seus próprios feeds."
+  },
+  {
+   "key": "vigia2026",
+   "acao": "Escreva o que um agente de coleta teria absorvido na eleição sem rótulo de IA."
+  }
+ ],
+ "llminjection": {
+  "resumo": "O LLmInjection já faz o que a crítica pediu aos dossiês: separa nota da fonte (A a E) de confiança analítica, não funde rótulos de fornecedores e classifica a maturidade de cada técnica pelo grafo de evidências.",
+  "maturidade": [
+   [
+    "LLMI-T006",
+    "Envenenamento de dados ou modelo",
+    "Demonstrada em pesquisa",
+    "LLMI-T006.md"
+   ],
+   [
+    "LLMI-T007",
+    "Envenenamento de RAG",
+    "Demonstrada em pesquisa",
+    "LLMI-T007.md"
+   ],
+   [
+    "LLMI-T009",
+    "Envenenamento de memória ou contexto",
+    "Demonstrada em pesquisa",
+    "LLMI-T009.md"
+   ],
+   [
+    "LLMI-T023",
+    "Links que envenenam a memória do assistente",
+    "Observada em campo",
+    "LLMI-T023.md"
+   ],
+   [
+    "LLMI-T017",
+    "Injeção contra scanners de IA",
+    "Observada em campo",
+    "LLMI-T017.md"
+   ],
+   [
+    "LLMI-T021",
+    "Ferramenta envenenada e rug pull",
+    "Observada em campo",
+    "LLMI-T021.md"
+   ],
+   [
+    "LLMI-T002",
+    "Injeção indireta",
+    "Vulnerabilidade divulgada",
+    "LLMI-T002.md"
+   ],
+   [
+    "LLMI-T015",
+    "Orquestração de ataque por agente",
+    "Observada em campo",
+    "LLMI-T015.md"
+   ]
+  ],
+  "leitura": "Envenenamento de dados, de RAG e de memória como pesquisa; memória por links, scanners e ferramentas já em campo. É a mesma conclusão da análise de hipóteses, por outro caminho.",
+  "pecas": [
+   [
+    "Exercício E1 (dose-resposta na base)",
+    "TC-RAG-004 · DET-AI-004",
+    "Teste de conflito de proveniência em RAG e detecção de mudança de integridade em RAG ou memória",
+    "docs/TEST-CASES.md"
+   ],
+   [
+    "Exercício E3 (memória que sobrevive)",
+    "TC-MEM-007 · DET-AI-031",
+    "Envenenamento de memória persistente e escrita de memória fora do escopo",
+    "docs/TEST-CASES.md"
+   ],
+   [
+    "Exercício E6 (checkpoint e dados de treino)",
+    "TC-POI-036 · DET-AI-042",
+    "Canário de envenenamento de treino e deriva de proveniência do dataset",
+    "docs/DETECTION-ENGINEERING.md"
+   ],
+   [
+    "GuardBreaker e DUSTMAKER",
+    "TC-SCAN-016 · DET-AI-014",
+    "Scanner que dá veredito limpo na mesma execução em que recusou ou falhou",
+    "docs/DETECTION-ENGINEERING.md"
+   ],
+   [
+    "Chaves de API e contexto vazado",
+    "DET-AI-060 (Sigma)",
+    "Credencial-canário que só existiu em prompts é usada: o provedor ou intermediário reteve o contexto",
+    "detections/sigma/det-ai-060-prompt-only-canary-credential-used.yml"
+   ],
+   [
+    "ARTEX",
+    "Mapa de detecção e casos TCEM",
+    "Storm-0940, Storm-3358, VAPOR PANDA e outros, com detecções",
+    "docs/ARTEX-DETECTION-MAP.md"
+   ],
+   [
+    "Brasil e América Latina",
+    "Panorama em português",
+    "O que cada relatório diz e não diz, e pistas não promovidas",
+    "docs/pt-BR/PANORAMA-BRASIL-LATAM.md"
+   ],
+   [
+    "Notas de fonte e confiança",
+    "Escala A a E e confiança separada",
+    "Base para unificar os status deste artefato",
+    "docs/SOURCE-GRADING.md"
+   ]
+  ],
+  "gh": "https://github.com/Ridd1kulusC0d3r/LLmInjection/blob/main/"
+ }
+}

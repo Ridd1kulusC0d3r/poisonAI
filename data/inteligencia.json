@@ -1,0 +1,551 @@
+{
+ "intel": {
+  "pirs": [
+   [
+    "PIR-1",
+    "Algum ator com intenção e capacidade está tentando, ou deve tentar nos próximos 12 meses, manipular as conclusões de pipelines de CTI/OSINT com IA? Com que sinais saberíamos?",
+    [
+     "RQ1",
+     "RQ13",
+     "RQ19"
+    ]
+   ],
+   [
+    "PIR-2",
+    "Quais das nossas fontes são ao mesmo tempo baratas de falsificar e decisivas nas nossas conclusões?",
+    [
+     "RQ5",
+     "RQ24",
+     "QP6"
+    ]
+   ],
+   [
+    "PIR-3",
+    "Como o cibercrime brasileiro está incorporando IA, e o que muda para quem defende instituições financeiras e de pagamento?",
+    [
+     "RQ22"
+    ]
+   ],
+   [
+    "PIR-4",
+    "Como conteúdo sintético e propaganda em português contaminam fontes abertas e assistentes de IA usados no Brasil?",
+    [
+     "RQ7",
+     "QP5",
+     "RQ15",
+     "RQ23"
+    ]
+   ],
+   [
+    "PIR-5",
+    "Quais frameworks agênticos ofensivos estão em uso contra alvos na América Latina, e que telemetria os revela?",
+    [
+     "RQ22",
+     "RQ17"
+    ]
+   ]
+  ],
+  "circular": [
+   [
+    "Família ARTEX",
+    "Microsoft (21/out), GTIG/Mandiant (30/out), Amazon (13/nov) e Elastic (13/nov) são as primárias. Blogs e agregadores que as repetem contam como elas, não como corroboração."
+   ],
+   [
+    "Família Pravda",
+    "NewsGuard, ASP, DFRLab e VIGINUM são primárias independentes entre si. As matérias em português repercutem a NewsGuard e o ASP."
+   ],
+   [
+    "Família AISI",
+    "Uma primária, o relatório do instituto. O resto repete."
+   ]
+  ],
+  "descarte": [
+   "Agregadores e blogs genéricos sem autoria técnica identificável: só para achar a primária.",
+   "Páginas de “timeline” e “lista completa” de ataques do mês e FAQs de fornecedores sem fonte.",
+   "Posts em redes sociais como fonte de fato: vale a reportagem que os cita ou a publicação original."
+  ],
+  "base": [
+   "A “verdade” contra a qual se mede envenenamento já é fragmentada: discordância entre fontes é a norma.",
+   "A regra de corroboração custa mais do que parece: em IPs e hashes, a corroboração independente é rara até para dado verdadeiro. Funciona melhor para atribuição e narrativa.",
+   "O ruído natural pode camuflar o adversário e também tornar o envenenamento desnecessário (H4)."
+  ],
+  "pergunta": "Por que, até 25/11/2026, não há caso público confirmado de pipeline de CTI ou OSINT em produção envenenado por conteúdo gerado por IA?",
+  "hip": [
+   [
+    "H1",
+    "Acontece, mas não é detectado: faltam telemetria e proveniência."
+   ],
+   [
+    "H2",
+    "Acontece e é detectado, mas não é divulgado."
+   ],
+   [
+    "H3",
+    "Não compensa para o adversário: há caminhos mais baratos para o mesmo efeito."
+   ],
+   [
+    "H4",
+    "O ruído natural dos feeds torna o envenenamento pouco eficaz ou desnecessário."
+   ],
+   [
+    "H5",
+    "É questão de tempo: a capacidade amadureceu há pouco."
+   ],
+   [
+    "H6",
+    "O esforço existe, mas mira outro alvo: assistentes públicos e opinião pública."
+   ]
+  ],
+  "ev": [
+   [
+    "E1",
+    "O âncora: quase nenhum sistema registra proveniência ou foi testado sob ataque",
+    "CNNNCN",
+    "palmieri2026survey"
+   ],
+   [
+    "E2",
+    "Envenenamento funciona barato em laboratório (250 documentos; CTI falso aceito)",
+    "CCINCN",
+    "souly2025near"
+   ],
+   [
+    "E3",
+    "O submundo concentra-se em credenciais e acesso roubados, não em manipulação de dados",
+    "NNCNNN",
+    "halcyon2026"
+   ],
+   [
+    "E4",
+    "Feeds já têm sobreposição de 2,5% a 4,0% e falsos positivos frequentes",
+    "CNCCNN",
+    "bouwman2020cup"
+   ],
+   [
+    "E5",
+    "Operações russas investem em escala para chegar a chatbots e buscadores",
+    "NNNNNC",
+    "asp2025pravda"
+   ],
+   [
+    "E6",
+    "Malware já embute texto para enganar ou travar analisadores de IA (Skynet, GuardBreaker, DUSTMAKER)",
+    "CNINCN",
+    "eset2026guardbreaker"
+   ],
+   [
+    "E7",
+    "Atores estatais usam IA sobretudo para acelerar operações, não para enganar defensores",
+    "NNCNNN",
+    "msft2026storm0940"
+   ],
+   [
+    "E8",
+    "Fornecedores publicam com frequência relatórios sobre uso indevido de IA",
+    "IINNNN",
+    "gtig2026sep"
+   ],
+   [
+    "E9",
+    "Nenhuma oferta de “serviço de envenenamento de CTI” nos levantamentos do submundo",
+    "NNCCCN",
+    "rapid7_2026"
+   ],
+   [
+    "E10",
+    "Envenenamento de memória observado em produção, mas com fim comercial e contra assistentes do público (Microsoft, AML.CS0072)",
+    "NICNCC",
+    "msft2026recpoison"
+   ],
+   [
+    "E11",
+    "Pesquisa brasileira manipula 14 de 23 modelos de SOC pela telemetria do EDR, em laboratório",
+    "CNINCN",
+    "viaconnect2026edr"
+   ]
+  ],
+  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3.",
+  "julgamento": [
+   "É provável que a ausência de casos se explique principalmente por H3 e H6.",
+   "É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).",
+   "Confiança baixa a moderada: autorrelatos de fornecedores e ausência de evidência."
+  ],
+  "premissas": [
+   [
+    "P1",
+    "Adversários querem moldar as conclusões de analistas de CTI",
+    "Fraca",
+    "A linha vale mais como robustez geral do que como defesa contra ameaça ativa"
+   ],
+   [
+    "P2",
+    "Pipelines de CTI com IA são usados em decisões relevantes",
+    "Moderada",
+    "O dano de um envenenamento seria menor do que o suposto"
+   ],
+   [
+    "P3",
+    "O revisor humano é o último controle eficaz",
+    "Fraca",
+    "O modelo copiloto pode dar falsa segurança"
+   ],
+   [
+    "P4",
+    "O que vale em laboratório vale em produção",
+    "Fraca",
+    "Riscos super ou subestimados, sem saber em qual direção"
+   ],
+   [
+    "P5",
+    "Relatórios de fornecedores são confiáveis sobre técnicas",
+    "Moderada para técnica; baixa para atribuição",
+    "Atribuições citadas podem cair"
+   ],
+   [
+    "P6",
+    "O problema é igual no Brasil e no eixo anglófono",
+    "Não testada",
+    "O recorte local muda prioridades (aba Brasil)"
+   ]
+  ],
+  "indic": [
+   [
+    "I1",
+    "Primeiro relatório falso ou IOC fabricado identificado em comunidade de compartilhamento (MISP, ISAC)",
+    "H1/H5",
+    "Avisos das comunidades; FIRST"
+   ],
+   [
+    "I2",
+    "Oferta em fórum de serviço de “seeding” de relatórios técnicos ou reputação de indicadores",
+    "H5, contra H3",
+    "Monitoramento do submundo"
+   ],
+   [
+    "I3",
+    "Ferramenta pública que gera relatórios de ameaça falsos em lote",
+    "H5",
+    "Repositórios de código; avisos de fornecedores"
+   ],
+   [
+    "I4",
+    "Fornecedor de CTI publica retratação por inteligência contaminada",
+    "H1/H2",
+    "Blogs e boletins de fornecedores"
+   ],
+   [
+    "I5",
+    "Novas amostras de malware com texto dirigido a analisadores de IA, com taxa de sucesso medida",
+    "Contra H3",
+    "ESET, Check Point, GTIG"
+   ],
+   [
+    "I6",
+    "Contas falsas de OSINT em português ganhando tração em crises",
+    "H6",
+    "Agências de checagem; DFRLab"
+   ],
+   [
+    "I7",
+    "Caso documentado de assistente de IA corporativo ou de SOC enganado em produção (parcialmente visto: o envenenamento de recomendação da Microsoft atinge assistentes do público, não de SOC)",
+    "H1/H5",
+    "Divulgações de incidentes; CVEs"
+   ],
+   [
+    "I8",
+    "Propaganda estatal medida em dados de treino ou em respostas em português",
+    "H6",
+    "DFRLab; NewsGuard; pesquisadores lusófonos"
+   ]
+  ],
+  "cenarios": [
+   [
+    "A. Continuidade",
+    "Envenenamento de CTI segue em laboratório; o dano real vem de agentes ofensivos e de conteúdo sintético em massa",
+    "Provável",
+    "Nenhum de I1 a I4; crescimento de I5 e I6"
+   ],
+   [
+    "B. Primeiro caso",
+    "Um caso público de pipeline de CTI ou de assistente de SOC manipulado em produção",
+    "Improvável em 12 meses; tão provável quanto não em 24",
+    "I1, I4 ou I7"
+   ],
+   [
+    "C. Industrialização",
+    "Serviço de envenenamento oferecido no submundo, com clientes",
+    "Muito improvável em 12 meses",
+    "I2, I3"
+   ]
+  ],
+  "escala": [
+   [
+    "Quase nula",
+    1,
+    5
+   ],
+   [
+    "Muito improvável",
+    5,
+    20
+   ],
+   [
+    "Improvável",
+    20,
+    45
+   ],
+   [
+    "Tão provável quanto não",
+    45,
+    55
+   ],
+   [
+    "Provável",
+    55,
+    80
+   ],
+   [
+    "Muito provável",
+    80,
+    95
+   ],
+   [
+    "Quase certo",
+    95,
+    99
+   ]
+  ],
+  "jcs": [
+   [
+    "JC1",
+    "Atores criminosos e estatais continuarão usando IA principalmente para acelerar operações conhecidas, não para criar técnicas novas.",
+    "Muito provável",
+    "Moderada",
+    "Microsoft, GTIG, Elastic e Amazon convergem; todos são fornecedores."
+   ],
+   [
+    "JC2",
+    "Pipelines de CTI/OSINT com IA em uso hoje não conseguem reconstituir a origem de suas conclusões.",
+    "Provável",
+    "Moderada",
+    "Âncora; nenhum padrão de proveniência adotado."
+   ],
+   [
+    "JC3",
+    "Um ator já estar envenenando de forma sistemática pipelines de CTI.",
+    "Improvável",
+    "Baixa",
+    "Ausência de evidência sob baixa visibilidade."
+   ],
+   [
+    "JC4",
+    "No Brasil, a ameaça de IA mais relevante para defensores no curto prazo é a aceleração do cibercrime financeiro local.",
+    "Quase certo",
+    "Moderada",
+    "Telemetria de fornecedores convergente, sem dado oficial independente."
+   ],
+   [
+    "JC5",
+    "Agentes de OSINT operando no Brasil durante eleições absorvem conteúdo sintético não rotulado.",
+    "Muito provável",
+    "Moderada",
+    "Data Privacy Brasil e VigIA mostram baixa rotulagem."
+   ],
+   [
+    "JC6",
+    "Chatbots respondem pior em português do que em inglês a narrativas de propaganda estatal.",
+    "Tão provável quanto não",
+    "Baixa",
+    "Indícios indiretos; nenhuma auditoria em pt-BR."
+   ]
+  ],
+  "opsec": [
+   "Separar identidade e infraestrutura de pesquisa das pessoais e institucionais.",
+   "Submundo só por leitura, de preferência via relatórios de quem tem autorização e estrutura.",
+   "Não usar chaves de API pessoais em agentes que visitam a web aberta: o contexto viaja com cada chamada.",
+   "Supor que páginas sobre o tema podem servir conteúdo diferente ao seu agente."
+  ],
+  "divulga": [
+   "Falar de padrões e evidência publicada; não detalhar assinaturas das suas iscas nem lacunas não corrigidas de terceiros (Rouxii: 19% para 97%).",
+   "Vulnerabilidade achada na bancada em produto de terceiro passa por divulgação coordenada antes de virar pauta.",
+   "Ao citar atribuição a Estado, dizer quem atribui e com que confiança.",
+   "Em período eleitoral, tratar todos os campos políticos da mesma forma e citar levantamentos pelos dados."
+  ],
+  "metricas": [
+   [
+    "Cobertura dos PIRs",
+    "Fração dos PIRs com resposta atualizada no ciclo",
+    "5 de 5, mesmo que “sem mudança”"
+   ],
+   [
+    "Uso",
+    "Decisões, episódios ou textos que citam o produto",
+    "Registrar; meta após o 1º trimestre"
+   ],
+   [
+    "Tempo até ação",
+    "Da publicação ao primeiro uso",
+    "Medir antes de fixar meta"
+   ],
+   [
+    "Qualidade de fonte",
+    "Proporção de afirmações dos JCs apoiadas em fonte A",
+    "Acima de 60%"
+   ],
+   [
+    "Correções",
+    "Retratações e correções publicadas",
+    "Registrar todas; honestidade é a meta"
+   ],
+   [
+    "Retorno de quem lê",
+    "Uma pergunta após cada episódio ou texto",
+    "“Isso mudou alguma decisão ou leitura?”"
+   ]
+  ],
+  "corresp": [
+   [
+    "Storm-0940",
+    "Microsoft",
+    "Atribuído ao comprometimento do ConnectWise; ARTEX desde set/2026",
+    "Alinhado ao Estado chinês"
+   ],
+   [
+    "UNC7228",
+    "GTIG",
+    "Sobreposição com Storm-0940, registrada como relação",
+    "Wiz também acompanha"
+   ],
+   [
+    "VAPOR PANDA",
+    "CrowdStrike",
+    "Outro cluster ligado à China com ARTEX",
+    "Não fundir"
+   ],
+   [
+    "Grupos de extorsão",
+    "GTIG",
+    "ARTEX em respostas a incidentes desde o fim de agosto",
+    "Motivação financeira"
+   ],
+   [
+    "BREEZE COMET",
+    "GTIG/Mandiant",
+    "Ex-UNC5669; sobreposição com Plump Spider (Axur) e SHADOW-AETHER-064 (Trend)",
+    "CL-CRI-1163 ligado só pela imprensa"
+   ]
+  ],
+  "ico": [
+   [
+    "Cibercrime brasileiro (bancário/Pix)",
+    "Alta contra o setor financeiro e de pagamentos",
+    "Alta e crescente; IA documentada",
+    "Alta: alvo local, idioma nativo",
+    "1"
+   ],
+   [
+    "Frameworks agênticos usados por grupos financeiros",
+    "Média",
+    "Alta (ferramenta aberta, bifurcações)",
+    "Média: credenciais expostas, nuvem mal configurada",
+    "2"
+   ],
+   [
+    "Produtores de conteúdo sintético eleitoral",
+    "Baixa contra CTI; alta contra o ecossistema de informação",
+    "Baixa sozinhos, alta em agregado",
+    "Alta em ciclos eleitorais",
+    "3 (OSINT)"
+   ],
+   [
+    "Operações de influência russas em português",
+    "Média contra o ecossistema lusófono; baixa contra CTI",
+    "Alta em volume",
+    "Média",
+    "3"
+   ],
+   [
+    "Atores estatais chineses com ARTEX",
+    "Baixa, salvo alvos na cadeia de suprimentos de TI",
+    "Alta",
+    "Baixa a média",
+    "4"
+   ],
+   [
+    "Envenenamento dirigido a pipelines de CTI",
+    "Não demonstrada",
+    "Demonstrada em laboratório",
+    "Alta, por falta de proveniência",
+    "Monitorar"
+   ]
+  ],
+  "atrib": [
+   "Organize a evidência pelo modelo de diamante: adversário, capacidade, infraestrutura e vítima.",
+   "Distinga atribuição técnica (ferramenta, infraestrutura), operacional (cluster, campanha) e estratégica (Estado ou mandante).",
+   "Escreva “a Microsoft atribui” ou “o GTIG avalia”, nunca a forma impessoal."
+  ],
+  "brleit": [
+   "A ameaça de IA mais concreta para defensores brasileiros é a aceleração de um cibercrime local já maduro, que se aproxima da infraestrutura de pagamentos.",
+   "Na eleição, o volume veio do usuário comum, não de operação estatal: um agente de OSINT precisa filtrar ruído massivo e descentralizado.",
+   "A maior parte do conteúdo sintético não era rotulada: um agente de coleta teria absorvido material sem sinal de origem.",
+   "A detecção eleitoral usou software mais checagem humana: um caso local para medir o modelo copiloto.",
+   "O BREEZE COMET confirma o padrão: acesso inicial de sempre, ferramentas sob medida produzidas mais rápido com LLM (GTIG, fonte primária)."
+  ],
+  "ecossistema": [
+   "CERT.br (NIC.br)",
+   "CTIR Gov (GSI/PR)",
+   "Regulador financeiro",
+   "Comunidades setoriais de compartilhamento e instâncias MISP (financeiro, telecom)"
+  ],
+  "ressalvas": [
+   "A análise de hipóteses concorrentes é de um só analista, sem revisão por pares nem por equipe.",
+   "Probabilidades e prioridades são julgamentos sobre evidência pública.",
+   "Dados brasileiros vêm de fornecedores, agências de checagem e uma organização da sociedade civil; não há série oficial independente.",
+   "Itens M (ICD 203, escala estimativa, diamante, níveis de atribuição, instituições brasileiras) foram citados de memória."
+  ]
+ },
+ "critica": [
+  [
+   "Falta o ciclo de inteligência",
+   "Sem requisitos, tardios e genéricos; sem métrica de valor do produto.",
+   "Atendido: cinco perguntas prioritárias e métricas. O cliente presumido do dossiê 5 foi retirado desta linha.",
+   "Definir quando revisar as perguntas e o que sai do escopo."
+  ],
+  [
+   "Falta método analítico",
+   "Sem ACH, sem checagem de premissas, sem indicadores; confiança da fonte misturada com confiança analítica.",
+   "Atendido: ACH, 6 premissas, 8 indicadores, escala estimativa e JCs.",
+   "ACH de um só analista: rode a matriz você mesmo e compare."
+  ],
+  [
+   "Falta linha de base de contaminação não adversarial",
+   "Feeds já são ruidosos por natureza.",
+   "Atendido: Li 2019 e Bouwman 2020 (este conferido na fonte).",
+   "Medir a discordância dos feeds da sua própria casa (RQ24)."
+  ],
+  [
+   "Falta profundidade sobre o adversário",
+   "Inventário em vez de avaliação; atribuição sem framework; sem custo-benefício.",
+   "Atendido: correspondência de nomes, intenção × capacidade × oportunidade, níveis de atribuição.",
+   "Custo-benefício do adversário ainda é qualitativo."
+  ],
+  [
+   "Falta relevância local",
+   "Sem cibercrime brasileiro, eleições, instituições ou lusofonia.",
+   "Atendido em parte: aba Brasil com cibercrime, eleições e lusofonia.",
+   "Instituições brasileiras não verificadas; auditoria em pt-BR não feita."
+  ],
+  [
+   "Os dossiês reproduzem o problema que denunciam",
+   "Reporte circular, fontes de baixa qualidade, pesquisa com IA sem checkpoint humano, ATLAS sem versão.",
+   "Atendido em parte: famílias circulares, regras de descarte, conferências registradas e a versão do ATLAS (v2026.09, via LLmInjection).",
+   "O checkpoint humano é seu: use “Conferi no original” na ficha de cada trabalho."
+  ],
+  [
+   "Falta OPSEC do pesquisador",
+   "Pegada de coleta e política de divulgação.",
+   "Atendido: regras de OPSEC e de divulgação.",
+   "Aplicar antes do primeiro episódio sobre detecção."
+  ]
+ ]
+}

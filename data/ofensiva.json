@@ -1,0 +1,254 @@
+{
+ "regras": [
+  "Emulação de adversário: descrever a campanha no nível de táticas e objetivos.",
+  "Red team do próprio pipeline: bancada fechada, sistemas seus, autorização escrita.",
+  "Contrainteligência ofensiva: engano, iscas e coleta sobre quem tenta manipular você.",
+  "Fora do escopo: textos de injeção prontos, código, ação contra sistemas de terceiros e semear conteúdo falso na web aberta."
+ ],
+ "estagios": [
+  [
+   "Reconhecimento do coletor",
+   "Descobrir que fontes, feeds e ferramentas o seu agente consome",
+   "Donos de site já identificam bots por injeções “de identificação”",
+   "Acessos anômalos a páginas-canário; conteúdo servido diferente para o seu agente",
+   [
+    "ipiwild2026"
+   ]
+  ],
+  [
+   "Construção de autoridade",
+   "Criar fontes com cara de instituição: think tank, veículo, conta de OSINT",
+   "Operações “false front” e contas impostoras de OSINT",
+   "Fontes novas, sem histórico, que se citam em circuito fechado",
+   [
+    "openai2026io",
+    "afp2026satellite"
+   ]
+  ],
+  [
+   "Semeadura",
+   "Colocar o conteúdo onde a coleta passa: feed, fórum, wiki, log, marketplace",
+   "CTI falso aceito por especialistas; 1.184 skills maliciosas",
+   "Rajadas de conteúdo parecido em pouco tempo",
+   [
+    "ranade2021fakecti",
+    "clawhavoc2026",
+    "dfrlab2025wiki"
+   ]
+  ],
+  [
+   "Garantia de recuperação",
+   "Fazer o conteúdo ser o escolhido para a pergunta certa",
+   "Poucos textos por pergunta-alvo; vazios de dados",
+   "Documento recuperado com frequência desproporcional",
+   [
+    "zou2025poisonedrag",
+    "alyukov2025hks"
+   ]
+  ],
+  [
+   "Influência na síntese",
+   "Fazer a IA tratar o conteúdo como fato ou instrução",
+   "Contexto e persona forjados em logs; sumarização mais exposta",
+   "Resumo que diverge da evidência bruta",
+   [
+    "watchtower2026"
+   ]
+  ],
+  [
+   "Persistência",
+   "Sobreviver à limpeza no grafo, na memória ou nos pesos",
+   "Diretivas de memória que sobrevivem à skill; edição de neurônios",
+   "Diferença entre memória ou pesos e uma referência confiável",
+   [
+    "clawhavoc2026",
+    "lazarus2026"
+   ]
+  ],
+  [
+   "Exploração do efeito",
+   "Colher o resultado na decisão humana",
+   "Ver os seis efeitos",
+   "Decisão que depende de uma única cadeia de fontes",
+   [
+    "parasuraman2010"
+   ]
+  ]
+ ],
+ "efeitos": [
+  [
+   "Cegar",
+   "O alerta verdadeiro vira benigno.",
+   "watchtower2026"
+  ],
+  [
+   "Desviar a atribuição",
+   "Falsa bandeira: o mais valioso para um Estado e o menos medido.",
+   "ranade2021fakecti"
+  ],
+  [
+   "Desgastar",
+   "Falsos positivos até desligarem o detector.",
+   "shafee2025falsealarms"
+  ],
+  [
+   "Desacreditar",
+   "Evidência autêntica parece fabricada.",
+   "newsguard2026detect"
+  ],
+  [
+   "Extrair",
+   "Aprender o que você coleta e conclui.",
+   "aws2026madpot"
+  ],
+  [
+   "Sequestrar a ação",
+   "Fazer o agente executar algo.",
+   "echoleak2025"
+  ]
+ ],
+ "exercicios": [
+  [
+   "E1",
+   "Dose-resposta de relatórios falsos na base",
+   "Desvio de atribuição",
+   "Documentos falsos até inverter a conclusão",
+   "A conclusão não muda com fonte única sem corroboração",
+   3
+  ],
+  [
+   "E2",
+   "Texto adversarial dentro da evidência (logs, tickets)",
+   "Cegueira",
+   "Alertas reais rebaixados; classificação × resumo",
+   "Nenhum rebaixamento sem registro auditável",
+   2
+  ],
+  [
+   "E3",
+   "Ferramenta ou skill adulterada",
+   "Sequestro e persistência",
+   "Se executa; se sobrevive à remoção",
+   "Execução bloqueada por permissão mínima; memória restaurável",
+   1
+  ],
+  [
+   "E4",
+   "Fonte com autoridade fabricada",
+   "Construção de autoridade",
+   "Peso dado pelo agente e pelo analista",
+   "Fonte sem histórico entra com nota baixa",
+   4
+  ],
+  [
+   "E5",
+   "Evidência visual fabricada misturada a autêntica",
+   "Descrédito",
+   "Acerto e falso positivo no autêntico",
+   "Nada descartado só por veredito automático",
+   4
+  ],
+  [
+   "E6",
+   "Checkpoint diferente da referência",
+   "Persistência em pesos",
+   "Se a entrada detecta a diferença",
+   "Todo modelo confere com hash e origem",
+   1
+  ]
+ ],
+ "medidas": [
+  "Propagação: a contaminação chegou ao relatório ou morreu em qual etapa?",
+  "Tempo até detecção: quem percebeu primeiro, controle automático ou analista?",
+  "Detecção humana cega: o revisor, sem saber do exercício, acha o item semeado? É a medida que mais vale publicar."
+ ],
+ "escada": [
+  [
+   "Canários e honeytokens",
+   "Credenciais, documentos e páginas que ninguém legítimo deveria tocar",
+   "optionaltraps2026",
+   "Fazer",
+   "ok"
+  ],
+  [
+   "Iscas passivas de inferência",
+   "Endpoints que parecem APIs de LLM e só registram",
+   "aws2026madpot",
+   "Fazer com cuidado jurídico",
+   "warn"
+  ],
+  [
+   "Ambiente-sombra",
+   "Atacante confirmado roteado para cópia isolada",
+   "gingerbread2026",
+   "Promissor (laboratório)",
+   "info"
+  ],
+  [
+   "Desvio e atraso ativos",
+   "Artefatos que fazem o agente perder tempo dentro da sua rede",
+   "cheat2025",
+   "Pesquisa, só no seu perímetro",
+   "info"
+  ],
+  [
+   "Contra-ataque (hack back)",
+   "Induzir o agente a executar algo na máquina de quem ataca",
+   "mantis2024",
+   "Não fazer",
+   "risk"
+  ]
+ ],
+ "limites": [
+  [
+   "A armadilha precisa estar no caminho",
+   "Em Optional Traps, um modelo passou direto pelas iscas e chegou ao vazamento real."
+  ],
+  [
+   "O falso positivo mudou de natureza",
+   "Um agente legítimo também mordeu a isca."
+  ],
+  [
+   "O adversário aprende",
+   "Rouxii: de 19% para 97% de reconhecimento de honeypot só mudando o prompt."
+  ],
+  [
+   "Atribuição fraca",
+   "Memória capturada é relato do agente, e agentes alucinam."
+  ]
+ ],
+ "requisitos": [
+  "Quem tem interesse em moldar as conclusões da minha organização, e sobre qual assunto?",
+  "Quais das minhas fontes são baratas de falsificar e ao mesmo tempo decisivas?",
+  "Meus agentes já estão sendo identificados ou tratados de forma diferente pelas páginas que visitam?"
+ ],
+ "coleta": [
+  "Impressões comportamentais de agentes (tempo de resposta, padrão de comandos)",
+  "Ritmo de máquina: velocidade e paralelismo",
+  "Dependência de inferência: gateways e proxies",
+  "Bifurcações das ferramentas, não só o original",
+  "Submundo só como leitura: sem compra, interação ou persona"
+ ],
+ "linha": [
+  [
+   "Autorização define tudo",
+   "Art. 154-A do Código Penal (Lei 12.737/2012, penas ampliadas pela Lei 14.155/2021): intenção defensiva não substitui autorização do titular."
+  ],
+  [
+   "Contra-ataque é ataque",
+   "A máquina do operador pode ser de uma vítima intermediária."
+  ],
+  [
+   "Dados capturados em iscas",
+   "Podem ter dados pessoais e credenciais de terceiros: LGPD e, conforme o caso, dever de comunicar."
+  ],
+  [
+   "Nada de semear a web",
+   "Relatório, indicador ou conta falsa em ambiente público contamina o ecossistema."
+  ],
+  [
+   "Personas e compra de credenciais",
+   "Fora do escopo de pesquisa; em regra dependem de autoridade legal."
+  ]
+ ]
+}

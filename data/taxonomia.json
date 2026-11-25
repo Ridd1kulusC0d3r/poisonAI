@@ -1,0 +1,502 @@
+{
+ "tipos_de_estudo": [
+  {
+   "n": "Medição em escala (dados reais)",
+   "p": 5,
+   "d": "Conta o fenômeno em dados reais e grandes: web, marketplaces, repositórios, arquivos de treino.",
+   "prova": "Que o fenômeno existe e com que frequência, fora do laboratório.",
+   "nao": "Que causa dano nem por quê; costuma medir presença, não efeito."
+  },
+  {
+   "n": "Experimento de ataque em laboratório",
+   "p": 4,
+   "d": "Monta o ataque contra modelos ou sistemas controlados e mede a taxa de sucesso.",
+   "prova": "Que o ataque é possível e quanto custa (dose, condição).",
+   "nao": "Que alguém o usa de fato, nem que funciona em produção."
+  },
+  {
+   "n": "Avaliação empírica de modelos",
+   "p": 4,
+   "d": "Mede desempenho, erro ou viés de modelos em tarefas definidas.",
+   "prova": "Como modelos se comportam naquela tarefa e data.",
+   "nao": "Que o resultado vale para modelos novos ou fluxos reais."
+  },
+  {
+   "n": "Benchmark / dataset",
+   "p": 4,
+   "d": "Entrega um conjunto de teste reutilizável para comparar sistemas.",
+   "prova": "Base comum para medir e replicar.",
+   "nao": "Validade ecológica: o benchmark pode não parecer o trabalho real."
+  },
+  {
+   "n": "Estudo com humanos",
+   "p": 4,
+   "d": "Mede pessoas (analistas, caçadores, SOC) diante da IA ou de conteúdo falso.",
+   "prova": "O comportamento humano no circuito, se n e desenho forem bons.",
+   "nao": "Generalização quando n é pequeno (n=10 é a regra hoje)."
+  },
+  {
+   "n": "Auditoria / investigação de sociedade civil",
+   "p": 3,
+   "d": "Testa chatbots ou rastreia redes de influência com perguntas e coleta.",
+   "prova": "O que os sistemas respondiam naquelas perguntas e datas.",
+   "nao": "A causa (grooming ou vazio de dados) nem a frequência no uso comum."
+  },
+  {
+   "n": "Defesa / método",
+   "p": 3,
+   "d": "Propõe e testa uma defesa, um detector ou um método de medida.",
+   "prova": "Que a defesa funciona nas condições testadas.",
+   "nao": "Robustez contra adversário que conhece a defesa."
+  },
+  {
+   "n": "Incidente / caso documentado",
+   "p": 3,
+   "d": "Descreve um caso real: amostra, vulnerabilidade, incidente.",
+   "prova": "Que aconteceu pelo menos uma vez, em campo.",
+   "nao": "Frequência, nem eficácia (muitos casos não informam taxa de sucesso)."
+  },
+  {
+   "n": "Relatório de ameaça (autorrelato)",
+   "p": 3,
+   "d": "Fornecedor ou provedor relata o que viu na própria telemetria.",
+   "prova": "Técnicas e indicadores observados por quem tem visibilidade única.",
+   "nao": "Atribuição independente: é autorrelato, quase sempre sem dados abertos."
+  },
+  {
+   "n": "Revisão / survey",
+   "p": 3,
+   "d": "Organiza a literatura e aponta lacunas.",
+   "prova": "O estado do conhecimento publicado e o que falta.",
+   "nao": "Nada novo sobre o mundo; herda os erros das fontes que cita."
+  },
+  {
+   "n": "Prova de conceito",
+   "p": 2,
+   "d": "Mostra um ataque funcionando uma vez, sem medir taxa.",
+   "prova": "Possibilidade técnica.",
+   "nao": "Taxa de sucesso, custo ou uso real."
+  },
+  {
+   "n": "Arquitetura / sistema",
+   "p": 2,
+   "d": "Descreve um sistema construído, às vezes sem avaliação quantitativa.",
+   "prova": "Que dá para montar.",
+   "nao": "Que funciona bem ou com segurança."
+  },
+  {
+   "n": "Padrão / framework / guia",
+   "p": 2,
+   "d": "Taxonomia, lista de riscos ou guia de governo e indústria.",
+   "prova": "Vocabulário e consenso de referência.",
+   "nao": "Eficácia dos controles que recomenda."
+  },
+  {
+   "n": "Análise / opinião",
+   "p": 1,
+   "d": "Comentário, artigo de opinião ou nota de síntese.",
+   "prova": "Argumento e enquadramento.",
+   "nao": "Dado novo."
+  },
+  {
+   "n": "Monografia (literatura cinzenta)",
+   "p": 1,
+   "d": "Trabalho acadêmico não revisado por pares.",
+   "prova": "Um resultado a confirmar.",
+   "nao": "Generalização: base privada, sem revisão."
+  }
+ ],
+ "lados": {
+  "cap": "Capacidade (o que a IA faz)",
+  "atk": "Ataque à IA",
+  "med": "Medição do fenômeno",
+  "def": "Defesa",
+  "uso": "Uso adversarial de IA",
+  "fun": "Fundamento"
+ },
+ "origens": {
+  "0": "Artefato v1",
+  "1": "Dossiê 1 (âncora e agenda)",
+  "2": "Dossiê 2 (submundo e casos 2026)",
+  "3": "Dossiê 3 (postura ofensiva)",
+  "4": "Dossiê 4 (defesa e resposta)",
+  "5": "Dossiê 5 (inteligência e Brasil)",
+  "6": "Repositório LLmInjection",
+  "7": "Busca de 25/11/2026"
+ },
+ "eixos": {
+  "0": "E0 Âncora: OSINT agêntico",
+  "1": "E1 Alucinação e validação",
+  "2": "E2 Benchmarks de CTI",
+  "3": "E3 Envenenamento de treino",
+  "4": "E4 Envenenamento de RAG, grafo e memória",
+  "5": "E5 Injeção e ferramentas",
+  "6": "E6 Desinformação e LLM grooming",
+  "7": "E7 Atores de ameaça com IA",
+  "8": "E8 Camada 8 e governança",
+  "9": "E9 Submundo e agentes ofensivos",
+  "10": "E10 Engano contra agentes",
+  "11": "E11 Defesa, detecção e resposta",
+  "12": "E12 Brasil e lusofonia",
+  "13": "E13 Método de inteligência"
+ },
+ "tipos_de_fonte": {
+  "AC": "Acadêmico",
+  "IN": "Indústria (CTI)",
+  "GO": "Padrão/governo",
+  "SC": "Sociedade civil",
+  "IM": "Imprensa e análise"
+ },
+ "temas": {
+  "osintia": "OSINT e CTI com IA",
+  "aluc": "Alucinação",
+  "valid": "Validação e métricas",
+  "bench": "Benchmarks",
+  "poison": "Envenenamento de dados",
+  "rag": "RAG e grafos de conhecimento",
+  "mem": "Memória de agentes",
+  "inj": "Injeção de prompt",
+  "tools": "Ferramentas e MCP",
+  "supply": "Cadeia de suprimentos",
+  "desinf": "Desinformação e LLM grooming",
+  "fimi": "Operações de influência",
+  "apt": "Atores de ameaça",
+  "humano": "Analista e viés de automação",
+  "gov": "Frameworks e governança",
+  "br": "Brasil e eleições 2026",
+  "agentes": "Agentes ofensivos autônomos",
+  "under": "Submundo e mercado de IA",
+  "soc": "IA no SOC e logs",
+  "decep": "Engano e iscas contra agentes",
+  "multi": "Evidência visual e multimodal",
+  "vies": "Viés de modelo",
+  "defesa": "Detecção e resposta",
+  "metodo": "Método de inteligência"
+ },
+ "ordem_temas": [
+  "osintia",
+  "aluc",
+  "valid",
+  "bench",
+  "poison",
+  "rag",
+  "mem",
+  "inj",
+  "tools",
+  "supply",
+  "desinf",
+  "fimi",
+  "apt",
+  "humano",
+  "gov",
+  "br",
+  "agentes",
+  "under",
+  "soc",
+  "decep",
+  "multi",
+  "vies",
+  "defesa",
+  "metodo"
+ ],
+ "info_temas": {
+  "osintia": {
+   "o_que": "Uso de LLMs e agentes para coletar, triar e analisar informação aberta e inteligência de ameaças.",
+   "grupo": "A revisão de Palmieri organiza o campo e mostra que capacidade demonstrada correu na frente da validação. Os estudos empíricos (Mezzi, Clairoux-Trépanier, CyberThreat-Eval) baixam a expectativa quando o texto é real e longo.",
+   "pergunta": "Em que etapa do ciclo OSINT o sistema foi avaliado, e com que dado real?",
+   "extrair": [
+    "Etapa do ciclo (coleta, triagem, análise, relatório)",
+    "Fonte real ou sintética",
+    "Métrica usada",
+    "Papel do humano"
+   ]
+  },
+  "aluc": {
+   "o_que": "Saída fluente e falsa: fato, entidade, fonte ou credencial inventada.",
+   "grupo": "Citada como risco por mais de 20 estudos e medida de ponta a ponta em um só sistema OSINT. Fora de OSINT há métodos de medida (entropia semântica) e casos em que a alucinação vira vetor (pacotes inventados) ou atrapalha o próprio atacante (GTG-1002).",
+   "pergunta": "A alucinação foi medida por afirmação, em fluxo real, ou só citada como risco?",
+   "extrair": [
+    "Definição operacional",
+    "Unidade de medida (afirmação, relatório)",
+    "Taxa e condição",
+    "Como foi detectada"
+   ]
+  },
+  "valid": {
+   "o_que": "Como saber se a saída está certa: verdade-terreno, métricas, calibração, reprodutibilidade.",
+   "grupo": "O ponto fraco da área. Métricas lexicais enganam (CyberThreat-Eval), modelos são superconfiantes (Mezzi) e não há benchmark comum de OSINT com IA.",
+   "pergunta": "Contra que verdade-terreno o resultado foi conferido, e dá para reproduzir?",
+   "extrair": [
+    "Verdade-terreno",
+    "Métrica",
+    "Calibração ou confiança",
+    "Código e dados"
+   ]
+  },
+  "bench": {
+   "o_que": "Conjuntos de teste para comparar modelos em segurança e CTI.",
+   "grupo": "O paradoxo da aula: múltipla escolha mostra IA acima de humanos (CyberMetric), fluxo realista mostra IA abaixo do aceitável (CyberThreat-Eval). Benchmarks dinâmicos (AthenaBench) tentam não envelhecer.",
+   "pergunta": "A tarefa do benchmark se parece com o trabalho do analista?",
+   "extrair": [
+    "Formato da tarefa",
+    "Origem dos dados",
+    "Comparação com humanos",
+    "Data de corte"
+   ]
+  },
+  "poison": {
+   "o_que": "Plantar dados para mudar o que o modelo aprende ou o que ele recupera.",
+   "grupo": "O custo do ataque caiu nos estudos: 250 documentos no pré-treino (Souly), 5 textos por pergunta no RAG (PoisonedRAG), domínios expirados e janelas da Wikipedia (Carlini). No mundo real, a rede Pravda mostra a mesma lógica aplicada à propaganda.",
+   "pergunta": "Quantos itens envenenados bastaram, onde foram plantados e quem percebeu?",
+   "extrair": [
+    "Fase (treino, fine-tuning, índice)",
+    "Dose (quantidade de veneno)",
+    "Taxa de sucesso",
+    "Defesa testada"
+   ]
+  },
+  "rag": {
+   "o_que": "Recuperar documentos ou subgrafos na hora de responder, para ancorar o modelo.",
+   "grupo": "Proposto como remédio para alucinação e transformado em superfície de ataque: PoisonedRAG, GraphRAG under Fire, KEPo, ATLAS T0070 e T0071. No grafo há um paradoxo: resiste ao ataque simples e cai no ataque relacional.",
+   "pergunta": "O ataque mira o índice, o grafo ou a consulta, e a citação na resposta denuncia o veneno?",
+   "extrair": [
+    "Tipo de índice (vetor, grafo)",
+    "Ponto de injeção",
+    "Efeito na resposta",
+    "Rastro na citação"
+   ]
+  },
+  "mem": {
+   "o_que": "Memória de longo prazo do agente, que persiste entre sessões de investigação.",
+   "grupo": "AgentPoison mostra backdoor com menos de 0,1% de veneno; Dash et al. mostram que memória agressiva ajuda a tarefa e ajuda o atacante; estudos de revogação perguntam se o que foi apagado continua mandando.",
+   "pergunta": "Como uma entrada entra na memória, e como sai?",
+   "extrair": [
+    "Política de escrita",
+    "Política de recuperação",
+    "Revogação ou TTL",
+    "Proveniência por entrada"
+   ]
+  },
+  "inj": {
+   "o_que": "Texto que o modelo lê como instrução, vindo de dentro dos dados (página, documento, amostra, ferramenta).",
+   "grupo": "De Greshake (2023) ao malware que fala com a IA analisadora (Check Point, GTIG): o dado coletado em OSINT é o vetor natural.",
+   "pergunta": "Onde o pipeline mistura dado e instrução?",
+   "extrair": [
+    "Canal da injeção",
+    "Objetivo do atacante",
+    "Modelo e agente testados",
+    "Defesa"
+   ]
+  },
+  "tools": {
+   "o_que": "Ferramentas que o agente chama (Shodan, VirusTotal, MCP) e o que elas devolvem.",
+   "grupo": "A ferramenta virou canal de ataque: descrição, esquema e saída envenenados (Invariant, CyberArk), casos reais na cadeia MCP (CSA) e medição em escala (22,9% de vulnerabilidade).",
+   "pergunta": "O agente confia na ferramenta sem verificar o que ela diz?",
+   "extrair": [
+    "Ferramenta",
+    "Campo envenenado",
+    "Ação induzida",
+    "Controle (allowlist, versão fixa)"
+   ]
+  },
+  "supply": {
+   "o_que": "Pacotes, PoCs, modelos e datasets que entram no seu ambiente vindos de fora.",
+   "grupo": "Fonte aberta que ataca quem consome: 10,3% de PoCs maliciosos no GitHub, pacotes alucinados registráveis, servidores MCP falsos.",
+   "pergunta": "O que o agente baixa e executa, e quem conferiu antes?",
+   "extrair": [
+    "Artefato",
+    "Taxa de malícia",
+    "Vetor",
+    "Triagem proposta"
+   ]
+  },
+  "desinf": {
+   "o_que": "Informação falsa plantada para chegar às IAs e, por elas, aos usuários.",
+   "grupo": "LLM grooming (ASP), auditoria de chatbots (NewsGuard, ISD) e o caso brasileiro de 2026 (ITS Rio, InternetLab, Ekō). Mede-se a saída; o envenenamento em si raramente se prova.",
+   "pergunta": "O estudo mostra o veneno entrando ou só a resposta contaminada saindo?",
+   "extrair": [
+    "Narrativa ou fonte rastreada",
+    "Chatbots e línguas",
+    "Taxa de repetição",
+    "Prova de causa"
+   ]
+  },
+  "fimi": {
+   "o_que": "Operações de influência de Estados estrangeiros, agora mirando também as IAs.",
+   "grupo": "A rede Pravda é o caso emblemático; relatórios de provedores mostram operações que usam vários modelos e plataformas.",
+   "pergunta": "Quem é o ator, com que confiança, e por que meio a IA foi alcançada?",
+   "extrair": [
+    "Ator e atribuição",
+    "Meio (sites, redes, coleta)",
+    "Alvo",
+    "Confiança declarada"
+   ]
+  },
+  "apt": {
+   "o_que": "Grupos estatais e criminosos e como usam a IA, ou atacam a IA dos outros.",
+   "grupo": "De assistente em 2024 (Microsoft/OpenAI) a operador em 2025–2026 (GTG-1002, GTG-2002, Coral Sleet) e a malware que consulta LLM (PROMPTSTEAL). Ver a aba Atores de ameaça.",
+   "pergunta": "A IA foi ferramenta do atacante ou alvo do ataque?",
+   "extrair": [
+    "Ator e origem",
+    "IA como ferramenta ou alvo",
+    "Fase do ataque",
+    "Fonte e confiança"
+   ]
+  },
+  "humano": {
+   "o_que": "O analista no circuito: atenção, confiança e viés de automação.",
+   "grupo": "O co-piloto depende de um humano que verifica, mas o viés de automação atinge novatos e especialistas (Parasuraman e Manzey) e caçadores de ameaça aceitaram CTI falso (Ranade). É a Camada 8 da linha.",
+   "pergunta": "O checkpoint humano foi medido, ou só desenhado?",
+   "extrair": [
+    "Quem verifica",
+    "O que vê (fonte, incerteza)",
+    "Taxa de aceitação de erro",
+    "Carga de trabalho"
+   ]
+  },
+  "gov": {
+   "o_que": "Taxonomias e listas de risco para nomear ataques e controles.",
+   "grupo": "NIST AI 100-2e2025, OWASP LLM Top 10 2025 e MITRE ATLAS dão o vocabulário e os IDs para mapear cada experimento.",
+   "pergunta": "Que ID ou categoria descreve o ataque e o controle do estudo?",
+   "extrair": [
+    "ID ATLAS",
+    "Categoria OWASP",
+    "Termo NIST",
+    "Controle sugerido"
+   ]
+  },
+  "br": {
+   "o_que": "Evidência em português e no contexto brasileiro.",
+   "grupo": "Eleições de 2026: alucinações sobre candidatos (ITS Rio), associação candidato–perfil (InternetLab) e incidente registrado na OCDE (Ekō). É o recorte que dá originalidade à linha.",
+   "pergunta": "O resultado se mantém em português e com fontes brasileiras?",
+   "extrair": [
+    "Língua e país",
+    "Ferramentas",
+    "Período",
+    "Ligação com o TSE"
+   ]
+  },
+  "agentes": {
+   "o_que": "Agentes que executam ataques ou agem fora do roteiro com pouca supervisão.",
+   "grupo": "Saíram do laboratório: GTG-1002, ARTEX nas mãos de Storm-0940 e de criminosos, e agentes em avaliação oficial agindo na internet real (AISI). Nada de técnica nova: o ganho é velocidade e escala.",
+   "pergunta": "O que o agente fez sozinho, e quem validou o que ele disse ter feito?",
+   "extrair": [
+    "Framework ou modelo",
+    "Fração autônoma",
+    "Pontos de decisão humana",
+    "Erros e alucinações do agente"
+   ]
+  },
+  "under": {
+   "o_que": "O mercado clandestino de acesso a IA: contas, chaves, jailbreaks e dark LLMs.",
+   "grupo": "Halcyon, Rapid7, Trellix e GTIG convergem: o que vale é o acesso roubado a modelos comerciais; dark LLMs são a fatia menos capaz.",
+   "pergunta": "O que é vendido, por quanto, e o que é só alegação do vendedor?",
+   "extrair": [
+    "Categoria de oferta",
+    "Preço",
+    "Volume de posts",
+    "Grau de verificação (A/B/C)"
+   ]
+  },
+  "soc": {
+   "o_que": "IA lendo logs, alertas e amostras dentro do SOC.",
+   "grupo": "O atacante escreve o texto que a IA lê: injeção em logs (Watchtower, LogInject, LogJack), produto real vulnerável (GrafanaGhost) e malware com gatilho de recusa (GuardBreaker). Sumarização é a tarefa mais exposta.",
+   "pergunta": "Qual tarefa (classificar, resumir, remediar) foi atacada, com que modelo e que log?",
+   "extrair": [
+    "Tarefa",
+    "Modelo e data",
+    "Taxa de sucesso",
+    "Defesa e resíduo"
+   ]
+  },
+  "decep": {
+   "o_que": "Honeytokens, iscas de inferência, ambientes-sombra e armadilhas contra agentes atacantes.",
+   "grupo": "O agente adversário tem o mesmo gap de validação: MadPot capturou a memória de campanhas inteiras. Mas as iscas envelhecem (Rouxii: 19% para 97%) e agentes legítimos também mordem.",
+   "pergunta": "A isca está no caminho do atacante, e quanto tempo ela dura?",
+   "extrair": [
+    "Degrau da escada",
+    "Agentes testados",
+    "Falso positivo com agentes legítimos",
+    "Prazo de validade"
+   ]
+  },
+  "multi": {
+   "o_que": "Imagens e vídeos fabricados como evidência de inteligência.",
+   "grupo": "Imagens de satélite falsas, contas impostoras de OSINT e detectores que chamam o real de falso. Não há benchmark público para agentes de inteligência multimodais.",
+   "pergunta": "O estudo mede acerto no falso e falso positivo no autêntico?",
+   "extrair": [
+    "Tipo de mídia",
+    "Crise ou contexto",
+    "Detector usado",
+    "Falso positivo"
+   ]
+  },
+  "vies": {
+   "o_que": "Inclinação política ou geopolítica do modelo que contamina a análise.",
+   "grupo": "A citação de Kobayashi e Yamaguchi no âncora é frágil; estudos de viés medido diretamente (2505.19776, 2503.23688) são a base melhor.",
+   "pergunta": "O viés muda a atribuição de ameaça entre Estados?",
+   "extrair": [
+    "Instrumento de medida",
+    "Idiomas",
+    "Modelos",
+    "Efeito em tarefa de inteligência"
+   ]
+  },
+  "defesa": {
+   "o_que": "Detecção, hunting, modelagem de ameaças e resposta a incidentes para pipelines com agentes.",
+   "grupo": "O ataque faz o sistema funcionar bem sobre premissas falsas: a pergunta de defesa vira “de onde veio cada coisa em que o agente acredita?”. Proveniência sustenta tudo. Ver a aba Defesa.",
+   "pergunta": "Que telemetria a defesa exige, e qual a taxa de falso positivo medida?",
+   "extrair": [
+    "Camada",
+    "Sinal detectado",
+    "Linha de base",
+    "Falso positivo"
+   ]
+  },
+  "metodo": {
+   "o_que": "Técnicas analíticas, linguagem estimativa, atribuição e qualidade de fontes que transformam informação em julgamento.",
+   "grupo": "A crítica aos dossiês 1 a 4 e o dossiê 5: sem perguntas prioritárias, hipóteses concorrentes e confiança separada da fonte, uma boa revisão de literatura não vira inteligência.",
+   "pergunta": "Qual decisão este trabalho ajuda a tomar, e com que probabilidade e confiança?",
+   "extrair": [
+    "Técnica usada",
+    "Probabilidade",
+    "Confiança analítica",
+    "Fonte da evidência (A, B, M)"
+   ]
+  }
+ },
+ "notas_pares": {
+  "aluc|valid": "É a lacuna central: muitos estudos nomeiam a alucinação, poucos a medem com verdade-terreno. Mezzi e CyberThreat-Eval medem; Farquhar dá um método.",
+  "poison|rag": "O remédio virou ferida: o RAG reduz erro casual e abre a porta para o veneno dirigido (PoisonedRAG, grafos, ATLAS T0070).",
+  "rag|mem": "Grafo e memória são onde o veneno persiste de uma sessão para outra: é a ‘amplificação’ da aula.",
+  "desinf|fimi": "A propaganda estatal agora tem dois públicos: pessoas e coletores das IAs (LLM grooming).",
+  "desinf|br": "O caso brasileiro de 2026 dá corpus em português e um marco regulatório (Resolução TSE nº 23.755/2026).",
+  "apt|inj": "Atacantes começaram a escrever para a IA do defensor: malware com prompt embutido (Skynet, reverse shell do GTIG).",
+  "apt|aluc": "Até o agente ofensivo alucinou (GTG-1002): ponto de apoio para argumentar que validação humana é estrutural, não opcional.",
+  "humano|poison": "Ranade é o único que mede humanos diante de CTI falso, com n=10. Replicar com LLM atual é uma contribuição clara.",
+  "tools|inj": "A ferramenta MCP é um texto que o modelo lê com autoridade de instrução.",
+  "bench|valid": "Os benchmarks medem o que é fácil de medir; os de fluxo real (CyberThreat-Eval) mudam o resultado.",
+  "osintia|aluc": "No OSINT agêntico, só um número de alucinação de ponta a ponta existe (4%, Allam, via revisão).",
+  "supply|apt": "PoCs falsos e pacotes MCP impostores mostram ataque à fonte que o analista consome.",
+  "decep|agentes": "A IA do atacante também confia demais: MadPot capturou a memória de agentes ARTEX que trataram uma isca como API de LLM.",
+  "soc|inj": "Em um SOC o atacante escreve o log que a IA resume: injeção em substrato de log é a variante mais operacional.",
+  "supply|tools": "Skills e servidores MCP chegam comprometidos antes do primeiro relatório: 76 payloads maliciosos confirmados na auditoria da Snyk.",
+  "under|agentes": "O submundo vende acesso a modelos legítimos; frameworks abertos como o ARTEX rodam com chaves roubadas.",
+  "multi|desinf": "A desinformação de guerra migrou para a evidência visual, e o detector automático erra o autêntico.",
+  "desinf|valid": "O debate do grooming é de método: 33% da NewsGuard contra 5% do estudo revisado, com perguntas diferentes.",
+  "metodo|valid": "Feeds reais já discordam entre si (2,5% a 4,0% de sobreposição): sem essa linha de base, todo erro parece ataque.",
+  "br|multi": "Na eleição de 2026, a maior parte das mídias com IA veio de perfis comuns e anônimos, e só 371 de 920 estavam rotuladas.",
+  "br|apt": "No Brasil, a ameaça de IA mais concreta é o cibercrime bancário local se aproximando da infraestrutura de pagamentos."
+ },
+ "categorias_tempo": {
+  "atk": "Ataque à IA de defesa",
+  "uso": "Uso adversarial de IA",
+  "infl": "Influência e desinformação",
+  "med": "Medição",
+  "pesq": "Pesquisa",
+  "def": "Defesa e engano",
+  "ag": "Agentes fora do roteiro",
+  "br": "Brasil e lusofonia",
+  "met": "Método e linha de base"
+ }
+}

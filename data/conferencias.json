@@ -1,0 +1,355 @@
+{
+ "ancora": [
+  [
+   "74 estudos e taxonomia de 11 categorias",
+   "Confere",
+   "Revisão de Palmieri et al."
+  ],
+  [
+   "Alucinação citada em mais de 20 estudos e medida em um (4%)",
+   "Confere",
+   "Monografia de graduação (LUISS), não revisada, base curada."
+  ],
+  [
+   "Allam: falha de conclusão de 11%",
+   "Implícito",
+   "A revisão dá 89% de conclusão, 92% de acurácia factual e 96% de citação."
+  ],
+  [
+   "Ranade: caçadores julgaram CTI falso como verdadeiro",
+   "Confere, com nuance",
+   "78,5% das falsas e 73,6% das verdadeiras foram julgadas verdadeiras; acurácia reportada (36,8%) não bate com a matriz (47,5%)."
+  ],
+  [
+   "Niu: 9% de desinformação em 1,96 milhão de tweets de 48 comunidades",
+   "Corrigir",
+   "Fonte primária: quase 2 milhões de tweets de cerca de 1.040 usuários (conferido); “48 comunidades” não aparece; os 9% vêm de classificadores sem verdade-terreno (dossiê 1)."
+  ],
+  [
+   "Srikanth: analistas seniores com familiaridade 2/5 com LLM",
+   "Confere, com ressalva",
+   "Experiência é familiaridade autodeclarada; o artigo tem erros factuais graves."
+  ],
+  [
+   "Kobayashi e Yamaguchi: viés político transmitido a análises",
+   "Corrigir",
+   "O predecessor só mede se o modelo emite opinião. Troque por estudos de viés medido diretamente."
+  ],
+  [
+   "Pervez: automação agêntica de reconhecimento",
+   "Corrigir",
+   "OSINT manual com Shodan e Maltego, sem IA."
+  ],
+  [
+   "Shafee: défice de 25% em NER de “biosferas cibernéticas”",
+   "Corrigir",
+   "Dados de cibersegurança do Twitter (LASIGE), com sete chatbots."
+  ],
+  [
+   "“Shen et al. / Univ. Tsinghua”",
+   "Corrigir",
+   "A revisão cita o sistema só como [5]."
+  ],
+  [
+   "Mukhopadhyay e Luther definem os checkpoints",
+   "Parcial",
+   "Só posição geral; sem desenho nem avaliação."
+  ],
+  [
+   "Metodologia do âncora",
+   "Ressalva",
+   "Segundo o dossiê 1: triagem por um revisor, sem κ; primeiro autor também assina o Estudo 1 (conflito não declarado)."
+  ],
+  [
+   "Efeito cascata 9% + viés + 4%",
+   "Corrigir",
+   "Soma grandezas incompatíveis. Use a calculadora da aba Agenda e lembre que, sob envenenamento dirigido, a independência não vale."
+  ]
+ ],
+ "dossies": [
+  [
+   "Storm-0940: 2.900 logins por minuto em 2.250 tenants",
+   "Corrigir",
+   "2.250 é mínimo de tenants; o pico de 2.900 falhas por minuto foi numa campanha separada de password spray (327 contas, 8 organizações)."
+  ],
+  [
+   "Watchtower: sequestro de persona foi o ataque mais forte",
+   "Corrigir",
+   "O mais forte foi a manipulação de contexto (96% sem defesa); persona suprimiu 68% dos logs maliciosos; comando direto teve 0%."
+  ],
+  [
+   "ToxicSkills: 36% com injeção e 1.467 payloads maliciosos",
+   "Corrigir",
+   "36,82% (1.467 skills) com alguma falha; 13,4% (534) críticas; 76 payloads maliciosos confirmados."
+  ],
+  [
+   "Injeções na web: 54 modelos explicam 95%; 13 exfiltrações",
+   "Parcial",
+   "URLs, hosts, 15,3 mil injeções, 11,7 mil páginas e ~70% não renderizado conferidos; os outros números não estão no resumo."
+  ],
+  [
+   "Lazarus: menos de dez neurônios; 91,4% com 9,7% de falso positivo",
+   "Confere",
+   "Sete neurônios no Nemotron-Terminal-8B, ≥98,8% de disparo com gatilho. Título: “Lazare, veni foras”."
+  ],
+  [
+   "AISI: 19 ações em 10 de 122 execuções",
+   "Confere",
+   "17 do Mythos 5 e 2 do GPT-5.6 Sol; internet ligada e classificadores desligados de propósito."
+  ],
+  [
+   "GuardBreaker do UAC-0099",
+   "Confere",
+   "ESET, VBS com MATCHBOIL; grupo entrega alvos ao Sandworm."
+  ],
+  [
+   "MadPot capturou a memória de agentes ARTEX",
+   "Confere",
+   "3/out a 5/nov/2026; confiança moderada; resultados não verificados pela Amazon."
+  ],
+  [
+   "GTG-1002: o Claude fabricou dados",
+   "Confere",
+   "Citação da Anthropic reproduzida em cobertura: credenciais que não funcionavam e achados públicos."
+  ],
+  [
+   "Halcyon: quase 4.000 posts",
+   "Confere",
+   "Via Axios; acrescenta a alta de anúncios de menos de 50 para mais de 1.400 por mês."
+  ],
+  [
+   "Al Jazeera: 5%",
+   "Confere",
+   "E o estudo revisado da mesma equipe (HKS): 5% repetiram, 8% citaram sites do Kremlin."
+  ],
+  [
+   "DFRLab: Pravda no Common Crawl",
+   "Confere",
+   "Inclui também Glassbridge e RT; inclusão no arquivo não garante treino."
+  ],
+  [
+   "Kaspersky: cerca de 85% da América Latina; ransomware −18% (448 mil); phishing +5% (583 milhões)",
+   "Corrigir",
+   "1,7 milhão, +15% e seis de oito famílias conferidos no comunicado; os demais números não estão nele. Procure no relatório completo antes de citar."
+  ],
+  [
+   "Data Privacy Brasil: 88% envolveram imagem ou voz",
+   "Corrigir",
+   "São 336 casos, cerca de 81%. Os 413 casos, 1,8 por dia, 63% sem indicação e 40% de desinformação conferem."
+  ],
+  [
+   "TSE: a resolução exige rotulagem e veda deepfake para prejudicar ou favorecer",
+   "Parcial",
+   "Definição e placar (5 a 2, em 1º/set) conferem. A notícia não trata da rotulagem, e a vedação pressupõe que o conteúdo seja propaganda eleitoral."
+  ],
+  [
+   "VigIA: 920 mídias, 554 deepfakes, 371 rotuladas",
+   "Confere",
+   "Via Terra: 1.941 posts suspeitos; 525 publicações manipuladas de cidadãos comuns e anônimos."
+  ],
+  [
+   "Bouwman et al.: 2,5% a 4,0% para 22 atores",
+   "Confere",
+   "Página da USENIX; 14 entrevistas; atraso médio de cerca de um mês."
+  ],
+  [
+   "Storm-0940, UNC7228 e VAPOR PANDA como um só esforço",
+   "Corrigir",
+   "Clusters separados com sobreposição parcial (dossiê 5). O artefato agora os separa na aba Atores."
+  ],
+  [
+   "BREEZE COMET só via panorama da Vantico",
+   "Corrigir",
+   "Fonte primária existe e foi conferida: GTIG e Mandiant, 01/09/2026, ex-UNC5669, Pix, STR e boleto."
+  ],
+  [
+   "Slim Spider (CrowdStrike) usa IA contra instituição financeira brasileira",
+   "Não confirmado",
+   "O nome não aparece no post do GTIG nem no LLmInjection; o GTIG cita sobreposição com Plump Spider (Axur). Fonte única é um blog."
+  ],
+  [
+   "Microsoft: envenenamento de recomendação em assistentes",
+   "Confere",
+   "50 prompts de 31 organizações em 14 setores em 60 dias; ATLAS AML.T0080."
+  ],
+  [
+   "Viaconnect: 14 de 23 modelos manipulados pela telemetria do EDR",
+   "Confere via cobertura",
+   "AI Agent Security Summit, 21/10/2026; a palestra e o artigo não foram lidos."
+  ],
+  [
+   "Viaconnect: só cobertura de imprensa",
+   "Corrigir",
+   "A agenda oficial da Zenity Labs confirma o resumo: Elastic Security sem modificação; linha de comando, nome de processo e User-Agent; 14 de 23 modelos."
+  ],
+  [
+   "CrowdStrike: envenenamento de ferramentas de IA",
+   "Confere",
+   "09/01/2026; exemplos hipotéticos, sem incidentes nem números."
+  ]
+ ],
+ "pistas": [
+  {
+   "cat": "Citado na revisão",
+   "ano": null,
+   "tit": "Sistema agêntico com LangChain, Neo4j, memória e Tor (ref. [5])",
+   "lig": "QP2, QP6",
+   "onde": "Referência [5] de Palmieri et al. 2026",
+   "st": "A conferir",
+   "nota": "Arquitetura mais rica do corpus, sem medida de NER no pipeline nem validação na dark web."
+  },
+  {
+   "cat": "Citado na revisão",
+   "ano": null,
+   "tit": "Shafee et al.: sete chatbots em CTI do Twitter (ref. [54])",
+   "lig": "QP1",
+   "onde": "Referência [54]",
+   "st": "A conferir",
+   "nota": "NER cerca de 25% abaixo de modelos especializados; F1 0,94 (GPT-4) e 0,90 (GPT4all)."
+  },
+  {
+   "cat": "Citado na revisão",
+   "ano": null,
+   "tit": "Mukhopadhyay e Luther: arquitetura de checkpoints humanos (ref. [32])",
+   "lig": "QP3, QP4",
+   "onde": "Referência [32]",
+   "st": "A conferir",
+   "nota": "Posição de alto nível; desenho e avaliação ficam como lacuna."
+  },
+  {
+   "cat": "Citado na revisão",
+   "ano": null,
+   "tit": "Yurtalan: LLMs locais de pesos abertos em OSINT policial (ref. [14])",
+   "lig": "Governança",
+   "onde": "Referência [14]",
+   "st": "A conferir",
+   "nota": "Argumento on-premise; a revisão cita uma decisão italiana de proteção de dados como contexto."
+  },
+  {
+   "cat": "Framework",
+   "ano": 2025,
+   "tit": "OWASP Top 10 for Agentic Applications",
+   "lig": "QP7",
+   "onde": "OWASP (dez/2025, segundo a Bugcrowd)",
+   "st": "A conferir",
+   "nota": "Lista própria para agentes, irmã do Top 10 de LLM."
+  },
+  {
+   "cat": "Material da aula",
+   "ano": 2026,
+   "tit": "Áudio “Como hackers envenenam IAs de cibersegurança” (23 min)",
+   "lig": "Todas",
+   "onde": "Anexo da conversa",
+   "st": "Não transcrito",
+   "nota": "Não deu para transcrever aqui. O conteúdo da aula e os quatro dossiês foram conferidos contra as fontes (aba Recursos)."
+  },
+  {
+   "cat": "Dossiê 2",
+   "ano": 2026,
+   "tit": "GTG-20006: ator com nexo russo usando IA para phishing e ferramentas",
+   "lig": "Atores",
+   "onde": "Relatório da Anthropic (set/2026), via boletim",
+   "st": "A conferir",
+   "nota": "Abra o original antes de usar."
+  },
+  {
+   "cat": "Dossiê 2",
+   "ano": 2026,
+   "tit": "TRM Labs: índice de adoção de IA no cripto-crime (54/100 em 2026)",
+   "lig": "Submundo",
+   "onde": "TRM Labs (ago/2026), via cobertura",
+   "st": "A conferir",
+   "nota": "Plataforma onion DIG virou chat sem censura."
+  },
+  {
+   "cat": "Dossiê 2",
+   "ano": 2026,
+   "tit": "Linha de vermes de prompt: AgentWorm, Zombie Agents, Mind Viruses, Share-Borne AI Virus (arXiv 2609.35576)",
+   "lig": "RQ16",
+   "onde": "arXiv",
+   "st": "A conferir",
+   "nota": "Laboratório; nenhum verme confirmado em campo."
+  },
+  {
+   "cat": "Dossiê 2",
+   "ano": 2026,
+   "tit": "Exposição: 492 servidores MCP sem autenticação (Trend Micro)",
+   "lig": "RQ10",
+   "onde": "Cobertura secundária",
+   "st": "A conferir",
+   "nota": "Mais dezenas de milhares de instâncias OpenClaw expostas no início de 2026."
+  },
+  {
+   "cat": "Dossiê 4",
+   "ano": 2026,
+   "tit": "Alerta FLASH do FBI sobre o ARTEX (13/11/2026)",
+   "lig": "Defesa",
+   "onde": "FBI, via cobertura",
+   "st": "A conferir",
+   "nota": "Fonte de indicadores; confira o original."
+  },
+  {
+   "cat": "Dossiê 4",
+   "ano": 2026,
+   "tit": "NIST IR 8596: perfil de cibersegurança para IA (rascunho)",
+   "lig": "Defesa",
+   "onde": "NIST",
+   "st": "A conferir",
+   "nota": "Ainda em rascunho."
+  },
+  {
+   "cat": "Dossiê 4",
+   "ano": null,
+   "tit": "Clássicos de defesa: Detection Maturity Level, Hunting Maturity Model, PEAK, TaHiTI, Pirâmide da Dor, Código do Almirantado, Sigma, D3FEND",
+   "lig": "Defesa",
+   "onde": "Referências consolidadas",
+   "st": "A conferir",
+   "nota": "Citados de memória nos dossiês: confira edição e link."
+  },
+  {
+   "cat": "Dossiê 5",
+   "ano": 2026,
+   "tit": "Ler na íntegra o “ARTEX and Friends” do GTIG antes de citar números",
+   "lig": "PIR-5",
+   "onde": "Google Cloud Blog",
+   "st": "A conferir",
+   "nota": "A página existe; o conteúdo não foi lido."
+  },
+  {
+   "cat": "Dossiê 5",
+   "ano": null,
+   "tit": "Mapear CERT.br, CTIR Gov, regulador financeiro e comunidades MISP setoriais",
+   "lig": "PIR-2, PIR-3",
+   "onde": "Contatos e regras de uso",
+   "st": "A conferir",
+   "nota": "Fonte, consumidor e possível vetor de propagação de dado ruim."
+  },
+  {
+   "cat": "Dossiê 5",
+   "ano": 2026,
+   "tit": "Relatório completo da Kaspersky com ransomware, phishing e participação regional",
+   "lig": "PIR-3",
+   "onde": "Kaspersky",
+   "st": "A conferir",
+   "nota": "O comunicado não traz esses números."
+  },
+  {
+   "cat": "LLmInjection",
+   "ano": 2026,
+   "tit": "Ler a palestra ou artigo da Viaconnect (EDR → SOC com IA)",
+   "lig": "RQ11",
+   "onde": "Zenity AI Agent Security Summit 2026",
+   "st": "A conferir",
+   "nota": "Possível parceria de replicação no Brasil."
+  },
+  {
+   "cat": "LLmInjection",
+   "ano": 2026,
+   "tit": "Pistas do panorama Brasil ainda sem fonte primária: Serasa e Banco Central sobre golpes com Pix e deepfake; PixRevolution (Recorded Future)",
+   "lig": "PIR-3",
+   "onde": "docs/pt-BR/PANORAMA-BRASIL-LATAM.md",
+   "st": "A conferir",
+   "nota": "Mantidas fora dos dados pelo próprio repositório."
+  }
+ ]
+}

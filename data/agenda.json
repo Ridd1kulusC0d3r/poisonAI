@@ -1,0 +1,655 @@
+{
+ "qps": [
+  {
+   "id": "QP1",
+   "tit": "Quanto um agente OSINT alucina, etapa por etapa?",
+   "q": "Qual a taxa de alucinação de ponta a ponta de um agente OSINT/CTI em fluxo realista, medida por afirmação e por etapa, e como o erro se propaga de uma etapa para a seguinte?",
+   "h": "H1: a taxa cresce da extração para o relatório, e a atribuição de ator concentra os erros graves.",
+   "m": "Verdade-terreno em STIX (no estilo de Mezzi) ou CyberThreat-Eval; anotar cada afirmação do relatório como apoiada, não apoiada ou contradita; entropia semântica como sinal.",
+   "agenda": "Medição de alucinação",
+   "fecha": "A lacuna nº 1 da revisão: só um número medido, em condição favorável.",
+   "itens": [
+    "mezzi2025unreliable",
+    "chen2025cte",
+    "farquhar2024semantic",
+    "palmieri2026survey"
+   ]
+  },
+  {
+   "id": "QP2",
+   "tit": "Quantos documentos viram uma atribuição?",
+   "q": "Qual a dose mínima de documentos plantados que troca a atribuição de uma campanha (ator A para ator B) num agente com RAG ou grafo de CTI, e quanto tempo leva para alguém perceber?",
+   "h": "H2: poucos documentos bastam quando imitam o vocabulário da pergunta; no grafo, uma relação falsa compartilhada afeta várias perguntas.",
+   "m": "Curva dose-resposta (0, 1, 2, 3, 5, 10, 25 documentos) em RAG vetorial e em GraphRAG; métricas: troca de atribuição, fração do top-k envenenada, tempo até detecção.",
+   "agenda": "Robustez adversarial",
+   "fecha": "Agentes só foram avaliados em condição benigna.",
+   "itens": [
+    "zou2025poisonedrag",
+    "liang2025graphrag",
+    "wen2025fewwords",
+    "souly2025near",
+    "alam2024ctibench",
+    "atlas2025rag"
+   ]
+  },
+  {
+   "id": "QP3",
+   "tit": "O RAG transforma veneno em confiança?",
+   "q": "Respostas ancoradas numa fonte envenenada recebem mais confiança do analista do que alucinações sem fonte?",
+   "h": "H3: a citação aumenta a aceitação do erro; mostrar proveniência e incerteza reduz esse efeito.",
+   "m": "Experimento entre grupos com analistas: alucinação sem fonte × erro com citação envenenada × erro com citação e aviso de proveniência.",
+   "agenda": "Human–AI teaming",
+   "fecha": "Junta alucinação e envenenamento, que a literatura trata separados.",
+   "itens": [
+    "ranade2021fakecti",
+    "parasuraman2010",
+    "zou2025poisonedrag"
+   ]
+  },
+  {
+   "id": "QP4",
+   "tit": "O checkpoint humano pega CTI falso de LLM atual?",
+   "q": "Analistas brasileiros distinguem CTI falso gerado por um LLM atual de CTI autêntico? O viés de automação muda com a apresentação?",
+   "h": "H4: a taxa de aceitação do falso fica acima de 50% e cai quando o analista vê proveniência e uma segunda fonte.",
+   "m": "Replicar Ranade (2021) com n maior e modelos de 2026; medir aceitação, tempo e confiança; instrumentos de viés de automação.",
+   "agenda": "Human–AI teaming",
+   "fecha": "O único estudo com humanos tem n=10 e usa GPT-2.",
+   "itens": [
+    "ranade2021fakecti",
+    "parasuraman2010",
+    "anthropic2025aug"
+   ]
+  },
+  {
+   "id": "QP5",
+   "tit": "LLM grooming em português",
+   "q": "Que fontes de influência aparecem quando um agente OSINT pesquisa temas brasileiros e latino-americanos, e em que proporção?",
+   "h": "H5: perguntas enviesadas puxam mais fontes de operações de influência, como no estudo do ISD, também em português.",
+   "m": "Bateria de perguntas neutras, enviesadas e maliciosas em pt-BR, no molde do ISD e do ITS Rio; classificar domínios citados.",
+   "agenda": "Multilíngue",
+   "fecha": "Os estudos de grooming são em inglês e línguas europeias.",
+   "itens": [
+    "isd2025chatbots",
+    "newsguard2025pravda",
+    "asp2025pravda",
+    "itsrio2026boca",
+    "internetlab2026papo"
+   ]
+  },
+  {
+   "id": "QP6",
+   "tit": "Detectar veneno pela ausência de corroboração",
+   "q": "Um fato que entra no grafo sem uma segunda fonte independente é um sinal útil de envenenamento?",
+   "h": "H6: a ausência de corroboração independente separa nós plantados de nós legítimos melhor que o conteúdo do texto.",
+   "m": "Marcar cada nó com o número de fontes independentes e o tempo até a segunda fonte; avaliar como detector na curva da QP2.",
+   "agenda": "Robustez adversarial",
+   "fecha": "Possível ponte com a sua dissertação sobre detecção pela ausência.",
+   "itens": [
+    "liang2025graphrag",
+    "revoked2026",
+    "dash2026memory",
+    "carlini2024web"
+   ]
+  },
+  {
+   "id": "QP7",
+   "tit": "Ferramenta envenenada no agente OSINT",
+   "q": "Um agente OSINT ligado por MCP a ferramentas de reputação e varredura segue instruções vindas da saída dessas ferramentas?",
+   "h": "H7: campos de texto livre devolvidos por ferramentas funcionam como injeção indireta.",
+   "m": "Servidores MCP de teste que devolvem saídas com instruções; medir ações induzidas, no estilo do estudo de 22,9% da Dynatrace. Hipótese desta linha, não achado publicado.",
+   "agenda": "Reprodutibilidade e ferramentas abertas",
+   "fecha": "Une injeção e ferramentas no caso específico de OSINT.",
+   "itens": [
+    "invariant2025tpa",
+    "cyberark2025fsp",
+    "dynatrace2026mcp",
+    "gtig2025",
+    "checkpoint2025skynet"
+   ]
+  }
+ ],
+ "qp_itens": {
+  "QP1": [
+   "mezzi2025unreliable",
+   "chen2025cte",
+   "farquhar2024semantic",
+   "palmieri2026survey"
+  ],
+  "QP2": [
+   "zou2025poisonedrag",
+   "liang2025graphrag",
+   "wen2025fewwords",
+   "souly2025near",
+   "alam2024ctibench",
+   "atlas2025rag"
+  ],
+  "QP3": [
+   "ranade2021fakecti",
+   "parasuraman2010",
+   "zou2025poisonedrag"
+  ],
+  "QP4": [
+   "ranade2021fakecti",
+   "parasuraman2010",
+   "anthropic2025aug"
+  ],
+  "QP5": [
+   "isd2025chatbots",
+   "newsguard2025pravda",
+   "asp2025pravda",
+   "itsrio2026boca",
+   "internetlab2026papo"
+  ],
+  "QP6": [
+   "liang2025graphrag",
+   "revoked2026",
+   "dash2026memory",
+   "carlini2024web"
+  ],
+  "QP7": [
+   "invariant2025tpa",
+   "cyberark2025fsp",
+   "dynatrace2026mcp",
+   "gtig2025",
+   "checkpoint2025skynet"
+  ]
+ },
+ "perguntas": [
+  [
+   "QP1",
+   "Quanto um agente OSINT alucina, etapa por etapa?",
+   "A taxa cresce da extração para o relatório.",
+   "Verdade-terreno STIX; anotação por afirmação",
+   "Artefato",
+   "Alucinação",
+   "alta",
+   "≈ RQ2"
+  ],
+  [
+   "QP2",
+   "Quantos documentos viram uma atribuição?",
+   "Poucos, se imitam a pergunta.",
+   "Curva dose-resposta em RAG e GraphRAG",
+   "Artefato",
+   "Envenenamento",
+   "alta",
+   "≈ RQ1 e E1"
+  ],
+  [
+   "QP3",
+   "O RAG transforma veneno em confiança?",
+   "A citação aumenta a aceitação do erro.",
+   "Experimento entre grupos com analistas",
+   "Artefato",
+   "Humano",
+   "alta",
+   "complementa RQ4"
+  ],
+  [
+   "QP4",
+   "O checkpoint humano pega CTI falso de LLM atual?",
+   "Aceitação acima de 50%.",
+   "Replicar Ranade com n maior",
+   "Artefato",
+   "Humano",
+   "alta",
+   "≈ RQ4 e RQ19"
+  ],
+  [
+   "QP5",
+   "LLM grooming em português",
+   "Perguntas enviesadas puxam mais fontes de influência.",
+   "Bateria em pt-BR no molde do ISD",
+   "Artefato",
+   "Multilíngue",
+   "média",
+   "≈ RQ7"
+  ],
+  [
+   "QP6",
+   "Detectar veneno pela ausência de corroboração",
+   "Ausência de segunda fonte separa nós plantados.",
+   "Contagem de fontes independentes por nó",
+   "Artefato",
+   "Envenenamento",
+   "média",
+   "complementa RQ5 e RQ17"
+  ],
+  [
+   "QP7",
+   "Ferramenta envenenada no agente OSINT",
+   "Saídas de ferramenta funcionam como injeção.",
+   "Servidores MCP de teste",
+   "Artefato",
+   "Ferramentas",
+   "média",
+   "≈ RQ10"
+  ],
+  [
+   "RQ1",
+   "Quanto CTI falso de LLM é preciso para inverter uma atribuição feita por um agente ReAct com RAG?",
+   "Número quase constante e pequeno.",
+   "Sandbox fechado; geração controlada; curva dose-resposta (AnnoCTR, CTIBench, CTIConnect, RSB)",
+   "Dossiê 1",
+   "Envenenamento",
+   "alta",
+   ""
+  ],
+  [
+   "RQ2",
+   "Como o erro se propaga entre coleta, NER, grafo, RAG e relatório?",
+   "Amplificação superlinear na etapa de grafo.",
+   "Contaminação controlada de 0 a 20%; rastreio por afirmação; reanotação do dataset de Niu et al.",
+   "Dossiê 1",
+   "Alucinação",
+   "alta",
+   ""
+  ],
+  [
+   "RQ3",
+   "MISP, OpenCTI e STIX/TAXII propagam IOCs envenenados entre organizações?",
+   "Sim, por correlações e sightings automáticos.",
+   "Testbed federado com instâncias isoladas",
+   "Dossiê 1",
+   "Envenenamento",
+   "média",
+   ""
+  ],
+  [
+   "RQ4",
+   "Checkpoints humanos detectam conteúdo adversarial?",
+   "Perto do acaso sem proveniência; melhora com nota de fonte.",
+   "Experimento com n≥30 e itens semeados; alfabetização em LLM e pressão de tempo",
+   "Dossiê 1",
+   "Humano",
+   "alta",
+   ""
+  ],
+  [
+   "RQ5",
+   "Notas de confiabilidade (Almirantado, AuthRank) reduzem o envenenamento sem suprimir inteligência nova?",
+   "Há trade-off mensurável.",
+   "Ataque × supressão de relatórios legítimos novos (zero-days)",
+   "Dossiê 1",
+   "Defesa",
+   "média",
+   ""
+  ],
+  [
+   "RQ6",
+   "Analisadores de malware por LLM resistem a injeções imperativas, narrativas e de gatilho de recusa?",
+   "Narrativas e gatilhos de recusa superam as imperativas.",
+   "Avaliação cruzada; amostras Skynet e GuardBreaker; protocolo ALIBI",
+   "Dossiê 1",
+   "IA no SOC",
+   "média",
+   ""
+  ],
+  [
+   "RQ7",
+   "Chatbots em pt-BR repetem narrativas da Pravda mais que em inglês?",
+   "Sim, por vazios de dados em português.",
+   "Auditoria longitudinal com perguntas amplas e estreitas",
+   "Dossiê 1",
+   "Multilíngue",
+   "média",
+   ""
+  ],
+  [
+   "RQ8",
+   "LLMs com busca verificam mídia de crise gerada por IA?",
+   "Falham nas primeiras 72 horas.",
+   "Coorte de crises (Israel–Irã 2025, Índia–Paquistão 2025)",
+   "Dossiê 1",
+   "Multimodal",
+   "média",
+   ""
+  ],
+  [
+   "RQ9",
+   "O enquadramento do LLM enviesa a atribuição de ameaças entre Estados?",
+   "Sim, e muda com o idioma.",
+   "Troca contrafactual de atores em relatórios idênticos",
+   "Dossiê 1",
+   "Viés",
+   "média",
+   ""
+  ],
+  [
+   "RQ10",
+   "Agentes de CTI com skills e MCP de terceiros já chegam comprometidos?",
+   "Sim; a camada de ferramentas é o elo mais fraco.",
+   "Auditoria de dependências de agentes abertos; skills adulteradas em sandbox",
+   "Dossiê 2",
+   "Ferramentas",
+   "alta",
+   ""
+  ],
+  [
+   "RQ11",
+   "Quanto da triagem por LLM cai sob injeção em logs, com modelos e logs atuais?",
+   "Sumarização segue vulnerável em 2026.",
+   "Replicar LogInject e Watchtower com logs reais anonimizados; corpus pronto em Yeagerist0/prompt-injection-soc-telemetry",
+   "Dossiê 2",
+   "IA no SOC",
+   "alta",
+   "Viaconnect (Brasil) é o caso mais próximo"
+  ],
+  [
+   "RQ12",
+   "Iscas de inferência extraem ou corrompem a memória de agentes ofensivos? Com que limites legais?",
+   "Extração passiva é viável e defensável; corrupção ativa não.",
+   "Bancada com frameworks abertos apontados para iscas; análise jurídica (LGPD, Marco Civil)",
+   "Dossiê 2",
+   "Engano",
+   "média",
+   ""
+  ],
+  [
+   "RQ13",
+   "Com que frequência um agente de OSINT encontra injeções na web e com que efeito?",
+   "Frequentes e “defensivas”; efeito é degradação.",
+   "Agente de coleta instrumentado, cruzado com os modelos de 15,3 mil instâncias",
+   "Dossiê 2",
+   "Injeção",
+   "alta",
+   ""
+  ],
+  [
+   "RQ14",
+   "Como verificar a integridade de pesos abertos usados em inteligência?",
+   "Com referência, edições mínimas aparecem; sem referência, detecção imperfeita.",
+   "Reproduzir as defesas do Lazarus em modelos de CTI local",
+   "Dossiê 2",
+   "Integridade de modelo",
+   "média",
+   ""
+  ],
+  [
+   "RQ15",
+   "Agentes multimodais detectam imagem de satélite fabricada?",
+   "Perto do acaso sem metadados de proveniência.",
+   "Pares autênticos e gerados; medir falso positivo nos autênticos",
+   "Dossiê 2",
+   "Multimodal",
+   "média",
+   ""
+  ],
+  [
+   "RQ16",
+   "Artefatos de agentes autônomos já contaminam coletas de OSINT?",
+   "Sim, em volume pequeno e crescente.",
+   "Buscar indicadores do relatório do AISI em corpora de coleta",
+   "Dossiê 2",
+   "Agentes",
+   "baixa",
+   ""
+  ],
+  [
+   "RQ17",
+   "Em qual estágio da campanha a detecção é mais barata?",
+   "Autoridade e semeadura, antes do modelo.",
+   "Bancada instrumentada por estágio; custo por detecção",
+   "Dossiê 3",
+   "Defesa",
+   "média",
+   ""
+  ],
+  [
+   "RQ18",
+   "Quanto tempo uma isca contra agentes dura depois que sua assinatura vaza?",
+   "Queda abrupta.",
+   "Repetir Rouxii com iscas renovadas",
+   "Dossiê 3",
+   "Engano",
+   "média",
+   ""
+  ],
+  [
+   "RQ19",
+   "O revisor humano detecta falsa bandeira plantada em grafo de CTI?",
+   "Não, sem proveniência por afirmação.",
+   "Exercício E1 com revisão cega, n≥30",
+   "Dossiê 3",
+   "Humano",
+   "alta",
+   ""
+  ],
+  [
+   "RQ20",
+   "Iscas de inferência distinguem agente malicioso de agente legítimo mal configurado?",
+   "Mal; falso positivo cresce com a adoção de agentes.",
+   "Tráfego misto controlado",
+   "Dossiê 3",
+   "Engano",
+   "baixa",
+   ""
+  ],
+  [
+   "RQ21",
+   "A memória capturada de um agente adversário é fonte confiável?",
+   "Parcialmente: contém alucinações.",
+   "Comparar relato do agente com o que ocorreu em alvos de laboratório",
+   "Dossiê 3",
+   "Engano",
+   "média",
+   ""
+  ],
+  [
+   "RQ22",
+   "Que telemetria distingue uma intrusão conduzida por agente em ambiente financeiro brasileiro?",
+   "Ritmo de máquina e laço de planejamento aparecem também em fraude contra Pix.",
+   "Aplicar as detecções da aba Defesa a logs de instituição parceira",
+   "Dossiê 5",
+   "Brasil",
+   "alta",
+   "PIR-3 e PIR-5"
+  ],
+  [
+   "RQ23",
+   "Quanto erra o modelo copiloto (software mais checagem humana) na eleição de 2026?",
+   "Software sozinho erra muito; a checagem humana corrige, com custo de tempo.",
+   "Reanalisar amostra do VigIA: acerto e falso positivo por etapa",
+   "Dossiê 5",
+   "Humano",
+   "média",
+   "PIR-4; complementa RQ4"
+  ],
+  [
+   "RQ24",
+   "Qual a taxa de discordância natural entre as fontes de CTI que usamos?",
+   "Alta, como em Bouwman et al.",
+   "Medir sobreposição e atraso entre os feeds da casa antes de qualquer bancada adversarial",
+   "Dossiê 5",
+   "Método",
+   "alta",
+   "linha de base de RQ1 e RQ2"
+  ],
+  [
+   "RQ25",
+   "Envenenamento de memória por links (como o da Microsoft) atinge assistentes usados por analistas de CTI?",
+   "Sim, se o analista usa assistente com memória e clica em links de fontes abertas.",
+   "Bancada com assistentes de memória e links de relatórios; medir o que persiste",
+   "LLmInjection",
+   "Envenenamento",
+   "média",
+   "ATLAS AML.CS0072; complementa QP7"
+  ]
+ ],
+ "lacunas": [
+  [
+   "Não existe benchmark adversarial para agentes de CTI/OSINT",
+   "RSB e MCPTox são genéricos; CTIBench e CyberThreat-Eval são benignos.",
+   "Dossiê 1"
+  ],
+  [
+   "Erro composto ao longo do pipeline nunca foi medido",
+   "“No paper attempts to quantify the combined error rate.”",
+   "Âncora"
+  ],
+  [
+   "Envenenamento de grafo de CTI medido só com um exemplo",
+   "Ranade 2021, demonstração qualitativa.",
+   "Dossiê 1"
+  ],
+  [
+   "Eficácia do checkpoint humano não testada",
+   "Estudos com n=10, n=3 e n=10; nenhum com n≥30.",
+   "Âncora"
+  ],
+  [
+   "Triagem de malware por LLM sem métricas de campo",
+   "ALIBI e GuardBreaker sem taxa de sucesso pública.",
+   "Dossiê 1"
+  ],
+  [
+   "Grooming não medido em português",
+   "Nem em outras línguas fora do eixo ocidental.",
+   "Dossiê 1"
+  ],
+  [
+   "Proveniência sem medida de supressão de inteligência nova",
+   "Limitação admitida pelo AuthRank.",
+   "Dossiê 1"
+  ],
+  [
+   "A camada de ferramentas chega comprometida",
+   "Skills e MCP de terceiros antes de qualquer dado.",
+   "Dossiê 2"
+  ],
+  [
+   "Logs como canal de instrução, testados com modelos de 2024",
+   "Resultados atuais desconhecidos.",
+   "Dossiê 2"
+  ],
+  [
+   "Nenhum benchmark multimodal para agentes de inteligência",
+   "E detectores com falso positivo alto.",
+   "Dossiê 2"
+  ],
+  [
+   "Nenhum feed ou grafo de produção comprovadamente envenenado em público",
+   "A ausência é a justificativa central da linha.",
+   "Dossiês 1 a 3"
+  ],
+  [
+   "Nenhuma série oficial independente sobre IA no cibercrime brasileiro",
+   "Só telemetria de fornecedores.",
+   "Dossiê 5"
+  ],
+  [
+   "Ecossistema brasileiro de compartilhamento sem mapeamento para IA",
+   "CERT.br, CTIR Gov, regulador financeiro e MISP setoriais: coleta pendente.",
+   "Dossiê 5"
+  ]
+ ],
+ "fases": [
+  [
+   "Curto prazo (0 a 6 meses)",
+   [
+    "Revisão sistemática reprodutível: busca booleana registrada, dois revisores, κ",
+    "Corrigir as citações herdadas do âncora",
+    "Testbed fechado de RAG e agente de CTI",
+    "RQ1 e RQ6 em pequena escala",
+    "Protocolo ético: nenhum CTI falso sai do laboratório"
+   ]
+  ],
+  [
+   "Médio prazo (6 a 18 meses)",
+   [
+    "RQ2, RQ3, RQ5 e RQ7",
+    "Publicar um benchmark de envenenamento em CTI com divulgação responsável",
+    "Estudo com analistas (RQ4) com um CSIRT ou SOC parceiro"
+   ]
+  ],
+  [
+   "Longo prazo (18 a 36 meses)",
+   [
+    "Padrão de proveniência por afirmação integrável ao STIX",
+    "Currículo de alfabetização em IA para analistas, com proficiência medida",
+    "Monitoramento contínuo de grooming multilíngue",
+    "Propor controles específicos de CTI para OWASP e ATLAS"
+   ]
+  ]
+ ],
+ "tese": [
+  "O copiloto humano–IA é a hipótese de implantação mais prudente, mas sua eficácia contra conteúdo adversarial é desconhecida, e a melhor evidência disponível (n=10) sugere que ela é baixa.",
+  "Use o âncora como mapa, não como fonte de números: três dos números que ele usa como pilares não batem com as fontes primárias."
+ ],
+ "metricas": [
+  [
+   "Alucinação por afirmação",
+   "Afirmações sem apoio na fonte ÷ afirmações do relatório",
+   "QP1"
+  ],
+  [
+   "Troca de atribuição",
+   "Casos em que o ator atribuído mudou após o veneno ÷ casos testados",
+   "QP2"
+  ],
+  [
+   "Dose mínima (N50)",
+   "Menor número de documentos plantados que troca a atribuição em metade dos casos",
+   "QP2"
+  ],
+  [
+   "Fração envenenada no top-k",
+   "Documentos plantados entre os k recuperados ÷ k",
+   "QP2"
+  ],
+  [
+   "Tempo até detecção",
+   "Horas ou ciclos até o veneno ser marcado",
+   "QP2, QP6"
+  ],
+  [
+   "Aceitação de erro",
+   "Itens falsos aprovados pelo analista ÷ itens falsos mostrados",
+   "QP3, QP4"
+  ],
+  [
+   "Calibração",
+   "Diferença entre a confiança declarada e o acerto real",
+   "QP1"
+  ],
+  [
+   "Ações induzidas",
+   "Chamadas de ferramenta não pedidas ÷ cenários com veneno",
+   "QP7"
+  ]
+ ],
+ "veiculos": [
+  [
+   "Revista Brasileira de Inteligência (ABIN)",
+   "Recorte brasileiro, Camada 8 e governança (QP4, QP5)"
+  ],
+  [
+   "SBSeg (Simpósio Brasileiro de Segurança)",
+   "Experimentos de envenenamento e ferramentas (QP2, QP7)"
+  ],
+  [
+   "Workshop AISec (ACM CCS)",
+   "Alucinação × envenenamento em agentes (QP2, QP3)"
+  ],
+  [
+   "Forensic Science International: Digital Investigation",
+   "Validação em investigação digital (QP1)"
+  ],
+  [
+   "ACM Digital Threats: Research and Practice",
+   "Atores de ameaça e CTI com IA"
+  ],
+  [
+   "IEEE S&P, USENIX Security, ACM CCS, NDSS, ACSAC, RAID, ESORICS, SaTML",
+   "Ataques e defesas com rigor experimental (RQ1, RQ10, RQ11)"
+  ],
+  [
+   "ICWSM, ISCRAM, ACL/EMNLP, NeurIPS D&B",
+   "Desinformação, datasets e benchmarks (RQ2, RQ7)"
+  ],
+  [
+   "Virus Bulletin, CAMLIS, FIRST CTI SIG, SANS CTI Summit, DEF CON AI Village",
+   "Indústria e comunidade de CTI"
+  ]
+ ]
+}

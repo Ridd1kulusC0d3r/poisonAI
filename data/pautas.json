@@ -1,0 +1,314 @@
+{
+ "series": {
+  "E1": "Como hackers envenenam IAs de cibersegurança",
+  "E2": "Desinformação envenena a IA de espionagem",
+  "D2": "Submundo e casos de 2026",
+  "D3": "Postura ofensiva",
+  "D5": "Inteligência e Brasil"
+ },
+ "pautas": [
+  [
+   "E1",
+   "“NO MALWARE DETECTED”: o malware que conversa com a IA",
+   "De Skynet (falhou) a GuardBreaker, passando por ALIBI. A ESET não divulgou eficácia.",
+   [
+    "checkpoint2025skynet",
+    "eset2026guardbreaker",
+    "alibi2026"
+   ]
+  ],
+  [
+   "E1",
+   "O e-mail que fez o Copilot vazar dados sem um clique",
+   "EchoLeak como arquétipo do agente de SOC lendo conteúdo do atacante.",
+   [
+    "echoleak2025"
+   ]
+  ],
+  [
+   "E1",
+   "250 documentos",
+   "O estudo explicado, com a ressalva de que o backdoor era só texto sem sentido.",
+   [
+    "souly2025near"
+   ]
+  ],
+  [
+   "E1",
+   "97% de falsos alarmes",
+   "Textos gerados por LLM inundam e cegam classificadores de CTI.",
+   [
+    "shafee2025falsealarms"
+   ]
+  ],
+  [
+   "E1",
+   "Quando a IA do atacante alucina",
+   "GTG-1002 superestimou achados e isso freou a operação.",
+   [
+    "anthropic2025gtg1002"
+   ]
+  ],
+  [
+   "E2",
+   "Escrevendo para robôs: a rede Pravda",
+   "Milhões de artigos sem leitores, Wikipédia, Common Crawl e o debate 33% contra 5%.",
+   [
+    "asp2025pravda",
+    "dfrlab2026pipeline",
+    "newsguard2025pravda",
+    "alyukov2025hks"
+   ]
+  ],
+  [
+   "E2",
+   "“OSINT ou BULLSHINT?”",
+   "O que os 9% realmente significam e como números citados em cadeia se deformam.",
+   [
+    "niu2025bullshint",
+    "palmieri2026survey"
+   ]
+  ],
+  [
+   "E2",
+   "O verificador virou vetor",
+   "Grok e Perplexity na guerra Israel–Irã.",
+   [
+    "dfrlab2025grok"
+   ]
+  ],
+  [
+   "E2",
+   "Lavagem de autoridade",
+   "Think tanks e veículos falsos de Rússia, China e Irã.",
+   [
+    "openai2026io"
+   ]
+  ],
+  [
+   "E2",
+   "Há grooming em português?",
+   "Pauta-investigação própria, com teste de chatbots em pt-BR.",
+   [
+    "itsrio2026boca",
+    "internetlab2026papo",
+    "eko2026"
+   ]
+  ],
+  [
+   "D2",
+   "O agente que entregou a própria memória",
+   "MadPot: criminosos apontaram seus agentes para uma API falsa.",
+   [
+    "aws2026madpot"
+   ]
+  ],
+  [
+   "D2",
+   "2.900 logins por minuto",
+   "ARTEX, Storm-0940 e o ConnectWise. Nada de técnica nova, só velocidade.",
+   [
+    "msft2026storm0940"
+   ]
+  ],
+  [
+   "D2",
+   "A loja de extensões envenenada",
+   "ClawHavoc e ToxicSkills, e a skill que mandava no agente depois de apagada.",
+   [
+    "snyk2026toxicskills",
+    "clawhavoc2026"
+   ]
+  ],
+  [
+   "D2",
+   "Quem escreve os logs?",
+   "Por que resumir é mais perigoso que classificar.",
+   [
+    "watchtower2026",
+    "grafanaghost2026"
+   ]
+  ],
+  [
+   "D2",
+   "Sete neurônios",
+   "Lazarus e o agente adormecido em pesos abertos. Pesquisa, não ataque em campo.",
+   [
+    "lazarus2026"
+   ]
+  ],
+  [
+   "D2",
+   "O teste que saiu do laboratório",
+   "O incidente do AISI.",
+   [
+    "aisi2026incident"
+   ]
+  ],
+  [
+   "D2",
+   "O mercado negro não vende IA do mal. Vende a sua conta.",
+   "Credenciais roubadas, preços dobrando, infostealers atrás de chaves.",
+   [
+    "halcyon2026",
+    "gtig2026sep"
+   ]
+  ],
+  [
+   "D2",
+   "A foto de satélite que nunca existiu",
+   "Contas impostoras de OSINT e detectores que chamam o verdadeiro de falso.",
+   [
+    "afp2026satellite",
+    "newsguard2026detect"
+   ]
+  ],
+  [
+   "D2",
+   "Vermes de prompt: o que existe e o que é manchete",
+   "Demonstrações da OpenAI e da academia contra o que circula de fato.",
+   [
+    "openai2026worm",
+    "cohen2024worm"
+   ]
+  ],
+  [
+   "D2",
+   "Grooming de IA funciona?",
+   "NewsGuard, vazios de dados e o Carnegie.",
+   [
+    "newsguard2025pravda",
+    "alyukov2025hks",
+    "carnegie2026"
+   ]
+  ],
+  [
+   "D3",
+   "Como eu enganaria a sua IA de inteligência",
+   "A campanha em sete estágios, um caso documentado por estágio.",
+   [
+    "ranade2021fakecti",
+    "watchtower2026",
+    "clawhavoc2026"
+   ]
+  ],
+  [
+   "D3",
+   "A falsa bandeira na era dos agentes",
+   "Desvio de atribuição: o efeito mais valioso e menos medido.",
+   [
+    "ranade2021fakecti",
+    "bias2503"
+   ]
+  ],
+  [
+   "D3",
+   "Iscas para robôs",
+   "De honeytokens ao ambiente-sombra, e o modelo que ignorou as iscas.",
+   [
+    "optionaltraps2026",
+    "gingerbread2026",
+    "aws2026madpot"
+   ]
+  ],
+  [
+   "D3",
+   "A corrida das armadilhas",
+   "O agente que aprendeu a reconhecer honeypots só mudando o prompt.",
+   [
+    "rouxii2026"
+   ]
+  ],
+  [
+   "D3",
+   "Revidar é crime?",
+   "Hack back contra agentes de IA, com um jurista e um pesquisador.",
+   [
+    "mantis2024"
+   ]
+  ],
+  [
+   "D3",
+   "Ataque a si mesmo",
+   "Como montar um red team de pipeline de inteligência.",
+   [
+    "watchtower2026",
+    "lazarus2026"
+   ]
+  ],
+  [
+   "D5",
+   "Por que ainda não vimos um CTI envenenado?",
+   "Seis hipóteses concorrentes, uma matriz e o que mudaria o julgamento.",
+   [
+    "bouwman2020cup",
+    "heuer1999"
+   ]
+  ],
+  [
+   "D5",
+   "A eleição dos deepfakes de gente comum",
+   "Perfis anônimos, não operações estatais, e o que isso muda para quem coleta.",
+   [
+    "vigia2026",
+    "dataprivacy2026",
+    "tse2026deepfake"
+   ]
+  ],
+  [
+   "D5",
+   "O trojan brasileiro aprendeu IA",
+   "Do correntista para a infraestrutura do banco: Kaspersky, Slim Spider e BREEZE COMET.",
+   [
+    "kaspersky2026br",
+    "crowdstrike2026slim",
+    "gtig2026breeze"
+   ]
+  ],
+  [
+   "D5",
+   "Seus feeds não concordam entre si",
+   "2,5% a 4,0% de sobreposição: o ruído que já existe antes do atacante.",
+   [
+    "li2019tealeaves",
+    "bouwman2020cup"
+   ]
+  ],
+  [
+   "D5",
+   "O chatbot fala pior em português?",
+   "A lacuna lusófona e a auditoria que ninguém fez no Brasil.",
+   [
+    "lusa2026chatbots",
+    "pplware2026lingua",
+    "alyukov2025hks"
+   ]
+  ],
+  [
+   "D5",
+   "O botão “Resumir com IA” que envenena a memória",
+   "Envenenamento de memória já existe fora do laboratório, por marketing.",
+   [
+    "msft2026recpoison"
+   ]
+  ],
+  [
+   "D5",
+   "Seu SOC obedece ao EDR do atacante",
+   "A pesquisa brasileira que manipulou 14 de 23 modelos pela telemetria.",
+   [
+    "viaconnect2026edr",
+    "watchtower2026"
+   ]
+  ],
+  [
+   "D5",
+   "Pix, STR e boleto: o BREEZE COMET",
+   "Ferramentas sob medida escritas com LLM, com comentários em português.",
+   [
+    "gtig2026breeze",
+    "unit42_2026latam"
+   ]
+  ]
+ ]
+}

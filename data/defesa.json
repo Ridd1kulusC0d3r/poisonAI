@@ -1,0 +1,462 @@
+{
+ "passos": [
+  [
+   "Decompor",
+   "MAESTRO: sete camadas, do modelo ao ecossistema de agentes.",
+   "maestro2025"
+  ],
+  [
+   "Mapear",
+   "Cada camada para técnicas do MITRE ATLAS.",
+   "atlas2025rag"
+  ],
+  [
+   "Pontuar",
+   "OWASP AIVSS.",
+   "aivss"
+  ],
+  [
+   "Traduzir",
+   "Controles e pontos de aprovação humana ancorados no NIST AI RMF.",
+   "nist2025aml"
+  ]
+ ],
+ "comp": [
+  [
+   "Fontes externas",
+   "Conteúdo fabricado com cara de autoridade",
+   "CTI falso; redes de fachada",
+   "Nota de confiabilidade por fonte; fonte nova em quarentena",
+   "S1"
+  ],
+  [
+   "Coletor e navegador",
+   "Injeção indireta em HTML não renderizado",
+   "15,3 mil injeções na web",
+   "Remover conteúdo não renderizado; texto coletado é dado, nunca instrução",
+   "S1"
+  ],
+  [
+   "Ferramentas, skills, MCP",
+   "Ferramenta maliciosa ou alterada depois de aprovada",
+   "ClawHavoc; postmark-mcp",
+   "Lista de permitidos, versão fixa, revisão a cada atualização",
+   "S5"
+  ],
+  [
+   "Extração de entidades",
+   "Indicador falso vira “fato”",
+   "Grafo envenenado (Ranade)",
+   "Toda entidade carrega fonte e data de origem",
+   "S2"
+  ],
+  [
+   "Grafo e recuperação",
+   "Poucos documentos desviam respostas",
+   "PoisonedRAG; GraphRAG",
+   "Regra de corroboração: nada com fonte única",
+   "S3"
+  ],
+  [
+   "Modelo e pesos",
+   "Checkpoint adulterado",
+   "Lazarus",
+   "Origem registrada e hash conferido",
+   "S4"
+  ],
+  [
+   "Memória do agente",
+   "Diretiva que sobrevive à limpeza",
+   "Reescrita de MEMORY.md",
+   "Memória versionada, com diferença revisável e restauração",
+   "S3"
+  ],
+  [
+   "Credenciais do agente",
+   "Chave roubada; contexto exposto",
+   "Mercado de contas; LLMjacking",
+   "Credenciais curtas e de escopo mínimo; alerta de custo",
+   "S5"
+  ],
+  [
+   "Sumarização e relatório",
+   "Resumo diverge da evidência",
+   "Watchtower",
+   "Cada afirmação aponta para a evidência bruta",
+   "S6"
+  ],
+  [
+   "Revisor humano",
+   "Aceita texto fluente sem cruzar fontes",
+   "Estudos com n=10",
+   "Proveniência à vista; itens semeados para medir atenção",
+   "S7"
+  ]
+ ],
+ "higiene": [
+  [
+   "Fonte e informação separadas",
+   "Código do Almirantado (A–F e 1–6), aplicado por afirmação, não por documento."
+  ],
+  [
+   "Proveniência no dado",
+   "STIX 2.1 tem campo de confiança e objeto de opinião: indicador sem origem não entra no grafo."
+  ],
+  [
+   "Corroboração independente",
+   "Dois documentos que citam a mesma origem contam como um."
+  ],
+  [
+   "Envelhecer o dado",
+   "Afirmação sem reconfirmação perde confiança com o tempo."
+  ],
+  [
+   "Requisitos antes da coleta",
+   "Sem perguntas escritas e com dono, o agente coleta o fácil, e o fácil é o que o adversário semeou."
+  ]
+ ],
+ "fonte": [
+  [
+   "A",
+   "Completamente confiável"
+  ],
+  [
+   "B",
+   "Geralmente confiável"
+  ],
+  [
+   "C",
+   "Razoavelmente confiável"
+  ],
+  [
+   "D",
+   "Geralmente não confiável"
+  ],
+  [
+   "E",
+   "Não confiável"
+  ],
+  [
+   "F",
+   "Não é possível avaliar"
+  ]
+ ],
+ "info": [
+  [
+   "1",
+   "Confirmada por outras fontes"
+  ],
+  [
+   "2",
+   "Provavelmente verdadeira"
+  ],
+  [
+   "3",
+   "Possivelmente verdadeira"
+  ],
+  [
+   "4",
+   "Duvidosa"
+  ],
+  [
+   "5",
+   "Improvável"
+  ],
+  [
+   "6",
+   "Não é possível avaliar"
+  ]
+ ],
+ "piramide": [
+  [
+   "Comportamento",
+   "Rajadas de 2 a 25 s; nova tentativa reformulada segundos após bloqueio; várias famílias de cliente de uma origem em um minuto",
+   "Durável: é propriedade do laço de planejamento"
+  ],
+  [
+   "Ferramenta",
+   "O próprio ARTEX",
+   "Repositório original retirado; cópias com outros nomes"
+  ],
+  [
+   "Artefatos",
+   "Arquivos e contas com o nome do framework e sufixos incrementais",
+   "Frágil: uma bifurcação renomeia tudo"
+  ],
+  [
+   "Hashes, IPs, domínios",
+   "Endereços publicados",
+   "Horas a dias"
+  ]
+ ],
+ "deteccoes": [
+  [
+   "Identidade e nuvem",
+   "Rajada de chamadas de API ou testes de permissão por uma identidade em segundos",
+   "GTIG mediu 27 eventos em 23 s; faça linha de base antes"
+  ],
+  [
+   "Identidade e nuvem",
+   "Uma origem com várias famílias de cliente em um minuto",
+   "Caçada da Elastic"
+  ],
+  [
+   "Identidade e nuvem",
+   "Bloqueio seguido de tentativa reformulada em segundos",
+   "Assinatura do laço de planejamento"
+  ],
+  [
+   "Rede",
+   "Saída para webhook, túnel ou teste fora de banda a partir de produção",
+   "Endereços rotativos de webhook"
+  ],
+  [
+   "Seu agente",
+   "Chamada de ferramenta fora do perfil da tarefa",
+   "Exige perfil por tipo de tarefa"
+  ],
+  [
+   "Seu agente",
+   "Escrita na memória ou em configuração sem pedido do usuário",
+   "Persistência"
+  ],
+  [
+   "Seu agente",
+   "Resumo que rebaixa a gravidade sem evidência nova",
+   "Injeção em log"
+  ],
+  [
+   "Dados",
+   "Documento recuperado com frequência desproporcional",
+   "Envenenamento de recuperação"
+  ],
+  [
+   "Dados",
+   "Rajada de documentos novos e parecidos sobre o mesmo ator",
+   "Semeadura"
+  ],
+  [
+   "Dados",
+   "Mudança de atribuição apoiada só em fontes com menos de N dias",
+   "Falsa bandeira"
+  ],
+  [
+   "Modelo",
+   "Hash do checkpoint diferente da referência",
+   "Barato e decisivo"
+  ],
+  [
+   "Custo",
+   "Inferência fora do horário, região ou volume",
+   "LLMjacking"
+  ]
+ ],
+ "armadilhas": [
+  [
+   "Bloquear o endereço não basta",
+   "A credencial segue utilizável e o framework muda de rota: contenção é revogar."
+  ],
+  [
+   "O detector é superfície de ataque",
+   "Filtros pegaram 1 de 32 no LogJack; monitores com IA também são manipuláveis."
+  ],
+  [
+   "Sinal sem linha de base vira ruído",
+   "E ruído é um dos seis efeitos que o adversário busca."
+  ]
+ ],
+ "hunts": [
+  [
+   "H1",
+   "Há ferramentas ou skills fora do inventário aprovado",
+   "Configuração dos agentes; registro de instalação",
+   "Qualquer item fora da lista"
+  ],
+  [
+   "H2",
+   "Alguma ferramenta aprovada mudou depois da aprovação",
+   "Histórico de versões e descrições",
+   "Descrição ou permissão alterada sem revisão"
+  ],
+  [
+   "H3",
+   "A memória de algum agente tem diretiva que ninguém escreveu",
+   "Histórico da memória",
+   "Linha sem autor rastreável"
+  ],
+  [
+   "H4",
+   "Há conclusões no grafo com fonte única ou de mesma origem",
+   "Grafo com proveniência",
+   "Nó de atribuição com um só caminho de evidência"
+  ],
+  [
+   "H5",
+   "Fontes novas e sem histórico já influenciaram relatório",
+   "Relatórios e citações",
+   "Citação decisiva a fonte com poucos dias"
+  ],
+  [
+   "H6",
+   "Nossos agentes recebem conteúdo diferente de um navegador comum",
+   "Coleta pareada",
+   "Diferença sistemática em páginas específicas"
+  ],
+  [
+   "H7",
+   "Alguma identidade nossa tem ritmo de máquina sem ser automação conhecida",
+   "Logs de identidade e plano de controle",
+   "Rajadas fora da linha de base"
+  ],
+  [
+   "H8",
+   "Chaves de API de modelos em uso fora do padrão",
+   "Faturamento e auditoria do provedor",
+   "Horário, região ou volume anômalos"
+  ]
+ ],
+ "dml": [
+  [
+   "DML-1",
+   "Indicadores atômicos",
+   "IPs e domínios de relatórios"
+  ],
+  [
+   "DML-2",
+   "Artefatos",
+   "Nomes de arquivo e conta deixados por um framework"
+  ],
+  [
+   "DML-3",
+   "Ferramentas",
+   "Reconhecer um framework agêntico"
+  ],
+  [
+   "DML-4",
+   "Procedimentos",
+   "Sequência de ações do laço de planejamento"
+  ],
+  [
+   "DML-5",
+   "Técnicas",
+   "Envenenamento de recuperação, injeção em log, ferramenta envenenada"
+  ],
+  [
+   "DML-6",
+   "Táticas",
+   "Persistência em memória; construção de autoridade"
+  ],
+  [
+   "DML-7",
+   "Estratégia",
+   "A campanha em sete estágios"
+  ],
+  [
+   "DML-8",
+   "Objetivos",
+   "Qual dos seis efeitos o adversário busca"
+  ]
+ ],
+ "regua": [
+  [
+   "0",
+   "Cego",
+   "Agente em produção sem registro de execução",
+   "Não sabe dizer que documentos sustentaram o relatório de ontem"
+  ],
+  [
+   "1",
+   "Registrado",
+   "Execuções gravadas; inventário de ferramentas e modelos",
+   "Consegue reconstituir uma execução"
+  ],
+  [
+   "2",
+   "Rastreável",
+   "Proveniência por afirmação; fontes com nota",
+   "Consegue listar tudo que derivou de uma fonte"
+  ],
+  [
+   "3",
+   "Detectando",
+   "Detecções ativas com linha de base",
+   "Recebe alerta de mudança de memória e de atribuição com fonte nova"
+  ],
+  [
+   "4",
+   "Caçando",
+   "Hipóteses periódicas; red team semestral",
+   "Caçadas viram detecções"
+  ],
+  [
+   "5",
+   "Medindo",
+   "Itens semeados medem o revisor; métricas publicadas",
+   "Sabe a sua taxa de aceitação de conteúdo adversarial"
+  ]
+ ],
+ "playbook": [
+  [
+   "Preparar",
+   "Linha de base de grafo, memória e pesos fora do alcance dos agentes; mecanismo testado para pausar a ingestão; lista de quem recebe seus relatórios."
+  ],
+  [
+   "Detectar e triar",
+   "Qual afirmação é suspeita, de que fonte veio, desde quando está na base."
+  ],
+  [
+   "Conter",
+   "Pausar a fonte e as aparentadas; congelar e copiar grafo, memória e registros; revogar credenciais; marcar conclusões derivadas como “em revisão”."
+  ],
+  [
+   "Dimensionar",
+   "Pela proveniência, listar entidades, relações e relatórios que descendem da fonte. Impossível abaixo do nível 2."
+  ],
+  [
+   "Erradicar",
+   "Remover ou rebaixar o que não tem corroboração; restaurar memória e configuração; reverificar ferramentas e modelo."
+  ],
+  [
+   "Recuperar",
+   "Retomar a ingestão com a fonte em quarentena e a detecção que faltava."
+  ],
+  [
+   "Comunicar e retratar",
+   "Avisar quem consumiu os relatórios afetados, com a correção. É a parte que mais se omite."
+  ],
+  [
+   "Aprender",
+   "A lacuna vira detecção, hipótese de caçada e linha no modelo de ameaças; registrar quase incidentes."
+  ]
+ ],
+ "plano": [
+  [
+   "Dias 1 a 30: enxergar",
+   [
+    "Inventário de agentes, ferramentas, skills, servidores MCP, modelos e chaves",
+    "Registro de execução ligado e guardado fora do alcance dos agentes",
+    "Modelo de ameaças com a tabela de componentes",
+    "Caçadas H1, H2, H3 e H8"
+   ]
+  ],
+  [
+   "Dias 31 a 60: rastrear",
+   [
+    "Proveniência por afirmação e nota de fonte",
+    "Regra de corroboração e quarentena de fonte nova",
+    "Linha de base de grafo, memória e pesos",
+    "Primeiras detecções: memória, hash de modelo, custo, ritmo de máquina"
+   ]
+  ],
+  [
+   "Dias 61 a 90: testar",
+   [
+    "Exercícios E2 e E1 na bancada",
+    "Simulação de mesa do playbook, com retratação",
+    "Caçadas H4 a H7",
+    "Primeira medição do revisor com itens semeados",
+    "Autoavaliação na régua e meta do trimestre"
+   ]
+  ]
+ ]
+}
