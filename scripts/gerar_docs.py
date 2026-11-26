@@ -184,6 +184,31 @@ def main():
         t.append("\n## Ordem de leitura sugerida pelo dossiê 7\n")
         t += [f"{n}. {o}" for n, o in enumerate(D7["ordem"], 1)]
         escrever("DOSSIE7.md", "\n".join(t))
+    # ficha canônica do caso SQLite e piloto de retratações
+    def opc(nome):
+        f = DOCS.parent / "data" / nome
+        return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+    C, R, P = opc("caso-sqlite.json"), opc("caso-sqlite-registros.json"), opc("piloto-retratacao.json")
+    if C and R:
+        t = [f"# Ficha canônica: {C['titulo']}\n", f"**{C['rotulo']}.** {C['escopo_busca']}\n", "## As quatro perguntas\n"]
+        for q in C["perguntas"]:
+            t.append(f"### {q['q']}\n\n{q['r']}\n\n*Certeza: {q['certeza']}*\n")
+        t.append("## Linha do tempo\n")
+        t.append(tabela(["Data", "O quê", "Fonte"], C["linha_do_tempo"]))
+        t.append(f"\n## Os registros na lista oficial\n\nFonte: {R['fonte']}, commit {R['commit'][:10]}. {R['nota']} Reproduza com `python3 scripts/caso_cve.py`.\n")
+        t.append(tabela(["Registro", "Produto", "Examinado pela JFrog", "Publicado (UTC)", "Nota da CISA", "Horas até a nota", "Rejeitado (UTC)", "Horas publicado"],
+                        [[r["cve"], r["produto"], "sim" if r["examinado_jfrog"] else "", r["publicado"][:16].replace("T", " "),
+                          " → ".join(str(c[1]) for c in r["cisa_adp"]) or "sem nota", str(r["horas_ate_cisa"] or "—"), (r["rejeitado"] or "")[:16].replace("T", " "), str(r["horas_publicado"])] for r in R["registros"]]))
+        t.append("\n## Que evidência futura distinguiria H7\n")
+        t += [f"- {x}" for x in C["discriminar_h7"]]
+        t.append("\n## Correções feitas\n")
+        t += [f"- {x}" for x in C["correcoes"]]
+        if P:
+            t.append(f"\n## Piloto de retratações (versão 0, {P['observado_em']})\n\n{P['metodo']}\n\n**Limites:** {P['limites']}\n")
+            t.append(tabela(["Registro", "Fonte", "Estado", "Última modificação exibida", "O que a cópia mostra"],
+                            [[o["cve"], f"[{o['fonte']}]({o['url']})", o["estado"], o["ultima_mod"] or "não exibida", o["nota"]] for o in P["obs"]]))
+            t.append("\nCaptura direta, com data e hora: `python3 scripts/zumbis.py` (acrescenta linhas em `data/zumbis-capturas.csv`).")
+        escrever("CASO-SQLITE.md", "\n".join(t))
 
 
 if __name__ == "__main__":

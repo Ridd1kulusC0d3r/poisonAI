@@ -485,7 +485,7 @@
   },
   "vuln": {
    "o_que": "CVE, NVD, avisos de fornecedor e programas de bug bounty como fontes de inteligência que agentes tratam como verdade.",
-   "grupo": "O primeiro caso público de fonte de inteligência contaminada por conteúdo de IA veio por aqui, e não por um feed de CTI: 54 CVEs falsos entraram no NVD com enriquecimento da CISA em julho de 2026. O pipeline funciona no sistema de honra e nenhuma etapa exige reproduzir a falha.",
+   "grupo": "O primeiro caso identificado nesta pesquisa (busca em fontes abertas até 26/11/2026) de fonte de inteligência contaminada por conteúdo fabricado veio por aqui, e não por um feed de CTI: 32 registros CVE fabricados, citando um repositório obscuro, foram publicados na lista oficial entre 27 e 30/07/2026; 28 receberam nota da CISA (até 9,8) e todos foram rejeitados em 31/07. O pipeline funciona no sistema de honra e nenhuma etapa exige reproduzir a falha.",
    "pergunta": "O registro foi reproduzido por alguém além de quem o pediu? Quem reportou é rastreável? Quanto tempo um registro rejeitado continua vivo em bases derivadas e em respostas de assistentes?",
    "extrair": [
     "Quem publicou e quem verificou",

@@ -12,7 +12,7 @@
    "Injeções plantadas na web aberta (15,3 mil medidas)",
    "Imagem de satélite fabricada e contas impostoras de OSINT",
    "Artefatos deixados por agentes autônomos",
-   "Fonte autoritativa contaminada por volume: CVEs falsos com indício de IA chegam ao NVD com enriquecimento oficial (jul/2026)"
+   "Fonte autoritativa contaminada por volume: 32 CVEs fabricados, com suspeita de geração por IA, entram na lista oficial e 28 recebem nota da CISA (jul/2026)"
   ],
   "defesas": [
    "Registrar proveniência e hash de cada item na coleta",
@@ -39,7 +39,8 @@
    "gmtp2025",
    "register2026fakecve",
    "jfrog2026sqlite",
-   "oig2026nvd"
+   "oig2026nvd",
+   "cvelist2026lote"
   ],
   "atlas": [
    "AML.T0070"

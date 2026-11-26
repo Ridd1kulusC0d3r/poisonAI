@@ -54,7 +54,7 @@ Os julgamentos usam linguagem estimativa (quase nula, muito improvável, improv�
 
 ## Hipóteses concorrentes
 
-A pergunta central (por que o único caso público de fonte contaminada por IA, os CVEs falsos no NVD, não veio de um adversário mirando pipelines de CTI) é analisada com ACH: sete hipóteses, dezessete evidências, e a hipótese com mais inconsistências é a mais fraca. A matriz é de um só analista; ela rende mais com divergência real. Edite a sua no site.
+A pergunta central (por que o primeiro caso identificado nesta pesquisa de fonte contaminada por conteúdo fabricado, os 32 CVEs do lote de julho de 2026, não veio de um adversário mirando pipelines de CTI) é analisada com ACH: sete hipóteses, dezessete evidências, e a hipótese com mais inconsistências é a mais fraca. A matriz é de um só analista; ela rende mais com divergência real. Edite a sua no site.
 
 ## Origem do material
 
@@ -64,3 +64,9 @@ Artigo âncora (Palmieri et al., arXiv 2607.03233), cinco dossiês produzidos co
 ## Identidade visual
 
 O site usa a identidade do repositório LLmInjection: papel, tinta e uma única cor de sinal (#b43c0e), Inter e JetBrains Mono, cartões com profundidade suave, abas em pílula fixas com vidro fosco, tema claro e escuro. Todos os gráficos (cadeia, linhas de assunto, linha do tempo, curva dose-resposta, matriz de hipóteses) foram mantidos.
+
+## Medições próprias
+
+- **Ficha canônica do caso SQLite** (`data/caso-sqlite.json`, `data/caso-sqlite-registros.json`, `scripts/caso_cve.py`): toda contagem do caso sai do histórico de commits da lista oficial de CVEs. README, matriz de hipóteses e página usam a mesma ficha.
+- **Piloto de retratações** (`data/piloto-retratacao.json`, `scripts/zumbis.py`): estados por registro × fonte (ainda apresentado como válido, rejeição visível, removido, indisponível), mais “misto” e “inconclusivo”. Preservar o registro mostrando a rejeição conta como correção. A versão 0 usa cópias de índice de busca; a data só é conhecida quando a página exibe a última modificação.
+- **Medição do portão** (`scripts/medir_portao.py`): separa documento legítimo rejeitado de fato legítimo perdido (o fato perde todas as fontes) e de decisão final correta, com e sem o portão, nos mesmos dados sintéticos.

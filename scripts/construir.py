@@ -76,6 +76,20 @@ def score_leitura(it, peso, refs, trilha):
     return total, classe, partes
 
 
+def opcional(nome):
+    """JSON gerado por scripts próprios (caso, piloto, medição); ausente vira None."""
+    f = RAIZ / "data" / nome
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+
+
+def resumo_registros(d):
+    """Tira o histórico completo de cada registro para o site (fica no JSON do repositório)."""
+    if not d:
+        return None
+    return dict(fonte=d["fonte"], commit=d["commit"][:10], nota=d["nota"],
+                registros=[{k: r[k] for k in ("cve", "produto", "examinado_jfrog", "publicado", "cisa_adp", "horas_ate_cisa", "rejeitado", "horas_publicado")} for r in d["registros"]])
+
+
 def montar():
     tax = ler("taxonomia.json")
     itens_brutos = ler("itens.json")
@@ -159,6 +173,8 @@ def montar():
         fases=agenda["fases"], tese=agenda["tese"], epis=pautas["pautas"], episSer=pautas["series"],
         dchecks=conf["dossies"], grupos=rec["grupos_acompanhar"], intel=intel["intel"], crit=intel["critica"],
         repo=rec["llminjection"], repos=rec["repositorios"], queries=rec["consultas"],
+        caso=opcional("caso-sqlite.json"), casoReg=resumo_registros(opcional("caso-sqlite-registros.json")),
+        piloto=opcional("piloto-retratacao.json"), medicao=opcional("medicao-portao.json"),
         code=(RAIZ / "scripts" / "dose_resposta.py").read_text(encoding="utf-8"),
         updated=(RAIZ / "data" / "ATUALIZADO").read_text(encoding="utf-8").strip())
     return payload, itens, erros

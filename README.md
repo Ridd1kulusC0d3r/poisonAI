@@ -8,7 +8,14 @@
 
 ## A virada (dossiê 6)
 
-Em julho de 2026, 54 avisos de vulnerabilidade falsos, com indício de geração por IA, saíram de um repositório obscuro; seis de SQLite entraram no NVD com enriquecimento da CISA, com CVSS de até 9,8, até a JFrog tentar reproduzir e a MITRE rejeitar o lote. É o primeiro caso público de fonte de inteligência contaminada por conteúdo de IA, e o autor não era um Estado. A tese da linha mudou: **o ecossistema de inteligência opera no sistema de honra, e a IA tornou quase gratuito produzir uma afirmação plausível enquanto verificá-la custa o mesmo de sempre.** A aba **A virada** traz o caso, as correções aos dossiês 1 a 5, a hipótese H7 (produtor movido a incentivo), cinco projetos com dados públicos (RQ28 a RQ32) e o desenho experimental do dossiê 7 (um CTIConnect envenenado, com a taxa de supressão de evidência legítima como métrica central).
+Em julho de 2026, **32 registros CVE fabricados**, citando um repositório obscuro no GitHub, foram publicados na lista oficial entre 27 e 30/07; **28 receberam nota de gravidade da CISA** (até 9,8, mediana de três horas depois da publicação) e todos foram rejeitados em 31/07. A JFrog examinou seis de SQLite e não reproduziu nenhum; o autor do SQLite os chamou de fictícios. A geração por IA é **suspeita** (detector de texto), não fato, e a motivação é **desconhecida**. É o **primeiro caso identificado nesta pesquisa** (busca em fontes abertas até 26/11/2026) de fonte de inteligência contaminada por conteúdo fabricado. Todos esses números vêm de uma única ficha canônica, conferida no histórico da lista oficial: [docs/CASO-SQLITE.md](docs/CASO-SQLITE.md).
+
+A aba **A virada** traz a ficha, uma linha por registro, as correções aos dossiês 1 a 5, a hipótese H7 (produtor movido a incentivo) com a evidência que a distinguiria, cinco projetos com dados públicos (RQ28 a RQ32) e o desenho experimental do dossiê 7.
+
+## Primeiras medições próprias
+
+- **Piloto de retratações (projeto P1, versão 0):** para os seis registros de SQLite, 44 observações registro × fonte. Uma base que preserva o registro e mostra “rejeitado” conta como correção propagada, não como falha. Em 24 cópias o registro ainda aparecia como válido; o maior atraso conhecido é de ao menos 17 dias (trackers do Fedora abertos em 17/08). As cópias vêm de índice de busca; a captura direta, com data e hora, está em `scripts/zumbis.py`.
+- **Documento rejeitado não é fato perdido:** `scripts/medir_portao.py` mede, com e sem o portão de admissão e nos mesmos dados sintéticos, documentos legítimos rejeitados, fatos novos que perderam todas as fontes e decisões finais corretas. Exemplo: exigir corroboração na base ou no próprio lote rejeita só 7,1% dos documentos legítimos, mas perde 33,3% dos fatos novos, todos os que tinham uma única fonte. Resultado completo em [docs/MEDICAO-PORTAO.md](docs/MEDICAO-PORTAO.md).
 
 ## Laboratório
 
@@ -18,9 +25,9 @@ No site, a aba **Laboratório** deixa envenenar uma base de 320 relatórios sint
 
 | Trabalhos | Atores | Perguntas de pesquisa | Eventos na linha do tempo | Pautas | Evidências na análise de hipóteses |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **264** | **39** | **40** | **62** | **41** | **17** |
+| **266** | **39** | **40** | **63** | **41** | **17** |
 
-Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 264, 136 foram conferidos na fonte ou via cobertura nesta linha; o resto está marcado como vindo de dossiê, alegação ou memória.
+Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 266, 138 foram conferidos nesta linha (81 na fonte, 48 preprints conferidos e 9 via cobertura); o resto está marcado como vindo de dossiê, alegação ou memória.
 
 ## O que há aqui
 
@@ -43,9 +50,11 @@ Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **
 
 Quase toda defesa de RAG publicada age na recuperação ou na geração, e precisa conhecer a pergunta. Esta linha estuda também o portão **antes da indexação**: decidir se um lote de CTI entra na base que alimenta o assistente de SOC (RQ27). Leitura central no site (filtro “Admissão e ingestão de CTI”) e em [docs/LEITURA.md](docs/LEITURA.md).
 
-## A tese, em uma linha
+## Hipótese de pesquisa e julgamento sobre implantação
 
-O copiloto humano–IA é a hipótese de implantação mais prudente para OSINT e CTI, mas a eficácia dele contra conteúdo adversarial é desconhecida, e a melhor evidência disponível (estudos com n=10) sugere que é baixa.
+**Hipótese de pesquisa (o que o projeto pretende medir):** o ecossistema de inteligência de segurança opera no sistema de honra, e a IA generativa tornou quase gratuito produzir uma afirmação plausível enquanto verificá-la custa o mesmo de sempre. Assistentes de CTI herdam essa assimetria porque consomem automaticamente registros que ninguém reproduziu. A pergunta operacional é quanto uma defesa consegue filtrar sem descartar a evidência legítima de que o analista precisa.
+
+**Julgamento sobre implantação (recomendação provisória):** o copiloto humano–IA é a forma mais prudente de usar IA em OSINT e CTI, mas a eficácia dele contra conteúdo adversarial é desconhecida, e a melhor evidência disponível (estudos com n=10) sugere que é baixa.
 
 ## Início rápido
 

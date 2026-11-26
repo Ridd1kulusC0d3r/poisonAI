@@ -2,10 +2,10 @@
 
 # Catálogo por tipo de estudo
 
-264 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
+266 trabalhos. O peso (1 a 5) mede a força para afirmar algo sobre o mundo real; veja [METODOLOGIA.md](../METODOLOGIA.md).
 
 
-## Medição em escala (dados reais) · peso 5 · 19 trabalhos
+## Medição em escala (dados reais) · peso 5 · 20 trabalhos
 
 Prova: Que o fenômeno existe e com que frequência, fora do laboratório. Não prova: Que causa dano nem por quê; costuma medir presença, não efeito.
 
@@ -15,6 +15,7 @@ Prova: Que o fenômeno existe e com que frequência, fora do laboratório. Não 
 | 65 | 2026 | [AI supply chain security: canary tokens in prompts](https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens) | Dragos (2026), com resposta da OpenRouter (22/11/2026) | Medição do fenômeno | A | Conferido na fonte |
 | 51 | 2026 | [Does Frontier AI Strengthen Cyber Defense? Evidence from Project Glasswing](https://arxiv.org/pdf/2611.06629) | arXiv 2611.06629 | Medição do fenômeno | — | A conferir |
 | 56 | 2026 | [Estudo de skills maliciosas que sequestram o espaço de ação do agente](https://arxiv.org/html/2604.03081v1) | arXiv 2604.03081 | Medição do fenômeno | A | Dossiê A |
+| 73 | 2026 | [Histórico dos registros do lote na lista oficial de CVEs (cvelistV5)](https://github.com/CVEProject/cvelistV5) | CVE Program, repositório CVEProject/cvelistV5 | Medição do fenômeno | A | Conferido na fonte |
 | 75 | 2026 | [Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives](https://arxiv.org/pdf/2604.27202) | arXiv 2604.27202 (v2, 05/11/2026) | Medição do fenômeno | A | Preprint conferido |
 | 62 | 2026 | [Never Emitted: Reporter Attribution in GitHub's Machine-Readable Vulnerability Records](https://arxiv.org/pdf/2609.33099) | arXiv 2609.33099 | Medição do fenômeno | A | Preprint conferido |
 | 78 | 2026 | [Pravda in the pipeline: Early evidence of state-adjacent propaganda in AI training data](https://dfrlab.org/2026/04/08/pravda-in-the-pipeline/) | DFRLab (08/04/2026) | Medição do fenômeno | A | Conferido na fonte |
@@ -219,17 +220,18 @@ Prova: Que a defesa funciona nas condições testadas. Não prova: Robustez cont
 | 45 | 2023 | [Verify-and-Edit: A Knowledge-Enhanced Chain-of-Thought Framework](https://arxiv.org/pdf/2305.03268) | ACL 2023 · arXiv 2305.03268 | Defesa | — | A conferir |
 
 
-## Incidente / caso documentado · peso 3 · 22 trabalhos
+## Incidente / caso documentado · peso 3 · 23 trabalhos
 
 Prova: Que aconteceu pelo menos uma vez, em campo. Não prova: Frequência, nem eficácia (muitos casos não informam taxa de sucesso).
 
 | Score | Ano | Trabalho | Veículo | Lado | Nota | Status |
 |---|---|---|---|---|---|---|
-| 81 | 2026 | [AI slop pollutes the CVE pipeline with fake vulns](https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462) | The Register (03/08/2026) | Medição do fenômeno | A | Conferido na fonte |
+| 78 | 2026 | [AI slop pollutes the CVE pipeline with fake vulns](https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462) | The Register (03/08/2026) | Medição do fenômeno | A | Conferido na fonte |
 | 44 | 2026 | [Agente ARTEX escapa do sandbox de um pesquisador e chega à ferramenta interna da WorkOS](https://workos.com/security/bulletins/update-for-october-30th-2026-data-security-incident) | WorkOS, boletim de segurança (30/10/2026) | Medição do fenômeno | A | Dossiê A |
 | 50 | 2026 | [Agentes de avaliação da OpenAI comprometem a infraestrutura do Hugging Face (AML.CS0068)](https://huggingface.co/blog/security-incident-july-2026) | OpenAI e Hugging Face (jul/2026) · MITRE ATLAS | Medição do fenômeno | A | Dossiê A |
 | 50 | 2026 | [Agentes em teste de desalinhamento escapam da contenção e sondam o site do Epoch AI](https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website) | Epoch AI e Trajectory Labs (out/2026) | Medição do fenômeno | A | Dossiê A |
 | 57 | 2026 | [ClawHavoc: skills maliciosas no ClawHub](https://obot.ai/blog/mcp-security-agent-skills-supply-chain/) | Antiy CERT (fev/2026), via cobertura | Ataque à IA | B | Dossiê B |
+| 60 | 2026 | [Fake CVEs against SQLite](https://sqlite.org/forum/forumpost/34bdf3b9bd759d4d) | Fórum oficial do SQLite (29/07/2026) | Medição do fenômeno | A | Conferido na fonte |
 | 53 | 2026 | GrafanaGhost: logs envenenados no assistente de IA do Grafana | Noma Security (07/04/2026), via cobertura | Ataque à IA | B | Dossiê B |
 | 66 | 2026 | [GuardBreaker: UAC-0099 usa gatilho de recusa para parar a análise por IA](https://www.welivesecurity.com/es/seguridad-corporativa/guardbreaker-ia-analisis-malware/) | ESET Research (10/09/2026) | Ataque à IA | A | Conferido na fonte |
 | 41 | 2026 | [How we defended against an AI-driven attack](https://labs.eye.security/how-we-defended-against-an-ai-driven-attack/) | Eye Security (nov/2026) | Defesa | A | Dossiê A |

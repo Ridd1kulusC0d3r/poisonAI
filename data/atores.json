@@ -701,9 +701,9 @@
   "origem": "Desconhecida",
   "tipo": "Incentivo",
   "papel": "F",
-  "conf": "Fonte primária (JFrog, OSS-Security) lida nesta rodada",
+  "conf": "Lista oficial de CVEs, JFrog e OSS-Security, conferidos nesta rodada",
   "prio": null,
-  "oque": "Repositório novo e obscuro no GitHub publicou 55 avisos; 54 eram inteiramente falsos e seis de SQLite entraram no NVD com enriquecimento da CISA. Indício de geração por IA; nenhuma intenção comprovada.",
+  "oque": "Repositório novo no GitHub com 55 avisos (54 fabricados, segundo a JFrog). 32 viraram registros CVE oficiais e 28 receberam nota da CISA antes da rejeição em 31/07/2026. Suspeita de geração por IA; nenhuma intenção comprovada.",
   "osint": "Não mirou nenhum agente: mirou a fonte que os agentes tratam como verdade. Tratar como caso, não como réu.",
   "stg": [
    "S1",

@@ -357,12 +357,12 @@
   ],
   [
    "D6",
-   "54 vulnerabilidades que nunca existiram",
-   "Nota 10,0 dada por engano, a maior base do mundo enganada, um sistema de honra, um mantenedor exausto e um motivo que ninguém sabe.",
+   "32 vulnerabilidades que nunca existiram",
+   "Nota 10,0 dada por engano, a CISA pontuando em três horas, um sistema de honra, um mantenedor exausto e um motivo que ninguém sabe.",
    [
-    "register2026fakecve",
+    "cvelist2026lote",
     "jfrog2026sqlite",
-    "stenberg2026curl"
+    "sqliteforum2026fake"
    ]
   ],
   [

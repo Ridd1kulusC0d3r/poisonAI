@@ -2,7 +2,7 @@
 
 # Hipóteses concorrentes, indicadores e julgamentos
 
-**Pergunta:** Até 25/11/2026, o único caso público de fonte de inteligência contaminada por conteúdo gerado por IA (os CVEs falsos no NVD) não veio de um adversário mirando pipelines de CTI. Por quê?
+**Pergunta:** Até 26/11/2026, o primeiro caso identificado nesta pesquisa (busca em fontes abertas até 26/11/2026) de fonte de inteligência contaminada por conteúdo fabricado, com suspeita de geração por IA (os CVEs do lote de julho), não veio de um adversário mirando pipelines de CTI. Por quê?
 
 ## Hipóteses
 
@@ -31,7 +31,7 @@
 | E11. Pesquisa brasileira manipula 14 de 23 modelos de SOC pela telemetria do EDR, em laboratório | C | N | I | N | C | N | N |
 | E12. Injeção em campo contra um pipeline de IA (sandbox de avaliação) para roubar chaves, não para moldar conclusões (Anthropic, GTG-50020) | N | I | C | N | C | N | N |
 | E13. Provedores de inferência comprometidos sem saber até serem avisados por canários (Dragos) | C | N | N | N | N | N | N |
-| E14. 54 CVEs falsos com indício de IA entram no NVD com enriquecimento da CISA; motivação desconhecida, sem ator estatal (jul/2026) | C | I | C | I | C | N | C |
+| E14. 32 registros CVE fabricados, citando um repositório obscuro, foram publicados na lista oficial entre 27 e 30/07/2026; 28 receberam nota da CISA (até 9,8) e todos foram rejeitados em 31/07. A JFrog não reproduziu nenhum dos seis de SQLite examinados; geração por IA é suspeita; motivação desconhecida; nenhum ator estatal apontado | C | I | C | I | C | N | C |
 | E15. O curl encerra o bug bounty: relatórios de IA viram a maior parte do ruído; o mantenedor supõe motivação financeira | N | N | N | N | C | N | C |
 | E16. NVD com mais de 27 mil registros sem processar; a checagem manual que filtrava registros falsos sumiu (OIG, mai/2026) | C | N | N | N | N | N | C |
 | E17. Pacote oficial de agentes da Microsoft trocado por ladrão de credenciais (nov/2026): o prêmio é acesso, não conclusões | N | N | C | N | C | N | N |
@@ -41,10 +41,10 @@ Inconsistências por hipótese: H1 = 1, H2 = 4, H3 = 3, H4 = 1, H5 = 0, H6 = 0, 
 
 ## Leitura
 
-H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1. A virada do dossiê 6: E14 a E16 mostram que a contaminação já aconteceu, na fonte mais autoritativa do setor, e sem adversário estratégico. H7 é a hipótese mais bem sustentada pela evidência nova e não tem nenhuma inconsistência; ela explica o caso real sem contradizer H3 e H6, que continuam explicando por que não há campanha dirigida. H4 perde força: o ruído não impediu o lote falso de se propagar. E17 reforça H3: quando um adversário mira agentes, mira acesso.
+H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1. A virada do dossiê 6: E14 a E16 mostram que a contaminação já aconteceu ao menos uma vez, numa fonte autoritativa, e sem adversário estratégico identificado. H7 é compatível com a evidência nova e não tem inconsistências, mas isso não a confirma: E14, sozinha, é compatível com quase qualquer motivação e por isso pouco discrimina. O que pesa a favor de H7 é E15 (o mantenedor do curl descreve volume movido a recompensa) e a ausência de alvo, exploração ou narrativa. Os indicadores I12 a I15 dizem que evidência futura distinguiria H7 das alternativas. H4 perde força: o ruído não impediu o lote falso de se propagar. E17 reforça H3: quando um adversário mira agentes, mira acesso.
 
-- É quase certo que fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA (E14, E16).
-- É provável que a contaminação observada se explique principalmente por H7; H3 e H6 seguem explicando a falta de campanha dirigida.
+- É quase certo que fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo fabricado, com suspeita de geração por IA (E14, E16).
+- É tão provável quanto não que a contaminação observada se explique principalmente por H7; a evidência ainda não discrimina entre incentivo e outras motivações. H3 e H6 seguem explicando a falta de campanha dirigida.
 - Segue improvável, com confiança baixa, que um adversário estratégico esteja envenenando pipelines de CTI de forma sistemática.
 - É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).
 - Confiança moderada no primeiro julgamento (fonte primária e reprodução da JFrog); baixa nos demais (autorrelatos e ausência de evidência).
@@ -58,7 +58,7 @@ H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre 
 | JC4 | No Brasil, a ameaça de IA mais relevante para defensores no curto prazo é a aceleração do cibercrime financeiro local. | Quase certo | Moderada | Telemetria de fornecedores convergente, sem dado oficial independente. |
 | JC5 | Agentes de OSINT operando no Brasil durante eleições absorvem conteúdo sintético não rotulado. | Muito provável | Moderada | Data Privacy Brasil e VigIA mostram baixa rotulagem. |
 | JC6 | Chatbots respondem pior em português do que em inglês a narrativas de propaganda estatal. | Tão provável quanto não | Baixa | Indícios indiretos; nenhuma auditoria em pt-BR. |
-| JC3 | Fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA. | Quase certo | Moderada | Caso NVD/CISA de jul/2026 (E14) e NVD sem checagem manual (E16). |
+| JC3 | Fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo fabricado, com suspeita de geração por IA. | Quase certo | Moderada | Lote de jul/2026 na lista oficial: 32 registros, 28 com nota da CISA (E14); NVD sem checagem manual (E16). |
 | JC3b | Um adversário estratégico já envenena de forma sistemática pipelines de CTI. | Improvável | Baixa | Ausência de evidência sob baixa visibilidade; o caso real veio de incentivo. |
 
 
@@ -74,9 +74,13 @@ H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre 
 | I6 | Contas falsas de OSINT em português ganhando tração em crises | H6 | Agências de checagem; DFRLab |
 | I7 | Caso documentado de assistente de IA corporativo ou de SOC enganado em produção (parcialmente visto: o envenenamento de recomendação da Microsoft atinge assistentes do público, não de SOC) | H1/H5 | Divulgações de incidentes; CVEs |
 | I8 | Propaganda estatal medida em dados de treino ou em respostas em português | H6 | DFRLab; NewsGuard; pesquisadores lusófonos |
-| I9 | Novo lote de CVEs ou avisos rejeitados por terem sido gerados por IA | H7 | Lista OSS-Security; commits de rejeição no cvelistV5; JFrog |
+| I9 | Novo lote de CVEs ou avisos rejeitados por fabricação, com ou sem suspeita de IA | H7 | Lista OSS-Security; commits de rejeição no cvelistV5; JFrog |
 | I10 | Registro rejeitado que continua vivo em bases derivadas, scanners ou respostas de assistentes (CVE-zumbi) | H1/H7 | Bases derivadas; avisos de distribuições; assistentes com busca |
 | I11 | Pacote de framework de agentes comprometido na origem | H3/H5 | PyPI e npm; Socket, Endor Labs, StepSecurity |
+| I12 | O mesmo autor ou conta reaparece com lotes em outros projetos | H7 (contra H3) | Lista oficial de CVEs; GitHub; OSS-Security |
+| I13 | Avisos ligados a pedidos de recompensa, currículo, perfil ou portfólio | H7 | Plataformas de bug bounty; perfis públicos |
+| I14 | Registros que favorecem um produto, um setor ou uma narrativa específica | H3 (contra H7) | Leitura dos alvos do lote |
+| I15 | Alvos escolhidos por popularidade, sem ligação com um adversário | H7 | Distribuição de produtos dos lotes |
 
 
 ## Cenários (12 a 24 meses)

@@ -55,7 +55,7 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Pearl Sleet e Onyx Sleet como grupos de extorsão (versão anterior do artefato) | Corrigir | São estatais norte-coreanos que usam o ARTEX (Microsoft, 29/10/2026). Storm-3358 é o grupo criminoso. |
 | GTG-20006 (pista do dossiê 2) | Confere | Relatório de setembro da Anthropic: consistente com Midnight Blizzard, mais de 20 organizações alvo. |
 | Relatório completo do GTG-1002 | Confere | PDF de 14 páginas: cerca de 30 alvos, 80% a 90% do trabalho tático pela IA, revisão humana de 2 a 20 minutos por fase. |
-| CVEs falsos no NVD (dossiê 6) | Confere | The Register, JFrog (30/07/2026) e OSS-Security (31/07/2026): seis de SQLite, CVSS 9,8 a 7,5, Red Hat 10,0, lote rejeitado pela MITRE. |
+| CVEs falsos no NVD (dossiê 6) | Confere em parte | Lista oficial: 32 registros, 28 com nota da CISA, rejeitados em 31/07; seis de SQLite examinados pela JFrog. “54 no NVD” não confere: 54 é a estimativa da JFrog para o repositório. |
 | Atraso do NVD (dossiê 6) | Confere em parte | Relatório OIG-26-020-I de 26/05/2026: mais de 27 mil no fim de 2025 confere; o número de 17 mil no fim de 2024 não foi achado (a fonte dá cerca de 13 mil em jun/2024). |
 | Fim do bug bounty do curl (dossiê 6) | Confere | Encerrado em 31/01/2026. A proporção de uma em 20 ou 30 vem da palestra na FOSDEM, via LWN; não reconferida. |
 | agent-framework no PyPI (dossiê 6) | Confere | Versões 1.26.1 e 1.26.2, 33 minutos de intervalo, 17/11/2026; cerca de 190 mil downloads por mês. |
@@ -94,7 +94,7 @@ Registro de correções. Zero correção não é a meta; honestidade é.
 | Status | Trabalhos |
 |---|---|
 | Dossiê A | 85 |
-| Conferido na fonte | 79 |
+| Conferido na fonte | 81 |
 | Preprint conferido | 48 |
 | Dossiê B | 25 |
 | A conferir | 17 |

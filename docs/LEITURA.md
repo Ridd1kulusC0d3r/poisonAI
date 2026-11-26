@@ -5,7 +5,7 @@
 Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METODOLOGIA.md](../METODOLOGIA.md). É uma régua para decidir a ordem, não uma nota de qualidade.
 
 
-## Leia primeiro (34)
+## Leia primeiro (35)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
@@ -25,11 +25,11 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 84 | [Measuring Hallucination in Large Language Models for Cyber Threat Intelligence: An Exploratory Study](https://arxiv.org/html/2611.25590) | 2026 | Avaliação empírica de modelos | A | evidencia 24, nucleo 15, conexoes 9, verificacao 10, revisao 6, recencia 10, trilha 10 |
 | 83 | [The Retrieval-Robustness Paradox: Data Poisoning in Retrieval-Dependent Domains](https://neurips.cc/virtual/2026/178250) | 2026 | Avaliação empírica de modelos | A | evidencia 24, nucleo 10, conexoes 9, verificacao 10, revisao 10, recencia 10, trilha 10 |
 | 82 | [TrustRAG: Enhancing Robustness and Trustworthiness in Retrieval-Augmented Generation](https://arxiv.org/pdf/2501.00879) | 2025 | Defesa / método | A | evidencia 18, nucleo 15, conexoes 15, verificacao 10, revisao 6, recencia 8, trilha 10 |
-| 81 | [AI slop pollutes the CVE pipeline with fake vulns](https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462) | 2026 | Incidente / caso documentado | A | evidencia 18, nucleo 15, conexoes 15, verificacao 10, revisao 3, recencia 10, trilha 10 |
 | 81 | [LLMs grooming or data voids? LLM-powered chatbot references to Kremlin disinformation reflect information gaps, not manipulation](https://misinforeview.hks.harvard.edu/wp-content/uploads/2025/10/alyukov_chatbots_kremlin_disinformation_20251015.pdf) | 2025 | Auditoria / investigação de sociedade civil | A | evidencia 18, nucleo 10, conexoes 15, verificacao 10, revisao 10, recencia 8, trilha 10 |
 | 80 | [Bending the Automation Bias Curve: A Study of Human and AI-Based Decision Making in National Security Contexts](https://arxiv.org/abs/2306.16507) | 2024 | Estudo com humanos | A | evidencia 24, nucleo 5, conexoes 15, verificacao 10, revisao 10, recencia 6, trilha 10 |
 | 79 | [False Alarms, Real Damage: Adversarial Attacks Using LLM-based Models on Text-based Cyber Threat Intelligence Systems](https://arxiv.org/pdf/2507.06252) | 2025 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, conexoes 12, verificacao 10, revisao 10, recencia 8 |
 | 78 | [Pravda in the pipeline: Early evidence of state-adjacent propaganda in AI training data](https://dfrlab.org/2026/04/08/pravda-in-the-pipeline/) | 2026 | Medição em escala (dados reais) | A | evidencia 30, nucleo 10, conexoes 15, verificacao 10, revisao 3, recencia 10 |
+| 78 | [AI slop pollutes the CVE pipeline with fake vulns](https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462) | 2026 | Incidente / caso documentado | A | evidencia 18, nucleo 15, conexoes 12, verificacao 10, revisao 3, recencia 10, trilha 10 |
 | 78 | [Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples](https://arxiv.org/pdf/2510.07192) | 2025 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 5, conexoes 15, verificacao 10, revisao 6, recencia 8, trilha 10 |
 | 77 | [VigIA: deepfakes lideram uso irregular de IA no primeiro turno de 2026](https://www.terra.com.br/noticias/deepfakes-lideram-uso-irregular-de-inteligencia-artificial-nas-eleicoes-de-2026,18f52065d3deff52ab7ee08332dcea9a4y1a8m3q.html) | 2026 | Auditoria / investigação de sociedade civil | B | evidencia 18, nucleo 15, conexoes 15, verificacao 6, revisao 3, recencia 10, trilha 10 |
 | 77 | [Your AI-Powered SOC Is Following My Instructions: Indirect Prompt Injection via EDR Telemetry](https://labs.zenity.io/post/waiting-for-you-in-new-york) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, conexoes 15, verificacao 10, revisao 3, recencia 10 |
@@ -37,6 +37,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 75 | [Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives](https://arxiv.org/pdf/2604.27202) | 2026 | Medição em escala (dados reais) | A | evidencia 30, nucleo 10, conexoes 9, verificacao 10, revisao 6, recencia 10 |
 | 74 | [Disrupting the first reported AI-orchestrated cyber espionage campaign](https://assets.claude.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf) | 2025 | Relatório de ameaça (autorrelato) | A | evidencia 18, nucleo 10, conexoes 15, verificacao 10, revisao 3, recencia 8, trilha 10 |
 | 73 | [ToxicSkills: malicious AI agent skills on ClawHub](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/) | 2026 | Medição em escala (dados reais) | A | evidencia 30, nucleo 5, conexoes 15, verificacao 10, revisao 3, recencia 10 |
+| 73 | [Histórico dos registros do lote na lista oficial de CVEs (cvelistV5)](https://github.com/CVEProject/cvelistV5) | 2026 | Medição em escala (dados reais) | A | evidencia 30, nucleo 5, conexoes 15, verificacao 10, revisao 3, recencia 10 |
 | 70 | [Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents (Lazarus)](https://arxiv.org/pdf/2611.15118) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 5, conexoes 15, verificacao 10, revisao 6, recencia 10 |
 | 70 | [Poisoning the SOC: Prompt Injection via Ingested Telemetry](https://aivillage.org/posters/poisoning-the-soc-prompt-injection-via-ingested-telemetry/) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 10, conexoes 6, verificacao 10, revisao 10, recencia 10 |
 | 70 | [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/pdf/2406.18382) | 2025 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 15, conexoes 3, verificacao 10, revisao 10, recencia 8 |
@@ -45,7 +46,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 70 | [Complacency and Bias in Human Use of Automation: An Attentional Integration](https://pubmed.ncbi.nlm.nih.gov/21077562/) | 2010 | Revisão / survey | A | evidencia 18, nucleo 5, conexoes 15, verificacao 10, revisao 10, recencia 2, trilha 10 |
 
 
-## Leia depois (145)
+## Leia depois (146)
 
 | Score | Trabalho | Ano | Tipo de estudo | Nota | Por quê |
 |---|---|---|---|---|---|
@@ -105,6 +106,7 @@ Score de 0 a 100 calculado por `scripts/construir.py`; a fórmula está em [METO
 | 60 | [Architecture Matters: comparação de arquiteturas de RAG sob envenenamento](https://arxiv.org/pdf/2605.05632) | 2026 | Avaliação empírica de modelos | A | evidencia 24, nucleo 10, verificacao 10, revisao 6, recencia 10 |
 | 60 | [Memory Poisoning Attack and Defense on Memory Based LLM-Agents](https://arxiv.org/abs/2601.05504) | 2026 | Experimento de ataque em laboratório | A | evidencia 24, nucleo 10, verificacao 10, revisao 6, recencia 10 |
 | 60 | [Coverage Is Not Redundancy: Maintenance Cost and Exposure of Query-Aware Admission Indexes in Vector Databases Under Workload Drift](https://alphaxiv.org/abs/2608.16043v1) | 2026 | Defesa / método | A | evidencia 18, nucleo 10, conexoes 6, verificacao 10, revisao 6, recencia 10 |
+| 60 | [Fake CVEs against SQLite](https://sqlite.org/forum/forumpost/34bdf3b9bd759d4d) | 2026 | Incidente / caso documentado | A | evidencia 18, nucleo 10, conexoes 9, verificacao 10, revisao 3, recencia 10 |
 | 60 | [We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs](https://arxiv.org/pdf/2406.10279) | 2025 | Avaliação empírica de modelos | A | evidencia 24, nucleo 5, conexoes 3, verificacao 10, revisao 10, recencia 8 |
 | 60 | [Russian networks flood the Internet with propaganda, aiming to corrupt AI chatbots](https://thebulletin.org/2025/03/russian-networks-flood-the-internet-with-propaganda-aiming-to-corrupt-ai-chatbots/) | 2025 | Auditoria / investigação de sociedade civil | B | evidencia 18, nucleo 10, conexoes 15, verificacao 6, revisao 3, recencia 8 |
 | 60 | [Auditoria da NewsGuard: a rede Pravda nas respostas de 10 chatbots](https://www.axios.com/2025/03/06/exclusive-russian-disinfo-floods-ai-chatbots-study-finds) | 2025 | Auditoria / investigação de sociedade civil | B | evidencia 18, nucleo 10, conexoes 15, verificacao 6, revisao 3, recencia 8 |

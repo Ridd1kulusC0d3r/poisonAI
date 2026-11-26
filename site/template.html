@@ -442,7 +442,7 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
 .factor>div:nth-last-child(-n+2){border-bottom:0}
 @media (max-width:560px){.factor{grid-template-columns:1fr}}
 .supp{width:100%;height:auto;display:block}
-.supp rect.b{transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
+.supp rect.b{transform-box:fill-box;transform-origin:left center;animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 @media print{nav.tabs,.mast-tools,.drawer,.scrim{display:none!important}}
 .s7leg{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0;font:600 11px var(--mono);color:var(--muted)}
@@ -453,6 +453,11 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
 .s7c{display:inline-block;margin-top:4px;font:700 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 8px}
 .s7c.a{background:var(--accent);color:var(--signal-ink)}.s7c.b{background:var(--accent-soft);color:var(--ink)}.s7c.c{background:var(--bg-2);color:var(--muted)}
 .s7tag{font:600 10.5px var(--mono);color:var(--muted);display:block;margin-top:4px}
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.ficha .card h3{font-size:15px;margin:0 0 6px}
+.ficha .cert{display:block;margin-top:8px;font:600 11px/1.4 var(--mono);color:var(--muted)}
+.estado{display:inline-block;font:700 10.5px var(--mono);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.estado.val{background:var(--risk-bg);color:var(--risk)}.estado.rej{background:var(--ok-bg);color:var(--ok)}.estado.mis{background:var(--warn-bg);color:var(--warn)}.estado.inc,.estado.na{background:var(--bg-2);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -461,7 +466,7 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
     <div class="mast-bar"><span>poisonAI · linha de pesquisa · OSINT e CTI com IA</span><span class="mast-tools"><span class="tlp">TLP:CLEAR</span><button type="button" id="themebtn" aria-label="Alternar tema claro e escuro">Tema</button></span></div>
     <div class="mast-title">
       <div><h1>Alucinação e envenenamento em IA para OSINT e CTI</h1>
-        <p class="lede">Quem envenena as IAs de segurança, como, com que dose e com que evidência, e onde barrar o veneno antes que ele entre na base. O primeiro caso real já aconteceu, e não veio de um espião.</p><span class="rule"></span></div>
+        <p class="lede">Quem envenena as IAs de segurança, como, com que dose e com que evidência, e onde barrar o veneno antes que ele entre na base. O primeiro caso real identificado nesta pesquisa já aconteceu, e não veio de um espião.</p><span class="rule"></span></div>
       <div class="mast-art" aria-hidden="false"><svg viewBox="0 0 442 240" role="img" aria-label="Registro de vulnerabilidade com barras de tarja; uma linha marcada como não reproduzida">
   <rect x=".5" y=".5" width="441" height="239" rx="10" fill="var(--surface)" stroke="var(--ink)"/>
   <g style="font:700 10px var(--mono);letter-spacing:2px;fill:var(--muted)"><text x="22" y="28">REGISTRO · ENRIQUECIDO</text><text x="420" y="28" text-anchor="end">CVSS 9.8</text></g>
@@ -487,7 +492,7 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
     <section class="view" id="v-inicio">
     <div class="hero">
       <div class="eyebrow">Por que isto importa</div>
-      <h2 class="herot">Em julho de 2026, 54 vulnerabilidades que nunca existiram entraram na base mais autoritativa do setor. Ninguém atacou um agente: atacaram a fonte que ele trata como verdade.</h2>
+      <h2 class="herot">Em julho de 2026, 32 vulnerabilidades inventadas ganharam CVE oficial, e 28 receberam nota de gravidade da CISA, até 9,8, antes de serem rejeitadas. Ninguém atacou um agente: atacaram a fonte que ele trata como verdade.</h2>
       <p class="herol">A IA tornou quase gratuito produzir uma afirmação plausível; verificá-la custa o mesmo de sempre. Assistentes de SOC leem CVEs, feeds e a web aberta para escrever conclusões. Esta linha junta a evidência, separa laboratório de campo e propõe onde barrar o veneno: na porta, antes de indexar.</p>
       <div class="herocta"><a class="btn pri" href="#virada">Ver a virada</a><a class="btn" href="#laboratorio">Envenenar uma base agora</a><a class="btn" href="#catalogo">Ler os trabalhos em ordem</a></div>
     </div>
@@ -500,8 +505,8 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
   </section>
 
   <section class="view" id="v-virada">
-    <div class="mother"><div class="eyebrow">Dossiê 6 · a virada</div><p class="big2">Os dossiês 1 a 5 diziam que não havia caso público de fonte de inteligência envenenada por IA. Havia: atingiu o NVD, com enriquecimento da CISA, e o autor não era um Estado.</p>
-      <p class="note">Fontes primárias localizadas em 25/11/2026: reportagem do The Register, relatório da JFrog, post na OSS-Security e relatório do Inspetor-Geral. Detalhes técnicos devem ser lidos no original antes de citação.</p></div>
+    <div class="mother"><div class="eyebrow">Dossiê 6 · a virada</div><p class="big2">Os dossiês 1 a 5 diziam que não havia caso público de fonte de inteligência envenenada por IA. Esta pesquisa identificou ao menos um: registros CVE fabricados, com suspeita de geração por IA, entraram na lista oficial e receberam nota da CISA. O autor não foi identificado e nada aponta para um Estado.</p>
+      <p class="note">“Primeiro caso” quer dizer o primeiro identificado nesta pesquisa, numa busca em fontes abertas até 26/11/2026; não é uma afirmação sobre todo o histórico do setor. Todo número do caso abaixo vem da ficha canônica, conferida no histórico da lista oficial de CVEs.</p></div>
     <h2 class="sec">A tese, antes e agora</h2>
     <div class="vir"><div class="was"><div class="eyebrow">Antes</div><p id="v-antes"></p></div><div class="now"><div class="eyebrow">Agora</div><p id="v-agora"></p></div></div>
     <p class="quote" id="v-frase"></p><p class="note" id="v-frasefonte"></p>
@@ -509,6 +514,21 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
     <h2 class="sec">O caso, do envio à retratação</h2>
     <p class="note">Marcos em ordem, não em escala de tempo. Clique num marco para abrir o trabalho. O trecho tracejado é o que ninguém mediu: onde o registro continua vivo depois de rejeitado.</p>
     <div class="chartbox"><svg class="caseline" id="caseline" role="img" aria-label="Linha do tempo do caso dos CVEs falsos"></svg></div>
+    <h2 class="sec">Ficha canônica do caso</h2>
+    <p class="note" id="ficha-escopo"></p>
+    <div class="ficha" id="ficha-q"></div>
+    <div class="two wide" style="margin-top:12px"><div class="panel"><span class="l">O que foi corrigido</span><ul class="ext" id="ficha-corr"></ul></div>
+      <div class="panel"><span class="l">Que evidência futura distinguiria H7 (incentivo) das alternativas</span><ul class="ext" id="ficha-h7"></ul></div></div>
+    <h2 class="sec">Os registros na lista oficial</h2>
+    <p class="note" id="reg-nota"></p>
+    <div class="chips" id="reg-f" role="group" aria-label="Filtrar por produto"></div>
+    <div class="chartbox"><svg class="supp" id="reg-svg" role="img" aria-label="Janela de exposição de cada registro: da publicação à rejeição, com o momento da nota da CISA"></svg></div>
+    <div class="tablebox"><table class="stack" id="reg-t"><thead><tr><th>Registro</th><th>Produto</th><th>Publicado</th><th>Nota da CISA</th><th>Horas até a nota</th><th>Horas publicado</th></tr></thead><tbody></tbody></table></div>
+    <h2 class="sec">Piloto de retratações (projeto P1, versão 0)</h2>
+    <div class="mother"><p style="margin:0 0 6px" id="pil-met"></p><p class="note" style="margin:0" id="pil-lim"></p></div>
+    <div class="punch" id="pil-sum"></div>
+    <div class="chips" id="pil-f" role="group" aria-label="Filtrar por estado"></div>
+    <div class="tablebox"><table class="stack" id="pil-t"><thead><tr><th>Registro</th><th>Fonte</th><th>Estado</th><th>Última modificação exibida</th><th>O que a cópia mostra</th></tr></thead><tbody></tbody></table></div>
     <h2 class="sec">O verificador afogado</h2>
     <div class="punch" id="v-afoga"></div>
     <h2 class="sec">O que muda nos dossiês 1 a 5</h2>
@@ -569,6 +589,12 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
     <div class="tablebox" id="lab-chart"></div>
     <h2 class="sec">O que o laboratório ensina</h2>
     <div class="cards" id="lab-lessons"></div>
+    <h2 class="sec">Medição: documento rejeitado não é fato perdido</h2>
+    <p class="note" id="med-cen"></p>
+    <div class="chips" id="med-f" role="group" aria-label="Escolher o ataque"></div>
+    <div class="chartbox"><svg class="supp" id="med-svg" role="img" aria-label="Documentos legítimos rejeitados e fatos novos perdidos por configuração do portão"></svg></div>
+    <div class="tablebox"><table class="stack" id="med-t"><thead><tr><th>Portão</th><th>Docs legítimos rejeitados</th><th>Fatos novos perdidos (1 / 3 / 8 fontes)</th><th>Veneno admitido</th><th>Acerto nos alvos</th><th>Acerto nos fatos novos</th><th>Acerto total</th></tr></thead><tbody></tbody></table></div>
+    <p class="note" id="med-nota"></p>
   </section>
 
   <section class="view" id="v-catalogo">
@@ -841,7 +867,7 @@ input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 
       <button class="btn primary" id="m-copy">Copiar matriz (CSV)</button>
     </div>
     <div class="tablebox"><table id="matrix"><thead><tr><th>#</th><th>Trabalho</th><th>Assuntos</th><th>Abordagem</th><th>Fonte de dados</th><th>Acesso</th><th>Achado-chave</th><th>Pergunta que responde</th><th>Limitação</th><th>Relevância</th></tr></thead><tbody></tbody></table></div>
-    <h2 class="sec">Quantas fontes independentes há de fato</h2>
+    <h2 class="sec">Quantos registros sobram depois de agrupar republicações conhecidas</h2>
     <div class="cards" id="evsum"></div>
     <h2 class="sec">Registros que vêm da mesma origem</h2>
     <p class="note">Mesmos autores, mesmo laboratório ou o mesmo fenômeno medido por grupos que se citam. Não some como replicação independente.</p>
@@ -926,7 +952,7 @@ function kpis(){
   const segs = Object.keys(colors).filter(k=>cnt[k]).map(k=>`<i title="${esc(k)}: ${cnt[k]}" style="width:${cnt[k]/I.length*100}%;background:${colors[k]}"></i>`).join("");
   const leg = Object.keys(colors).filter(k=>cnt[k]).map(k=>`<span><span class="dot" style="background:${colors[k]}"></span>${esc(ST[k][1])} · ${cnt[k]}</span>`).join("");
   $("#kpis").innerHTML = `<div class="kpi"><b>${I.length}</b><span>trabalhos no catálogo</span></div>
-   <div class="kpi"><b>${indepCount()}</b><span>origens independentes</span></div>
+   <div class="kpi"><b>${indepCount()}</b><span>registros após agrupar republicações</span></div>
    <div class="kpi"><b>${D.actors.length}</b><span>atores de ameaça</span></div>
    <div class="kpi"><b>${D.study.filter(t=>I.some(i=>i.met===t.n)).length}</b><span>tipos de estudo</span></div>
    <div class="kpi"><b>${I.filter(i=>i.classe==="Leia primeiro").length}</b><span>para ler primeiro</span></div>
@@ -1321,7 +1347,7 @@ $("#m-copy").addEventListener("click", ()=>{
 function drawEvidence(){
   const inG=new Set(D.groups.flatMap(g=>g.keys));
   $("#evsum").innerHTML=`<div class="card"><div class="big">${I.length}</div><p>registros no catálogo</p></div>
-   <div class="card"><div class="big">${indepCount()}</div><p>origens independentes depois de juntar os grupos</p></div>
+   <div class="card"><div class="big">${indepCount()}</div><p>registros após agrupar republicações conhecidas</p></div>
    <div class="card"><div class="big">${I.filter(i=>!["Conferido na fonte","Conferido via cobertura","Preprint conferido"].includes(i.st)).length}</div><p>itens ainda a conferir na fonte (dossiê, alegação ou de memória)</p></div>`;
   $("#groups").innerHTML=D.groups.map(g=>`<div class="card"><h3>${esc(g.nome)}</h3><p class="note">${g.keys.length} registros, uma origem</p>
    <div class="recs">${g.keys.map(k=>{const it=byKey(k); return `<button data-open="${it.id}" title="${esc(it.tit)}">#${it.id} · ${it.ano}</button>`;}).join("")}</div></div>`).join("");
@@ -1551,7 +1577,7 @@ function drawBR(){
 
 // ---------- v8: início e laboratório
 function drawInicio(){
-  const P=[["54","vulnerabilidades que nunca existiram entraram no NVD com enriquecimento oficial, em julho de 2026","register2026fakecve",1],
+  const P=[["32","vulnerabilidades inventadas ganharam CVE oficial em julho de 2026; 28 receberam nota da CISA","cvelist2026lote",1],
     ["26,45%","a menos de proteção quando a resposta só existe na base, como em CTI: as defesas foram testadas onde o modelo já sabe","rrparadox2026",1],
     ["44%","dos documentos limpos o TrustRAG descartou numa reprodução independente: inteligência verdadeira jogada fora","trustrag2025",1],
     ["78,5%","dos relatórios de CTI falsos foram julgados verdadeiros por profissionais de segurança","ranade2021fakecti"],
@@ -1640,7 +1666,7 @@ function drawLab(){
   const razoes={}; R.mot.forEach(ms=>ms.forEach(m=>razoes[m]=(razoes[m]||0)+1));
   $("#lab-out").innerHTML=`<div class="verdict ${ok?"good":"bad"}"><span class="l">Resposta do assistente</span><div class="v">${esc(R.r07.resp)}</div><p style="margin:6px 0 0">${ok?"Certa: a base ainda sustenta APT-C.":R.r07.resp==="inconclusivo"?"Empate: o assistente já não sabe responder.":"Errada: a atribuição virou. É isso que iria para o relatório."}</p><p class="note">${Math.round(R.r07.frac*100)}% dos 5 documentos recuperados são falsos.</p></div>
    <div class="panel"><span class="l">Os 5 documentos que o assistente leu</span><ol class="docl">${R.r07.top.map(([s,d])=>`<li class="${d.p?"p":""}"><b>${s.toFixed(1)}</b>${esc(d.txt)}<div class="note">${esc(d.autor)} · ${d.idade} dias de histórico${d.p?" · plantado":""}</div></li>`).join("")}</ol></div>
-   <div class="panel"><span class="l">Portão de admissão</span>${LAB.gate?`<p style="font-size:15px;margin:4px 0">Barrou <b>${bf} de ${falsos.length}</b> relatórios falsos.</p><p style="font-size:15px;margin:4px 0">${LAB.novo?`Barrou <b>${bn} de ${novos.length}</b> relatórios verdadeiros novos ${bn?'<span class="pill prio-alta">rejeição indevida</span>':""}`:"Sem inteligência nova neste lote."}</p><p class="note">${Object.entries(razoes).map(([k,v])=>`${esc(k)}: ${v}`).join(" · ")||"Nenhum controle disparou."}</p>`:`<p style="font-size:15px">Desligado: tudo que chega entra na base.</p>`}
+   <div class="panel"><span class="l">Portão de admissão</span>${LAB.gate?`<p style="font-size:15px;margin:4px 0">Barrou <b>${bf} de ${falsos.length}</b> relatórios falsos.</p><p style="font-size:15px;margin:4px 0">${LAB.novo?`Barrou <b>${bn} de ${novos.length}</b> relatórios verdadeiros novos ${bn===novos.length?'<span class="pill prio-alta">fato perdido: a campanha-21 ficou sem nenhuma fonte</span>':bn?'<span class="pill prio-m">documentos rejeitados, fato ainda recuperável</span>':""}`:"Sem inteligência nova neste lote."}</p><p class="note">${Object.entries(razoes).map(([k,v])=>`${esc(k)}: ${v}`).join(" · ")||"Nenhum controle disparou."}</p>`:`<p style="font-size:15px">Desligado: tudo que chega entra na base.</p>`}
    ${LAB.novo?`<p class="note" style="margin-top:8px">Pergunta sobre a inteligência nova (campanha-21): o assistente responde <b>${esc(R.r21.resp==="inconclusivo"?"não sei":R.r21.resp)}</b>${R.r21.resp==="APT-D"?" (certo)":" (a novidade não chegou)"}.</p>`:""}</div>`;
   drawLabChart();
 }
@@ -1692,7 +1718,7 @@ function drawVirada(){
   $("#v-cons").innerHTML=V.consequencias.map(c=>`<div class="card"><h3>${esc(c[0])}</h3><p style="font-size:14px;margin:6px 0 0">${esc(c[1])}</p></div>`).join("");
   $("#v-corr tbody").innerHTML=T.correcoes.map(c=>`<tr><td><b>${esc(c[0])}</b></td><td style="color:var(--muted)">${esc(c[1])}</td><td>${esc(c[2])}</td></tr>`).join("");
   $("#v-proj").innerHTML=T.projetos.map(p=>`<div class="card"><span class="id">${p[0]}</span> <button class="linkish" data-rqgo="${p[5]}" style="font:600 12px var(--mono)">${p[5]}</button><h3 style="margin:8px 0 6px">${esc(p[1])}</h3><p style="font-size:14px;margin:0 0 8px">${esc(p[2])}</p><span class="l">Como</span><p style="font-size:13.5px;margin:0 0 8px">${esc(p[3])}</p><p class="note" style="margin:0">${esc(p[4])}</p></div>`).join("");
-  const AF=[["54 de 55","avisos do lote eram inteiramente falsos; seis chegaram ao NVD com enriquecimento da CISA","register2026fakecve"],
+  const AF=[["28 de 32","registros fabricados receberam nota da CISA, com mediana de 3 horas depois de publicados","cvelist2026lote"],
     ["10,0","foi a nota que a Red Hat chegou a dar a um CVE de função que não existe","register2026fakecve"],
     ["27 mil","registros sem processar no NVD no fim de 2025; a checagem manual que filtrava virou fila","oig2026nvd"],
     ["0 de 238","registros do GitHub dizem quem reportou: sem autoria, o sistema de honra não tem a quem cobrar","syed2026neveremitted"],
@@ -1707,17 +1733,17 @@ function drawVirada(){
 }
 function drawCaseline(){
   const svg=$("#caseline"); if(!svg) return;
-  const EV=[["27/07","MITRE publica seis CVEs de SQLite","CVSS de 9,8 a 7,5","register2026fakecve","var(--risk)"],
-    ["fim de jul.","NVD marca crítico; CISA enriquece","a Red Hat chega a dar 10,0","oig2026nvd","var(--risk)"],
-    ["30/07","JFrog compila e reproduz","nenhum dos seis reproduz","jfrog2026sqlite","var(--ok)"],
-    ["31/07","MITRE rejeita o lote inteiro","“sistema de honra”","osssec2026reject","var(--ok)"],
-    ["03/08","The Register publica o caso","GitHub ainda não tinha agido","register2026fakecve","var(--accent)"],
-    ["26/08","Créditos de quem reporta somem","0 de 238 registros do GitHub","syed2026neveremitted","var(--info)"],
-    ["17/11","Framework de agentes trocado na origem","agent-framework no PyPI","agentframework2026","var(--risk)"]];
+  const EV=[["27/07","9 registros publicados, 7 de SQLite","a CISA dá notas em horas","cvelist2026lote","var(--risk)"],
+    ["28/07","Mantenedor do Fedora: “completamente falsos”","primeiro alerta humano encontrado","","var(--ok)"],
+    ["29/07","Autor do SQLite: “fictícios”","fórum oficial","sqliteforum2026fake","var(--ok)"],
+    ["30/07","JFrog não reproduz nenhum","e ainda saem 7 registros","jfrog2026sqlite","var(--ok)"],
+    ["31/07","CNA rejeita os 32","“não era um problema de segurança”","osssec2026reject","var(--ok)"],
+    ["04/08","Bugs da Red Hat ainda abertos","51302 a 51304, status NEW","","var(--accent)"],
+    ["17/08","Trackers do Fedora ainda abertos","51303, gravidade alta","","var(--accent)"]];
   const W=1160,L=150,R=150,y0=128,n=EV.length,step=(W-L-R)/(n-1),x=i=>L+i*step;
   let g=`<line x1="${L-40}" x2="${W-R+40}" y1="${y0}" y2="${y0}" stroke="var(--line)" stroke-width="2"/>`;
-  g+=`<line class="dash" x1="${x(3)}" x2="${W-R+40}" y1="${y0}" y2="${y0}" stroke="var(--accent)" stroke-width="3"/>`;
-  g+=`<text x="${(x(3)+W-R)/2}" y="${y0+106}" text-anchor="middle" style="font:600 11.5px var(--mono);fill:var(--accent)">depois da rejeição: onde o registro segue vivo? (CVE-zumbi, projeto P1, ninguém mediu)</text>`;
+  g+=`<line class="dash" x1="${x(4)}" x2="${W-R+40}" y1="${y0}" y2="${y0}" stroke="var(--accent)" stroke-width="3"/>`;
+  g+=`<text x="${(x(4)+W-R)/2}" y="${y0+106}" text-anchor="middle" style="font:600 11.5px var(--mono);fill:var(--accent)">depois da rejeição: cópias que seguem como válidas (piloto de retratações abaixo)</text>`;
   EV.forEach((e,i)=>{ const it=byKey(e[3]), cx=x(i), up=i%2===0, ty=up?y0-70:y0+42;
     g+=`<g class="ev" ${it?`data-open="${it.id}"`:""} tabindex="0" role="button" aria-label="${esc(e[1])}"><line x1="${cx}" y1="${y0}" x2="${cx}" y2="${up?ty+22:ty-14}" stroke="${e[4]}" stroke-width="1.5"/><circle cx="${cx}" cy="${y0}" r="8" fill="var(--surface)" stroke="${e[4]}" stroke-width="3"/>
       <text x="${cx}" y="${ty-14}" text-anchor="middle" style="font:700 11px var(--mono);fill:${e[4]}">${esc(e[0])}</text><text x="${cx}" y="${ty+2}" text-anchor="middle" style="font:600 12.5px var(--body);fill:var(--ink)">${esc(e[1])}</text><text x="${cx}" y="${ty+17}" text-anchor="middle" style="font:12px var(--body)">${esc(e[2])}</text></g>`; });
@@ -1761,6 +1787,64 @@ function drawS7(){
 }
 document.addEventListener("click",e=>{ const b=e.target.closest("[data-s7]"); if(!b) return; S7F=b.dataset.s7||null; drawS7(); });
 
+// ---------- v10: ficha canônica, registros oficiais, piloto de retratações, medição do portão
+const FD=d=>d?d.slice(8,10)+"/"+d.slice(5,7):"—";
+const EST={"ainda apresentado como válido":"val","rejeição visível":"rej","misto":"mis","inconclusivo":"inc","não afetado (sem citar a rejeição)":"na","removido":"rej","indisponível para consulta":"inc"};
+let REGF=null, PILF=null, MEDF=null;
+function drawFicha(){
+  const C=D.caso; if(!C||!$("#ficha-q")) return;
+  $("#ficha-escopo").textContent=C.rotulo+". "+C.escopo_busca;
+  $("#ficha-q").innerHTML=C.perguntas.map(p=>`<div class="card"><h3>${esc(p.q)}</h3><p style="font-size:14px;margin:0">${esc(p.r)}</p><span class="cert">certeza: ${esc(p.certeza)}</span></div>`).join("");
+  $("#ficha-corr").innerHTML=C.correcoes.map(x=>`<li>${esc(x)}</li>`).join("");
+  $("#ficha-h7").innerHTML=C.discriminar_h7.map(x=>`<li>${esc(x)}</li>`).join("");
+}
+function drawReg(){
+  const R=D.casoReg; if(!R||!$("#reg-t")) return;
+  const all=R.registros, prods=[...new Set(all.map(r=>r.produto))], rows=all.filter(r=>!REGF||(REGF==="jfrog"?r.examinado_jfrog:r.produto===REGF));
+  const cisa=all.filter(r=>r.cisa_adp.length).length, crit=all.filter(r=>r.cisa_adp.some(c=>c[1]>=9)).length;
+  $("#reg-nota").textContent=`${all.length} registros citando o repositório, publicados de 27 a 30/07/2026 e rejeitados em 31/07; ${cisa} com nota da CISA, ${crit} com 9,0 ou mais em algum momento. Fonte: histórico da lista oficial (commit ${R.commit}). ${R.nota}`;
+  $("#reg-f").innerHTML=[`<button class="chip" data-regf="" aria-pressed="${!REGF}">Todos <span class="n">${all.length}</span></button>`,`<button class="chip" data-regf="jfrog" aria-pressed="${REGF==="jfrog"}">Os seis examinados pela JFrog <span class="n">6</span></button>`].concat(prods.map(p=>`<button class="chip" data-regf="${esc(p)}" aria-pressed="${REGF===p}">${esc(p)} <span class="n">${all.filter(r=>r.produto===p).length}</span></button>`)).join("");
+  $("#reg-t tbody").innerHTML=rows.map(r=>`<tr><td data-l="Registro" style="font-family:var(--mono)">${esc(r.cve)}${r.examinado_jfrog?' <span class="estado mis">JFrog</span>':""}</td><td data-l="Produto">${esc(r.produto)}</td><td data-l="Publicado">${FD(r.publicado)}</td>
+    <td data-l="Nota da CISA">${r.cisa_adp.length?r.cisa_adp.map(c=>`<b style="font-family:var(--mono);color:${c[1]>=9?"var(--risk)":"inherit"}">${String(c[1]).replace(".",",")}</b>`).join(" → "):'<span class="note">sem nota</span>'}</td>
+    <td data-l="Horas até a nota" style="font-family:var(--mono)">${r.horas_ate_cisa==null?"—":String(r.horas_ate_cisa).replace(".",",")}</td><td data-l="Horas publicado" style="font-family:var(--mono)">${String(r.horas_publicado).replace(".",",")}</td></tr>`).join("");
+  const svg=$("#reg-svg"), t0=Date.parse("2026-07-27T00:00:00Z"), t1=Date.parse("2026-08-01T00:00:00Z"), W=860, L=130, rh=13, H=rows.length*rh+40;
+  const x=t=>L+(W-L-20)*(Date.parse(t)-t0)/(t1-t0);
+  let g=["2026-07-27","2026-07-28","2026-07-29","2026-07-30","2026-07-31","2026-08-01"].map(d=>`<line x1="${x(d+"T00:00:00Z")}" x2="${x(d+"T00:00:00Z")}" y1="18" y2="${H-4}" stroke="var(--line-2)"/><text x="${x(d+"T00:00:00Z")+3}" y="12" style="font:11px var(--mono);fill:var(--muted)">${FD(d)}</text>`).join("");
+  rows.forEach((r,i)=>{ const y=24+i*rh; g+=`<text x="${L-8}" y="${y+8}" text-anchor="end" style="font:10.5px var(--mono);fill:var(--ink)">${r.cve.slice(4)}</text><rect class="b" x="${x(r.publicado)}" y="${y+1}" width="${x(r.rejeitado)-x(r.publicado)}" height="${rh-4}" rx="3" fill="${r.produto==="SQLite"?"var(--accent)":"var(--seq-2)"}" opacity=".85"/>`;
+    r.cisa_adp.forEach(c=>g+=`<circle cx="${x(c[0])}" cy="${y+rh/2-1}" r="3.2" fill="${c[1]>=9?"var(--risk)":"var(--surface)"}" stroke="var(--ink)" stroke-width="1"><title>CISA ${c[1]} em ${c[0].slice(0,16)}</title></circle>`); });
+  g+=`<text x="${W-20}" y="${H-2}" text-anchor="end" style="font:11px var(--mono);fill:var(--muted)">barra: publicado → rejeitado · ponto: nota da CISA (vermelho: 9,0 ou mais)</text>`;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H+8}`); svg.innerHTML=g;
+}
+function drawPiloto(){
+  const P=D.piloto; if(!P||!$("#pil-t")) return;
+  $("#pil-met").textContent=P.metodo; $("#pil-lim").textContent="Limites: "+P.limites+" Observado em "+FD(P.observado_em)+"/"+P.observado_em.slice(0,4)+".";
+  const cnt={}; P.obs.forEach(o=>cnt[o.estado]=(cnt[o.estado]||0)+1);
+  const rej=Date.parse(P.rejeicao_oficial), lb=P.obs.filter(o=>o.estado==="ainda apresentado como válido"&&o.ultima_mod&&Date.parse(o.ultima_mod+"T23:59:59Z")>rej).map(o=>({o,d:Math.floor((Date.parse(o.ultima_mod+"T00:00:00Z")-rej)/86400000)+1}));
+  const maxlb=lb.reduce((m,x)=>x.d>m.d?x:m,{d:0});
+  $("#pil-sum").innerHTML=[[P.obs.length,"observações (registro × fonte) sobre os seis registros de SQLite"],[cnt["ainda apresentado como válido"]||0,"cópias ainda apresentavam o registro como válido"],[cnt["rejeição visível"]||0,"mostravam a rejeição (contam como correção propagada)"],[cnt["misto"]||0,"mostravam a rejeição com a nota crítica ainda no topo"],[maxlb.d?("≥ "+maxlb.d+" dias"):"—","maior atraso conhecido: "+(maxlb.o?maxlb.o.fonte+", "+maxlb.o.cve:"")]].map(c=>`<div class="pcard" style="cursor:default"><span class="num">${c[0]}</span><span class="what">${esc(c[1])}</span></div>`).join("");
+  const ests=Object.keys(cnt);
+  $("#pil-f").innerHTML=[`<button class="chip" data-pilf="" aria-pressed="${!PILF}">Todos <span class="n">${P.obs.length}</span></button>`].concat(ests.map(e=>`<button class="chip" data-pilf="${esc(e)}" aria-pressed="${PILF===e}">${esc(e)} <span class="n">${cnt[e]}</span></button>`)).join("");
+  $("#pil-t tbody").innerHTML=P.obs.filter(o=>!PILF||o.estado===PILF).map(o=>`<tr><td data-l="Registro" style="font-family:var(--mono)">${esc(o.cve.slice(4))}</td><td data-l="Fonte"><a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.fonte)}</a></td><td data-l="Estado"><span class="estado ${EST[o.estado]||"inc"}">${esc(o.estado)}</span></td><td data-l="Última modificação" style="font-family:var(--mono)">${o.ultima_mod?FD(o.ultima_mod):"não exibida"}</td><td data-l="O que mostra">${esc(o.nota)}</td></tr>`).join("");
+}
+function drawMed(){
+  const M=D.medicao; if(!M||!$("#med-t")) return;
+  const ats=[...new Set(M.linhas.map(l=>l.ataque))]; if(!MEDF) MEDF=ats[0];
+  $("#med-cen").textContent=M.cenario.replace(/\s+/g," ")+" Reproduza com python3 scripts/medir_portao.py.";
+  $("#med-nota").textContent=M.nota;
+  $("#med-f").innerHTML=ats.map(a=>`<button class="chip" data-medf="${esc(a)}" aria-pressed="${MEDF===a}">${esc(a)}</button>`).join("");
+  const R=M.linhas.filter(l=>l.ataque===MEDF), pc=v=>String(v).replace(".",",")+"%";
+  $("#med-t tbody").innerHTML=R.map(l=>`<tr><td data-l="Portão"><b>${esc(l.portao)}</b></td><td data-l="Docs legítimos rejeitados" style="font-family:var(--mono)">${pc(l.legit_rejeitados)}</td><td data-l="Fatos perdidos" style="font-family:var(--mono)"><b style="color:${l.fatos_perdidos>0?"var(--risk)":"inherit"}">${pc(l.fatos_perdidos)}</b> <span class="note">(${pc(l.fatos_perdidos_k1)} / ${pc(l.fatos_perdidos_k3)} / ${pc(l.fatos_perdidos_k8)})</span></td><td data-l="Veneno admitido" style="font-family:var(--mono)">${pc(l.veneno_admitido)}</td><td data-l="Acerto nos alvos" style="font-family:var(--mono)">${pc(l.acerto_alvos)}</td><td data-l="Acerto nos fatos novos" style="font-family:var(--mono)">${pc(l.acerto_novos)}</td><td data-l="Acerto total" style="font-family:var(--mono)"><b>${pc(l.acerto_total)}</b></td></tr>`).join("");
+  const W=900,L=320,BW=W-L-70,rh=16; let y=26, g=`<text x="${L}" y="14" style="font:600 11px var(--mono);fill:var(--seq-2)">■ documentos legítimos rejeitados</text><text x="${L+250}" y="14" style="font:600 11px var(--mono);fill:var(--risk)">■ fatos novos perdidos</text><text x="${L+430}" y="14" style="font:600 11px var(--mono);fill:var(--accent)">■ veneno admitido</text>`;
+  R.forEach((l,i)=>{ g+=`<text x="${L-10}" y="${y+rh+4}" text-anchor="end" style="font:600 12px var(--body);fill:var(--ink)">${esc(l.portao)}</text>`;
+    [[l.legit_rejeitados,"var(--seq-2)"],[l.fatos_perdidos,"var(--risk)"],[l.veneno_admitido,"var(--accent)"]].forEach((b,j)=>{ g+=`<rect class="b" x="${L}" y="${y+j*rh}" width="${Math.max(1,BW*b[0]/100)}" height="${rh-4}" rx="3" fill="${b[1]}" style="animation-delay:${i*.06}s"/><text x="${L+BW*b[0]/100+6}" y="${y+j*rh+10}" style="font:600 10.5px var(--mono);fill:var(--ink)">${pc(b[0])}</text>`; });
+    y+=rh*3+12; });
+  $("#med-svg").setAttribute("viewBox",`0 0 ${W} ${y}`); $("#med-svg").innerHTML=g;
+}
+document.addEventListener("click",e=>{ let b;
+  if((b=e.target.closest("[data-regf]"))){ REGF=b.dataset.regf||null; drawReg(); }
+  else if((b=e.target.closest("[data-pilf]"))){ PILF=b.dataset.pilf||null; drawPiloto(); }
+  else if((b=e.target.closest("[data-medf]"))){ MEDF=b.dataset.medf; drawMed(); } });
+
 // ---------- recursos
 function drawResources(){
   const vc=v=>v.startsWith("Confere")?"v-ok":v==="Corrigir"?"v-fix":"v-mid";
@@ -1788,7 +1872,7 @@ function remember(){ try{ localStorage.setItem(PK, JSON.stringify({tags:[...S.ta
 try{ const p=JSON.parse(localStorage.getItem(PK)||"{}"); (p.tags||[]).forEach(x=>{ if(TOP[x]) S.tags.add(x); }); (Array.isArray(p.met)?p.met:[]).forEach(x=>{ if(STUDY[x]) S.met.add(x); }); (p.lado||[]).forEach(x=>S.lado.add(x)); (p.dos||[]).forEach(x=>S.dos.add(x)); (p.pr||[]).forEach(x=>S.pr.add(x)); (p.cl||[]).forEach(x=>S.cl.add(x)); (p.eixo||[]).forEach(x=>S.eixo.add(x)); (p.ft||[]).forEach(x=>S.ft.add(x)); (p.st||[]).forEach(x=>S.st.add(x)); S.tipo=p.tipo||""; S.aut=p.aut||""; S.sort=p.sort||"score"; }catch(e){}
 
 kpis(); initSelects(); $("#f-tipo").value=S.tipo; $("#f-aut").value=S.aut; $("#sort").value=S.sort;
-drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); drawVirada(); drawS7(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
+drawFilters(); drawList(); drawChain(); drawActorMatrix(); drawActors(); drawAgenda(); drawTipos(); drawTL(); drawOff(); drawDef(); drawEps(); drawAgenda2(); drawRec2(); drawIntel(); drawBR(); drawTop(); drawInicio(); drawVirada(); drawS7(); drawFicha(); drawReg(); drawPiloto(); drawMed(); labLessons(); drawLab(); drawTrail(); drawEvidence(); drawResources(); drawProtocol(); initMatrix(); drawMatrix(); initDownloads(); drawDownloads();
 addEventListener("hashchange", route); route();
 })();
 </script>

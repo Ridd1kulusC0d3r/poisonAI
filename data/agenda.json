@@ -453,9 +453,9 @@
   ],
   [
    "RQ28",
-   "Quanto tempo um registro de vulnerabilidade rejeitado continua vivo em bases derivadas, scanners e respostas de assistentes?",
+   "Depois que um registro de vulnerabilidade é rejeitado, por quanto tempo um analista ainda o encontra apresentado como válido em bases derivadas, scanners e assistentes?",
    "A retratação chega a menos lugares e mais tarde que a injeção; assistentes com busca repetem o registro por semanas.",
-   "Projeto P1: consulta periódica aos 54 identificadores rejeitados em bases, avisos, buscadores e assistentes; curva de sobrevivência",
+   "Projeto P1: os 32 registros do lote de jul/2026; estado por registro × fonte (válido, rejeição visível, removido, indisponível); tempo até a primeira observação da correção",
    "Dossiê 6",
    "Vulnerabilidade",
    "alta",
@@ -585,7 +585,7 @@
   ],
   [
    "Ninguém mediu a meia-vida de um CVE rejeitado",
-   "Os 54 registros de jul/2026 têm data de injeção e de retratação conhecidas: experimento natural ainda não feito.",
+   "Os 32 registros de jul/2026 têm data de injeção e de retratação conhecidas: experimento natural ainda não feito.",
    "Dossiê 6"
   ],
   [

@@ -16,19 +16,20 @@
 
 | Onde | Como estava | Correção |
 |---|---|---|
-| Dossiês 1, 2, 3 e 5; página (ressalvas, cenários) | “Não há incidente público em que um feed ou base de CTI tenha sido envenenado por conteúdo gerado por IA” | Há: CVEs falsos, com indício de geração por IA, entraram no NVD com enriquecimento da CISA (jul/2026). O que segue sem caso público é o envenenamento dirigido por ator estatal contra pipeline de CTI. |
+| Dossiês 1, 2, 3 e 5; página (ressalvas, cenários) | “Não há incidente público em que um feed ou base de CTI tenha sido envenenado por conteúdo gerado por IA” | Há ao menos um, identificado nesta pesquisa: 32 registros CVE fabricados, citando um repositório obscuro, foram publicados na lista oficial entre 27 e 30/07/2026; 28 receberam nota da CISA (até 9,8) e todos foram rejeitados em 31/07, com suspeita de geração por IA. O que segue sem caso identificado é o envenenamento dirigido por ator estatal contra pipeline de CTI. |
 | Dossiê 5, análise de hipóteses | Seis hipóteses (H1 a H6) | Acrescentada H7: a contaminação acontece por produtores movidos a incentivo. É a hipótese mais bem sustentada pela evidência nova. |
 | Dossiê 5, julgamento JC3 | “Improvável que alguém esteja envenenando sistematicamente pipelines de CTI” | Dividido: é quase certo que fontes autoritativas já recebem e às vezes publicam conteúdo falso de IA; segue improvável, com confiança baixa, que isso seja campanha dirigida. |
 | Dossiê 5, cenário B (“primeiro caso”) | Improvável em 12 meses | Realizado em forma não prevista: o caso veio pela base de vulnerabilidades, não pelo feed de CTI. |
 | Dossiê 2, tabela de atores | Só Estados, cibercrime e operações de influência | Acrescentado o produtor movido a incentivo (aba Atores, tipo Incentivo). |
 | Dossiê 4, modelagem de ameaças | Fontes externas tratadas como feeds e fóruns | NVD, CVE e bases de avisos entram como fonte não verificada por padrão (cadeia, etapa S1). |
+| Página e README (26/11/2026) | “54 CVEs falsos entraram no NVD com enriquecimento da CISA” | 32 registros oficiais, 28 com nota da CISA, seis examinados pela JFrog; 54 é a estimativa da JFrog para o repositório inteiro. |
 
 
 ## Cinco projetos com dados públicos
 
 | # | Projeto | Por que | Como | Prazo e cuidado | Pergunta |
 |---|---|---|---|---|---|
-| P1 | CVEs-zumbis: quanto tempo um registro falso sobrevive depois de rejeitado? | Experimento natural de propagação de erro, com data de injeção e de retratação conhecidas. Mede o erro composto (RQ2) e a retratação, o passo mais omitido do playbook. Ninguém mediu. | Lista dos identificadores rejeitados; consulta periódica a bases públicas, avisos de distribuições, buscadores e assistentes com busca; registro de quando cada cópia aparece e some. Resultado: a meia-vida de uma retratação. | Semanas: uma tabela registro × lugar × ainda presente já é nota curta publicável. | RQ28 |
+| P1 | CVEs-zumbis: depois da retratação, por quanto tempo um analista ainda encontra o aviso apresentado como válido? | Experimento natural de propagação de erro, com data de injeção e de retratação conhecidas. Mede o erro composto (RQ2) e a retratação. Uma base que preserva o registro e mostra “rejeitado” já propagou a correção: medir só a presença da página puniria boa prática. | Para cada registro × fonte: ainda apresentado como válido, rejeição visível, removido ou indisponível. Resultado: tempo entre a rejeição oficial e a primeira observação da correção em cada fonte; se a observação começou tarde, publicar o intervalo conhecido. Piloto v0 com os seis registros de SQLite nesta aba; captura direta com scripts/zumbis.py. | Semanas. O piloto v0 já é publicável como nota curta, com os limites declarados. | RQ28 |
 | P2 | Quanto da inteligência de vulnerabilidade já é escrita por IA? | Primeira medida populacional desse tipo em segurança, com método validado (Liang et al.). | Estimador distribucional aplicado ao repositório público de registros CVE em JSON e ao banco de avisos do GitHub, por ano, por CNA e por tipo de produto, de 2020 a 2026. Cruzar com taxa de rejeição e disputa por CNA. | Meses; maior visibilidade. Mede exposição, não fraude: texto com IA não é texto falso. | RQ29 |
 | P3 | Triagem de CVEs fantasmas com sinais simples | Os sinais da JFrog bastam para priorizar a verificação humana em escala? | Pontuação com os sinais (fornecedor não corroborou, sem hash de commit, metadados suspeitos, funções inexistentes) aplicada a registros recentes de relatores novos; verificação manual de amostra estratificada; precisão e revocação. | Semanas. Suspeitas vão para a CNA por divulgação coordenada, nunca para publicação nominal. | RQ30 |
 | P4 | Agentes e chatbots ainda “lembram” dos CVEs falsos? | Liga o caso real ao eixo de grooming sem propaganda estatal, e pode ser feito em português. | Bateria fixa de perguntas sobre os registros rejeitados, repetida todo mês, em vários assistentes e idiomas, com registro das fontes citadas. | Trilha contínua. | RQ31 |
@@ -43,7 +44,7 @@
 
 | Fator | Níveis |
 |---|---|
-| Ataque | Nenhum · PoisonedRAG (5 textos por alvo) · CorruptRAG (1 texto) · Injeção indireta (instrução no relatório) · Grafo (relações compartilhadas) · Braço natural: os 54 CVEs falsos |
+| Ataque | Nenhum · PoisonedRAG (5 textos por alvo) · CorruptRAG (1 texto) · Injeção indireta (instrução no relatório) · Grafo (relações compartilhadas) · Braço natural: os 32 registros fabricados de jul/2026 |
 | Dose | 1, 3, 5 e 10 documentos por alvo |
 | Defesa | Nenhuma · RobustRAG · TrustRAG · GMTP · Proveniência assinada na ingestão (RAG-H/RAGShield) · Combinação |
 | Arquitetura | RAG simples · Agente com ferramentas e memória |

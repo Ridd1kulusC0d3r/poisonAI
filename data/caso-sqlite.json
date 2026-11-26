@@ -1,0 +1,108 @@
+{
+ "id": "caso-sqlite-2026",
+ "titulo": "Lote de CVEs fabricados citando o repositório programmervuln/cveadvisory- (jul/2026)",
+ "rotulo": "Primeiro caso identificado nesta pesquisa",
+ "escopo_busca": "Busca em fontes abertas (imprensa técnica, listas de segurança, literatura acadêmica e cinzenta, bases de vulnerabilidade) feita para esta linha até 26/11/2026. Não é um levantamento exaustivo: outro caso anterior pode existir fora desse escopo.",
+ "atualizado": "2026-11-26",
+ "perguntas": [
+  {
+   "q": "Quantos avisos foram publicados e quantos foram examinados?",
+   "r": "O repositório tinha 55 avisos (auditoria posterior da JFrog, que diz que 54 eram totalmente fabricados e um continha um bug real; o post não diz se todos foram checados um a um). Na lista oficial de CVEs, 32 registros citando o repositório foram publicados entre 27 e 30/07/2026 no bloco 51xxx: 13 sobre SQLite, 18 sobre ESP32-audioI2S e 1 sobre LibRaw. A JFrog examinou em detalhe seis, todos de SQLite.",
+   "certeza": "Alta para os 32 e os seis (registros oficiais e relatório técnico); moderada para os 55 e os 54 (afirmação da JFrog sem método detalhado).",
+   "fontes": [
+    "jfrog2026sqlite",
+    "caso-sqlite-registros.json"
+   ]
+  },
+  {
+   "q": "Quais registros chegaram às bases oficiais e receberam enriquecimento?",
+   "r": "Todos os 32 foram publicados na lista oficial (CNA: MITRE), que a NVD espelha. 28 receberam enriquecimento CISA-ADP (Vulnrichment) com nota CVSS, mediana de cerca de 3 horas depois da publicação; 15 chegaram a 9,0 ou mais em algum momento. As notas vieram da CISA, não da CNA (que não deu nota) nem do NIST (páginas da NVD mostram “NVD assessment not yet provided”). Os seis examinados pela JFrog: 51296 (7,5), 51297 (8,8), 51300 (9,1), 51302 (9,8, revista para 7,5 em 30/07), 51303 (9,8) e 51304 (7,5). A Red Hat chegou a 10,0 em 51302 e rebaixou para 7,6.",
+   "certeza": "Alta: histórico de commits da lista oficial (uma linha por registro na tabela abaixo).",
+   "fontes": [
+    "caso-sqlite-registros.json",
+    "jfrog2026sqlite"
+   ]
+  },
+  {
+   "q": "Qual é a evidência de geração por IA?",
+   "r": "Suspeita, não fato. A JFrog escreve que os avisos “parecem” gerados por IA e que o GPTZero os marcou; o título do post é uma pergunta. O que é fato é a fabricação: o código citado não existe nas versões afetadas, o autor do SQLite chamou os CVEs de fictícios no fórum oficial (29/07) e a Red Hat repete isso nas páginas que atualizou.",
+   "certeza": "Fabricação: alta. Geração por IA: baixa a moderada (detector de texto e julgamento de analista).",
+   "fontes": [
+    "jfrog2026sqlite",
+    "sqliteforum2026fake"
+   ]
+  },
+  {
+   "q": "O que se sabe sobre a motivação do autor?",
+   "r": "Nada. A JFrog não atribui intenção e nenhuma fonte identificou o autor. Recompensa, currículo, reputação, teste do sistema e influência sobre scanners são explicações a investigar, não conclusões.",
+   "certeza": "Desconhecida.",
+   "fontes": [
+    "jfrog2026sqlite"
+   ]
+  }
+ ],
+ "linha_do_tempo": [
+  [
+   "2026-06-07",
+   "Identificadores reservados (dateReserved).",
+   "lista oficial"
+  ],
+  [
+   "2026-07-27",
+   "Nove registros publicados: sete de SQLite (entre eles os seis que a JFrog examinou), um de LibRaw e um de ESP32-audioI2S. A CISA começa a enriquecer em horas.",
+   "lista oficial"
+  ],
+  [
+   "2026-07-28",
+   "Mais 16 registros de ESP32-audioI2S publicados.",
+   "lista oficial"
+  ],
+  [
+   "2026-07-28",
+   "Um mantenedor do Fedora escreve no Bugzilla que 51296 e 51298 são relatos completamente falsos: o código nem existe na versão citada.",
+   "Bugzilla da Red Hat"
+  ],
+  [
+   "2026-07-29",
+   "Richard Hipp abre no fórum oficial do SQLite o tópico “Fake CVEs against SQLite”.",
+   "fórum do SQLite"
+  ],
+  [
+   "2026-07-30",
+   "Ainda saem sete registros: seis de SQLite (51290 a 51295) e um de ESP32-audioI2S, depois de o autor do SQLite já ter chamado os anteriores de fictícios. A JFrog publica a análise. A CISA rebaixa 51302 de 9,8 para 7,5.",
+   "lista oficial; JFrog"
+  ],
+  [
+   "2026-07-31",
+   "A CNA rejeita os 32 registros (motivo: “não era um problema de segurança”).",
+   "lista oficial; OSS-Security"
+  ],
+  [
+   "2026-08-03",
+   "The Register publica o caso.",
+   "imprensa"
+  ],
+  [
+   "2026-08-04",
+   "Bugs de falha da Red Hat para 51302, 51303 e 51304 ainda abertos (status NEW) na última modificação indexada.",
+   "piloto de retratações"
+  ],
+  [
+   "2026-08-17",
+   "Trackers do Fedora para 51303 ainda abertos na última modificação indexada.",
+   "piloto de retratações"
+  ]
+ ],
+ "discriminar_h7": [
+  "O mesmo autor ou conta reaparece com lotes em outros projetos (padrão de volume, típico de incentivo).",
+  "Os avisos aparecem ligados a pedidos de recompensa, currículo, perfil ou portfólio.",
+  "Nenhuma exploração, nenhum produto ou cliente específico e nenhuma narrativa favorecida pelos registros (contra H3 e contra uma campanha dirigida).",
+  "Os alvos são escolhidos por popularidade (SQLite, bibliotecas muito usadas), não por relevância para um setor ou um adversário."
+ ],
+ "correcoes": [
+  "“54 CVEs falsos entraram no NVD” estava errado: 54 é a estimativa da JFrog para o repositório; 32 viraram registros oficiais; seis foram examinados.",
+  "“Notas de até 9,8 dadas pelo NVD” estava impreciso: as notas vieram da CISA (ADP), não do NIST nem da CNA.",
+  "“Gerados por IA” passou a “com suspeita de geração por IA”; a fabricação é que está confirmada.",
+  "“Primeiro caso público” passou a “primeiro caso identificado nesta pesquisa”, com escopo e data da busca."
+ ]
+}

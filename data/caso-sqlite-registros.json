@@ -1,0 +1,1337 @@
+{
+ "fonte": "https://github.com/CVEProject/cvelistV5",
+ "commit": "2233e247ef5e2d44ee143e0b8f77923461017268",
+ "bloco": "cves/2026/51xxx/",
+ "repositorio_citado": "programmervuln",
+ "gerado_em": "2026-11-26T00:51:48Z",
+ "registros": [
+  {
+   "cve": "CVE-2026-51235",
+   "produto": "LibRaw",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-27T17:33:24+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T18:44:42+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 1.2,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 93.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "2786c0581d",
+     "quando": "2026-07-27T17:33:24+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "1930d8e9c9",
+     "quando": "2026-07-27T18:44:42+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51244",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-27T18:44:42+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T19:14:22+00:00",
+     7.5
+    ]
+   ],
+   "horas_ate_cisa": 0.5,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 92.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1930d8e9c9",
+     "quando": "2026-07-27T18:44:42+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "7040aa3cef",
+     "quando": "2026-07-27T19:14:22+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.5
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51251",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:53:47+00:00",
+     7.5
+    ]
+   ],
+   "horas_ate_cisa": 4.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6d13b43de3",
+     "quando": "2026-07-28T18:53:47+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.5
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51252",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:53:47+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 4.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6d13b43de3",
+     "quando": "2026-07-28T18:53:47+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51254",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:53:47+00:00",
+     7.8
+    ]
+   ],
+   "horas_ate_cisa": 4.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6d13b43de3",
+     "quando": "2026-07-28T18:53:47+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51259",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:53:47+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 4.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6d13b43de3",
+     "quando": "2026-07-28T18:53:47+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51260",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:53:47+00:00",
+     9.4
+    ]
+   ],
+   "horas_ate_cisa": 4.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6d13b43de3",
+     "quando": "2026-07-28T18:53:47+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.4
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51261",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T14:33:28+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T17:51:14+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 51.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 72.2,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "553a993167",
+     "quando": "2026-07-30T17:51:14+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51263",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:21:13+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 2.9,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "403238ea81",
+     "quando": "2026-07-28T18:21:13+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51266",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:21:13+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 2.9,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "403238ea81",
+     "quando": "2026-07-28T18:21:13+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51267",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:21:13+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 2.9,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "403238ea81",
+     "quando": "2026-07-28T18:21:13+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51268",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T17:51:14+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 50.4,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "553a993167",
+     "quando": "2026-07-30T17:51:14+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51269",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T17:51:38+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 2.4,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "ee7574df80",
+     "quando": "2026-07-28T17:51:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51270",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T15:25:11+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T17:51:14+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 50.4,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 71.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "1c54423722",
+     "quando": "2026-07-28T15:25:11+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "553a993167",
+     "quando": "2026-07-30T17:51:14+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51271",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T16:10:58+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:21:13+00:00",
+     9.6
+    ]
+   ],
+   "horas_ate_cisa": 2.2,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 70.5,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "187f978205",
+     "quando": "2026-07-28T16:10:58+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "403238ea81",
+     "quando": "2026-07-28T18:21:13+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.6
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51272",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T17:51:14+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T20:01:12+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 2.2,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 20.9,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "553a993167",
+     "quando": "2026-07-30T17:51:14+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "0f45b1e19c",
+     "quando": "2026-07-30T20:01:12+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51273",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T16:48:38+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T18:21:13+00:00",
+     7.8
+    ]
+   ],
+   "horas_ate_cisa": 1.5,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 69.9,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "d850dc20f5",
+     "quando": "2026-07-28T16:48:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "403238ea81",
+     "quando": "2026-07-28T18:21:13+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51274",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T16:48:38+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T17:51:38+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 1.1,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 69.9,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "d850dc20f5",
+     "quando": "2026-07-28T16:48:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "ee7574df80",
+     "quando": "2026-07-28T17:51:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51275",
+   "produto": "ESP32-audioI2S",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-28T16:48:38+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T17:51:38+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 1.1,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 69.9,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "d850dc20f5",
+     "quando": "2026-07-28T16:48:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "ee7574df80",
+     "quando": "2026-07-28T17:51:38+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51290",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T19:26:21+00:00",
+     9.1
+    ]
+   ],
+   "horas_ate_cisa": 2.7,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "ae40ab6042",
+     "quando": "2026-07-30T19:26:21+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.1
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51291",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-30T19:26:21+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 2.7,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "ae40ab6042",
+     "quando": "2026-07-30T19:26:21+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51292",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [],
+   "horas_ate_cisa": null,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51293",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [],
+   "horas_ate_cisa": null,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51294",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [],
+   "horas_ate_cisa": null,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51295",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-30T16:45:51+00:00",
+   "cisa_adp": [],
+   "horas_ate_cisa": null,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 22.0,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "7e87df2a24",
+     "quando": "2026-07-30T16:45:51+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T14:33:28+00:00",
+     7.5
+    ]
+   ],
+   "horas_ate_cisa": 23.1,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "f135a3eefb",
+     "quando": "2026-07-28T14:33:28+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.5
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51297",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T18:44:42+00:00",
+     8.8
+    ]
+   ],
+   "horas_ate_cisa": 3.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "1930d8e9c9",
+     "quando": "2026-07-27T18:44:42+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       8.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51298",
+   "produto": "SQLite",
+   "examinado_jfrog": false,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T18:44:42+00:00",
+     6.2
+    ]
+   ],
+   "horas_ate_cisa": 3.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "1930d8e9c9",
+     "quando": "2026-07-27T18:44:42+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       6.2
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T13:42:29+00:00",
+     9.1
+    ]
+   ],
+   "horas_ate_cisa": 22.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "23afcbea3d",
+     "quando": "2026-07-28T13:42:29+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.1
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-28T13:42:29+00:00",
+     9.8
+    ],
+    [
+     "2026-07-30T20:01:12+00:00",
+     7.5
+    ]
+   ],
+   "horas_ate_cisa": 22.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "23afcbea3d",
+     "quando": "2026-07-28T13:42:29+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "0f45b1e19c",
+     "quando": "2026-07-30T20:01:12+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.5
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T18:44:42+00:00",
+     9.8
+    ]
+   ],
+   "horas_ate_cisa": 3.3,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "1930d8e9c9",
+     "quando": "2026-07-27T18:44:42+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       9.8
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "produto": "SQLite",
+   "examinado_jfrog": true,
+   "publicado": "2026-07-27T15:25:23+00:00",
+   "cisa_adp": [
+    [
+     "2026-07-27T18:08:52+00:00",
+     7.5
+    ]
+   ],
+   "horas_ate_cisa": 2.7,
+   "rejeitado": "2026-07-31T14:43:58+00:00",
+   "horas_publicado": 95.3,
+   "motivo_rejeicao": "DO NOT USE THIS CVE RECORD. ConsultIDs: none. Reason: This record was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+   "historico": [
+    {
+     "commit": "8a32d285d7",
+     "quando": "2026-07-27T15:25:23+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {}
+    },
+    {
+     "commit": "cc838d0e5f",
+     "quando": "2026-07-27T18:08:52+00:00",
+     "estado": "PUBLISHED",
+     "cna": [],
+     "adp": {
+      "CISA-ADP": [
+       7.5
+      ]
+     }
+    },
+    {
+     "commit": "6a1b7cf5b6",
+     "quando": "2026-07-31T14:43:58+00:00",
+     "estado": "REJECTED",
+     "cna": [],
+     "adp": {}
+    }
+   ]
+  }
+ ],
+ "nota": "Datas são as dos commits da lista oficial (UTC). Enriquecimento = contêiner ADP da CISA (Vulnrichment) com nota CVSS. O escopo é o bloco 51xxx; registros do mesmo lote em outros blocos não entram."
+}

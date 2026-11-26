@@ -407,10 +407,10 @@
  },
  {
   "data": "2026-07",
-  "titulo": "CVEs falsos com indício de IA entram no NVD",
-  "texto": "Seis de SQLite com CVSS até 9,8; a MITRE rejeita o lote em 31/07.",
+  "titulo": "32 CVEs fabricados entram na lista oficial",
+  "texto": "28 recebem nota da CISA, até 9,8; todos rejeitados em 31/07.",
   "categoria": "atk",
-  "item": "register2026fakecve"
+  "item": "cvelist2026lote"
  },
  {
   "data": "2026-08",
@@ -432,5 +432,12 @@
   "texto": "agent-framework 1.26.1 e 1.26.2.",
   "categoria": "atk",
   "item": "agentframework2026"
+ },
+ {
+  "data": "2026-07",
+  "titulo": "Autor do SQLite chama os CVEs de fictícios",
+  "texto": "Tópico “Fake CVEs against SQLite” no fórum oficial, 29/07.",
+  "categoria": "med",
+  "item": "sqliteforum2026fake"
  }
 ]

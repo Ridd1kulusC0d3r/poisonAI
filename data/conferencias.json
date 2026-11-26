@@ -209,8 +209,8 @@
   ],
   [
    "CVEs falsos no NVD (dossiê 6)",
-   "Confere",
-   "The Register, JFrog (30/07/2026) e OSS-Security (31/07/2026): seis de SQLite, CVSS 9,8 a 7,5, Red Hat 10,0, lote rejeitado pela MITRE."
+   "Confere em parte",
+   "Lista oficial: 32 registros, 28 com nota da CISA, rejeitados em 31/07; seis de SQLite examinados pela JFrog. “54 no NVD” não confere: 54 é a estimativa da JFrog para o repositório."
   ],
   [
    "Atraso do NVD (dossiê 6)",

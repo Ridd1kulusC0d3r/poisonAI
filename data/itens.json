@@ -8021,12 +8021,13 @@
   "aut": [
    "The Register"
   ],
-  "nota": "O caso que derruba a frase “não há caso público”. Um lote de CVEs de SQLite com notas críticas e altas entrou no NVD com enriquecimento da CISA e se revelou tecnicamente falso, com indício de geração por IA. O autor não era um Estado.",
+  "nota": "A reportagem que tornou público o caso usado para mudar a tese da linha. Os números canônicos do caso estão na ficha da aba A virada, conferidos no histórico da lista oficial de CVEs; a reportagem simplifica alguns deles.",
   "num": [
-   "Seis CVEs de SQLite com CVSS de 9,8 a 7,5; nenhum descrevia falha reproduzível. A Red Hat chegou a dar 10,0 a um deles antes de rebaixar.",
-   "O repositório tinha 55 avisos; os outros 49 alegavam falhas na libraw e na ESP32-audioI2S. 54 eram inteiramente falsos; um trazia um bug real com metadados de CVE não verificados.",
-   "A MITRE rejeitou o lote inteiro. Red Hat e NVD marcaram ou removeram os registros; o GitHub ainda não tinha agido na data da reportagem.",
-   "Motivação desconhecida: a JFrog levanta, como especulação, inflar currículo ou influenciar o que ferramentas automáticas marcam como real."
+   "Lista oficial: 32 registros publicados entre 27 e 30/07/2026 (13 de SQLite, 18 de ESP32-audioI2S, 1 de LibRaw), todos rejeitados em 31/07.",
+   "28 receberam enriquecimento CISA-ADP com nota CVSS, mediana de cerca de 3 horas depois da publicação; 15 chegaram a 9,0 ou mais. As notas vieram da CISA, não da CNA nem do NIST.",
+   "A JFrog examinou seis registros de SQLite e não reproduziu nenhum; a Red Hat chegou a 10,0 em um deles antes de rebaixar.",
+   "O repositório tinha 55 avisos; segundo a JFrog, 54 eram totalmente fabricados e um continha um bug real. Geração por IA é suspeita (detector de texto), não fato.",
+   "Motivação desconhecida: inflar currículo ou influenciar scanners são especulações da própria JFrog."
   ],
   "tags": [
    "vuln",
@@ -8067,7 +8068,8 @@
   ],
   "nota": "A verificação que expôs o lote: compilar as versões citadas, ler o código e rodar as provas de conceito. Dá os sinais de triagem que o projeto P3 propõe medir.",
   "num": [
-   "O código citado não existia nas versões afetadas ou era lógica sem relação com a falha alegada.",
+   "Os seis: 51296, 51297, 51300, 51302, 51303 e 51304, todos com uso-após-liberação alegado em código que não existe na versão citada.",
+   "Sobre IA, o texto é cauteloso: os avisos “parecem” gerados por IA e o GPTZero os marcou; a fabricação é que é afirmada como fato.",
    "Sinais propostos: fornecedor não corroborou; referências sem hash de commit ou pull request; metadados suspeitos; funções inexistentes."
   ],
   "tags": [
@@ -8113,7 +8115,7 @@
   ],
   "nota": "A frase que resume o mecanismo: a MITRE e a maioria das CNAs que atribuem CVEs a código de terceiros operam no sistema de honra.",
   "num": [
-   "Registra a rejeição do lote inteiro pela MITRE no mesmo dia da análise da JFrog."
+   "A lista oficial registra a rejeição dos 32 registros em 31/07, com o motivo “não era um problema de segurança”."
   ],
   "tags": [
    "vuln",
@@ -10290,6 +10292,80 @@
    {
     "lab": "Código no GitHub",
     "url": "https://github.com/ml-postech/RA-RAG",
+    "kind": "dados"
+   }
+  ],
+  "doi": "",
+  "repo": []
+ },
+ {
+  "key": "sqliteforum2026fake",
+  "ano": 2026,
+  "eixo": 1,
+  "ft": "SC",
+  "tit": "Fake CVEs against SQLite",
+  "veic": "Fórum oficial do SQLite (29/07/2026)",
+  "tipo": "Registro de incidente",
+  "st": "Conferido na fonte",
+  "aut": [
+   "Hipp, Richard"
+  ],
+  "nota": "O autor do SQLite abre o tópico depois de receber e-mails de analistas sobre CVEs fictícios. É a confirmação upstream da fabricação que a Red Hat depois cita nas suas páginas.",
+  "tags": [
+   "vuln",
+   "valid",
+   "humano"
+  ],
+  "met": "Incidente / caso documentado",
+  "lado": "med",
+  "dos": [
+   11
+  ],
+  "src": "Fórum do projeto",
+  "links": [
+   {
+    "lab": "Tópico no fórum",
+    "url": "https://sqlite.org/forum/forumpost/34bdf3b9bd759d4d",
+    "kind": "aberto"
+   }
+  ],
+  "doi": "",
+  "num": [],
+  "repo": [],
+  "open": "Texto aberto"
+ },
+ {
+  "key": "cvelist2026lote",
+  "ano": 2026,
+  "eixo": 13,
+  "ft": "GO",
+  "tit": "Histórico dos registros do lote na lista oficial de CVEs (cvelistV5)",
+  "veic": "CVE Program, repositório CVEProject/cvelistV5",
+  "tipo": "Dataset",
+  "st": "Conferido na fonte",
+  "aut": [
+   "CVE Program"
+  ],
+  "nota": "A fonte primária da ficha do caso: cada versão de cada registro, com data, nota da CISA e rejeição. Reconstruído por scripts/caso_cve.py.",
+  "num": [
+   "32 registros citando o repositório no bloco 51xxx; 28 com nota CISA-ADP; 15 com 9,0 ou mais em algum momento; rejeição de todos em 31/07/2026."
+  ],
+  "tags": [
+   "vuln",
+   "metodo",
+   "valid"
+  ],
+  "met": "Medição em escala (dados reais)",
+  "lado": "med",
+  "dos": [
+   11
+  ],
+  "src": "Lista oficial de CVEs",
+  "open": "Código/dados",
+  "links": [
+   {
+    "lab": "Repositório da lista oficial",
+    "url": "https://github.com/CVEProject/cvelistV5",
     "kind": "dados"
    }
   ],

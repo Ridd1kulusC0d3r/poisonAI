@@ -69,7 +69,7 @@
    "A regra de corroboração custa mais do que parece: em IPs e hashes, a corroboração independente é rara até para dado verdadeiro. Funciona melhor para atribuição e narrativa.",
    "O ruído natural pode camuflar o adversário e também tornar o envenenamento desnecessário (H4)."
   ],
-  "pergunta": "Até 25/11/2026, o único caso público de fonte de inteligência contaminada por conteúdo gerado por IA (os CVEs falsos no NVD) não veio de um adversário mirando pipelines de CTI. Por quê?",
+  "pergunta": "Até 26/11/2026, o primeiro caso identificado nesta pesquisa (busca em fontes abertas até 26/11/2026) de fonte de inteligência contaminada por conteúdo fabricado, com suspeita de geração por IA (os CVEs do lote de julho), não veio de um adversário mirando pipelines de CTI. Por quê?",
   "hip": [
    [
     "H1",
@@ -181,9 +181,9 @@
    ],
    [
     "E14",
-    "54 CVEs falsos com indício de IA entram no NVD com enriquecimento da CISA; motivação desconhecida, sem ator estatal (jul/2026)",
+    "32 registros CVE fabricados, citando um repositório obscuro, foram publicados na lista oficial entre 27 e 30/07/2026; 28 receberam nota da CISA (até 9,8) e todos foram rejeitados em 31/07. A JFrog não reproduziu nenhum dos seis de SQLite examinados; geração por IA é suspeita; motivação desconhecida; nenhum ator estatal apontado",
     "CICICNC",
-    "register2026fakecve"
+    "cvelist2026lote"
    ],
    [
     "E15",
@@ -204,10 +204,10 @@
     "agentframework2026"
    ]
   ],
-  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1. A virada do dossiê 6: E14 a E16 mostram que a contaminação já aconteceu, na fonte mais autoritativa do setor, e sem adversário estratégico. H7 é a hipótese mais bem sustentada pela evidência nova e não tem nenhuma inconsistência; ela explica o caso real sem contradizer H3 e H6, que continuam explicando por que não há campanha dirigida. H4 perde força: o ruído não impediu o lote falso de se propagar. E17 reforça H3: quando um adversário mira agentes, mira acesso.",
+  "leitura": "H2 tem a maior carga de inconsistência: com tantos relatórios públicos sobre abuso de IA, um caso de CTI envenenado seria valioso de divulgar. H3 e H6 acumulam consistência sem inconsistência forte. H1 não pode ser descartada, porque a falta de telemetria (E1) impede justamente a detecção. E6 é a evidência mais incômoda para H3. Duas evidências novas, vindas do LLmInjection: E10 mostra envenenamento de memória fora do laboratório, mas por motivo comercial e contra o público, o que reforça H3 e H6 e enfraquece H2; E11 mostra que a superfície do SOC é real e barata de atacar, o que pesa contra H3. Do relatório de setembro da Anthropic e da Dragos (via LLmInjection, conferidos aqui): E12 mostra injeção contra pipeline de IA em campo quando o prêmio é acesso, o que reforça H3 e H5; E13 mostra comprometimento que ninguém via, o que reforça H1. A virada do dossiê 6: E14 a E16 mostram que a contaminação já aconteceu ao menos uma vez, numa fonte autoritativa, e sem adversário estratégico identificado. H7 é compatível com a evidência nova e não tem inconsistências, mas isso não a confirma: E14, sozinha, é compatível com quase qualquer motivação e por isso pouco discrimina. O que pesa a favor de H7 é E15 (o mantenedor do curl descreve volume movido a recompensa) e a ausência de alvo, exploração ou narrativa. Os indicadores I12 a I15 dizem que evidência futura distinguiria H7 das alternativas. H4 perde força: o ruído não impediu o lote falso de se propagar. E17 reforça H3: quando um adversário mira agentes, mira acesso.",
   "julgamento": [
-   "É quase certo que fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA (E14, E16).",
-   "É provável que a contaminação observada se explique principalmente por H7; H3 e H6 seguem explicando a falta de campanha dirigida.",
+   "É quase certo que fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo fabricado, com suspeita de geração por IA (E14, E16).",
+   "É tão provável quanto não que a contaminação observada se explique principalmente por H7; a evidência ainda não discrimina entre incentivo e outras motivações. H3 e H6 seguem explicando a falta de campanha dirigida.",
    "Segue improvável, com confiança baixa, que um adversário estratégico esteja envenenando pipelines de CTI de forma sistemática.",
    "É tão provável quanto não que manipulações de baixa escala já tenham ocorrido sem detecção (H1).",
    "Confiança moderada no primeiro julgamento (fonte primária e reprodução da JFrog); baixa nos demais (autorrelatos e ausência de evidência)."
@@ -307,7 +307,7 @@
    ],
    [
     "I9",
-    "Novo lote de CVEs ou avisos rejeitados por terem sido gerados por IA",
+    "Novo lote de CVEs ou avisos rejeitados por fabricação, com ou sem suspeita de IA",
     "H7",
     "Lista OSS-Security; commits de rejeição no cvelistV5; JFrog"
    ],
@@ -322,6 +322,30 @@
     "Pacote de framework de agentes comprometido na origem",
     "H3/H5",
     "PyPI e npm; Socket, Endor Labs, StepSecurity"
+   ],
+   [
+    "I12",
+    "O mesmo autor ou conta reaparece com lotes em outros projetos",
+    "H7 (contra H3)",
+    "Lista oficial de CVEs; GitHub; OSS-Security"
+   ],
+   [
+    "I13",
+    "Avisos ligados a pedidos de recompensa, currículo, perfil ou portfólio",
+    "H7",
+    "Plataformas de bug bounty; perfis públicos"
+   ],
+   [
+    "I14",
+    "Registros que favorecem um produto, um setor ou uma narrativa específica",
+    "H3 (contra H7)",
+    "Leitura dos alvos do lote"
+   ],
+   [
+    "I15",
+    "Alvos escolhidos por popularidade, sem ligação com um adversário",
+    "H7",
+    "Distribuição de produtos dos lotes"
    ]
   ],
   "cenarios": [
@@ -425,10 +449,10 @@
    ],
    [
     "JC3",
-    "Fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo falso gerado por IA.",
+    "Fontes autoritativas de inteligência de vulnerabilidade já recebem e às vezes publicam conteúdo fabricado, com suspeita de geração por IA.",
     "Quase certo",
     "Moderada",
-    "Caso NVD/CISA de jul/2026 (E14) e NVD sem checagem manual (E16)."
+    "Lote de jul/2026 na lista oficial: 32 registros, 28 com nota da CISA (E14); NVD sem checagem manual (E16)."
    ],
    [
     "JC3b",
@@ -584,7 +608,9 @@
    "Itens M (ICD 203, escala estimativa, diamante, níveis de atribuição, instituições brasileiras) foram citados de memória.",
    "Dossiê 6: o relatório da JFrog, o post da OSS-Security e o relatório do Inspetor-Geral foram localizados nesta rodada; detalhes técnicos (funções citadas, provas de conceito) devem ser lidos no original antes de citação.",
    "Os números da Mozilla e do volume de CVEs vêm de citação em paper de terceiros (arXiv 2607.20255).",
-   "Dossiê 7: itens marcados como Dossiê B foram localizados por citação de terceiros; vários trabalhos de 2026 são preprints sem revisão."
+   "Dossiê 7: itens marcados como Dossiê B foram localizados por citação de terceiros; vários trabalhos de 2026 são preprints sem revisão.",
+   "Ficha do caso SQLite (26/11/2026): contagens refeitas no histórico da lista oficial de CVEs. “54 CVEs no NVD” estava errado: 54 é a estimativa da JFrog para o repositório; 32 viraram registros oficiais; seis foram examinados em detalhe.",
+   "“Primeiro caso” quer dizer primeiro caso identificado nesta pesquisa, com o escopo e a data da busca; não é uma afirmação sobre todo o histórico do setor."
   ],
   "virada": {
    "antes": "Agentes de CTI/OSINT têm um gap de validação porque foram testados só em ambiente benigno, e adversários podem explorar isso.",
@@ -611,7 +637,7 @@
    [
     "Dossiês 1, 2, 3 e 5; página (ressalvas, cenários)",
     "“Não há incidente público em que um feed ou base de CTI tenha sido envenenado por conteúdo gerado por IA”",
-    "Há: CVEs falsos, com indício de geração por IA, entraram no NVD com enriquecimento da CISA (jul/2026). O que segue sem caso público é o envenenamento dirigido por ator estatal contra pipeline de CTI."
+    "Há ao menos um, identificado nesta pesquisa: 32 registros CVE fabricados, citando um repositório obscuro, foram publicados na lista oficial entre 27 e 30/07/2026; 28 receberam nota da CISA (até 9,8) e todos foram rejeitados em 31/07, com suspeita de geração por IA. O que segue sem caso identificado é o envenenamento dirigido por ator estatal contra pipeline de CTI."
    ],
    [
     "Dossiê 5, análise de hipóteses",
@@ -637,15 +663,20 @@
     "Dossiê 4, modelagem de ameaças",
     "Fontes externas tratadas como feeds e fóruns",
     "NVD, CVE e bases de avisos entram como fonte não verificada por padrão (cadeia, etapa S1)."
+   ],
+   [
+    "Página e README (26/11/2026)",
+    "“54 CVEs falsos entraram no NVD com enriquecimento da CISA”",
+    "32 registros oficiais, 28 com nota da CISA, seis examinados pela JFrog; 54 é a estimativa da JFrog para o repositório inteiro."
    ]
   ],
   "projetos": [
    [
     "P1",
-    "CVEs-zumbis: quanto tempo um registro falso sobrevive depois de rejeitado?",
-    "Experimento natural de propagação de erro, com data de injeção e de retratação conhecidas. Mede o erro composto (RQ2) e a retratação, o passo mais omitido do playbook. Ninguém mediu.",
-    "Lista dos identificadores rejeitados; consulta periódica a bases públicas, avisos de distribuições, buscadores e assistentes com busca; registro de quando cada cópia aparece e some. Resultado: a meia-vida de uma retratação.",
-    "Semanas: uma tabela registro × lugar × ainda presente já é nota curta publicável.",
+    "CVEs-zumbis: depois da retratação, por quanto tempo um analista ainda encontra o aviso apresentado como válido?",
+    "Experimento natural de propagação de erro, com data de injeção e de retratação conhecidas. Mede o erro composto (RQ2) e a retratação. Uma base que preserva o registro e mostra “rejeitado” já propagou a correção: medir só a presença da página puniria boa prática.",
+    "Para cada registro × fonte: ainda apresentado como válido, rejeição visível, removido ou indisponível. Resultado: tempo entre a rejeição oficial e a primeira observação da correção em cada fonte; se a observação começou tarde, publicar o intervalo conhecido. Piloto v0 com os seis registros de SQLite nesta aba; captura direta com scripts/zumbis.py.",
+    "Semanas. O piloto v0 já é publicável como nota curta, com os limites declarados.",
     "RQ28"
    ],
    [
@@ -687,7 +718,7 @@
    "fatores": [
     [
      "Ataque",
-     "Nenhum · PoisonedRAG (5 textos por alvo) · CorruptRAG (1 texto) · Injeção indireta (instrução no relatório) · Grafo (relações compartilhadas) · Braço natural: os 54 CVEs falsos"
+     "Nenhum · PoisonedRAG (5 textos por alvo) · CorruptRAG (1 texto) · Injeção indireta (instrução no relatório) · Grafo (relações compartilhadas) · Braço natural: os 32 registros fabricados de jul/2026"
     ],
     [
      "Dose",

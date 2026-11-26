@@ -1,0 +1,370 @@
+{
+ "id": "piloto-retratacao-v0",
+ "observado_em": "2026-11-26",
+ "rejeicao_oficial": "2026-07-31T14:43:58Z",
+ "metodo": "Versão 0, por índice de busca: para cada um dos seis registros de SQLite examinados pela JFrog, buscas pelo identificador e classificação da cópia indexada de cada página em quatro estados (ainda apresentado como válido, rejeição visível, removido, indisponível para consulta), mais “misto” (rejeição visível com nota crítica ainda exibida), “não afetado” e “inconclusivo”. Uma página que preserva o registro e mostra a rejeição conta como correção propagada, não como falha. Quando a página exibe a data da última modificação, ela delimita o atraso conhecido; sem essa data, não se sabe quando a cópia foi feita.",
+ "limites": "Cópias de índice de busca, não páginas consultadas ao vivo: uma página marcada como válida pode já ter sido corrigida. A consulta direta às páginas ficou pendente nesta rodada; o script scripts/zumbis.py faz essa captura com data e hora. A lista de fontes é a que o índice devolveu, não uma amostra planejada.",
+ "estados": [
+  "ainda apresentado como válido",
+  "rejeição visível",
+  "misto",
+  "não afetado (sem citar a rejeição)",
+  "inconclusivo",
+  "removido",
+  "indisponível para consulta"
+ ],
+ "obs": [
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51296.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51297",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51297.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51300.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51302.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51303.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "Lista oficial de CVEs (CVE Program)",
+   "url": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/51xxx/CVE-2026-51304.json",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Estado REJECTED desde 31/07; referência para medir atraso. Coletado do repositório oficial."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "Red Hat (página do CVE)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-51296",
+   "estado": "rejeição visível",
+   "ultima_mod": "",
+   "nota": "Diz que o upstream confirmou o CVE como fictício e que a CNA o rejeitou."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "Red Hat Bugzilla (falha 2507546)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507546",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "Status NEW, com a descrição original da falha."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "Fedora (tracker 2507909)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507909",
+   "estado": "misto",
+   "ultima_mod": "2026-07-28",
+   "nota": "Um mantenedor comentou em 28/07 que o relato é completamente falso; o tracker segue com o título da falha."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "OSV (UBUNTU-CVE-2026-51296)",
+   "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-51296",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-07-29",
+   "nota": "Cópia indexada anterior à rejeição (gravidade média, pacotes afetados)."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "INCIBE-CERT",
+   "url": "https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2026-51296",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Descrição da falha, análise pendente."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "SentinelOne (base de vulnerabilidades)",
+   "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-51296/",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-29",
+   "nota": "Artigo técnico tratando a falha como real."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "cvefeed.io",
+   "url": "https://cvefeed.io/vuln/detail/CVE-2026-51296",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Orienta atualizar o SQLite."
+  },
+  {
+   "cve": "CVE-2026-51296",
+   "fonte": "Amazon Linux (ALAS)",
+   "url": "https://explore.alas.aws.amazon.com/CVE-2026-51296.html",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-07-31",
+   "nota": "Modificada em 31/07; o trecho indexado não mostra o estado."
+  },
+  {
+   "cve": "CVE-2026-51297",
+   "fonte": "Red Hat (página do CVE)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-51297",
+   "estado": "inconclusivo",
+   "ultima_mod": "",
+   "nota": "O trecho indexado só mostra a descrição."
+  },
+  {
+   "cve": "CVE-2026-51297",
+   "fonte": "INCIBE-CERT",
+   "url": "https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2026-51297",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Descrição da falha, análise pendente."
+  },
+  {
+   "cve": "CVE-2026-51297",
+   "fonte": "SentinelOne (base de vulnerabilidades)",
+   "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-51297/",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-29",
+   "nota": "Artigo técnico tratando a falha como real."
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "fonte": "Red Hat Bugzilla (falha 2507549)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507549",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "Status NEW, com a descrição original."
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "fonte": "Feedly (página do CVE)",
+   "url": "https://feedly.com/cve/CVE-2026-51300",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "CVSS 9,1 crítico, “Public PoC” e orientação de aplicar patches."
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "fonte": "Amazon Linux (ALAS)",
+   "url": "https://explore.alas.aws.amazon.com/CVE-2026-51300.html",
+   "estado": "não afetado (sem citar a rejeição)",
+   "ultima_mod": "",
+   "nota": "Amazon Linux 2 e 2023 marcados como não afetados."
+  },
+  {
+   "cve": "CVE-2026-51300",
+   "fonte": "INCIBE-CERT",
+   "url": "https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2026-51300",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Análise pendente."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "NVD",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51302",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-07-28",
+   "nota": "Cópia indexada anterior à rejeição; outros registros do lote aparecem na NVD com o texto de rejeição."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "OSV (CVE-2026-51302)",
+   "url": "https://osv.dev/vulnerability/CVE-2026-51302",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-08-01",
+   "nota": "Modificada depois da rejeição e ainda com descrição e gravidade 7,5; o trecho não mostra o campo de retirada."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "Red Hat Bugzilla (falha 2507543)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507543",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-08-04",
+   "nota": "Status NEW, com a descrição original, quatro dias depois da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "OpenCVE",
+   "url": "https://app.opencve.io/cve/CVE-2026-51302",
+   "estado": "misto",
+   "ultima_mod": "2026-07-31",
+   "nota": "Mostra status REJECTED e, no topo, “CVSS 3.1 · 10.0 Critical”."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "SentinelOne (base de vulnerabilidades)",
+   "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-51302/",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-30",
+   "nota": "Artigo técnico tratando a falha como real."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "cvefeed.io",
+   "url": "https://cvefeed.io/vuln/detail/CVE-2026-51302",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Orienta atualizar para 3.41.2 ou posterior."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "vulert",
+   "url": "https://vulert.com/vuln-db/CVE-2026-51302",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "Descrição técnica e instruções de correção."
+  },
+  {
+   "cve": "CVE-2026-51302",
+   "fonte": "cve.threatint.com",
+   "url": "https://cve.threatint.com/CVE/CVE-2026-51302",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Estado PUBLISHED."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "Red Hat Bugzilla (falha 2507555)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507555",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-08-04",
+   "nota": "Status NEW, quatro dias depois da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "Fedora (tracker 2508472, mingw-sqlite)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2508472",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-08-17",
+   "nota": "Tracker aberto, gravidade alta, 17 dias depois da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "Fedora (tracker 2508475, fossil)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2508475",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-08-17",
+   "nota": "Tracker aberto, 17 dias depois da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "Feedly (página do CVE)",
+   "url": "https://feedly.com/cve/CVE-2026-51303",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "CVSS 9,8 crítico, “Public PoC” e detecção no Nessus."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "OpenCVE",
+   "url": "https://app.opencve.io/cve/CVE-2026-51303",
+   "estado": "misto",
+   "ultima_mod": "",
+   "nota": "Texto “DO NOT USE THIS CVE RECORD” ao lado de “CVSS 3.1 · 9.8 Critical”."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "averlon",
+   "url": "https://research.averlon.ai/vulnerability-intelligence/cve/CVE-2026-51303",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "Gravidade crítica, CVSS 9,8."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "cve.report",
+   "url": "https://cve.report/CVE-2026-51303",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Estado PUBLISHED."
+  },
+  {
+   "cve": "CVE-2026-51303",
+   "fonte": "INCIBE-CERT",
+   "url": "https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2026-51303",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-27",
+   "nota": "Análise pendente."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "Red Hat (página do CVE)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-51304",
+   "estado": "rejeição visível",
+   "ultima_mod": "",
+   "nota": "Não afeta os produtos; upstream confirmou como fictício; CNA rejeitou."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "CIRCL vulnerability-lookup",
+   "url": "https://cve.circl.lu/cve/CVE-2026-51304",
+   "estado": "rejeição visível",
+   "ultima_mod": "2026-07-31",
+   "nota": "Espelha o estado REJECTED da lista oficial."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "Red Hat Bugzilla (falha 2507560)",
+   "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2507560",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-08-04",
+   "nota": "Status NEW, quatro dias depois da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "Feedly (página do CVE)",
+   "url": "https://feedly.com/cve/CVE-2026-51304",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "",
+   "nota": "CVSS 7,5 e “A patch is available” com link para aviso do GitHub."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "SentinelOne (base de vulnerabilidades)",
+   "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-51304/",
+   "estado": "ainda apresentado como válido",
+   "ultima_mod": "2026-07-29",
+   "nota": "Artigo técnico com indicadores de comprometimento."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "OSV (CVE-2026-51304)",
+   "url": "https://osv.dev/vulnerability/CVE-2026-51304",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-07-31",
+   "nota": "Modificada às 03h49 UTC de 31/07, antes da rejeição."
+  },
+  {
+   "cve": "CVE-2026-51304",
+   "fonte": "NVD",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51304",
+   "estado": "inconclusivo",
+   "ultima_mod": "2026-07-29",
+   "nota": "Cópia indexada anterior à rejeição."
+  }
+ ]
+}
