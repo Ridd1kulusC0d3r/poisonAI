@@ -30,7 +30,19 @@ A aba **A virada** traz a ficha, uma linha por registro, as correções aos doss
 ## Primeiras medições próprias
 
 - **Piloto de retratações (projeto P1, versão 0):** para os seis registros de SQLite, 44 observações registro × fonte. Uma base que preserva o registro e mostra “rejeitado” conta como correção propagada, não como falha. Em 24 cópias o registro ainda aparecia como válido; o maior atraso conhecido é de ao menos 17 dias (trackers do Fedora abertos em 17/08). As cópias vêm de índice de busca; a captura direta, com data e hora, está em `scripts/zumbis.py`.
-- **Documento rejeitado não é fato perdido:** `scripts/medir_portao.py` mede, com e sem o portão de admissão e nos mesmos dados sintéticos, documentos legítimos rejeitados, fatos novos que perderam todas as fontes e decisões finais corretas. Exemplo: exigir corroboração na base ou no próprio lote rejeita só 7,1% dos documentos legítimos, mas perde 33,3% dos fatos novos, todos os que tinham uma única fonte. Resultado completo em [docs/MEDICAO-PORTAO.md](docs/MEDICAO-PORTAO.md).
+### O custo de exigir corroboração
+
+No lote sintético, a regra que exige corroboração na base ou no lote rejeitou **10 de 140 documentos legítimos (7,1%)**. Todos os dez eram a única fonte de um fato novo. Assim, **10 dos 30 fatos novos (33,3%)** ficaram sem cobertura.
+
+```mermaid
+xychart-beta
+    title "Perda em cada grupo avaliado"
+    x-axis ["Documentos legítimos", "Fatos novos"]
+    y-axis "Percentual perdido" 0 --> 100
+    bar [7.1, 33.3]
+```
+
+[Consultar os resultados de cada regra e o método de reprodução](docs/MEDICAO-PORTAO.md)
 
 ## Laboratório
 
