@@ -1,10 +1,25 @@
 # poisonAI
 
-**Alucinação e envenenamento em IA para OSINT e inteligência de ameaças.** Uma linha de pesquisa aberta: quem envenena as IAs de segurança, como, com que dose, com que evidência, e o que ninguém mediu ainda.
+Pesquisa aberta sobre a confiabilidade da IA em OSINT e inteligência de ameaças. Quanto uma defesa consegue filtrar antes de descartar a única evidência legítima de que o analista precisa?
 
-**[Abrir o site interativo](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Ordem de leitura](docs/LEITURA.md) · [Metodologia](METODOLOGIA.md) · [Ética e escopo](ETICA.md) · [A virada](docs/VIRADA.md) · [Dossiê 7 por score](docs/DOSSIE7.md) · [Hipóteses](docs/HIPOTESES.md) · [Brasil](docs/BRASIL.md)
+**[Explorar o site](https://ridd1kulusc0d3r.github.io/poisonAI/)** · [Comece aqui](COMECE-AQUI.md) · [Guia da documentação](docs/README.md) · [Metodologia](METODOLOGIA.md) · [Ética](ETICA.md)
 
-> O que acontece quando a fonte de onde a IA de inteligência bebe já vem contaminada, e quem garante que alguém vai perceber.
+[![Visita ao site com a página inicial, o catálogo de trabalhos e a linha do tempo](docs/media/visita.gif)](https://ridd1kulusc0d3r.github.io/poisonAI/)
+
+## Percursos de leitura
+
+| Quero… | Por onde começar |
+|---|---|
+| Conferir um caso real e suas fontes | [Ficha do caso SQLite](docs/CASO-SQLITE.md) → [Revisão das hipóteses](docs/VIRADA.md) |
+| Avaliar o custo de uma defesa | [Medição do portão de admissão](docs/MEDICAO-PORTAO.md) → [Laboratório interativo](https://ridd1kulusc0d3r.github.io/poisonAI/#laboratorio) |
+| Selecionar referências para pesquisa | [Ordem de leitura](docs/LEITURA.md) → [Bibliografia do Dossiê 7](docs/DOSSIE7.md) |
+| Investigar o recorte brasileiro | [Brasil e lusofonia](docs/BRASIL.md) → [Julgamentos e evidências](docs/HIPOTESES.md) |
+
+### Como os temas se relacionam
+
+Cada nó representa um tema. A espessura da ligação indica quantos trabalhos abordam os dois assuntos. Selecione um nó no mapa interativo para explorar a bibliografia associada.
+
+[![Mapa do site alternando a visão geral e o destaque das ligações de dois temas](docs/media/temas.gif)](https://ridd1kulusc0d3r.github.io/poisonAI/#linhas)
 
 ## A virada (dossiê 6)
 
@@ -15,7 +30,19 @@ A aba **A virada** traz a ficha, uma linha por registro, as correções aos doss
 ## Primeiras medições próprias
 
 - **Piloto de retratações (projeto P1, versão 0):** para os seis registros de SQLite, 44 observações registro × fonte. Uma base que preserva o registro e mostra “rejeitado” conta como correção propagada, não como falha. Em 24 cópias o registro ainda aparecia como válido; o maior atraso conhecido é de ao menos 17 dias (trackers do Fedora abertos em 17/08). As cópias vêm de índice de busca; a captura direta, com data e hora, está em `scripts/zumbis.py`.
-- **Documento rejeitado não é fato perdido:** `scripts/medir_portao.py` mede, com e sem o portão de admissão e nos mesmos dados sintéticos, documentos legítimos rejeitados, fatos novos que perderam todas as fontes e decisões finais corretas. Exemplo: exigir corroboração na base ou no próprio lote rejeita só 7,1% dos documentos legítimos, mas perde 33,3% dos fatos novos, todos os que tinham uma única fonte. Resultado completo em [docs/MEDICAO-PORTAO.md](docs/MEDICAO-PORTAO.md).
+### O custo de exigir corroboração
+
+No lote sintético, a regra que exige corroboração na base ou no lote rejeitou **10 de 140 documentos legítimos (7,1%)**. Todos os dez eram a única fonte de um fato novo. Assim, **10 dos 30 fatos novos (33,3%)** ficaram sem cobertura.
+
+```mermaid
+xychart-beta
+    title "Perda em cada grupo avaliado"
+    x-axis ["Documentos legítimos", "Fatos novos"]
+    y-axis "Percentual perdido" 0 --> 100
+    bar [7.1, 33.3]
+```
+
+[Consultar os resultados de cada regra e o método de reprodução](docs/MEDICAO-PORTAO.md)
 
 ## Laboratório
 
@@ -28,23 +55,6 @@ No site, a aba **Laboratório** deixa envenenar uma base de 320 relatórios sint
 | **266** | **39** | **40** | **63** | **41** | **17** |
 
 Cada trabalho traz **score de leitura (0 a 100)**, **nota da fonte (A a E)**, **tipo de estudo**, **peso da evidência (1 a 5)**, **lado** (capacidade, ataque, defesa, medição, uso adversarial, fundamento), **revisão por pares** e **status de verificação**. Dos 266, 138 foram conferidos nesta linha (81 na fonte, 48 preprints conferidos e 9 via cobertura); o resto está marcado como vindo de dossiê, alegação ou memória.
-
-## O que há aqui
-
-| Camada | Onde |
-|---|---|
-| Site interativo: catálogo com filtros, tipos de estudo, linha do tempo, atores, cadeia de ataque em sete etapas, ofensiva, defesa, agenda, pautas | [`site/index.html`](site/index.html) |
-| Dados abertos, um JSON por tema | [`data/`](data/) |
-| Bibliografia BibTeX gerada | [`data/referencias.bib`](data/referencias.bib) |
-| **Ordem de leitura por score: comece por aqui** | [`docs/LEITURA.md`](docs/LEITURA.md) |
-| Catálogo por tipo de estudo | [`docs/CATALOGO.md`](docs/CATALOGO.md) |
-| Análise de hipóteses concorrentes, indicadores, cenários e julgamentos com linguagem estimativa | [`docs/HIPOTESES.md`](docs/HIPOTESES.md) |
-| Recorte brasileiro: cibercrime financeiro, eleições de 2026, lusofonia | [`docs/BRASIL.md`](docs/BRASIL.md) |
-| Agenda: 40 perguntas, lacunas, fases | [`docs/AGENDA.md`](docs/AGENDA.md) |
-| Registro de conferência e correções | [`docs/CONFERENCIA.md`](docs/CONFERENCIA.md) |
-| Atores com rótulos de fornecedor preservados | [`docs/ATORES.md`](docs/ATORES.md) |
-| Pautas para episódios | [`docs/PAUTAS.md`](docs/PAUTAS.md) |
-| Experimento de brinquedo: dose-resposta de envenenamento num RAG BM25 | [`scripts/dose_resposta.py`](scripts/dose_resposta.py) |
 
 ## Defesa na admissão
 
